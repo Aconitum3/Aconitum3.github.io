@@ -2,7 +2,7 @@ import { defineConfig } from 'astro/config';
 
 // https://astro.build/config
 export default defineConfig({
-  site: "https://aconitum3.github.io"
+  site: "https://aconitum3.github.io",
   markdown: {
     rehypePlugins: [
       ['rehype-katex',{}]
