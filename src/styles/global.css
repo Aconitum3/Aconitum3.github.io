@@ -1,0 +1,99 @@
+body {
+  background-color: #FFFFFB;  
+}
+
+/** Header **/
+
+.header-float {
+  width: 100%;
+  height: 60px;
+  position: fixed;
+  top: 0;
+  left: 0;
+  background-color: #FFFFFB;
+  align-items: center;
+  z-index: 100;
+}
+
+/* LOGO */
+
+.header-float .logo {
+  height: 100%;
+  margin-left: 20px;
+  float: left;
+  display: flex;
+  align-items: center;
+}
+
+/* Navigation */
+
+.header-float nav {
+  height: 100%;
+  float: left;
+}
+
+.header-float nav ul {
+  display: flex;
+  padding-left: 20px;
+}
+
+.header-float nav ul li {
+  list-style: none;
+  margin-left: 10px;
+}
+
+/* Dark Mode Toggle */
+
+.toggle {
+  height: 100%;
+  float: right;
+  display: flex;
+  align-items: center;
+  margin-right: 20px;
+}
+
+.toggle p {
+  margin-left: 10px;
+  margin-right: 10px;
+}
+
+
+/** Content **/
+
+.main-content {
+  width: 60%;
+  margin: auto;
+  margin-top: 80px;
+}
+
+/*** Dark Theme ***/
+
+body.dark-theme {
+  color: #F8F8F3;
+  background-color: #0F2540;
+}
+
+.dark-theme .header-float {
+  background-color: #0F2540;
+}
+
+.dark-theme a:visited {
+  color: #F7D94C;
+}
+
+/*** Responsive ***/
+@media screen and (max-width: 480px) {
+/** Header **/
+.toggle {
+  margin-right: 20px;
+}
+
+.toggle p {
+  margin-left: 20px;
+}
+
+/** Content **/
+.main-content {
+  width: 80%;
+}
+}

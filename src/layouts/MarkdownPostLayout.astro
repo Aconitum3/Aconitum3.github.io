@@ -1,0 +1,14 @@
+---
+import BaseLayout from '@/layouts/BaseLayout.astro';
+import Flipper from '@/components/Flipper.astro';
+import '@/styles/markdownpost.css';
+
+const { frontmatter } = Astro.props;
+---
+<BaseLayout pageTitle={frontmatter.title}>
+  <link slot="head" rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.15.2/dist/katex.min.css" integrity="sha384-MlJdn/WNKDGXveldHDdyRP1R4CTHr3FeuDNfhsLPYrq2t0UBkUdK2jyTnXPEK1NQ" crossorigin="anonymous">
+  <slot />  
+  <script src="@/scripts/CopyCodeButton.js" />
+  <script src="@/scripts/CopyLatexButton.js" />
+  <Flipper prevPostFileName = {frontmatter.prev} nextPostFileName ={frontmatter.next} />
+</BaseLayout>

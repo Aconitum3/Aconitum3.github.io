@@ -1,0 +1,126 @@
+@font-face {
+  font-family: "HackGen";
+  src: url("/fonts/HackGenConsoleNF-Regular.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+code {
+  font-family: "HackGen";
+}
+
+p code {
+  background-color: #EEEEF2;
+  color: #282A36;
+  font-weight: bold;
+  font-size: 80%;
+  padding-top: 1px;
+  padding-bottom: 1px;
+  padding-left: 6px;
+  padding-right: 6px;
+  border-radius: 3px;
+  margin: 3px;
+}
+
+
+pre {
+  position: relative;
+  padding-top: 30px;
+  padding-bottom: 30px;
+  padding-left: 20px;
+  padding-right: 20px;
+  border-radius: 5px;
+}
+
+.math-display {
+  position: relative;
+  padding-top: 15px;
+  padding-bottom: 15px;
+  padding-left: 20px;
+  padding-right: 20px;
+}
+
+/** Copy Block **/
+
+/* Copy Block [ Common ] */
+
+.copy-block {
+  display: none;
+  position: absolute;
+  right: 10%;
+  top: 5px;
+}
+
+.copy-button {
+  background-color: transparent;
+  border: none;
+}
+
+.copy-message {
+  font-family: "HackGen";
+  padding-top: 5px;
+  color: #F7D94C;
+}
+
+/* Copy Button [ Code ] */
+
+.code-block:hover .copy-block {
+  display: flex;
+}
+
+.code-block .copy-button svg {
+  fill: #F8F8F2;
+}
+
+.code-block .copy-button:hover svg {
+  fill: #F7D94C;
+}
+
+/* Copy Button [ LaTeX ] */
+
+.math-block:hover .copy-block {
+  display: flex;
+}
+
+.math-block .copy-button svg {
+  fill: #282A36;
+}
+
+.math-block .copy-button:hover svg {
+  fill: #6272A4;
+}
+
+.math-block .copy-message {
+  color: #282A36;
+}
+
+
+/*** Dark Theme ***/
+
+/* Code Block [ LaTeX ] */
+
+body.dark-theme .math-block .copy-button svg {
+  fill: #F8F8F2;
+}
+
+body.dark-theme .math-block .copy-button:hover svg {
+  fill: #F7D94C;
+}
+
+body.dark-theme .math-block .copy-message {
+  color: #F7D94C; 
+}
+
+/*** Responsive ***/
+
+@media screen and (max-width: 480px) {
+  
+  .math-display {
+    overflow-x: scroll;
+  }
+
+
+}
+
+

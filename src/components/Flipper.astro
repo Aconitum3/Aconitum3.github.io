@@ -1,0 +1,15 @@
+---
+import { getEntry } from 'astro:content';
+
+const { prevPostFileName, nextPostFileName } = Astro.props;
+
+const prevPostFlag = prevPostFileName !== '';
+const nextPostFlag = nextPostFileName !== '';
+
+const prevPost = prevPostFlag ? await getEntry('posts', prevPostFileName) : '';
+const nextPost = nextPostFlag ? await getEntry('posts', nextPostFileName) : '';
+---
+<ul>
+  {prevPostFlag && (<a href={'/posts/' + prevPost.slug}><li>Previous Post: {prevPost.data.title}</li></a>)}
+  {nextPostFlag && (<a href={'/posts/' + nextPost.slug}><li>Next Post: {nextPost.data.title}</li></a>)} 
+</ul>

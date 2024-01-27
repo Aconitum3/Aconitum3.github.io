@@ -1,0 +1,60 @@
+---
+import FormattedDate from '@/components/FormattedDate.astro';
+
+const { frontmatter, url } = Astro.props;
+---
+<style>
+  .postcard-title {
+    width: 50%;
+    padding-left: 15px;
+    padding-right: 15px;
+    padding-top: 5px;
+    padding-bottom: 5px;
+  }
+
+  .postcard-date {
+    width: 15%;
+    text-align: center;
+    padding-left: 10px;
+    padding-right: 10px;
+  }
+
+  .postcard-tags {
+    width: 35%;
+    text-align: left;
+  }
+  
+  .postcard-tags ul {
+    list-style-type: none;  
+    display: flex;
+    padding-inline-start: 0;
+    margin-right: 10px;
+  }
+
+  .postcard-tags li {
+    margin-left: 10px;
+  }
+    
+  .postcard td {
+    border-bottom: 1px solid #0F2540;
+  }
+  
+  /*** Dark Mode Theme ***/
+
+  body.dark-theme .postcard td {
+    border-bottom: 1px solid #F8F8F2;
+  }
+</style>
+<tr class="postcard">
+  <td class="postcard-title">
+    <a href={url}>{frontmatter.title}</a>
+  </td>
+  <td class="postcard-date">
+    <FormattedDate date={frontmatter.pubDate} />
+  </td>
+  <td class="postcard-tags">
+    <ul>
+      {frontmatter.tags.map((tag) => <li><a href={'/tags/' + tag}>{tag}</a></li>)}
+    </ul>
+  </td>
+</tr>

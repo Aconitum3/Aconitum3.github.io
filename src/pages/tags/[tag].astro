@@ -1,0 +1,33 @@
+---
+import BaseLayout from '@/layouts/BaseLayout.astro';
+import PostCard from '@/components/PostCard.astro';
+import PostCardList from '@/components/PostCardList.astro';
+import { getCollection } from 'astro:content';
+
+
+export async function getStaticPaths() {
+  const allPosts = await getCollection('posts');
+
+  const uniqueTags = [...new Set(allPosts.map((post) => post.data.tags).flat())];
+  
+  return uniqueTags.map((tag) => {
+    const filteredPosts = allPosts.filter((post) => post.data.tags.includes(tag));
+    const filteredPostsSorted = filteredPosts.sort(
+	(a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf()
+    );
+    
+    return {
+      params: { tag },
+      props: { posts: filteredPostsSorted },
+    };
+  });
+};
+
+const { tag } = Astro.params;
+const { posts } = Astro.props;
+---
+<BaseLayout pageTitle={tag}>
+  <PostCardList>
+    {posts.map((post) => <PostCard frontmatter={post.data} url={'/posts/' + post.slug} />)}
+  </PostCardList>
+</BaseLayout>

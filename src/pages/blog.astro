@@ -1,0 +1,20 @@
+---
+import BaseLayout from '@/layouts/BaseLayout.astro';
+import PostCard from '@/components/PostCard.astro';
+import PostCardList from '@/components/PostCardList.astro';
+import { getCollection } from 'astro:content';
+
+const allPosts = await getCollection('posts');
+const allPostsSorted = allPosts.sort(
+	(a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf()
+);
+
+const pageTitle = 'Blog';
+---
+<BaseLayout pageTitle={pageTitle}>
+  <PostCardList>
+    {allPostsSorted.map((post) =>
+      <PostCard frontmatter={post.data} url={'/posts/' + post.slug} />
+    )}
+  </PostCardList>
+</BaseLayout>

@@ -1,0 +1,48 @@
+---
+---
+<style>
+  h3 {
+    text-align: center;
+  }
+
+  .bloglist {
+    width: 100%;
+    border-collapse: collapse;
+  }
+  .bloglist th {
+    border-bottom: 3px double #0F2540;
+    border-top: 3px double #0F2540;
+  }
+
+  .table-title {
+    text-align: left;
+    padding-left: 15px;
+  }
+
+  .table-date {
+    text-align: center;
+  }
+
+  .table-tags {
+    text-align: left;
+    padding-left: 10px;
+  }
+
+  /*** Dark Theme ***/
+  
+  body.dark-theme .bloglist th {
+    border-bottom: 3px double #F8F8F2;
+    border-top: 3px double #F8F8F2;
+  }
+
+</style>
+
+<h3>Table 1: Blog List</h2>
+<table border="0" class="bloglist">
+  <tr>
+    <th class="table-title">Title</th>
+    <th class="table-date">pubDate</th>
+    <th class="table-tags">Tags</th>
+  </tr>
+  <slot />
+</table>
