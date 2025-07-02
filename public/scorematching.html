@@ -2369,16 +2369,75 @@ color: #556056;
 \newcommand{\pd}[3][]{\frac{\partial^{#1}{#2}}{\partial^{#1}{#3}}}
 \newcommand{\ang}[1]{\langle{#1}\rangle}
 \]</span></p>
+<section id="はじめに" class="level1">
+<h1>はじめに</h1>
+<p>この資料では，スコアマッチングを中心に，正規化定数に依らない統計的推測の方法を紹介する．以下のようなモデルを考える．</p>
+<p><span class="math display">\[
+q(x\mid\theta)=\frac{\tilde{q}(x\mid\theta)}{Z(\theta)}
+\]</span></p>
+<p>ここで，<span class="math inline">\(Z(\theta)\)</span> は正規化定数で，連続分布の場合は <span class="math display">\[
+Z(\theta)=\int\tilde{q}(x\mid\theta)\d{x}
+\]</span></p>
+<p>として定まる．離散分布の場合は， <span class="math display">\[
+Z(\theta)=\sum_{x}\tilde{q}(x\mid\theta)
+\]</span></p>
+<p>として定まる．この正規化定数の評価が困難な場合を考える． そのような状況では最尤推定は利用できないため，何か別の方法が必要になる． はじめに，正規化定数の評価が困難なモデルの例を紹介する．</p>
+<div id="exm-energybased-model" class="theorem example">
+<p><span class="theorem-title"><strong>Example 1 (エネルギーベースモデル)</strong></span> エネルギーベースモデルは，エネルギー関数 <span class="math inline">\(E(x\mid\theta)\)</span> を用いて， <span class="math display">\[
+q(x\mid\theta)\propto e^{-E(x\mid\theta)}
+\]</span></p>
+<p>と表されるモデルである．<span class="math inline">\(\log{q}(x\mid\theta)\)</span> の形状を <span class="math inline">\(E(x\mid\theta)\)</span> によって直接モデリングする方法である．機械学習分野では <span class="math inline">\(E(x\mid\theta)\)</span> をニューラルネットなどで構成し，複雑なデータ分布を学習する．しかし，一般に正規化定数は評価できない．</p>
+</div>
+<div id="exm-boltzmann" class="theorem example">
+<p><span class="theorem-title"><strong>Example 2 (Boltzmann マシン)</strong></span> Bolzmann マシンはエネルギー関数 <span class="math display">\[
+E(\bm{x}\mid \bm\theta)=\sum_{j=1}^{d}\theta_{j}x_{j}+\sum_{j&lt;k}\theta_{jk}x_{j}x_{k}
+\]</span></p>
+<p>をもつ <span class="math inline">\(\mathfrak{X}=\{-1,1\}^{d}\)</span> 上のエネルギーベースモデルである．正規化定数は <span class="math display">\[
+Z(\bm\theta)=\sum_{\bm{x}\in\{-1,1\}^{d}}e^{-E(\bm{x}\mid\bm\theta)}
+\]</span></p>
+<p>で <span class="math inline">\(2^d\)</span> 項の和となるため，<span class="math inline">\(d\)</span> が大きいと評価は現実的でない．</p>
+</div>
+<div id="exm-truncated-model" class="theorem example">
+<p><span class="theorem-title"><strong>Example 3 (切断分布)</strong></span> <span class="math inline">\(\mathfrak{X}\)</span> 上のモデル <span class="math inline">\(p(x\mid\theta)\)</span> を用いて，<span class="math inline">\(V\subset\mathfrak{X}\)</span> 上のモデルを <span class="math display">\[
+q(x\mid\theta)\propto p(x\mid\theta)1_{V}(x)
+\]</span></p>
+<p>によって構成する．このようなモデル（分布）を切断分布という<a href="#fn1" class="footnote-ref" id="fnref1" role="doc-noteref"><sup>1</sup></a>．正規化定数 <span class="math inline">\(Z(\theta)\)</span> は <span class="math display">\[
+Z(\theta)=\int_{V}p(x\mid\theta)\d{x}
+\]</span></p>
+<p>によって与えられる．<span class="math inline">\(q\)</span> が正規分布の場合ですら，<span class="math inline">\(Z(\theta)\)</span> は陽に表せない． 例えば，<span class="citation" data-cites="LiuEstimatingDensityModels2022">Liu, Kanamori, and Williams (<a href="#ref-LiuEstimatingDensityModels2022" role="doc-biblioref">2022</a>)</span> では，シカゴの犯罪発生地点のデータに多変量混合正規分布の切断分布を当てはめることを検討している．ここで，<span class="math inline">\(V\subset\mathbb{R}^{2}\)</span> は多角形で，シカゴの形状を表現する．他にも，生存時間解析では切断分布がよく現れる．</p>
+</div>
+<div id="exm-truncated-gaussian" class="theorem example">
+<p><span class="theorem-title"><strong>Example 4 (切断 Gaussian グラフィカルモデル)</strong></span> <span class="math inline">\([0,\infty)^{d}\)</span> 上の切断 Gaussian グラフィカルモデルは <span class="math display">\[
+q(\bm{x}\mid\Sigma)\propto \exp\left(-\frac{1}{2}\bm{x}\Sigma^{-1}\bm{x}\right)
+\]</span></p>
+<p>で表されるモデルである．<span class="math inline">\(\Sigma\)</span> を推定することで，変数間の依存関係を調べることができる． <span class="citation" data-cites="LinEstimationHighdimensionalGraphical2016">Lin, Drton, and Shojaie (<a href="#ref-LinEstimationHighdimensionalGraphical2016" role="doc-biblioref">2016</a>)</span> では，RSA-seq データにこのモデルを適用した．RSA-seq データは数百種類の遺伝子の発現量を並べた非負ベクトルデータである．複雑な疾病を解析するには，遺伝子発現の相互作用を調べることが重要（らしい）．</p>
+</div>
+<div id="exm-torus-model" class="theorem example">
+<p><span class="theorem-title"><strong>Example 5 (トーラスグラフモデル)</strong></span> <span class="math inline">\(d\)</span> 次元トーラスは円周 <span class="math inline">\(\mathbb{S}^1\)</span> の <span class="math inline">\(d\)</span> 個の直積である．角度の　<span class="math inline">\(d\)</span> 変量データ <span class="math inline">\(\bm{x}\in[0,2\pi)^{d}\)</span> は <span class="math inline">\(d\)</span> 次元トーラス上の1点とみなせる．</p>
+<p><span class="citation" data-cites="KleinTorusGraphsMultivariate2020">Klein et al. (<a href="#ref-KleinTorusGraphsMultivariate2020" role="doc-biblioref">2020</a>)</span> によって導入されたトーラスグラフモデルは <span class="math display">\[
+q(\bm{x}\mid\bm{\theta})\propto
+\exp\left(
+\sum_{j=1}^{d}\begin{bmatrix}\theta_{j,1}\\\theta_{j,2}\end{bmatrix}^{\top}\begin{bmatrix}\cos{x_j}\\\sin{x_j}\end{bmatrix}
++\sum_{j&lt;k}
+\begin{bmatrix}\theta_{jk,1}\\\theta_{jk,2}\\\theta_{jk,3}\\\theta_{jk,4}\end{bmatrix}^\top
+\begin{bmatrix}\cos(x_j-x_k)\\\sin(x_j-x_k)\\\cos(x_j+x_k)\\\sin(x_j+x_k)\end{bmatrix}
+\right)
+\]</span></p>
+<p>で表されるモデルで，トーラス上のグラフィカルモデルである．正規化定数の評価は見るからに困難である．</p>
+</div>
+<div id="exm-manifold" class="theorem example">
+<p><span class="theorem-title"><strong>Example 6 (多様体上の確率分布)</strong></span> 多様体上の確率分布の多くは，評価困難な正規化定数をもつ． 例えば，超球面 <span class="math inline">\(\mathbb{S}^{d-1}\)</span> 上の Fisher-Bingham 分布は密度 <span class="math display">\[
+q(\bm{x}\mid\bm\mu,A)\propto
+\exp\left(
+\bm{x}^\top \bm{\mu} + \bm{x}^\top A\bm{x}
+\right)
+\]</span></p>
+<p>をもつ分布である．<span class="math inline">\(\mathbb{R}^d\)</span> 上の多変量正規分布を球面上に制限することで得られる．</p>
+</div>
+</section>
 <section id="スコアマッチング" class="level1">
 <h1>スコアマッチング</h1>
-<p>スコアマッチングは <span class="citation" data-cites="HyvärinenEstimationNonNormalizedStatistical2005">Hyvärinen (<a href="#ref-HyvärinenEstimationNonNormalizedStatistical2005" role="doc-biblioref">2005</a>)</span> によって提案された正規化定数に依らない統計的推測の方法である．以下のようなモデルを考える．</p>
-<p><span class="math display">\[
-p(x\mid\theta)=\frac{\tilde{p}(x\mid\theta)}{Z(\theta)}
-\]</span></p>
-<p>ここで，<span class="math inline">\(Z(\theta)\)</span> は正規化定数で， <span class="math display">\[
-Z(\theta)=\int\tilde{p}(x\mid\theta)\d{x}
-\]</span></p>
-<p>として定まる．</p>
+<p>スコアマッチングは <span class="citation" data-cites="HyvärinenEstimationNonNormalizedStatistical2005">Hyvärinen (<a href="#ref-HyvärinenEstimationNonNormalizedStatistical2005" role="doc-biblioref">2005</a>)</span> によって提案された正規化定数に依らない統計的推測の方法である．</p>
 <section id="fisher-ダイバージェンス" class="level2">
 <h2 class="anchored" data-anchor-id="fisher-ダイバージェンス">Fisher ダイバージェンス</h2>
 <div id="def-fisherdiv" class="theorem definition">
@@ -2408,7 +2467,7 @@ J(P\,\|\,Q):=\int_{\mathfrak{X}} p(\bm{x})\|\nabla_{\bm{x}}\log{p}(\bm{x})-\nabl
 </details>
 <p><span class="math inline">\(P\)</span> からの標本によって，<span class="math inline">\(Q\)</span> で <span class="math inline">\(P\)</span> を近似することを考えると，<span class="math inline">\(\nabla_{\bm{x}}\log{p}(\bm{x})\)</span> を知ることができないため困ってしまう．次節で導出する Hyvärinen スコアは適当な条件の下で，<span class="math inline">\(\nabla_{\bm{x}}\log{p}\)</span> の評価を回避して経験 Fisher ダイバージェンスを最小化する方法を与える．</p>
 <div id="exm-fisherdiv-counterexample" class="theorem example">
-<p><span class="theorem-title"><strong>Example 1 (<span class="math inline">\(J(P\,\|\,Q)=0\Rightarrow P=Q\)</span> が成立しない例)</strong></span> 各連結成分で， <span class="math inline">\(\log p(\bm{x})-\log q(\bm{x})\)</span> が異なる定数になるようにすることで反例が構成できる．<span class="math inline">\(\mathfrak{X}\)</span> は開だが連結でない，すなわち，2つの非交差な開集合 <span class="math inline">\(G_{1},G_{2}\)</span> によって， <span class="math inline">\(\mathfrak{X}=G_{1}\sqcup G_{2}\)</span> と表せると仮定する．ここで，微分可能な <span class="math inline">\(f_1,f_2\)</span> を用いて，<span class="math inline">\(P,Q\)</span> の密度をそれぞれ <span class="math display">\[
+<p><span class="theorem-title"><strong>Example 7 (<span class="math inline">\(J(P\,\|\,Q)=0\Rightarrow P=Q\)</span> が成立しない例)</strong></span> 各連結成分で， <span class="math inline">\(\log p(\bm{x})-\log q(\bm{x})\)</span> が異なる定数になるようにすることで反例が構成できる．<span class="math inline">\(\mathfrak{X}\)</span> は開だが連結でない，すなわち，2つの非交差な開集合 <span class="math inline">\(G_{1},G_{2}\)</span> によって， <span class="math inline">\(\mathfrak{X}=G_{1}\sqcup G_{2}\)</span> と表せると仮定する．ここで，微分可能な <span class="math inline">\(f_1,f_2\)</span> を用いて，<span class="math inline">\(P,Q\)</span> の密度をそれぞれ <span class="math display">\[
 \begin{align*}
 p(\bm{x})&amp;:=\alpha f_{1}(\bm{x})1_{G_{1}}(\bm{x})+(1-\alpha)f_{2}(\bm{x})1_{G_{2}}(\bm{x})\\
 q(\bm{x})&amp;:=\beta f_{1}(\bm{x})1_{G_{1}}(\bm{x})+(1-\beta)f_{2}(\bm{x})1_{G_{2}}(\bm{x})
@@ -2423,7 +2482,7 @@ q(\bm{x})&amp;:=\beta f_{1}(\bm{x})1_{G_{1}}(\bm{x})+(1-\beta)f_{2}(\bm{x})1_{G_
 <p><span class="math display">\[
 \int_{\mathfrak{X}}\partial_{j}(f(\bm{x})g(\bm{x}))\d{\bm{x}}=\int_{\partial\mathfrak{X}}f(\bm{x})g(\bm{x})\nu_{j}(\bm{x})\d{s}
 \]</span></p>
-<p>が本質的な役割を果たす<a href="#fn1" class="footnote-ref" id="fnref1" role="doc-noteref"><sup>1</sup></a>．ただし，<span class="math inline">\(\partial_j=\partial/\partial{x_j}\)</span> で，<span class="math inline">\((\nu_1,\dots,\nu_d)^\top\)</span> は <span class="math inline">\(\partial{\mathfrak{X}}\)</span> の単位法線ベクトル．</p>
+<p>が本質的な役割を果たす<a href="#fn2" class="footnote-ref" id="fnref2" role="doc-noteref"><sup>2</sup></a>．ただし，<span class="math inline">\(\partial_j=\partial/\partial{x_j}\)</span> で，<span class="math inline">\((\nu_1,\dots,\nu_d)^\top\)</span> は <span class="math inline">\(\partial{\mathfrak{X}}\)</span> の単位法線ベクトル．</p>
 <p>Fisher ダイバージェンスは以下のように展開できる． <span class="math display">\[
 \begin{align*}
 J(P\,\|\,Q)
@@ -2445,7 +2504,7 @@ J(P\,\|\,Q)
 &amp;=-\sum\limits_{j=1}^{d}\int_\mathfrak{X}p(\bm{x})\frac{\partial^{2}\log{q}(\bm{x})}{\partial{x_{j}^{2}}}\d{x}+\sum\limits_{j=1}^{d}\int_{\partial{\mathfrak{X}}}p(\bm{x})\frac{\partial\log{q}(\bm{x})}{\partial{x_{j}}}\nu_{j}(\bm{x})\d{s}
 \end{align*}
 \]</span></p>
-<p>と展開できる<a href="#fn2" class="footnote-ref" id="fnref2" role="doc-noteref"><sup>2</sup></a>．このとき，境界項が無視できる（0になる）ならば，</p>
+<p>と展開できる<a href="#fn3" class="footnote-ref" id="fnref3" role="doc-noteref"><sup>3</sup></a>．このとき，境界項が無視できる（0になる）ならば，</p>
 <p><span class="math display">\[
 \begin{align*}
 J(P\,\|\,Q)
@@ -2460,13 +2519,16 @@ E_{\mathbb{P}_{n}}\Big[\|\nabla_{\bm{x}}\log{q\|^{2}+2\Delta_{\bm{x}}\log{q}}\Bi
 <p>の最小化によって達成される．</p>
 <p>経験 Fisher ダイバージェンスを最小化する推定量をスコアマッチング推定量という．スコアマッチング推定量の漸近的な振る舞いは M 推定量の枠組みで議論される．</p>
 <div id="exm-hyv-boundary-condition" class="theorem example">
-<p><span class="theorem-title"><strong>Example 2</strong></span> <span class="math inline">\(\mathfrak{X}=(a_{1},b_{1})\times\cdots\times(a_{d},b_{d})\)</span> の場合，境界項を無視できる条件は， <span class="math display">\[
+<p><span class="theorem-title"><strong>Example 8</strong></span> <span class="math inline">\(\mathfrak{X}=(a_{1},b_{1})\times\cdots\times(a_{d},b_{d})\)</span> の場合，境界項を無視できる条件は， <span class="math display">\[
 \lim_{x_j\searrow a_j}p(\bm{x})\frac{\partial\log{q}(\bm{x})}{\partial{x_j}}=\lim_{x_j\nearrow b_j}p(\bm{x})\frac{\partial\log{q}(\bm{x})}{\partial{x_j}}
 \]</span></p>
 <p>が（両辺有限で）任意の <span class="math inline">\(j=1,\dots,d\)</span> で成立することである．</p>
 </div>
+<div id="exm-hyv-boundary-condition-torus" class="theorem example">
+<p><span class="theorem-title"><strong>Example 9 (境界項が無視できる例 トーラスグラフモデル)</strong></span> <span class="math inline">\(p\)</span> が連続なら，トーラスグラフモデルは境界項を無視できる．</p>
+</div>
 <div id="exm-hyv-boundary-condition-counter1" class="theorem example">
-<p><span class="theorem-title"><strong>Example 3 (境界項が無視できない例 その1 非負分布)</strong></span> <span class="math inline">\(P=\text{Exp}(\theta_0),Q=\text{Exp}(\theta)\)</span> とする．このとき， <span class="math display">\[
+<p><span class="theorem-title"><strong>Example 10 (境界項が無視できない例 その1 非負分布)</strong></span> <span class="math inline">\(P=\text{Exp}(\theta_0),Q=\text{Exp}(\theta)\)</span> とする．このとき， <span class="math display">\[
 \lim_{x\searrow0}p(x)\dd{\log{q}(x)}{x}
 =\lim_{x\searrow0}\frac{1}{\theta_0}e^{-x/\theta_0}\dd{}{x}(-\frac{x}{\theta}-\log\theta)
 =\lim_{x\searrow0}-\frac{1}{\theta\theta_0}e^{-x/\theta_0}
@@ -2475,7 +2537,7 @@ E_{\mathbb{P}_{n}}\Big[\|\nabla_{\bm{x}}\log{q\|^{2}+2\Delta_{\bm{x}}\log{q}}\Bi
 <p>となり，境界項は消えない．</p>
 </div>
 <div id="exm-hyv-boundary-condition-counter2" class="theorem example">
-<p><span class="theorem-title"><strong>Example 4 (境界項が無視できない例 その2 切断分布)</strong></span> <span class="math inline">\(P\)</span> は <span class="math inline">\((a,b)\)</span> 上に制限された正規分布 <span class="math inline">\(N(\mu_0,\sigma_0^2)\)</span>，<span class="math inline">\(Q\)</span> も同様に制限された正規分布 <span class="math inline">\(N(\mu,\sigma^2)\)</span> とする．密度は <span class="math display">\[
+<p><span class="theorem-title"><strong>Example 11 (境界項が無視できない例 その2 切断分布)</strong></span> <span class="math inline">\(P\)</span> は <span class="math inline">\((a,b)\)</span> 上に制限された正規分布 <span class="math inline">\(N(\mu_0,\sigma_0^2)\)</span>，<span class="math inline">\(Q\)</span> も同様に制限された正規分布 <span class="math inline">\(N(\mu,\sigma^2)\)</span> とする．密度は <span class="math display">\[
 q(x\mid\mu,\sigma^2)=\frac{1}{C(\mu,\sigma^2)}\frac{1}{\sqrt{2\pi\sigma^2}}\exp\left\{-\frac{(x-\mu)^2}{2\sigma^2}\right\},\quad x\in(a,b)
 \]</span></p>
 <p>である．ただし， <span class="math display">\[
@@ -2487,7 +2549,7 @@ C(\mu,\sigma^2)=\int_{a}^{b}\frac{1}{\sqrt{2\pi\sigma^2}}\exp\left\{-\frac{(x-\m
 <p>となり，境界項が消えるとは限らない．</p>
 </div>
 <div id="exm-hyv-boundary-condition-counter2" class="theorem example">
-<p><span class="theorem-title"><strong>Example 5 (境界項が無視できない例 その3 裾が重い分布と裾が軽い分布)</strong></span> <span class="math inline">\(P=\text{Cauchy}(0,1)\)</span> で，<span class="math inline">\(Q\)</span> は密度 <span class="math inline">\(q(x)\propto\exp(-(x-\mu)^4/4)\)</span> をもつとする． <span class="math display">\[
+<p><span class="theorem-title"><strong>Example 12 (境界項が無視できない例 その3 裾が重い分布と裾が軽い分布)</strong></span> <span class="math inline">\(P=\text{Cauchy}(0,1)\)</span> で，<span class="math inline">\(Q\)</span> は密度 <span class="math inline">\(q(x)\propto\exp(-(x-\mu)^4/4)\)</span> をもつとする． <span class="math display">\[
 \dd{\log{q}(x)}{x}=-(x-\mu)^3
 \]</span></p>
 <p>より， <span class="math display">\[
@@ -2497,7 +2559,7 @@ C(\mu,\sigma^2)=\int_{a}^{b}\frac{1}{\sqrt{2\pi\sigma^2}}\exp\left\{-\frac{(x-\m
 <p>となり，境界項が発散してしまう．</p>
 </div>
 <div id="exm-sm1" class="theorem example">
-<p><span class="theorem-title"><strong>Example 6 (スコアマッチング推定量の例 その1 正規分布)</strong></span> 多変量正規分布 <span class="math inline">\(N(\bm{\mu},\Sigma)\)</span> のスコアマッチング推定量を求める．</p>
+<p><span class="theorem-title"><strong>Example 13 (スコアマッチング推定量の例 その1 正規分布)</strong></span> 多変量正規分布 <span class="math inline">\(N(\bm{\mu},\Sigma)\)</span> のスコアマッチング推定量を求める．</p>
 <details>
 <summary>
 途中式
@@ -2539,7 +2601,7 @@ H(\bm{x}\mid\bm{\mu},\Sigma)-2\mathrm{tr}\,\Sigma^{-1}+(\bm{x}-\bm{\mu})^{\top}\
 <p>となり，最尤推定量と一致する．</p>
 </div>
 <div id="exm-sm2" class="theorem example">
-<p><span class="theorem-title"><strong>Example 7 (スコアマッチング推定量の例 その2 指数型分布族)</strong></span> 以下の密度 <span class="math inline">\(q(\bm{x}\mid\bm{\theta})\)</span> をもつモデルのスコアマッチング推定量を求める．ただし，<span class="math inline">\(b:\mathbb{R}^{d}\to\mathbb{R},\bm{t}:\mathbb{R}^{d}\to\mathbb{R}^{m}\)</span> である． <span class="math display">\[
+<p><span class="theorem-title"><strong>Example 14 (スコアマッチング推定量の例 その2 指数型分布族)</strong></span> 以下の密度 <span class="math inline">\(q(\bm{x}\mid\bm{\theta})\)</span> をもつモデルのスコアマッチング推定量を求める．ただし，<span class="math inline">\(b:\mathbb{R}^{d}\to\mathbb{R},\bm{t}:\mathbb{R}^{d}\to\mathbb{R}^{m}\)</span> である． <span class="math display">\[
 q(\bm{x}\mid\bm{\theta})=\frac{1}{Z(\bm{\theta})}b(\bm{x})e^{-\bm{\theta}^{\top}\bm{t}(\bm{x})}
 \]</span></p>
 <details>
@@ -2623,13 +2685,13 @@ E_{P}\Big[\|\bm\psi(\bm{x})\|^{2}+2\operatorname{tr}\nabla_{\bm{x}}\bm\psi(\bm{x
 <section id="デノイジングスコアマッチング" class="level2">
 <h2 class="anchored" data-anchor-id="デノイジングスコアマッチング">デノイジング・スコアマッチング</h2>
 <p><span class="citation" data-cites="VincentConnectionScoreMatching2011">Vincent (<a href="#ref-VincentConnectionScoreMatching2011" role="doc-biblioref">2011</a>)</span> によって提案されたデノイジング・スコアマッチングは <span class="math inline">\(\operatorname{tr}\bm\nabla_{\bm{x}}\bm\psi^{\top}\)</span> の計算を回避できる方法の1つである．いま，<span class="math inline">\(\bm{x}\)</span> は興味ある分布 <span class="math inline">\(P\)</span> に従うとして，<span class="math inline">\(\tilde{\bm{x}}=\bm{x}+\bm{z}\)</span> とする．<span class="math inline">\(\bm{z}\)</span> は既知の分布に従うノイズである．</p>
-<div id="wrn-dsm" class="callout callout-style-default callout-warning callout-titled">
+<div id="wrn" class="callout callout-style-default callout-warning callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-Warning 1
+Warning
 </div>
 </div>
 <div class="callout-body-container callout-body">
@@ -2735,13 +2797,13 @@ E_{p(\bm{x})}\Big[(\bm{v}^{\top}\bm\psi(\bm{x}))(\bm{v}^{\top}\nabla_{\bm{x}}\lo
 \sum\limits_{m=1}^{M}\sum\limits_{i=1}^{n}\Big[(\bm{v}_{i,m}^{\top}\bm\psi(\bm{x}_{i}))^{2}+2\bm{v}_{i,m}^{\top}\nabla_{\bm{x}}\bm\psi(\bm{x}_{i})^{\top}\bm{v}_{i,m}\Big]
 \]</span></p>
 <p>を最小化することになるが，<span class="citation" data-cites="SongSlicedScoreMatching2019">Song et al. (<a href="#ref-SongSlicedScoreMatching2019" role="doc-biblioref">2019</a>)</span> では <span class="math inline">\(M=1\)</span> で十分良いと大胆な主張をしている．</p>
-<div id="cau-ssm" class="callout callout-style-default callout-caution callout-titled">
+<div id="cau" class="callout callout-style-default callout-caution callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-Caution 1
+Caution
 </div>
 </div>
 <div class="callout-body-container callout-body">
@@ -2784,13 +2846,13 @@ E[\bm{v}^{\top}A\bm{v}]=\sum_{j=1}^{d}\sum_{k=1}^{d}A_{jk}E[v_{j}v_{k}]=\sum_{j=
 \bm{v}^{\top}\operatorname{Hess}_{\bm{x}}f(\bm{x})\bm{v}=\bm{v}^{\top}\nabla_{\bm{x}}(\bm{v}^{\top}\nabla_{\bm{x}}f(\bm{x}))
 \]</span></p>
 <p>と表すと，自動微分の回数が2回で済むので効率が良い．</p>
-<div id="cau-hutchinson" class="callout callout-style-default callout-caution callout-titled">
+<div id="cau" class="callout callout-style-default callout-caution callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-Caution 2
+Caution
 </div>
 </div>
 <div class="callout-body-container callout-body">
@@ -2972,7 +3034,7 @@ J_\bm{w}(P\,\|\,Q)
 \end{align*}
 \]</span></p>
 <p>となる．<span class="math inline">\(\|\bm{w}(\bm{x})^{1/2}\odot\nabla_{\bm{x}}\log{q}\|^{2}+2\sum_{j=1}^{d}\partial_{j}(w_{j}\partial_{j}\log{q})\)</span> を一般化 Hyvärinen スコアという．</p>
-<p><span class="math inline">\(\bm{w}\)</span> は <span class="math inline">\(\partial{\mathfrak{X}}\)</span> で <span class="math inline">\(0\)</span> になるように選ぶことで，境界項は無視できる． <span class="math inline">\(\mathfrak{X}=[0,\infty)^{d}\)</span> において， <span class="citation" data-cites="HyvärinenExtensionsScoreMatching2007">Hyvärinen (<a href="#ref-HyvärinenExtensionsScoreMatching2007" role="doc-biblioref">2007</a>)</span> は，<span class="math inline">\(\bm{w}(\bm{x}):=\bm{x}\)</span> を，<span class="citation" data-cites="YuGeneralizedScoreMatching">Yu, Drton, and Shojaie (<a href="#ref-YuGeneralizedScoreMatching" role="doc-biblioref">2019</a>)</span> は <span class="math inline">\(w_{j}(\bm{x})=\min\{x_{j},c\}\)</span> を提案している．<span class="citation" data-cites="LiuEstimatingDensityModels2022">Liu, Kanamori, and Williams (<a href="#ref-LiuEstimatingDensityModels2022" role="doc-biblioref">2022</a>)</span> は，有界な <span class="math inline">\(\mathfrak{X}\)</span> において， <span class="math inline">\(w_{j}(\bm{x}):=\inf_{\bm{z}\in\partial\mathfrak{X}}\|\bm{x}-\bm{z}\|\)</span> とすることを提案している<a href="#fn3" class="footnote-ref" id="fnref3" role="doc-noteref"><sup>3</sup></a>．</p>
+<p><span class="math inline">\(\bm{w}\)</span> は <span class="math inline">\(\partial{\mathfrak{X}}\)</span> で <span class="math inline">\(0\)</span> になるように選ぶことで，境界項は無視できる． <span class="math inline">\(\mathfrak{X}=[0,\infty)^{d}\)</span> において， <span class="citation" data-cites="HyvärinenExtensionsScoreMatching2007">Hyvärinen (<a href="#ref-HyvärinenExtensionsScoreMatching2007" role="doc-biblioref">2007</a>)</span> は，<span class="math inline">\(\bm{w}(\bm{x}):=\bm{x}\)</span> を，<span class="citation" data-cites="YuGeneralizedScoreMatching">Yu, Drton, and Shojaie (<a href="#ref-YuGeneralizedScoreMatching" role="doc-biblioref">2019</a>)</span> は <span class="math inline">\(w_{j}(\bm{x})=\min\{x_{j},c\}\)</span> を提案している．<span class="citation" data-cites="LiuEstimatingDensityModels2022">Liu, Kanamori, and Williams (<a href="#ref-LiuEstimatingDensityModels2022" role="doc-biblioref">2022</a>)</span> は，有界な <span class="math inline">\(\mathfrak{X}\)</span> において， <span class="math inline">\(w_{j}(\bm{x}):=\inf_{\bm{z}\in\partial\mathfrak{X}}\|\bm{x}-\bm{z}\|\)</span> とすることを提案している<a href="#fn4" class="footnote-ref" id="fnref4" role="doc-noteref"><sup>4</sup></a>．</p>
 </section>
 <section id="球面上のスコアマッチング" class="level2">
 <h2 class="anchored" data-anchor-id="球面上のスコアマッチング">球面上のスコアマッチング</h2>
@@ -3121,7 +3183,7 @@ Caution
 </section>
 <section id="ノイズ対照推定" class="level2">
 <h2 class="anchored" data-anchor-id="ノイズ対照推定">ノイズ対照推定</h2>
-<p>間に合わず．<span class="citation" data-cites="GutmannNoisecontrastiveEstimationNew2010">Gutmann and Hyvärinen (<a href="#ref-GutmannNoisecontrastiveEstimationNew2010" role="doc-biblioref">2010</a>)</span> と <span class="citation" data-cites="MatsudaEstimationNonnormalizedMixture2019">Matsuda and Hyvärinen (<a href="#ref-MatsudaEstimationNonnormalizedMixture2019" role="doc-biblioref">2019</a>)</span> を紹介する予定だった．</p>
+<p>間に合わず．<span class="citation" data-cites="GutmannNoisecontrastiveEstimationNew2010">Gutmann and Hyvärinen (<a href="#ref-GutmannNoisecontrastiveEstimationNew2010" role="doc-biblioref">2010</a>)</span> や <span class="citation" data-cites="MatsudaEstimationNonnormalizedMixture2019">Matsuda and Hyvärinen (<a href="#ref-MatsudaEstimationNonnormalizedMixture2019" role="doc-biblioref">2019</a>)</span> を紹介する予定だった．</p>
 </section>
 <section id="スコアリングルールとしての特徴づけ" class="level2">
 <h2 class="anchored" data-anchor-id="スコアリングルールとしての特徴づけ">スコアリングルールとしての特徴づけ</h2>
@@ -3173,25 +3235,25 @@ Note
 </div>
 </div>
 <div id="exm-logscore" class="theorem example">
-<p><span class="theorem-title"><strong>Example 8 (対数スコア)</strong></span> <span class="math inline">\(S(x,Q):=\log{q}(x)\)</span> とすると，<span class="math inline">\(H(P)=\int_{\mathfrak{X}}p(x)\log{p}(x)\d{x}\)</span> は Shannon エントロピー．<span class="math inline">\(D(P,Q)=\int_{\mathfrak{X}}p(x)\log\frac{p(x)}{q(x)}\d{x}\)</span> は Kullback-Leibler ダイバージェンス．対数スコアは1次局所的で，strictly proper なスコアリングルール．</p>
+<p><span class="theorem-title"><strong>Example 15 (対数スコア)</strong></span> <span class="math inline">\(S(x,Q):=\log{q}(x)\)</span> とすると，<span class="math inline">\(H(P)=\int_{\mathfrak{X}}p(x)\log{p}(x)\d{x}\)</span> は Shannon エントロピー．<span class="math inline">\(D(P,Q)=\int_{\mathfrak{X}}p(x)\log\frac{p(x)}{q(x)}\d{x}\)</span> は Kullback-Leibler ダイバージェンス．対数スコアは1次局所的で，strictly proper なスコアリングルール．</p>
 </div>
 <div id="exm-hyvscore" class="theorem example">
-<p><span class="theorem-title"><strong>Example 9 (Hyvärinen スコア)</strong></span> Hyvärinen スコアは <span class="math display">\[
+<p><span class="theorem-title"><strong>Example 16 (Hyvärinen スコア)</strong></span> Hyvärinen スコアは <span class="math display">\[
 S(x,Q):=2\frac{q&#39;&#39;(x)}{q(x)}-\left(\frac{q&#39;(x)}{q(x)}\right)^{2}
 \]</span> とかける．Hyvärinen スコアは2次局所的，0次斉次的なスコアリングルール．</p>
 </div>
 <p>proper なスコアリングルールの特徴づけのために，いくつかの微分作用素を定義する．</p>
 <div id="def-differential-operator" class="theorem definition">
-<p><span class="theorem-title"><strong>Definition 11</strong></span> <span class="math inline">\(s(x,y_0,y_1,\dots,y_m)\in C^\infty(\mathfrak{X}\times(0,\infty)\times\mathbb{R}^d)\)</span> に対し， <span class="math display">\[
+<p><span class="theorem-title"><strong>Definition 11</strong></span> <span class="math inline">\(f(x,y_0,y_1,\dots,y_m)\in C^\infty(\mathfrak{X}\times(0,\infty)\times\mathbb{R}^m)\)</span> に対し， <span class="math display">\[
 \begin{align*}
-D&amp;:=\pd{}{x}+\sum_{j=0}^{m}y_{j+1}\pd{}{y_{j}},\\
-\Lambda&amp;:=\sum_{j=0}^{m}(-1)^{j}D^{j}\left[\pd{}{y_{j}}\right],\\
-E&amp;:=\sum_{j=0}^{m}y_{j}\pd{}{y_j}
+Df&amp;:=\pd{f}{x}+\sum_{j=0}^{m}y_{j+1}\pd{f}{y_{j}},\\
+\Lambda f&amp;:=\sum_{j=0}^{m}(-1)^{j}D^{j}\left[\pd{f}{y_{j}}\right],\\
+Ef&amp;:=\sum_{j=0}^{m}y_{j}\pd{f}{y_j}
 \end{align*}
 \]</span></p>
 <p>と定義する．</p>
 </div>
-<p><span class="math inline">\(h\)</span> 次斉次的な <span class="math inline">\(\phi\in C^\infty(\mathfrak{X}\times(0,\infty)\times\mathbb{R}^d)\)</span> 全体を <span class="math inline">\(\mathcal{F}_{m}^{h}\)</span> として，<span class="math inline">\(\mathcal{F}^{h}:=\bigcup_{m=0}^{\infty}\mathcal{F}_{m}^{h}\)</span> とする．<span class="math inline">\(F^{h}\)</span> は線形空間．このとき，<span class="math inline">\(\Lambda\)</span> は <span class="math inline">\(\mathcal{F}^{1}\)</span> から <span class="math inline">\(\mathcal{F}^{0}\)</span> への線形写像になっていることが，<a href="#lem-hom1" class="quarto-xref">Lemma 1</a> と <a href="#lem-hom2" class="quarto-xref">Lemma 2</a> から従う．</p>
+<p><span class="math inline">\(h\)</span> 次斉次的な <span class="math inline">\(\phi\in C^\infty(\mathfrak{X}\times(0,\infty)\times\mathbb{R}^d)\)</span> 全体を <span class="math inline">\(\mathcal{F}_{m}^{h}\)</span> として，<span class="math inline">\(\mathcal{F}^{h}:=\bigcup_{m=0}^{\infty}\mathcal{F}_{m}^{h}\)</span> とする．<span class="math inline">\(\mathcal{F}^{h}\)</span> は線形空間．このとき，<span class="math inline">\(\Lambda\)</span> は <span class="math inline">\(\mathcal{F}^{1}\)</span> から <span class="math inline">\(\mathcal{F}^{0}\)</span> への線形写像になっていることが，<a href="#lem-hom1" class="quarto-xref">Lemma 1</a> と <a href="#lem-hom2" class="quarto-xref">Lemma 2</a> から従う．</p>
 <details>
 <summary>
 <a href="#lem-hom1" class="quarto-xref">Lemma 1</a> と <a href="#lem-hom2" class="quarto-xref">Lemma 2</a>
@@ -3199,8 +3261,8 @@ E&amp;:=\sum_{j=0}^{m}y_{j}\pd{}{y_j}
 <div id="lem-hom1" class="theorem lemma">
 <p><span class="theorem-title"><strong>Lemma 1</strong></span> <span class="math inline">\(f\in\mathcal{F}_{m}^{h}\)</span> とする． <span class="math display">\[
 \begin{align*}
-&amp;\frac{\partial{f}}{\partial{x}}\in H_{m}^{h}
-&amp;\frac{\partial{f}}{\partial{y_{j}}}\in H_{m}^{h-1},\quad j=0,\dots,m
+&amp;\frac{\partial{f}}{\partial{x}}\in \mathcal{F}_{m}^{h}
+&amp;\frac{\partial{f}}{\partial{y_{j}}}\in \mathcal{F}_{m}^{h-1},\quad j=0,\dots,m
 \end{align*}
 \]</span></p>
 </div>
@@ -3371,11 +3433,62 @@ D_{0}^{\phi}(P,Q)
 \]</span> とかける．<span class="math inline">\(\phi\)</span> は凹関数なので，これは非負．よって，境界項 <span class="math inline">\(S_{B}^{\phi}(P,Q)-S_{B}^{\phi}(P,P)\)</span> が常に消えるような <span class="math inline">\(\mathcal{P}\)</span> においては，<span class="math inline">\(D_{0}^{\phi}\)</span> はダイバージェンス，すなわち <span class="math inline">\(S(x,Q)\)</span> は proper である．</p>
 </div>
 </details>
+<div id="exm-gen-hyvscore" class="theorem example">
+<p><span class="theorem-title"><strong>Example 17 (一般化 Hyvärinen スコアの生成)</strong></span> <span class="math inline">\(\phi(x,y_0,y_1)=-w(x)y_1^2/y_0\)</span> は一般化 Hyvärinen スコアを生成する．</p>
+<details>
+<summary>
+導出
+</summary>
+<p><span class="math display">\[
+\begin{align*}
+\Lambda\phi
+&amp;=\pd{\phi}{y_0}-D\left[\pd{\phi}{y_1}\right]
+\\
+&amp;=\pd{\phi}{y_0}-\frac{\partial^{2}\phi}{\partial{x}\partial{y_{1}}}-y_{1}\frac{\partial^{2}\phi}{\partial{y_{0}}\partial{y_{1}}}-y_{2}\pd[2]{\phi}{y_{1}}\\
+&amp;=w(x)\frac{y_{1}^{2}}{y_{0}^{2}}+w&#39;(x)\frac{2y_{1}}{y_{0}}-y_{1}w(x)\frac{2y_{1}}{y_{0}^{2}}-y_{2}w(x)\frac{-2}{y_{0}}\\
+&amp;=w(x)\left(\frac{2y_{2}}{y_{0}}-\frac{y_{1}^{2}}{y_{0}^{2}}\right)+2w&#39;(x)\frac{y_{1}}{y_{0}}
+\end{align*}
+\]</span></p>
+<p>である．1次元の一般化 Hyvärinen スコアは</p>
+<p><span class="math display">\[
+\begin{align*}
+&amp;\left(w(x)^{1/2}\dd{\log{q}(x)}{x}\right)^{2}+2\dd{}{x}\left(w(x)\dd{\log{q}(x)}{x}\right)\\
+&amp;=w(x)\frac{q&#39;(x)^{2}}{q(x)^{2}}+2w(x)\dd[2]{\log{q}(x)}{x}+2w&#39;(x)\frac{q&#39;(x)}{q(x)}\\
+&amp;=w(x)\frac{q&#39;(x)^{2}}{q(x)^{2}}+2w(x)\left(\frac{q&#39;&#39;(x)}{q(x)}-\frac{q&#39;(x)^{2}}{q(x)^{2}}\right)+2w&#39;(x)\frac{q&#39;(x)}{q(x)}\\
+&amp;=w(x)\left(\frac{q&#39;(x)^{2}}{q(x)^{2}}-2\frac{q&#39;&#39;(x)}{q(x)}\right)+2w&#39;(x)\frac{q&#39;(x)}{q(x)}
+\end{align*}
+\]</span></p>
+<p>となり，一致することがわかる．</p>
+<p>次に，一般化 Fisherダイバージェンス を導出する．</p>
+<p><span class="math display">\[
+\pd{\phi}{y_0}=w(x)\frac{y_1^2}{y_0^2},
+\pd{\phi}{y_1}=-w(x)\frac{2y_1}{y_0}
+\]</span></p>
+<p>である． <span class="math display">\[
+\begin{align*}
+S(P,Q)
+&amp;=\sum\limits_{j=0}^{1}\int_{a}^{b}p^{(j)}(x)g_{j}(x)\,dx+\sum\limits_{j=1}^{1}(-1)^{j}\sum\limits_{l=0}^{j-1}(-1)^{l}\left[p^{(l)}(x)g_{j}^{(j-l-1)}(x)\right]_{a}^{b}\\
+&amp;=\int_{a}^{b}\left(p(x)g_{0}(x)+p&#39;(x)g_{1}(x)\right)\,dx
++\Big[-p(x)g_{1}(x)\Big]_{a}^{b}\\
+&amp;=\int_{a}^{b}w(x)\left(p(x)\frac{q&#39;(x)^{2}}{q(x)^{2}}+p&#39;(x)\frac{-2q&#39;(x)}{q(x)}\right)\,dx
++\left[-p(x)w(x)\frac{-2q&#39;(x)}{q(x)}\right]_{a}^{b}\\
+&amp;=\int_{a}^{b}w(x)\left(p(x)\frac{q&#39;(x)^{2}}{q(x)^{2}}-2p&#39;(x)\frac{q&#39;(x)}{q(x)}\right)\,dx
++\left[2w(x)p(x)\frac{q&#39;(x)}{q(x)}\right]_{a}^{b}\\\\
+S(P,P)
+&amp;=\int_{a}^{b}w(x)\left(-\frac{p&#39;(x)^{2}}{p(x)}\right)\,dx+\Big[2w(x)p&#39;(x)\Big]_{a}^{b}
+\\\\
+S(P,Q)-S(P,P)
+&amp;=\int_{a}^{b}p(x)w(x)\left(\frac{p&#39;(x)}{p(x)}-\frac{q&#39;(x)}{q(x)}\right)^{2}\,dx
++\left[w(x)\left(2p(x)\frac{q&#39;(x)}{q(x)}-2p&#39;(x)\right)\right]_{a}^{b}
+\end{align*}
+\]</span></p>
+</details>
+</div>
 </section>
 </section>
 <section id="文献紹介" class="level1">
 <h1>文献紹介</h1>
-<p><span class="citation" data-cites="松田HiSeikiKa2025">松田 (<a href="#ref-松田HiSeikiKa2025" role="doc-biblioref">2025</a>)</span> は本資料の作成に際して大いに参考した．</p>
+<p><span class="citation" data-cites="松田HiSeikiKa2025">松田 (<a href="#ref-松田HiSeikiKa2025" role="doc-biblioref">2025</a>)</span> は本資料の作成に際して特に参考した．</p>
 
 </section>
 
@@ -3395,6 +3508,12 @@ Hyvärinen, Aapo. 2005. <span>“Estimation of <span>Non</span>-<span>Normalized
 </div>
 <div id="ref-HyvärinenNoisecorrectedLangevinAlgorithm2025" class="csl-entry" role="listitem">
 ———. 2025. <span>“A Noise-Corrected <span>Langevin</span> Algorithm and Sampling by Half-Denoising.”</span> arXiv. <a href="https://doi.org/10.48550/arXiv.2410.05837">https://doi.org/10.48550/arXiv.2410.05837</a>.
+</div>
+<div id="ref-KleinTorusGraphsMultivariate2020" class="csl-entry" role="listitem">
+Klein, Natalie, Josue Orellana, Scott L. Brincat, Earl K. Miller, and Robert E. Kass. 2020. <span>“Torus Graphs for Multivariate Phase Coupling Analysis.”</span> <em>The Annals of Applied Statistics</em> 14 (2). <a href="https://doi.org/10.1214/19-AOAS1300">https://doi.org/10.1214/19-AOAS1300</a>.
+</div>
+<div id="ref-LinEstimationHighdimensionalGraphical2016" class="csl-entry" role="listitem">
+Lin, Lina, Mathias Drton, and Ali Shojaie. 2016. <span>“Estimation of High-Dimensional Graphical Models Using Regularized Score Matching.”</span> <em>Electronic Journal of Statistics</em> 10 (1). <a href="https://doi.org/10.1214/16-EJS1126">https://doi.org/10.1214/16-EJS1126</a>.
 </div>
 <div id="ref-LiuEstimatingDensityModels2022" class="csl-entry" role="listitem">
 Liu, Song, Takafumi Kanamori, and Daniel J Williams. 2022. <span>“Estimating <span>Density</span> <span>Models</span> with <span>Truncation</span> <span>Boundaries</span> Using <span>Score</span> <span>Matching</span>.”</span>
@@ -3435,9 +3554,10 @@ Yu, Shiqing, Mathias Drton, and Ali Shojaie. 2019. <span>“Generalized <span>Sc
 </div></section><section id="footnotes" class="footnotes footnotes-end-of-document" role="doc-endnotes"><h2 class="anchored quarto-appendix-heading">Footnotes</h2>
 
 <ol>
-<li id="fn1"><p>ただし，<span class="math inline">\(\mathfrak{X},f,g\)</span> はいくらかの条件を満たす必要がある．<a href="#fnref1" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
-<li id="fn2"><p><span class="math inline">\(\mathfrak{X}=\mathbb{R}^{d}\)</span> の場合，Green の定理をそのまま適用することはできないが，部分積分を行うことで同じ結果が得られる．<a href="#fnref2" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
-<li id="fn3"><p>この <span class="math inline">\(w_{j}\)</span> は微分可能とは限らないが，弱微分は定義できる．<a href="#fnref3" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn1"><p>このままだと，<span class="math inline">\(\mathfrak{X}=\mathbb{R}^{d}\)</span> において，<span class="math inline">\(V=\{\bm{x}\mid\|\bm{x}\|=1\}\)</span> としても切断分布と呼べる．このように次元が落ちる状況は切断分布とは言わない気がする．例えば，<span class="math inline">\(V\)</span> は開集合としておけばこのような状況は含めずに済む．<a href="#fnref1" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn2"><p>ただし，<span class="math inline">\(\mathfrak{X},f,g\)</span> はいくらかの条件を満たす必要がある．<a href="#fnref2" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn3"><p><span class="math inline">\(\mathfrak{X}=\mathbb{R}^{d}\)</span> の場合，Green の定理をそのまま適用することはできないが，部分積分を行うことで同じ結果が得られる．<a href="#fnref3" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn4"><p>この <span class="math inline">\(w_{j}\)</span> は微分可能とは限らないが，弱微分は定義できる．<a href="#fnref4" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
 </ol>
 </section></div></main>
 <!-- /main column -->
