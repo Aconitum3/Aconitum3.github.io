@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 <meta name="author" content="March">
-<meta name="dcterms.date" content="2025-08-28">
+<meta name="dcterms.date" content="2025-08-31">
 
 <title>Lie Groups, Lie Algebras, and Representations Chapter 3, Lie Algebras 要旨</title>
 <style>
@@ -2343,6 +2343,8 @@ color: #556056;
   <li><a href="#位相群" id="toc-位相群" class="nav-link" data-scroll-target="#位相群">位相群</a></li>
   <li><a href="#lie-群の中心と-lie-代数の中心" id="toc-lie-群の中心と-lie-代数の中心" class="nav-link" data-scroll-target="#lie-群の中心と-lie-代数の中心">Lie 群の中心と Lie 代数の中心</a></li>
   <li><a href="#指数写像の微分" id="toc-指数写像の微分" class="nav-link" data-scroll-target="#指数写像の微分">指数写像の微分</a></li>
+  <li><a href="#複素-lie-代数にならない-lie-群の-lie-代数の例" id="toc-複素-lie-代数にならない-lie-群の-lie-代数の例" class="nav-link" data-scroll-target="#複素-lie-代数にならない-lie-群の-lie-代数の例">複素 Lie 代数にならない Lie 群の Lie 代数の例</a></li>
+  <li><a href="#operatornamesu2operatornameso3-の関係" id="toc-operatornamesu2operatornameso3-の関係" class="nav-link" data-scroll-target="#operatornamesu2operatornameso3-の関係"><span class="math inline">\(\operatorname{SU}(2),\operatorname{SO}(3)\)</span> の関係</a></li>
   </ul></li>
   </ul>
 </nav>
@@ -2368,7 +2370,7 @@ color: #556056;
     <div>
     <div class="quarto-title-meta-heading">Published</div>
     <div class="quarto-title-meta-contents">
-      <p class="date">August 28, 2025</p>
+      <p class="date">August 31, 2025</p>
     </div>
   </div>
   
@@ -2498,7 +2500,7 @@ Tip 1
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<p><span class="math inline">\(R\)</span> が <span class="math inline">\(\R,\C\)</span> の場合しか考えないので，<span class="math inline">\(\mathcal{A}\)</span> は乗法の備わったベクトル空間と思えばOK.</p>
+<p><span class="math inline">\(R\)</span> が <span class="math inline">\(\R,\C\)</span> の場合しか考えないので，<span class="math inline">\(\mathcal{A}\)</span> は乗法の備わったベクトル空間と思えば OK.</p>
 </div>
 </div>
 <div id="exm-3.3" class="theorem example">
@@ -2590,7 +2592,7 @@ Note 3: 群の中心との関連
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<p>群 <span class="math inline">\(G\)</span> の中心とは，<span class="math inline">\(Z(G):=\{x\in G\mid gx=xg\enspace\forall g\in G\}\)</span>，すなわち，任意の元に対して可換になるような元全体のことである．Lie 代数の中心も，<span class="math inline">\([H,X]=0\iff [H,X]=[X,H]\)</span> より，同じような定義になっている．</p>
+<p>群 <span class="math inline">\(G\)</span> の中心とは，<span class="math inline">\(Z(G):=\{x\in G\mid gx=xg\enspace\forall g\in G\}\)</span>，すなわち，任意の元に対して可換になるような元全体のことである．Lie 代数の中心も，<span class="math inline">\([H,X]=0\iff [H,X]=[X,H]\)</span> なので，同じような定義になっている．</p>
 </div>
 </div>
 <div id="def-Hom" class="theorem definition">
@@ -2865,7 +2867,7 @@ Warning 1
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<p>線形 Lie 群の Lie 代数は <a href="#def-LieAlg" class="quarto-xref">Definition 1</a> の意味での Lie 代数とは限らない． 実際，<a href="#thm-3.20" class="quarto-xref">Theorem 1</a> によって実 Lie 代数になることは示されるものの，複素 Lie 代数になる保証はない． このことが <a href="#def-3.36" class="quarto-xref">Definition 14</a> で Lie 代数の複素化を考える動機になる．</p>
+<p>線形 Lie 群の Lie 代数は <a href="#def-LieAlg" class="quarto-xref">Definition 1</a> の意味での Lie 代数とは限らない． 実際，<a href="#thm-3.20" class="quarto-xref">Theorem 1</a> によって実 Lie 代数になることは示されるものの，複素 Lie 代数になる保証はない（<a href="#exm-not-complex-liealg" class="quarto-xref">Example 14</a> を参照）． このことが <a href="#def-3.36" class="quarto-xref">Definition 14</a> で Lie 代数の複素化を考える動機になる．</p>
 </div>
 </div>
 <p><span class="math inline">\(G\)</span> は線形 Lie 群，<span class="math inline">\(\g\)</span> は <span class="math inline">\(G\)</span> の Lie 代数とする．</p>
@@ -3268,8 +3270,21 @@ V=\left\{
   \begin{pmatrix}x_1&amp;x_2+ix_3\\x_2-ix_3&amp;-x_1\end{pmatrix}
   \,\middle|\, x_1,x_2,x_3\in \R\right\}
 \]</span></p>
-<p>とする．<span class="math inline">\(U\in\SU(2)\)</span> に対し，<span class="math inline">\(\Phi_U:V\to V,X\mapsto UXU^*\)</span> は内積を保つ写像で， <span class="math inline">\(\Phi:\SU(2)\to\SO(3),U\mapsto\Phi_U\)</span> は Lie 群の2対1準同型写像だった<span class="citation" data-cites="hallLieGroupsLie2015">(<a href="#ref-hallLieGroupsLie2015" role="doc-biblioref">Hall 2015</a> Proposition 1.19)</span>．</p>
+<p>とする．<span class="math inline">\(U\in\SU(2)\)</span> に対し，<span class="math inline">\(\Phi_U:V\to V,X\mapsto UXU^*\)</span> は内積を保つ写像で， <span class="math inline">\(\Phi:\SU(2)\to\SO(3),U\mapsto\Phi_U\)</span> は Lie 群の2対1の全射準同型だった <span class="citation" data-cites="hallLieGroupsLie2015">(<a href="#ref-hallLieGroupsLie2015" role="doc-biblioref">Hall 2015</a> Proposition 1.19)</span>．</p>
 <p><a href="#exm-3.27" class="quarto-xref">Example 10</a> で構成した <span class="math inline">\(\phi\)</span> は <span class="math inline">\(\Phi\)</span> が誘導する Lie 代数の準同型写像．</p>
+</div>
+<div id="nte-3.29-modif" class="callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Tip 7
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>同一視に関する細かい議論は <a href="#exm-3.29-modif" class="quarto-xref">Example 15</a> を参照．</p>
+</div>
 </div>
 <div id="nte-3.29" class="callout callout-style-default callout-note callout-titled">
 <div class="callout-header d-flex align-content-center">
@@ -3277,7 +3292,7 @@ V=\left\{
 <i class="callout-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-Note 7
+Note 8
 </div>
 </div>
 <div class="callout-body-container callout-body">
@@ -3301,7 +3316,7 @@ Note 7
 \right]
 =\begin{pmatrix}&amp;ix_2-x_3\\-ix_2&amp;\end{pmatrix}\\[5pt]
 &amp;\simeq\begin{pmatrix}0\\-x_3\\x_2\end{pmatrix}
-=F_1\begin{pmatrix}x_1\\x_2\\x_3\end{pmatrix}\\[10pt]
+=F_1\begin{pmatrix}x_1\\x_2\\x_3\end{pmatrix},\\[10pt]
 \phi(E_2)Y
 &amp;=\left[
   \frac12\begin{pmatrix}&amp;i\\i&amp;\end{pmatrix},
@@ -3309,7 +3324,7 @@ Note 7
 \right]
 =\begin{pmatrix}x_3&amp;-x_1\\ix_1&amp;-x_3\end{pmatrix}\\[5pt]
 &amp;\simeq\begin{pmatrix}x_3\\0\\-x_1\end{pmatrix}
-=F_2\begin{pmatrix}x_1\\x_2\\x_3\end{pmatrix}\\[10pt]
+=F_2\begin{pmatrix}x_1\\x_2\\x_3\end{pmatrix},\\[10pt]
 \phi(E_3)Y
 &amp;=\left[
   \frac12\begin{pmatrix}&amp;-1\\1&amp;\end{pmatrix},
@@ -3369,7 +3384,7 @@ Note 7
 <i class="callout-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-Note 8
+Note 9
 </div>
 </div>
 <div class="callout-body-container callout-body">
@@ -3430,7 +3445,7 @@ Note 8
 <i class="callout-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-Note 9
+Note 10
 </div>
 </div>
 <div class="callout-body-container callout-body">
@@ -3558,7 +3573,7 @@ V_\C:=\{(u,v)\mid u,v\in V\}
 <i class="callout-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-Note 10
+Note 11
 </div>
 </div>
 <div class="callout-body-container callout-body">
@@ -3688,9 +3703,17 @@ Jacobi 恒等式
 </ul>
 </div>
 <div class="proof">
-<p><span class="proof-title"><em>Proof</em>. </span><span class="math inline">\((\gl(n;\R)_\C\simeq\gl(n;\C)):\)</span></p>
-<p><a href="#exm-3.23" class="quarto-xref">Example 6</a> より，<span class="math inline">\(\gl(n;\R)=M_n(\R),\gl(n;\C)=M_n(\C)\)</span> なので明らか．</p>
-<p><span class="math inline">\((\u(n)_\C\simeq\gl(n;\C)):\)</span></p>
+<p><span class="proof-title"><em>Proof</em>. </span></p>
+<details>
+<summary>
+<span class="math inline">\(\gl(n;\R)_\C\simeq\gl(n;\C)\)</span>
+</summary>
+<a href="#exm-3.23" class="quarto-xref">Example 6</a> より，<span class="math inline">\(\gl(n;\R)=M_n(\R),\gl(n;\C)=M_n(\C)\)</span> なので明らか．
+</details>
+<details>
+<summary>
+<span class="math inline">\(\u(n)_\C\simeq\gl(n;\C)\)</span>
+</summary>
 <p><a href="#exm-3.24" class="quarto-xref">Example 7</a> より，<span class="math inline">\(\u(n)=\SkewH(n)\)</span> である． <span class="math inline">\(X\in\u(n)\)</span> とすると，<span class="math inline">\(iX\not\in\u(n)\)</span>．実際，<span class="math inline">\(X^*=-X\)</span> より，<span class="math inline">\((iX)^*=-iX^*=iX\)</span> である．</p>
 <p><span class="math inline">\(\h:=\{X+iY\mid X,Y\in\u(n)\}\)</span> とする．<span class="math inline">\(\h\subset\gl(n;\C)\)</span> は明らか．</p>
 <p>任意の <span class="math inline">\(X\in M_n(C)\)</span> は</p>
@@ -3698,24 +3721,81 @@ Jacobi 恒等式
 X=\frac{X-X^*}{2}+i\frac{X+X^*}{2i}
 \]</span></p>
 <p>と分解できる．<span class="math inline">\((X-X^*)/2,(X+X^*)/(2i)\in\SkewH(n)\)</span> より，<span class="math inline">\(X\in\h\)</span>.</p>
-<p>したがって，<span class="math inline">\(\u(n)_\C\simeq\h=\gl(n;\C)\)</span>.</p>
-<p><span class="math inline">\((\su(n)_\C\simeq\sl(n;\C)):\)</span></p>
+したがって，<span class="math inline">\(\u(n)_\C\simeq\h=\gl(n;\C)\)</span>.
+</details>
+<details>
+<summary>
+<span class="math inline">\(\su(n)_\C\simeq\sl(n;\C)\)</span>
+</summary>
 <p><a href="#exm-3.24" class="quarto-xref">Example 7</a> より，<span class="math inline">\(\su(n)=\SkewH(n)\cap\sl(n;\C)\)</span> で，<span class="math inline">\(\u(n)\)</span> の場合と同様に，<span class="math inline">\(X\in\su(n)\Rightarrow iX\not\in\su(n)\)</span> が成立する．</p>
 <p><span class="math inline">\(\h:=\{X+iY\mid X,Y\in\su(n)\}\)</span> とする．<span class="math inline">\(\h\subset\sl(n;\C)\)</span> は明らか．</p>
 <p>任意の <span class="math inline">\(X\in\sl(n;\C)\)</span> は</p>
 <p><span class="math display">\[
 X=\frac{X-X^*}{2}+i\frac{X+X^*}{2i}
 \]</span></p>
-<p>と分解できて，<span class="math inline">\((X-X^*)/2,(X+X^*)/(2i)\in\SkewH(n)\cap\sl(n;\C)\)</span> より，<span class="math inline">\(X\in\h\)</span>. したがって，<span class="math inline">\(\su(n)_\C\simeq\h=\sl(n;\C)\)</span>.</p>
-<p><span class="math inline">\(\sl(n;\R)_\C\simeq\sl(n;\C)\)</span></p>
-<p>省略．</p>
-<p><span class="math inline">\(\so(n)_\C\simeq\so(n;\C)\)</span></p>
+と分解できて，<span class="math inline">\((X-X^*)/2,(X+X^*)/(2i)\in\SkewH(n)\cap\sl(n;\C)\)</span> より，<span class="math inline">\(X\in\h\)</span>. したがって，<span class="math inline">\(\su(n)_\C\simeq\h=\sl(n;\C)\)</span>.
+</details>
+<details>
+<summary>
+<span class="math inline">\(\sl(n;\R)_\C\simeq\sl(n;\C)\)</span>
+</summary>
+<p><span class="math inline">\(\h:=\{X+iY\mid X,Y\in\sl(n;\R)\}\)</span> とする．<span class="math inline">\(\h\subset\sl(n;\C)\)</span> は明らか． また，任意の <span class="math inline">\(X\in\sl(n;\C)\)</span> は <span class="math inline">\(X=\Re(X)+i\Im(X)\)</span> と分解できて，<span class="math inline">\(\Re(X),\Im(X)\in\sl(n;\R)\)</span> である． したがって，<span class="math inline">\(X\in\h\)</span> なので，<span class="math inline">\(\sl(n;\C)\subset\h\)</span>.</p>
+以上より，<span class="math inline">\(\h=\sl(n;\C)\)</span>.
+</details>
+<details>
+<summary>
+<span class="math inline">\(\so(n)_\C\simeq\so(n;\C)\)</span>
+</summary>
 <p><a href="#exm-3.24" class="quarto-xref">Example 7</a> より，<span class="math inline">\(\so(n;\K)=\Skew(n;\K)\cap\sl(n;\K)\)</span> である．</p>
 <p><span class="math inline">\(\h:=\{X+iY\mid X,Y\in\so(n)\}\)</span> とする．<span class="math inline">\(\h\subset\so(n;\C)\)</span> は明らか．</p>
 <p><span class="math inline">\(X\in\so(n;\C)\)</span> とする．</p>
-<p><span class="math inline">\(X=\Re(X)+i\Im(X)\)</span> とすると，</p>
-<p><span class="math inline">\(\sp(n;\R)_\C\simeq\sp(n;\C)\)</span></p>
-<p><span class="math inline">\(\sp(n)_\C\simeq\sp(n;\C)\)</span></p>
+<p><span class="math inline">\(X=\Re(X)+i\Im(X)\)</span> とすると，<span class="math inline">\(\Re(X),\Im(X)\in\sl(n;\R)\)</span> である．また，<span class="math inline">\(\Re(X),\Im(X)\in\Skew(n;\R)\)</span> も，</p>
+<p><span class="math display">\[
+\begin{align*}
+(\Re(X))^\top &amp;= \left(\frac{X+\overline{X}}{2}\right)^\top
+=\frac{X^\top+\overline{X^\top}}{2}
+=-\frac{X+\overline{X}}{2}
+=-\Re(X)\\
+(\Im(X))^\top &amp;= \left(\frac{X-\overline{X}}{2}\right)^\top
+=\frac{X^\top-\overline{X^\top}}{2}
+=-\frac{X-\overline{X}}{2}
+=-\Im(X)
+\end{align*}
+\]</span></p>
+からわかる．よって，<span class="math inline">\(X\in\h\)</span> で，<span class="math inline">\(\so(n;\C)\subset\h\)</span> が成立．したがって，<span class="math inline">\(\h=\so(n;\C)\)</span>.
+</details>
+<details>
+<summary>
+<span class="math inline">\(X\in\sp(n;\K)\Rightarrow \Re(X),\Im(X)\in\sp(n;\R),X^\top,X^*\in\sp(n;\K)\)</span>
+</summary>
+<p><span class="math inline">\(\Re(X),\Im(X)\in\sp(n;\R)\)</span> は明らか．実際，</p>
+<p><span class="math display">\[
+\Omega\Re(X)^\top\Omega + i\Omega\Im(X)^\top\Omega
+=\Omega{X}^\top\Omega
+=\Re(X)+i\Im(X)
+\]</span></p>
+<p>より，<span class="math inline">\(\Re(X)=\Omega\Re(X)^\top\Omega,\Im(X)=\Omega\Im(X)^\top\Omega.\)</span></p>
+<p><span class="math inline">\((\Omega{X}\Omega)^\top=\Omega^\top X^\top\Omega^\top=(-\Omega)X^\top(-\Omega)=X\)</span> の両辺を転置すると，<span class="math inline">\(\Omega(X^\top)^\top\Omega=X^\top\)</span> が得られる．よって，<span class="math inline">\(X^\top\in\sp(n;\K).\)</span></p>
+<span class="math inline">\(X^*=\Re(X^\top)-i\Im(X^\top)\in\sp(n;\K).\)</span>
+</details>
+<details>
+<summary>
+<span class="math inline">\(\sp(n;\R)_\C\simeq\sp(n;\C)\)</span>
+</summary>
+<p><a href="#exm-3.25" class="quarto-xref">Example 8</a> より，<span class="math inline">\(\Omega=\begin{pmatrix}&amp;I_n\\-I_n&amp;\end{pmatrix}\)</span> とすると，<span class="math inline">\(\sp(n;\K)=\{X\in M_{2n}(\K)\mid \Omega X^\top \Omega=X\}\)</span> である．</p>
+<p><span class="math inline">\(\h:=\{X+iY\mid X,Y\in \sp(n;\R)\}\)</span> とする．<span class="math inline">\(X+iY\in\h\)</span> とすると，<span class="math inline">\(\Omega(X+iY)^\top\Omega=X+iY\)</span> より，<span class="math inline">\(h\subset\sp(n;\C).\)</span></p>
+<span class="math inline">\(X\in\sp(n;\C)\)</span> とする．<span class="math inline">\(\Re(X),\Im(X)\in\sp(n;\R)\)</span> である． <span class="math inline">\(X=\Re(X)+i\Im(X)\in\h\)</span> より，<span class="math inline">\(\sp(n;\C)\subset\h\)</span> である．したがって，<span class="math inline">\(\h=\sp(n;\C)\)</span>.
+</details>
+<details>
+<summary>
+<span class="math inline">\(\sp(n)_\C\simeq\sp(n;\C)\)</span>
+</summary>
+<p><a href="#exm-3.25" class="quarto-xref">Example 8</a> より，<span class="math inline">\(\sp(n)=\sp(n;\C)\cap\u(2n)\)</span> である．</p>
+<p><span class="math inline">\(X\in\sp(n)\Rightarrow iX\not\in\sp(n)\)</span> は <span class="math inline">\(X\in\u(2n)=\SkewH(2n)\)</span> からわかる．</p>
+<p><span class="math inline">\(\h:=\{X+iY\mid X,Y\in \sp(n)\}\)</span> とすると，<span class="math inline">\(\h\subset \sp(n;\C)\)</span> は明らか．</p>
+<p><span class="math inline">\(X\in\sp(n;\C)\)</span> に対し，<span class="math inline">\(X=(X-X^*)/2 + i(X+X^*)/(2i)\)</span> とすると，<span class="math inline">\((X-X^*)/2,(X+X^*)/(2i)\in\sp(n)\)</span> である．よって，<span class="math inline">\(X\in\h\)</span> が成立し，<span class="math inline">\(\sp(n;\C)\subset\h.\)</span></p>
+以上より，<span class="math inline">\(\h=\sp(n;\C)\)</span>.
+</details>
 </div>
 </section>
 <section id="the-exponential-map" class="level1">
@@ -3742,7 +3822,7 @@ X=\frac{X-X^*}{2}+i\frac{X+X^*}{2i}
 <i class="callout-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-Note 11
+Note 12
 </div>
 </div>
 <div class="callout-body-container callout-body">
@@ -3783,7 +3863,7 @@ Note 11
 <i class="callout-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-Note 12
+Note 13
 </div>
 </div>
 <div class="callout-body-container callout-body">
@@ -3819,7 +3899,7 @@ e^{k_mY_m}=\exp\left( k_m\|Y_m\|\frac{Y_m}{\|Y_m\|} \right)\to e^{tY}
 証明
 </summary>
 <div class="proof">
-<p><span class="proof-title"><em>Proof</em>. </span>(<span class="math inline">\(G\)</span> は <span class="math inline">\(M_n\)</span> の <span class="math inline">\(k\)</span> 次元正則部分多様体)：</p>
+<p><span class="proof-title"><em>Proof</em>. </span>(<span class="math inline">\(G\)</span> は <span class="math inline">\(M_n(\C)\)</span> の <span class="math inline">\(k\)</span> 次元正則部分多様体)：</p>
 <p>任意の <span class="math inline">\(A_0\in G\)</span> に対し，<span class="math inline">\(M_n(\C)\)</span> の <span class="math inline">\(A_0\)</span> まわりのチャート <span class="math inline">\((U,\varphi)\)</span> が存在し，<span class="math inline">\(G\cap U\)</span> が <span class="math inline">\(n-k\)</span> 個の座標関数が消えている点の集合として定まることを示す．</p>
 <p><a href="#thm-3.42" class="quarto-xref">Theorem 3</a> の <span class="math inline">\(V_\varepsilon\)</span> をとる．任意の <span class="math inline">\(A_0\in G\)</span> に対し，<span class="math inline">\(A_0V_\varepsilon:=\{A_0A\mid A\in V_\varepsilon\}\)</span> は <span class="math inline">\(A_0\)</span> の近傍である． <span class="math inline">\(A\in A_0V_\varepsilon\iff A_0^{-1}A\in V_\varepsilon\)</span> より，<span class="math inline">\(X=\log(A_0^{-1}A)\)</span> として，<span class="math inline">\(A=A_0e^{X}\)</span> とかける．</p>
 <p><span class="citation" data-cites="hallLieGroupsLie2015">Hall (<a href="#ref-hallLieGroupsLie2015" role="doc-biblioref">2015</a>)</span> Proposition 2.16 より，<span class="math inline">\(X\mapsto e^X\)</span> は滑らかで，<a href="#prp-dexp" class="quarto-xref">Proposition 24</a> より，<span class="math inline">\(\exp_{*,0}\)</span> は正則．したがって，逆関数定理より，<span class="math inline">\(I\)</span> のある近傍 <span class="math inline">\(V\)</span> で逆写像 <span class="math inline">\(\log\)</span> も滑らか．このとき，<span class="math inline">\(V\)</span> は <span class="math inline">\(V\subset V_\varepsilon\)</span> となるようにとれる． したがって，<span class="math inline">\(\varphi:A_0V\to\varphi(A_0V),A\mapsto\log(A_0^{-1}A)\)</span> は <span class="math inline">\(C^\infty\)</span> 級微分同相．</p>
@@ -3886,7 +3966,7 @@ A\left(\frac{m-1}{m}\right)^{-1}A\left(1\right)\\
 <i class="callout-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-Note 13
+Note 14
 </div>
 </div>
 <div class="callout-body-container callout-body">
@@ -3950,7 +4030,7 @@ A\left(\frac{m-1}{m}\right)^{-1}A\left(1\right)
 <i class="callout-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-Note 14
+Note 15
 </div>
 </div>
 <div class="callout-body-container callout-body">
@@ -4030,7 +4110,7 @@ AB=e^{X_1}e^{X_2}\cdots e^{X_m}e^{Y_1}e^{Y_2}\cdots e^{Y_l}
 <i class="callout-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-Note 15
+Note 16
 </div>
 </div>
 <div class="callout-body-container callout-body">
@@ -4086,6 +4166,124 @@ Ae^{tX}
 <p><span class="math display">\[
 \exp_{*,0}(A)=\left.\dd{}{t}\exp(X(t))\right|_{t=0}=A.
 \]</span></p>
+</div>
+</section>
+<section id="複素-lie-代数にならない-lie-群の-lie-代数の例" class="level2">
+<h2 class="anchored" data-anchor-id="複素-lie-代数にならない-lie-群の-lie-代数の例">複素 Lie 代数にならない Lie 群の Lie 代数の例</h2>
+<div id="exm-not-complex-liealg" class="theorem example">
+<p><span class="theorem-title"><strong>Example 14</strong></span> <span class="math inline">\(\Omega:=\begin{pmatrix}&amp;I_n\\-I_n&amp;\end{pmatrix}\)</span> とする．</p>
+<p><span class="math inline">\(\operatorname{SpH}(n):=\{A\in \GL(2n;\C)\mid -\Omega A^*\Omega=A^{-1}\}\)</span> は線形 Lie 代数で，その Lie 代数 <span class="math inline">\(\operatorname{sph}(n)\)</span> は <span class="math inline">\(\operatorname{sph}(n)=\{X\in M_{2n}(\C)\mid \Omega X^*\Omega=X\}\)</span> だが，<span class="math inline">\(\operatorname{sph}(n)\)</span> は複素 Lie 代数ではない．</p>
+</div>
+<div class="proof">
+<p><span class="proof-title"><em>Proof</em>. </span>（<span class="math inline">\(\operatorname{SpH}(n)\)</span> は線形 Lie 群）：</p>
+<p><span class="math inline">\(f:\GL(2n;\C)\to\GL(2n;\C),A\mapsto -\Omega{A^*}\Omega{A}\)</span> とすると，<span class="math inline">\(f\)</span> は連続で，<span class="math inline">\(f^{-1}(\{I_{2n}\})=\operatorname{SpH}(n)\)</span> より，<span class="math inline">\(\operatorname{SpH}(n)\)</span> は線形 Lie 群．</p>
+<p>（<span class="math inline">\(\operatorname{SpH}(n)\)</span> の Lie 代数は <span class="math inline">\(\operatorname{sph}(n)=\{X\in M_{2n}(\C)\mid \Omega X^*\Omega=X\}\)</span>）：</p>
+<p><span class="math display">\[
+\begin{align*}
+X\in\operatorname{sph}(n)&amp;\iff
+e^{tX}\in\operatorname{SpH}(n),\enspace\forall{t\in\R}\\
+&amp;\iff -\Omega e^{tX^*}\Omega=e^{-tX},\forall{t\in\R}\\
+&amp;\iff -\Omega X^*\Omega=-X
+\end{align*}
+\]</span></p>
+<p>したがって，<span class="math inline">\(\operatorname{sph}(n)=\{X\in M_{2n}(\C)\mid \Omega X^*\Omega=X\}.\)</span></p>
+<p>（<span class="math inline">\(\operatorname{sph}(n)\)</span> は複素 Lie 代数ではない）：</p>
+<p><span class="math inline">\(X,Y\in\operatorname{sph}(n)\)</span> とする．</p>
+<p><span class="math inline">\(\Omega(X+iY)^*\Omega=\Omega(X^*-iY^*)\Omega=\Omega X^*\Omega-i\Omega Y^*\Omega=X-iY\)</span></p>
+<p>より，<span class="math inline">\(X+iY\not\in\operatorname{sph}(n).\)</span></p>
+</div>
+</section>
+<section id="operatornamesu2operatornameso3-の関係" class="level2">
+<h2 class="anchored" data-anchor-id="operatornamesu2operatornameso3-の関係"><span class="math inline">\(\operatorname{SU}(2),\operatorname{SO}(3)\)</span> の関係</h2>
+<p><span class="math inline">\(V,W\)</span> は <span class="math inline">\(n,m\)</span> 次元実内積空間とする．<span class="math inline">\(v=\{v_1,\dots,v_n\}\subset{V},w=\{w_1,\dots,w_m\}\subset{W}\)</span> は <span class="math inline">\(V,W\)</span> の基底とする．<span class="math inline">\(\End(V,W)\)</span> は <span class="math inline">\(V\)</span> から <span class="math inline">\(W\)</span> への線形写像全体とする．<span class="math inline">\(\mathcal{R}_{v,w}:\End(V,W)\to\mathcal{R}_{v,w}(\End(V,W))\subset\R^{m\times n}\)</span> は基底 <span class="math inline">\(v,w\)</span> に関する表現行列を与える線形写像とする．<span class="math inline">\(\mathcal{R}_{v,w}\)</span> は実ベクトル空間の同型写像である．</p>
+<div id="prp-3.29-append-1" class="theorem proposition">
+<p><span class="theorem-title"><strong>Proposition 25</strong></span> <span class="math inline">\(n\leq m\)</span> で，<span class="math inline">\(v,w\)</span> は正規直交基底とする．<span class="math inline">\(\psi\in\End(V,W)\)</span> が内積を保つ，すなわち，任意の <span class="math inline">\(x,y\in V\)</span> に対し，<span class="math inline">\(\langle\psi(x),\psi(y)\rangle_W=\langle x,y\rangle_V\)</span> が成立する <span class="math inline">\(\iff\mathcal{R}_{v,w}(\psi)\in\operatorname{St}(n,m)=\{Q\in\R^{m\times n}\mid Q^\top Q=I_n\}\)</span>.</p>
+</div>
+<div class="proof">
+<p><span class="proof-title"><em>Proof</em>. </span><span class="math inline">\(x=a_1v_1+\dots+a_nv_n,y=b_1v_1+\dots+b_nv_n\)</span> とする．</p>
+<p><span class="math inline">\((\Leftarrow)\)</span></p>
+<p><span class="math inline">\(\langle\,\cdot\,,\,\cdot\, \rangle_{\R^n}\)</span> は <span class="math inline">\(\R^n\)</span> の標準内積とする．</p>
+<p><span class="math display">\[
+\begin{align*}
+\langle\psi(x),\psi(y)\rangle_W
+&amp;=\langle\mathcal{R}_{v,w}(\psi)a,\mathcal{R}_{v,w}(\psi)b\rangle_{\R^m}\\
+&amp;=\langle a,\mathcal{R}_{v,w}(\psi)^\top\mathcal{R}_{v,w}(\psi)b\rangle_{\R^n}\\
+&amp;=\langle a,b\rangle_{\R^n}\\
+&amp;=\langle x,y\rangle_{V}.
+\end{align*}
+\]</span></p>
+<p><span class="math inline">\((\Rightarrow)\)</span></p>
+<p>仮定より，<span class="math inline">\(\langle a,b \rangle_{\R^n}=\langle a,\mathcal{R}_{v,w}(\psi)^\top\mathcal{R}_{v,w}(\psi)b\rangle_{\R^n}\)</span>，すなわち，<span class="math inline">\(\langle a,(\mathcal{R}_{v,w}(\psi)^\top\mathcal{R}_{v,w}(\psi)-I_n)b\rangle_{\R^n}=0\)</span> が成立する．</p>
+<p><span class="math inline">\(a\)</span> は任意なので，<span class="math inline">\(a=(\mathcal{R}_{v,w}(\psi)^\top\mathcal{R}_{v,w}(\psi)-I_n)b\)</span> とすると， <span class="math inline">\(\|(\mathcal{R}_{v,w}(\psi)^\top\mathcal{R}_{v,w}(\psi)-I_n)b\|_{\R^n}=0\)</span> である．このとき，<span class="math inline">\(\mathcal{R}_{v,w}(\psi)^\top\mathcal{R}_{v,w}(\psi)-I_n = 0\)</span> が成立する．実際，<span class="math inline">\(\mathcal{R}_{v,w}(\psi)^\top\mathcal{R}_{v,w}(\psi)-I_n\neq0\)</span> を仮定すると，ある <span class="math inline">\(b\in\R^n\)</span> が存在して，<span class="math inline">\((\mathcal{R}_{v,w}(\psi)^\top\mathcal{R}_{v,w}(\psi)-I_n)b\neq0\)</span> だが，このとき，<span class="math inline">\(\|(\mathcal{R}_{v,w}(\psi)^\top\mathcal{R}_{v,w}(\psi)-I_n)b\|_{\R^n}\neq0\)</span> となり，矛盾．</p>
+<p>以上より，<span class="math inline">\(\mathcal{R}_{v,w}(\psi)\in\operatorname{St}(n,m).\)</span></p>
+</div>
+<div id="prp-3.29-append-2" class="theorem proposition">
+<p><span class="theorem-title"><strong>Proposition 26</strong></span> <span class="math inline">\(f_t\in\End(V,W)\)</span> は <span class="math inline">\(t=0\)</span> で微分可能とする．<span class="math inline">\(\mathcal{R}_{v,w}\left(\left.\dd{}{t}f_t\right|_{t=0}\right)=\left.\dd{}{t}\mathcal{R}_{v,w}(f_t)\right|_{t=0}\)</span> が成立する．</p>
+</div>
+<div class="proof">
+<p><span class="proof-title"><em>Proof</em>. </span><span class="math inline">\(x=a_1v_1+\dots+a_nv_n\in V\)</span> とする．</p>
+<p><span class="math display">\[
+\begin{align*}
+\left.\dd{}{t}f_t(x)\right|_{t=0}
+&amp;=\left.\dd{}{t}\sum_{i=1}^{m}\left(\mathcal{R}_{v,w}(f_t)a\right)_iw_i\right|_{t=0}
+=\sum_{i=1}^{m}\left(\left.\dd{}{t}\mathcal{R}_{v,w}(f_t)\right|_{t=0}a\right)_iw_i\\
+\left.\dd{}{t}f_t(x)\right|_{t=0}
+&amp;=\left(\left.\dd{}{t}f_t\right|_{t=0}\right)(x)
+=\sum_{i=1}^{m}\left(\mathcal{R}_{v,w}\left(\left.\dd{}{t}f_t\right|_{t=0}\right)a\right)_iw_i
+\end{align*}
+\]</span></p>
+</div>
+<div id="exm-3.29-modif" class="theorem example">
+<p><span class="theorem-title"><strong>Example 15 (<span class="citation" data-cites="hallLieGroupsLie2015">Hall (<a href="#ref-hallLieGroupsLie2015" role="doc-biblioref">2015</a>)</span> Example 3.29)</strong></span> <span class="math display">\[
+V=\left\{
+  \begin{pmatrix}x_1&amp;x_2+ix_3\\x_2-ix_3&amp;-x_1\end{pmatrix}
+  \,\middle|\, x_1,x_2,x_3\in \R\right\}
+\]</span></p>
+<p>とする．<span class="math inline">\(U\in\SU(2)\)</span> に対し，<span class="math inline">\(\Phi_U:V\to V,X\mapsto UXU^*\)</span> は内積を保つ写像で， <span class="math inline">\(\Phi:\SU(2)\to\SO(3),U\mapsto\mathcal{R}_{v,v}(\Phi_U)\)</span> は Lie 群の2対1の全射準同型だった <span class="citation" data-cites="hallLieGroupsLie2015">(<a href="#ref-hallLieGroupsLie2015" role="doc-biblioref">Hall 2015</a> Proposition 1.19)</span>．</p>
+<p><a href="#exm-3.27" class="quarto-xref">Example 10</a> で構成した <span class="math inline">\(\phi\)</span> は <span class="math inline">\(\Phi\)</span> が誘導する Lie 代数の準同型写像．</p>
+</div>
+<div class="proof">
+<p><span class="proof-title"><em>Proof</em>. </span><span class="math inline">\(Y=x_1v_1+x_2v_2+x_3v_3\)</span> とする．ただし， <span class="math display">\[
+v_1=\begin{pmatrix}1&amp;\\&amp;1\end{pmatrix},
+v_2=\begin{pmatrix}&amp;1\\1&amp;\end{pmatrix},
+v_3=\begin{pmatrix}&amp;i\\-i&amp;\end{pmatrix}
+\]</span></p>
+<p>である．</p>
+<p><span class="math display">\[
+\left.\dd{}{t}\Phi_{e^{tX}}(Y)\right|_{t=0}
+=\left.\dd{}{t}e^{tX}Ye^{-tX}\right|_{t=0}
+=[X,Y]
+\]</span></p>
+<p>より，<span class="math inline">\(\phi(X)=\left.\dd{}{t}\mathcal{R}_{v,v}\left(\Phi_{e^{tX}}\right)\right|_{t=0}=\mathcal{R}_{v,v}([X,\,\cdot\,])\)</span> である．</p>
+<p><span class="math display">\[
+\begin{align*}
+[E_1,Y]
+&amp;=\left[
+  \frac12\begin{pmatrix}i&amp;\\&amp;-i\end{pmatrix},
+  \begin{pmatrix}x_1&amp;x_2+ix_3\\x_2-ix_3&amp;-x_1\end{pmatrix}
+\right]
+=\begin{pmatrix}&amp;ix_2-x_3\\-ix_2&amp;\end{pmatrix}\\[5pt]
+&amp;=0v_1-x_3v_2+x_2v_3
+=\sum_{i=1}^{3}(F_1x)_iv_i\\[10pt]
+[E_2,Y]
+&amp;=\left[
+  \frac12\begin{pmatrix}&amp;i\\i&amp;\end{pmatrix},
+  \begin{pmatrix}x_1&amp;x_2+ix_3\\x_2-ix_3&amp;-x_1\end{pmatrix}
+\right]
+=\begin{pmatrix}x_3&amp;-x_1\\ix_1&amp;-x_3\end{pmatrix}\\[5pt]
+&amp;=x_3v_1+0v_2-x_1v_3
+=\sum_{i=1}^{3}(F_2x)_iv_i\\[10pt]
+[E_3,Y]
+&amp;=\left[
+  \frac12\begin{pmatrix}&amp;-1\\1&amp;\end{pmatrix},
+  \begin{pmatrix}x_1&amp;x_2+ix_3\\x_2-ix_3&amp;-x_1\end{pmatrix}
+\right]
+=\begin{pmatrix}-x_2&amp;x_1\\x_1&amp;x_2\end{pmatrix}\\[5pt]
+&amp;=-x_2v_1+x_1v_2+0v_3
+=\sum_{i=1}^{3}(F_3x)_iv_i\\[10pt]
+\end{align*}
+\]</span></p>
+<p>が成立し，<span class="math inline">\(\phi(E_i)=F_i\)</span> がわかる．</p>
 </div>
 
 </section>
