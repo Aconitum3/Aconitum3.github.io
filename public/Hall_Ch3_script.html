@@ -9,7 +9,7 @@
 <meta name="author" content="March">
 <meta name="dcterms.date" content="2025-09-01">
 
-<title>Lie Groups, Lie Algebras, and Representations Chapter 3, Lie Algebras 要旨</title>
+<title>Lie Groups, Lie Algebras, and Representations Chapter 3, Lie Algebras 発表用台本</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -2330,23 +2330,13 @@ color: #556056;
     <h2 id="toc-title">Table of contents</h2>
    
   <ul>
-  <li><a href="#definitions-and-first-examples" id="toc-definitions-and-first-examples" class="nav-link active" data-scroll-target="#definitions-and-first-examples">3.1 Definitions and First Examples</a></li>
-  <li><a href="#simple-solveble-and-nilpotent-lie-algebras" id="toc-simple-solveble-and-nilpotent-lie-algebras" class="nav-link" data-scroll-target="#simple-solveble-and-nilpotent-lie-algebras">3.2 Simple, Solveble, and Nilpotent Lie Algebras</a></li>
-  <li><a href="#the-lie-algebra-of-a-matrix-lie-group" id="toc-the-lie-algebra-of-a-matrix-lie-group" class="nav-link" data-scroll-target="#the-lie-algebra-of-a-matrix-lie-group">3.3 The Lie Algebra of a Matrix Lie Group</a></li>
+  <li><a href="#definition-and-first-examples" id="toc-definition-and-first-examples" class="nav-link active" data-scroll-target="#definition-and-first-examples">3.1 Definition and First Examples</a></li>
+  <li><a href="#simple-solvable-and-nilpotent-lie-algebras" id="toc-simple-solvable-and-nilpotent-lie-algebras" class="nav-link" data-scroll-target="#simple-solvable-and-nilpotent-lie-algebras">Simple, Solvable, and Nilpotent Lie Algebras</a></li>
+  <li><a href="#the-lie-algebar-of-a-matrix-lie-group" id="toc-the-lie-algebar-of-a-matrix-lie-group" class="nav-link" data-scroll-target="#the-lie-algebar-of-a-matrix-lie-group">3.3 The Lie Algebar of a Matrix Lie Group</a></li>
   <li><a href="#examples" id="toc-examples" class="nav-link" data-scroll-target="#examples">3.4 Examples</a></li>
   <li><a href="#lie-group-and-lie-algebra-homomorpisms" id="toc-lie-group-and-lie-algebra-homomorpisms" class="nav-link" data-scroll-target="#lie-group-and-lie-algebra-homomorpisms">3.5 Lie Group and Lie Algebra Homomorpisms</a></li>
   <li><a href="#the-complexification-of-a-real-lie-algebra" id="toc-the-complexification-of-a-real-lie-algebra" class="nav-link" data-scroll-target="#the-complexification-of-a-real-lie-algebra">3.6 The Complexification of a Real Lie Algebra</a></li>
-  <li><a href="#the-exponential-map" id="toc-the-exponential-map" class="nav-link" data-scroll-target="#the-exponential-map">3.7 The Exponential Map</a></li>
-  <li><a href="#conseqences-of-theorem-3.42" id="toc-conseqences-of-theorem-3.42" class="nav-link" data-scroll-target="#conseqences-of-theorem-3.42">3.8 Conseqences of Theorem 3.42</a></li>
-  <li><a href="#補足" id="toc-補足" class="nav-link" data-scroll-target="#補足">補足</a>
-  <ul class="collapse">
-  <li><a href="#位相群" id="toc-位相群" class="nav-link" data-scroll-target="#位相群">位相群</a></li>
-  <li><a href="#lie-群の中心と-lie-代数の中心" id="toc-lie-群の中心と-lie-代数の中心" class="nav-link" data-scroll-target="#lie-群の中心と-lie-代数の中心">Lie 群の中心と Lie 代数の中心</a></li>
-  <li><a href="#指数写像の微分" id="toc-指数写像の微分" class="nav-link" data-scroll-target="#指数写像の微分">指数写像の微分</a></li>
-  <li><a href="#複素-lie-代数にならない-lie-群の-lie-代数の例" id="toc-複素-lie-代数にならない-lie-群の-lie-代数の例" class="nav-link" data-scroll-target="#複素-lie-代数にならない-lie-群の-lie-代数の例">複素 Lie 代数にならない Lie 群の Lie 代数の例</a></li>
-  <li><a href="#operatornamesu2operatornameso3-の関係" id="toc-operatornamesu2operatornameso3-の関係" class="nav-link" data-scroll-target="#operatornamesu2operatornameso3-の関係"><span class="math inline">\(\operatorname{SU}(2),\operatorname{SO}(3)\)</span> の関係</a></li>
-  <li><a href="#章" id="toc-章" class="nav-link" data-scroll-target="#章">2章</a></li>
-  </ul></li>
+  <li><a href="#exponential-map" id="toc-exponential-map" class="nav-link" data-scroll-target="#exponential-map">3.7 Exponential Map</a></li>
   </ul>
 </nav>
 </div>
@@ -2354,7 +2344,7 @@ color: #556056;
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">Lie Groups, Lie Algebras, and Representations Chapter 3, Lie Algebras 要旨</h1>
+<h1 class="title">Lie Groups, Lie Algebras, and Representations Chapter 3, Lie Algebras 発表用台本</h1>
 </div>
 
 
@@ -2417,1929 +2407,292 @@ color: #556056;
 \newcommand{\Ad}{\operatorname{Ad}}
 \newcommand{\Ker}{\operatorname{Ker}}
 \]</span></p>
-<section id="definitions-and-first-examples" class="level1">
-<h1>3.1 Definitions and First Examples</h1>
-<div id="def-LieAlg" class="theorem definition">
-<p><span class="theorem-title"><strong>Definition 1 (<span class="citation" data-cites="hallLieGroupsLie2015">Hall (<a href="#ref-hallLieGroupsLie2015" role="doc-biblioref">2015</a>)</span> Definition 3.1 有限次元｛実，複素｝Lie 代数)</strong></span> <span class="math inline">\(N\in\N\)</span> とする．<span class="math inline">\(N\)</span> 次元｛実，複素｝ベクトル空間 <span class="math inline">\(\g\)</span> が <span class="math inline">\(N\)</span> 次元｛実，複素｝Lie 代数 (Lie algebra) であるとは，双線形写像 <span class="math inline">\([\,\cdot\,,\,\cdot\,]:\g\times\g\to\g\)</span> で</p>
-<ul>
-<li>反交換的 (skew symmetric): <span class="math inline">\([X,Y]=-[Y,X],\quad\forall{X,Y}\in\g\)</span></li>
-<li>Jacobi 恒等式 (Jacobi identity): <span class="math inline">\([X,[Y,Z]]+[Y,[Z,X]]+[Z,[X,Y]]=0,\quad\forall{X,Y,Z}\in\g\)</span></li>
-</ul>
-<p>を満たすもの（括弧積; bracket）が備わっていることである．</p>
-</div>
-<ul>
-<li><span class="math inline">\(X,Y\in\g\)</span> が可換 (commutative) であるとは，<span class="math inline">\([X,Y]=[Y,X]\)</span> となる，すなわち <span class="math inline">\([X,Y]=0\)</span> となること．</li>
-<li><span class="math inline">\(\g\)</span> が可換であるとは，任意の <span class="math inline">\(X,Y\in\g\)</span> が可換であること．</li>
-</ul>
-<div id="exm-3.2" class="theorem example">
-<p><span class="theorem-title"><strong>Example 1 (<span class="citation" data-cites="hallLieGroupsLie2015">Hall (<a href="#ref-hallLieGroupsLie2015" role="doc-biblioref">2015</a>)</span> Example 3.2)</strong></span> <span class="math inline">\(\g:=\R^{3},[x,y]:=x\times{y}=(x_2x_3-x_3y_2,x_3y_1-x_1y_3,x_1y_2-x_2y_1)\)</span> とすると，<span class="math inline">\(\g\)</span> は3次元実 Lie 代数．</p>
-</div>
-<div class="proof">
-<p><span class="proof-title"><em>Proof</em>. </span>双線形性，反交換性，Jacobi 恒等式の成立を確認する．</p>
-<details>
-<summary>
-反交換性
-</summary>
-<p><span class="math inline">\(x,y\in\R^3\)</span> とする． <span class="math display">\[
-y\times{x}=(y_2x_3-y_3x_2,y_3x_1-y_1x_3,y_1x_2-y_2x_1)=-(x\times{y}).
-\]</span></p>
-</details>
-<details>
-<summary>
-双線形性
-</summary>
-<p><span class="math inline">\(x,y,z\in\R^3,a,b\in\R\)</span> とする．<span class="math inline">\((ax+by)\times z\)</span> の第 <span class="math inline">\(i\)</span> 成分は <span class="math display">\[
-\begin{align*}
-(ax_2+by_2)z_3 - (ax_3+by_3)z_2 &amp;= a(x_2z_3-x_3z_2) - b(y_2z_3-y_3z_2),\quad i=1,\\
-(ax_3+by_3)z_1 - (ax_1+by_1)z_3 &amp;= a(x_3z_1-x_1z_3) - b(y_3z_1-y_1z_3),\quad i=2,\\
-(ax_1+by_1)z_2 - (ax_2+by_2)z_1 &amp;= a(x_1z_2-x_2z_1) - b(y_1z_2-y_2z_1),\quad i=3
-\end{align*}
-\]</span></p>
-とかけるので，<span class="math inline">\((ax+by)\times{z}=a(x\times{z})+b(y\times{z})\)</span>.
-</details>
-<details>
-<summary>
-Jacobi 恒等式
-</summary>
-<p><span class="math inline">\(x,y,z\in\R^3\)</span> とする．<span class="math inline">\(x\times(y\times{z})+y\times(z\times{x})+z\times(x\times{y})=0\)</span> を示す． <span class="math inline">\(e_1:=(1,0,0),e_2:=(0,1,0),e_3:=(0,0,1)\)</span> とすると， <span class="math display">\[
-\begin{align*}
-&amp;x\times(y\times{z})+y\times(z\times{x})+z\times(x\times{y})\\[5pt]
-&amp;=\sum_{i,j,k}(x_iy_jz_k+x_ky_iz_j+x_jy_kz_i)e_i\times(e_j\times{e_k})
-\end{align*}
-\]</span></p>
-<p>である． <span class="math display">\[
-\begin{align*}
-&amp;e_i\times(e_j\times e_j)=0\quad i,j=1,2,3\\
-&amp;e_1\times e_2=e_3\\
-&amp;e_2\times e_3=e_1\\
-&amp;e_3\times e_1=e_2\\
-&amp;e_i\times(e_j\times e_k)=0\quad i\neq j,j\neq k,k\neq i
-\end{align*}
-\]</span></p>
-<p>に注意すると，反交換性から <span class="math display">\[
-\begin{align*}
-&amp;x\times(y\times{z})+y\times(z\times{x})+z\times(x\times{y})\\[5pt]
-&amp;=\sum_{i\neq j}(x_iy_iz_j+x_jy_iz_i+x_iy_jz_i)\{e_i\times(e_i\times{e_j})+e_i\times(e_j\times{e_i})\}\\
-&amp;=0.
-\end{align*}
-\]</span></p>
-</details>
-</div>
-<div id="def-associativeAlg" class="theorem definition">
-<p><span class="theorem-title"><strong>Definition 2 (結合多元環)</strong></span> <span class="math inline">\(R\)</span> は可換環とする．<span class="math inline">\(R\)</span>-加群 <span class="math inline">\(\mathcal{A}\)</span> は，<span class="math inline">\(R\)</span>-加群の加法とある乗法によって環になるとする．<span class="math inline">\(\mathcal{A}\)</span> が結合多元環 (associative algebra) であるとは，任意の <span class="math inline">\(r\in R\)</span> と <span class="math inline">\(x,y\in\mathcal{A}\)</span> に対し， <span class="math display">\[
-r(xy)=(rx)y=x(ry)
-\]</span></p>
-<p>が成立することである．</p>
-</div>
-<div id="tip-associativeAlg" class="callout callout-style-default callout-tip callout-titled">
+<p>全体を通して，難しい証明は多くない．ただし，3.7節以降はちょっと大変． 2章で準備した道具を駆使していろいろな性質を示す．</p>
+<div id="tip-background" class="callout callout-style-default callout-tip callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-Tip 1
+Tip 1: 発表者のバックグラウンド
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<p><span class="math inline">\(R\)</span> が <span class="math inline">\(\R,\C\)</span> の場合しか考えないので，<span class="math inline">\(\mathcal{A}\)</span> は乗法の備わったベクトル空間と思えば OK.</p>
+<p>Lie 群や Lie 代数のことは事前知識なし．多様体，代数学は初歩の用語の定義くらいは知っている．</p>
 </div>
+</div>
+<section id="definition-and-first-examples" class="level2">
+<h2 class="anchored" data-anchor-id="definition-and-first-examples">3.1 Definition and First Examples</h2>
+<div id="def-3.1" class="theorem definition">
+<p><span class="theorem-title"><strong>Definition 1 (<span class="citation" data-cites="hallLieGroupsLie2015">Hall (<a href="#ref-hallLieGroupsLie2015" role="doc-biblioref">2015</a>)</span> Definition 3.1 有限次元｛実，複素｝Lie 代数)</strong></span> 本章の主題である Lie 代数を定義する．双線形性と反交換性が何を要求しているかは直感的だが，Jacobi 恒等式が初見ではよくわからない．随伴を用いると Leibniz 則と思えることを <a href="#def-3.7" class="quarto-xref">Definition 4</a> で紹介する．また，結合多元環への埋め込みを考えると，括弧積が <span class="math inline">\(XY-YX\)</span> の形になることを <a href="#exm-3.3" class="quarto-xref">Example 2</a> で補足する．双線形性，反交換性，Jacobi 恒等式の要求によって，埋め込まれたあとの空間で括弧積はどのくらい可換でないかを測る指標になっている？今のところ Leibniz 則と思うのが個人的にはしっくりきている．実際，括弧積は Lie 微分と密接に関係しているようだ．</p>
+</div>
+<div id="exm-3.2" class="theorem example">
+<p><span class="theorem-title"><strong>Example 1 (<span class="citation" data-cites="hallLieGroupsLie2015">Hall (<a href="#ref-hallLieGroupsLie2015" role="doc-biblioref">2015</a>)</span> Example 3.2)</strong></span> <span class="math inline">\(\R^3\)</span> が外積によって Lie 代数になるという例． 双線形性と反交換性は定義からほぼ明らかなので証明は飛ばす．Jacobi 恒等式の成立も計算するだけだが，1つ目の例なので簡単に計算過程を追う．</p>
 </div>
 <div id="exm-3.3" class="theorem example">
-<p><span class="theorem-title"><strong>Example 2 (<span class="citation" data-cites="hallLieGroupsLie2015">Hall (<a href="#ref-hallLieGroupsLie2015" role="doc-biblioref">2015</a>)</span> Example 3.3)</strong></span> <span class="math inline">\(\g\)</span> は結合多元環 <span class="math inline">\(\mathcal{A}\)</span> の部分空間で，<span class="math inline">\(X,Y\in\g\Rightarrow XY-YX\in\g\)</span> とする． <span class="math inline">\([X,Y]:=XY-YX\)</span> とすると，<span class="math inline">\(\g\)</span> は Lie 代数．</p>
+<p><span class="theorem-title"><strong>Example 2 (<span class="citation" data-cites="hallLieGroupsLie2015">Hall (<a href="#ref-hallLieGroupsLie2015" role="doc-biblioref">2015</a>)</span> Example 3.3)</strong></span> 結合多元環の部分空間においては，<span class="math inline">\(XY-YX\)</span> が Lie 括弧積になるという例．任意の Lie 代数は結合多元環に埋め込んで，括弧積をこの形にできるらしい．詳しくは9章で．</p>
+<p>また，結合多元環といっても，<span class="math inline">\(\R\)</span>-加群か <span class="math inline">\(\C\)</span>-加群しか考えないので，良い感じの乗法が備わった｛実，複素｝ベクトル空間と思っていい．9章では <span class="math inline">\(\mathcal{R}\)</span> が体とは限らない状況も考えるのだろうか．</p>
+<p>証明はただ計算するだけなので飛ばす．</p>
 </div>
-<div id="nte-exm3.3" class="callout callout-style-default callout-note callout-titled">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-Note 1: Jacobi 恒等式の解釈
-</div>
-</div>
-<div class="callout-body-container callout-body">
-<p>任意の Lie 代数はある結合多元環 <span class="math inline">\(\mathcal{A}\)</span> の部分空間として埋め込まれ，括弧積は <span class="math inline">\(XY-YX\)</span> になる<span class="citation" data-cites="hallLieGroupsLie2015">(<a href="#ref-hallLieGroupsLie2015" role="doc-biblioref">Hall 2015</a> Theorem 9.10 Poincaré-Birkhoff-Witt の定理)</span>． Jacobi 恒等式は，一般に乗法が定義されていない <span class="math inline">\(\g\)</span> で括弧積が <span class="math inline">\(XY-YX\)</span> として振る舞うことを要求していると思える．</p>
-</div>
-</div>
-<details>
-<summary>
-証明
-</summary>
-<div class="proof">
-<p><span class="proof-title"><em>Proof</em>. </span>双線形性と反交換性は容易．Jacobi 恒等式を示す．<span class="math inline">\(X,Y,Z\in\g\)</span> とする． <span class="math display">\[
-\begin{align*}
-&amp;[X,[Y,Z]]+[Y,[Z,X]]+[Z,[X,Y]]\\
-&amp;=X(YZ-ZY)-(YZ-ZY)X+Y(ZX-XZ)\\
-&amp;\hphantom{=}-(ZX-XZ)Y+Z(XY-YX)-(XY-YX)Z\\
-&amp;=0.
-\end{align*}
-\]</span></p>
-</div>
-</details>
 <div id="exm-3.4" class="theorem example">
-<p><span class="theorem-title"><strong>Example 3 (<span class="citation" data-cites="hallLieGroupsLie2015">Hall (<a href="#ref-hallLieGroupsLie2015" role="doc-biblioref">2015</a>)</span> Example 3.4)</strong></span> <span class="math inline">\(\K\)</span> は <span class="math inline">\(\R,\C\)</span> のいずれかとする． <span class="math inline">\(\sl(n;\K):=\{X\in M_{n}(\K)\mid \tr{X}=0\}\)</span> は <span class="math inline">\([X,Y]:=XY-YX\)</span> に関して <span class="math inline">\(\K\)</span> 上の Lie 代数．</p>
+<p><span class="theorem-title"><strong>Example 3 (<span class="citation" data-cites="hallLieGroupsLie2015">Hall (<a href="#ref-hallLieGroupsLie2015" role="doc-biblioref">2015</a>)</span> Example 3.4)</strong></span> <span class="math inline">\(\sl(n;\K)\)</span> が Lie 代数になるという例．<span class="math inline">\(\sl(n;\K)\)</span> は主に3.4節で度々現れる．証明は <a href="#exm-3.3" class="quarto-xref">Example 2</a> の結果を使うだけなので省略せず説明する．</p>
 </div>
-<details>
-<summary>
-証明
-</summary>
-<div class="proof">
-<p><span class="proof-title"><em>Proof</em>. </span><span class="math inline">\(M_n(\K)\)</span> は <span class="math inline">\(\K\)</span> 上の結合多元環なので，<a href="#exm-3.3" class="quarto-xref">Example 2</a> が使える．<span class="math inline">\(XY-YX\in\sl(n;\K)\)</span> を示す． <span class="math inline">\(XY-YX\in M_n(\K)\)</span> は明らかなので，<span class="math inline">\(\tr(XY-YX)=0\)</span> を示せばよい． <span class="math display">\[
-\tr(XY-YX)=\tr(XY)-\tr(XY)=0.
-\]</span></p>
+<div id="def-3.5" class="theorem definition">
+<p><span class="theorem-title"><strong>Definition 2 (<span class="citation" data-cites="hallLieGroupsLie2015">Hall (<a href="#ref-hallLieGroupsLie2015" role="doc-biblioref">2015</a>)</span> Definition 3.5 Lie 部分代数)</strong></span> Lie 部分代数を定義する．よくある部分空間の定義．イデアルや中心も定義する．イデアルや中心の定義は群，環と同じような定義になっている．イデアルは3.2節で使うので少し丁寧に説明する．中心はこの章では全く出てこないのであんまり説明はしない．補足に中心に関する話題をちょっといれた．</p>
 </div>
-</details>
-<div id="def-LieSubAlg" class="theorem definition">
-<p><span class="theorem-title"><strong>Definition 3 (<span class="citation" data-cites="hallLieGroupsLie2015">Hall (<a href="#ref-hallLieGroupsLie2015" role="doc-biblioref">2015</a>)</span> Definition 3.5 Lie 部分代数)</strong></span> Lie 代数 <span class="math inline">\(\g\)</span> の線形部分空間 <span class="math inline">\(\h\)</span> が Lie 部分代数 (subalgebra) であるとは，括弧積に閉じること，すなわち <span class="math inline">\(H_1,H_2\in\h\Rightarrow[H_1,H_2]\in\h\)</span> が成立することである．</p>
+<div id="def-3.6" class="theorem definition">
+<p><span class="theorem-title"><strong>Definition 3 (<span class="citation" data-cites="hallLieGroupsLie2015">Hall (<a href="#ref-hallLieGroupsLie2015" role="doc-biblioref">2015</a>)</span> Definition 3.6 Lie 代数の準同型)</strong></span> Lie 代数の準同型を定義する．よくある準同型の定義．同型や自己同型もよくある定義．</p>
 </div>
-<div id="def-ideal" class="theorem definition">
-<p><span class="theorem-title"><strong>Definition 4 (イデアル)</strong></span> Lie 代数 <span class="math inline">\(\g\)</span> の部分代数 <span class="math inline">\(\h\)</span> が <span class="math inline">\(\g\)</span> のイデアル (ideal) であるとは，<span class="math inline">\(X\in\g,H\in\h\Rightarrow [X,H]\in\h\)</span> が成立することである．</p>
+<div id="def-3.7" class="theorem definition">
+<p><span class="theorem-title"><strong>Definition 4 (<span class="citation" data-cites="hallLieGroupsLie2015">Hall (<a href="#ref-hallLieGroupsLie2015" role="doc-biblioref">2015</a>)</span> Definition 3.7 随伴)</strong></span> 随伴を定義する．これを随伴と呼ぶのはなぜだろうか．Jacobi 恒等式は随伴を使うと，Leibniz 則と思える．</p>
 </div>
-<div id="nte-ideal" class="callout callout-style-default callout-note callout-titled">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-Note 2: 環のイデアルとの関連
-</div>
-</div>
-<div class="callout-body-container callout-body">
-<p>環 <span class="math inline">\(R\)</span> の加法に関する部分群 <span class="math inline">\(I\subset R\)</span> が（両側）イデアルであるとは，任意の <span class="math inline">\(r\in R\)</span> と <span class="math inline">\(x\in I\)</span> に対して，<span class="math inline">\(rx,xr\in I\)</span> となることである．<span class="math inline">\([X,H]\in\h\)</span> ならば，<span class="math inline">\([H,X]=-[X,H]\in\h\)</span> なので，Lie 代数のイデアルは環の（両側）イデアルと同じような定義になっている．</p>
-</div>
-</div>
-<div id="def-center" class="theorem definition">
-<p><span class="theorem-title"><strong>Definition 5 (中心)</strong></span> <span class="math inline">\(\g\)</span> は Lie 代数とする．<span class="math inline">\(Z(\g):=\{H\in\g\mid [H,X]=0,\enspace\forall X\in\g\}\)</span> を <span class="math inline">\(\g\)</span> の中心 (center) という．</p>
-</div>
-<div id="tip-center" class="callout callout-style-default callout-tip callout-titled">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-Tip 2
-</div>
-</div>
-<div class="callout-body-container callout-body">
-<p>Lie 代数の中心に関する話題は，この章では全く出てこないが，以降の章で度々現れる．</p>
-</div>
-</div>
-<div id="nte-center" class="callout callout-style-default callout-note callout-titled">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-Note 3: 群の中心との関連
-</div>
-</div>
-<div class="callout-body-container callout-body">
-<p>群 <span class="math inline">\(G\)</span> の中心とは，<span class="math inline">\(Z(G):=\{x\in G\mid gx=xg\enspace\forall g\in G\}\)</span>，すなわち，任意の元に対して可換になるような元全体のことである．Lie 代数の中心も，<span class="math inline">\([H,X]=0\iff [H,X]=[X,H]\)</span> なので，同じような定義になっている．</p>
-</div>
-</div>
-<div id="def-Hom" class="theorem definition">
-<p><span class="theorem-title"><strong>Definition 6 (<span class="citation" data-cites="hallLieGroupsLie2015">Hall (<a href="#ref-hallLieGroupsLie2015" role="doc-biblioref">2015</a>)</span> Definition 3.6 Lie 代数の準同型)</strong></span> <span class="math inline">\(\g,\h\)</span> は Lie 代数とする．線形写像 <span class="math inline">\(\phi:\g\to\h\)</span> が Lie 代数の準同型写像 (Lie algebra homomorphism) であるとは，任意の <span class="math inline">\(X,Y\in\g\)</span> に対し，<span class="math inline">\(\phi([X,Y])=[\phi(X),\phi(Y)]\)</span> が成立することである．</p>
-</div>
-<ul>
-<li>Lie 代数の同型写像 (isomorphism) とは，Lie 代数の準同型全単射のこと．</li>
-<li>Lie 代数の自己同型写像 (automorphism) とは，ある Lie 代数からそれ自身への Lie 代数の同型写像のこと．</li>
-</ul>
-<div id="def-adjoint" class="theorem definition">
-<p><span class="theorem-title"><strong>Definition 7 (<span class="citation" data-cites="hallLieGroupsLie2015">Hall (<a href="#ref-hallLieGroupsLie2015" role="doc-biblioref">2015</a>)</span> Definition 3.7 随伴)</strong></span> <span class="math inline">\(\g\)</span> は Lie 代数，<span class="math inline">\(X\in\g\)</span> とする． <span class="math inline">\(\g\)</span> から <span class="math inline">\(\g\)</span> 自身への線形写像全体を <span class="math inline">\(\End(\g)\)</span> とする． 線形写像 <span class="math inline">\(\ad_X:\g\to\g,Y\mapsto[X,Y]\)</span> によって定まる 線形写像 <span class="math inline">\(\ad:\g\to\End(\g),X\mapsto\ad_X\)</span> を随伴写像 (adjoint map) や随伴表現 (adjoint representation) という．</p>
-</div>
-<div id="nte-3.7" class="callout callout-style-default callout-note callout-titled">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-Note 4: Jacobi 恒等式の解釈 その2
-</div>
-</div>
-<div class="callout-body-container callout-body">
-<p>Jacobi 恒等式は，<span class="math inline">\(\ad_X([Y,Z])=[\ad_X(Y),Z]+[Y,\ad_X(Z)]\)</span> とかけて，Leibniz 則と思える．</p>
-</div>
-</div>
-<div id="prp-3.8a" class="theorem proposition">
-<p><span class="theorem-title"><strong>Proposition 1</strong></span> <span class="math inline">\(\End(\g)\)</span> は <span class="math inline">\([f,g]:=fg-gf\)</span> に関して Lie 代数で，<span class="math inline">\(\{\ad_X\mid X\in\g\}\)</span> は Lie 部分代数．</p>
-</div>
-<details>
-<summary>
-証明
-</summary>
-<div class="proof">
-<p><span class="proof-title"><em>Proof</em>. </span><span class="math inline">\(\End(\g)\)</span> が Lie 代数であることは <a href="#exm-3.3" class="quarto-xref">Example 2</a> から従う．<span class="math inline">\(\h:=\{\ad_X\mid X\in\g\}\)</span> が Lie 部分代数であることを示す． <span class="math inline">\(\h\)</span> が線形部分空間であることは，<span class="math inline">\(a\ad_X+b\ad_Y=\ad_{aX+bY}\)</span> からわかる． <span class="math inline">\([\ad_X,\ad_Y]\in\h\)</span> を示す．Jacobi 恒等式より， <span class="math display">\[
-[\ad_X,\ad_Y](Z)=[X,[Y,Z]]-[Y,[X,Z]]=[[X,Y],Z]=\ad_{[X,Y]}(Z).
-\]</span></p>
-</div>
-</details>
 <div id="prp-3.8" class="theorem proposition">
-<p><span class="theorem-title"><strong>Proposition 2 (<span class="citation" data-cites="hallLieGroupsLie2015">Hall (<a href="#ref-hallLieGroupsLie2015" role="doc-biblioref">2015</a>)</span> Proposition 3.8)</strong></span> <span class="math inline">\(\ad\)</span> は Lie 代数の準同型写像．</p>
+<p><span class="theorem-title"><strong>Proposition 1 (<span class="citation" data-cites="hallLieGroupsLie2015">Hall (<a href="#ref-hallLieGroupsLie2015" role="doc-biblioref">2015</a>)</span> Proposition 3.8)</strong></span> <span class="math inline">\(\ad\)</span> が Lie 代数の準同型になっているという主張．証明するべきことは，<span class="math inline">\(\End(\g)\)</span> が Lie 代数であることと，<span class="math inline">\(\ad\)</span> が括弧積を保つこと．前者は <a href="#exm-3.2" class="quarto-xref">Example 1</a> からすぐわかる．後者の証明では Jacobi 恒等式が本質的な役割を果たす．</p>
 </div>
-<details>
-<summary>
-証明
-</summary>
-<div class="proof">
-<p><span class="proof-title"><em>Proof</em>. </span><a href="#prp-3.8a" class="quarto-xref">Proposition 1</a> の証明中で，<span class="math inline">\(\ad([X,Y])=[\ad(X),\ad(Y)]\)</span> を示した．</p>
+<div id="def-3.9" class="theorem definition">
+<p><span class="theorem-title"><strong>Definition 5 (<span class="citation" data-cites="hallLieGroupsLie2015">Hall (<a href="#ref-hallLieGroupsLie2015" role="doc-biblioref">2015</a>)</span> Definition 3.9 直和)</strong></span> Lie 代数の直和を定義する．以降ではほとんど出てこない．一応3.6節の複素化が関係なくもないが，あんまり関係ない．</p>
 </div>
-</details>
-<div id="prp-3.9" class="theorem proposition">
-<p><span class="theorem-title"><strong>Proposition 3 (<span class="citation" data-cites="hallLieGroupsLie2015">Hall (<a href="#ref-hallLieGroupsLie2015" role="doc-biblioref">2015</a>)</span> Definition 3.9 直和)</strong></span> <span class="math inline">\(\g_1,\g_2\)</span> は Lie 代数，<span class="math inline">\(\g_1\oplus\g_2\)</span> はベクトル空間の直和とする． <span class="math inline">\((X_1,X_2),(Y_1,Y_2)\in\g_1\oplus\g_2\)</span> に対し， <span class="math display">\[
-[(X_1,X_2),(Y_1,Y_2)]:=([X_1,Y_1],[X_2,Y_2])
-\]</span></p>
-<p>は括弧積で，<span class="math inline">\(\g_1\oplus\g_2\)</span> はこの括弧積に関して Lie 代数（Lie 代数の直和; Lie algebra direct sum）．</p>
+<div id="def-3.10" class="theorem definition">
+<p><span class="theorem-title"><strong>Definition 6 (<span class="citation" data-cites="hallLieGroupsLie2015">Hall (<a href="#ref-hallLieGroupsLie2015" role="doc-biblioref">2015</a>)</span> Definition 3.10 構造定数)</strong></span> 構造定数を定義する．括弧積を特徴づける定数になっている．Christoffel 記号のようなものだと思っている． 以降では全く出てこない．<span class="math inline">\(\R^3\)</span> の外積の構造定数が Levi-Civita 記号（Eddington のイプシロン）になるらしい．</p>
 </div>
-<details>
-<summary>
-証明
-</summary>
-<div class="proof">
-<p><span class="proof-title"><em>Proof</em>. </span>双線形性，反交換性は明らか．Jacobi 恒等式も各成分毎に成立しているので，結局全体として成立．</p>
-</div>
-</details>
-<div id="prp-StrctCons" class="theorem proposition">
-<p><span class="theorem-title"><strong>Proposition 4 (<span class="citation" data-cites="hallLieGroupsLie2015">Hall (<a href="#ref-hallLieGroupsLie2015" role="doc-biblioref">2015</a>)</span> Definition 3.10 構造定数)</strong></span> <span class="math inline">\(\g\)</span> は <span class="math inline">\(\K\)</span> 上の <span class="math inline">\(N\)</span> 次元 Lie 代数，<span class="math inline">\(X_1,\dots,X_N\in\g\)</span> は <span class="math inline">\(\g\)</span> の（ベクトル空間としての）基底とする． このとき，（基底の選び方に依る）定数 <span class="math inline">\(c_{jkl}\)</span>（構造定数; structure constant）が一意に存在し， <span class="math display">\[
-[X_j,X_k]=\sum_{l=1}^{N}c_{jkl}X_{l}
-\]</span></p>
-<p>が成立．</p>
-</div>
-<div id="nte-3.10" class="callout callout-style-default callout-note callout-titled">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-Note 5: 構造定数の自由度
-</div>
-</div>
-<div class="callout-body-container callout-body">
-<p>構造定数の自由度は <span class="math inline">\(N^3\)</span> より小さい．実際，対称性から <span class="math inline">\(c_{jkl}+c_{kjl}=0\)</span> が，Jacobi 恒等式から <span class="math display">\[
-\sum_{n=1}^{N}(c_{jkn}c_{nlm} + c_{kln}c_{njm} + c_{ljn}c_{nkm}) = 0
-\]</span></p>
-<p>が要請される．</p>
-</div>
-</div>
-<details>
-<summary>
-証明
-</summary>
-<div class="proof">
-<p><span class="proof-title"><em>Proof</em>. </span>ベクトル空間の基底の性質から直ちに従う．</p>
-</div>
-</details>
 </section>
-<section id="simple-solveble-and-nilpotent-lie-algebras" class="level1">
-<h1>3.2 Simple, Solveble, and Nilpotent Lie Algebras</h1>
-<p><span class="math inline">\(\K\)</span> は <span class="math inline">\(\R,\C\)</span> のいずれかとする．<span class="math inline">\(\g\)</span> は <span class="math inline">\(\K\)</span> 上の Lie 代数とする．</p>
-<div id="def-IrreducibleSimple" class="theorem definition">
-<p><span class="theorem-title"><strong>Definition 8 (<span class="citation" data-cites="hallLieGroupsLie2015">Hall (<a href="#ref-hallLieGroupsLie2015" role="doc-biblioref">2015</a>)</span> Definition 3.11 既約，単純)</strong></span> <span class="math inline">\(\g\)</span> が既約 (irreducible) であるとは，<span class="math inline">\(\g\)</span> のイデアルが <span class="math inline">\(\{0\}\)</span> と <span class="math inline">\(\g\)</span> 自身に限ることである．既約で，<span class="math inline">\(\dim\g\geq2\)</span> を満たす <span class="math inline">\(\g\)</span> を単純 (simple) であるという．</p>
+<section id="simple-solvable-and-nilpotent-lie-algebras" class="level2">
+<h2 class="anchored" data-anchor-id="simple-solvable-and-nilpotent-lie-algebras">Simple, Solvable, and Nilpotent Lie Algebras</h2>
+<p>この節は以降の節には影響しない．4章と9章で現れるようだ．</p>
+<div id="def-3.11" class="theorem definition">
+<p><span class="theorem-title"><strong>Definition 7 (<span class="citation" data-cites="hallLieGroupsLie2015">Hall (<a href="#ref-hallLieGroupsLie2015" role="doc-biblioref">2015</a>)</span> Definition 3.11 既約，単純)</strong></span> Lie 代数が既約であること，単純であることを定義する．既約は極大イデアルに対応する．単純は，<span class="math inline">\(\dim \g=1\)</span> の既約な <span class="math inline">\(\g\)</span> は他と違った振る舞いをする（括弧積が可換になる）から，その区別のための概念だと思っている．</p>
+<p><span class="math inline">\(\g\)</span> が単純であることと，<span class="math inline">\(\g\)</span> は既約でかつ括弧積は非可換であることが同値であることの証明はそこまで難しくない．簡単に説明する．</p>
 </div>
-<div id="prp-simple" class="theorem proposition">
-<p><span class="theorem-title"><strong>Proposition 5</strong></span> <span class="math inline">\(\g\)</span> が単純 <span class="math inline">\(\iff\)</span> <span class="math inline">\(\g\)</span> は既約で，括弧積は非可換．</p>
+<div id="prp-3.12" class="theorem proposition">
+<p><span class="theorem-title"><strong>Proposition 2 (<span class="citation" data-cites="hallLieGroupsLie2015">Hall (<a href="#ref-hallLieGroupsLie2015" role="doc-biblioref">2015</a>)</span> Proposition 3.12)</strong></span> <span class="math inline">\(\sl(2;\C)\)</span> が単純であることを示すのは面倒くさい．ほとんど計算するだけ．証明の肝は任意の <span class="math inline">\(\{0\}\)</span> でないイデアルが，<span class="math inline">\(\sl(2;\C)\)</span> のある基底を含んでいることを示すこと．</p>
 </div>
-<details>
-<summary>
-証明
-</summary>
-<div class="proof">
-<p><span class="proof-title"><em>Proof</em>. </span><span class="math inline">\((\Rightarrow)\)</span></p>
-<p>既約性は定義から自動的に満たされる．括弧積は可換と仮定して矛盾を導く． このとき，<span class="math inline">\(\g\)</span> の任意の線形部分空間は <span class="math inline">\(\g\)</span> のイデアルである． 特に，<span class="math inline">\(\dim\g\geq2\)</span> より，<span class="math inline">\(\{0\}\)</span> でも <span class="math inline">\(\g\)</span> 自身でもない線形部分空間が存在． これは <span class="math inline">\(\g\)</span> が既約であることに矛盾．よって，括弧積は非可換．</p>
-<p><span class="math inline">\((\Leftarrow)\)</span></p>
-<p>対偶「<span class="math inline">\(\dim\g&lt;2\Rightarrow\)</span> 括弧積は可換」を示す． 任意の <span class="math inline">\(X,Y\in\g\)</span> に対し，ある <span class="math inline">\(a\in\K\)</span> が存在し，<span class="math inline">\(X=aY\)</span> である． <span class="math inline">\([X,Y]=a[Y,Y]=0\)</span> より，括弧積は可換．</p>
+<div id="def-3.13" class="theorem definition">
+<p><span class="theorem-title"><strong>Definition 8 (<span class="citation" data-cites="hallLieGroupsLie2015">Hall (<a href="#ref-hallLieGroupsLie2015" role="doc-biblioref">2015</a>)</span> Definition 3.13 交換子イデアル)</strong></span> 交換子イデアルを定義する．括弧積の有限個の線形結合全体である． 初見では，何をしたいのかよくわからない．また，<span class="math inline">\([\g,\g]\)</span> はとても大きい集合に見えて，<span class="math inline">\([\g,\g]=\g\)</span> が成立しそうに思えるがそうとは限らない．例えば <span class="math inline">\(X\in\g\)</span> が <span class="math inline">\(X\in[\g,\g]\)</span> とは限らない．</p>
+<p>交換子イデアルがイデアルであることの証明は簡単．</p>
 </div>
-</details>
-<div id="exm-3.12" class="theorem example">
-<p><span class="theorem-title"><strong>Example 4 (<span class="citation" data-cites="hallLieGroupsLie2015">Hall (<a href="#ref-hallLieGroupsLie2015" role="doc-biblioref">2015</a>)</span> Proposition 3.12)</strong></span> <span class="math inline">\(\sl(2;\C)=\{X\in M_2(\C)\mid \tr{X}=0\}\)</span> は単純．</p>
+<div id="def-3.14" class="theorem definition">
+<p><span class="theorem-title"><strong>Definition 9 (<span class="citation" data-cites="hallLieGroupsLie2015">Hall (<a href="#ref-hallLieGroupsLie2015" role="doc-biblioref">2015</a>)</span> Definition 3.14 導来列，可解)</strong></span> 導来列を定義する．導来列は減少列だが，これがあるときに <span class="math inline">\(\{0\}\)</span> になることを可解であると定義する．導来列を考えたいモチベーションはよくわからない．</p>
 </div>
-<div class="proof">
-<p><span class="proof-title"><em>Proof</em>. </span><span class="math inline">\(\sl(2;\C)\)</span> の基底として， <span class="math display">\[
-X=\begin{pmatrix}0&amp;1\\0&amp;0\end{pmatrix},
-Y=\begin{pmatrix}0&amp;0\\1&amp;0\end{pmatrix},
-H=\begin{pmatrix}1&amp;0\\0&amp;-1\end{pmatrix}
-\]</span></p>
-<p>がとれる．<span class="math inline">\(\dim\sl(2;\C)=3\)</span> なので，<span class="math inline">\(\sl(2;\C)\)</span> が既約であることを示せばよい． 任意の <span class="math inline">\(\{0\}\)</span> でない <span class="math inline">\(\sl(2;\C)\)</span> のイデアルを <span class="math inline">\(\h\)</span> とする．</p>
-<details>
-<summary>
-<span class="math inline">\(\h=\sl(2;\C)\)</span>
-</summary>
-<p>仮定より，<span class="math inline">\(Z=aX+bH+cY\in\h\)</span> で，<span class="math inline">\(a=b=c=0\)</span> とならないような <span class="math inline">\(Z\)</span> が存在． <span class="math inline">\([X,Y]=H,[H,X]=2X,[H,Y]=-2Y\)</span> に注意すると，<span class="math inline">\(\h\)</span> はイデアルなので， <span class="math display">\[
-\begin{align*}
-[X,Z]&amp;=-2bX+cH\in\h\\
-[H,Z]&amp;=2aX-2cY\in\h\\
-[Y,Z]&amp;=-aH+2bY\in\h
-\end{align*}
-\]</span></p>
-<p>である．これをもう一度繰り返すと <span class="math display">\[
-\begin{align*}
-[H,[X,Z]]&amp;=-4bX\in\h\\
-[X,[X,Z]]&amp;=-2cX\in\h\\
-[Y,[H,Z]]&amp;=-2aY\in\h\\
-[H,[Y,Z]]&amp;=-4bY\in\h\\
-[Y,[Y,Z]]&amp;=-2aH\in\h\\
-[X,[H,Z]]&amp;=-2cH\in\h
-\end{align*}
-\]</span></p>
-<p>が成立.</p>
-<p><span class="math inline">\(a\neq0\)</span> の場合：<span class="math inline">\(Y,H\in\h\)</span> である．<span class="math inline">\([X,H]=-2X\in\h\)</span> より，<span class="math inline">\(X\in\h\)</span>.</p>
-<p><span class="math inline">\(b\neq0\)</span> の場合：<span class="math inline">\(X,Y\in\h\)</span> である．<span class="math inline">\([X,Y]=H\)</span> より，<span class="math inline">\(H\in\h\)</span></p>
-<p><span class="math inline">\(c\neq0\)</span> の場合：<span class="math inline">\(X,H\in\h\)</span> である．<span class="math inline">\([Y,H]=-2Y\in\h\)</span> より，<span class="math inline">\(Y\in\h\)</span>.</p>
-以上より，<span class="math inline">\(X,Y,H\in\h\)</span> がいえるので，<span class="math inline">\(\sl(2;\C)\subset\h\)</span>．逆の包含関係は明らか．
-</details>
+<div id="def-3.15" class="theorem definition">
+<p><span class="theorem-title"><strong>Definition 10 (<span class="citation" data-cites="hallLieGroupsLie2015">Hall (<a href="#ref-hallLieGroupsLie2015" role="doc-biblioref">2015</a>)</span> Definition 3.15 昇中心列，冪零)</strong></span> 昇中心列を定義する．導来列と似ているが，ちょっと違う．<span class="math inline">\(\g_j\subset\g^j\)</span> が常に成立する．冪零は，導来列における可解に対応する概念．</p>
+<p><span class="math inline">\(\g^j\)</span> がイデアルであることは証明しなければならない．帰納法で示す．証明の肝は昇中心列もまた減少列になっていること．</p>
+<p><span class="math inline">\(\g\)</span> が冪零 <span class="math inline">\(\Rightarrow\)</span> <span class="math inline">\(\g\)</span> は可解の証明は，<span class="math inline">\(\g_j\subset\g^j\)</span> が本質的．ここでの証明も帰納法で示す．</p>
 </div>
-<div id="prp-commutator" class="theorem proposition">
-<p><span class="theorem-title"><strong>Proposition 6 (<span class="citation" data-cites="hallLieGroupsLie2015">Hall (<a href="#ref-hallLieGroupsLie2015" role="doc-biblioref">2015</a>)</span> Definition 3.13 交換子イデアル)</strong></span> <span class="math display">\[
-[\g,\g]:=\left\{\sum_{j=1}^{m}c_{j}[X_j,Y_j]\,\middle|\, m\in\N,c_j\in\K,X_j,Y_j\in\g\right\}\subset\g
-\]</span></p>
-<p>は <span class="math inline">\(\g\)</span> のイデアル（交換子イデアル; commutator ideal）．</p>
-</div>
-<details>
-<summary>
-証明
-</summary>
-<div class="proof">
-<p><span class="proof-title"><em>Proof</em>. </span><span class="math inline">\([\g,\g]\)</span> が <span class="math inline">\(\g\)</span> の線形部分空間であることは明らか．<span class="math inline">\(X\in\g\)</span> とする．<span class="math inline">\(Z\in[\g,\g]\subset\g\)</span> に対し，<span class="math inline">\([X,Z]\in[\g,\g]\)</span> なので，<span class="math inline">\([\g,\g]\)</span> は <span class="math inline">\(\g\)</span> のイデアル．</p>
-</div>
-</details>
-<div id="def-derivedSeries" class="theorem definition">
-<p><span class="theorem-title"><strong>Definition 9 (<span class="citation" data-cites="hallLieGroupsLie2015">Hall (<a href="#ref-hallLieGroupsLie2015" role="doc-biblioref">2015</a>)</span> Definition 3.14 導来列，可解)</strong></span> <span class="math inline">\(\g_0:=\g,\g_j:=[\g_{j-1},\g_{j-1}]\)</span> として帰納的に定義した <span class="math inline">\(\g\)</span> のイデアルの列を <span class="math inline">\(\g\)</span> の導来列 (derived series) という．ある <span class="math inline">\(j\in\N\)</span> が存在して，<span class="math inline">\(\g_j=\{0\}\)</span> となる <span class="math inline">\(\g\)</span> を可解 (solvable) であるという．</p>
-</div>
-<div id="prp-uppercentralseries" class="theorem proposition">
-<p><span class="theorem-title"><strong>Proposition 7 (<span class="citation" data-cites="hallLieGroupsLie2015">Hall (<a href="#ref-hallLieGroupsLie2015" role="doc-biblioref">2015</a>)</span> Definition 3.15 昇中心列)</strong></span> <span class="math inline">\(\g^0:=\g\)</span> とする．<span class="math inline">\(j\geq1\)</span> について， <span class="math display">\[
-\g^{j}:=\left\{\sum_{k=1}^{m}c_k[X_k,Y_k]\,\middle|\,m\in\N,c_k\in\K,X_k\in\g,Y_k\in\g^{j-1}\right\}
-\]</span></p>
-<p>と帰納的に定義すると，任意の <span class="math inline">\(g^{j}\)</span> は <span class="math inline">\(\g\)</span> のイデアル（昇中心列; upper central series）．</p>
-</div>
-<details>
-<summary>
-証明
-</summary>
-<div class="proof">
-<p><span class="proof-title"><em>Proof</em>. </span><span class="math inline">\(\g^j\)</span> が <span class="math inline">\(\g\)</span> の線形部分空間であることは明らか．<span class="math inline">\(X\in\g,Y\in\g^j\)</span> とする． <span class="math inline">\(\g^j\)</span> が <span class="math inline">\(\g\)</span> のイデアルであることを帰納法によって示す．</p>
-<p><span class="math inline">\((n=1):\)</span></p>
-<p><a href="#prp-commutator" class="quarto-xref">Proposition 6</a> より， <span class="math inline">\(\g^1=[\g,\g]\)</span> は <span class="math inline">\(\g\)</span> のイデアル.</p>
-<p><span class="math inline">\((n\geq2):\)</span></p>
-<p><span class="math inline">\(\g^{n-1}\)</span> は <span class="math inline">\(\g\)</span> のイデアルであるとする．このとき，任意の <span class="math inline">\(X\in\g,Y\in\g^{n-1}\)</span> に対し，<span class="math inline">\([X,Y]\in\g^{n-1}\)</span> が成立．よって，<span class="math inline">\(\g^{n}\subset\g^{n-1}\)</span>. したがって，任意の <span class="math inline">\(X&#39;\in\g,Y&#39;\in\g^{n}\subset\g^{n-1}\)</span> に対し，<span class="math inline">\([X&#39;,Y&#39;]\in\g^{n}\)</span>．よって，<span class="math inline">\(\g^n\)</span> は <span class="math inline">\(\g\)</span> のイデアル．</p>
-</div>
-</details>
-<div id="def-nilpotent" class="theorem definition">
-<p><span class="theorem-title"><strong>Definition 10 (<span class="citation" data-cites="hallLieGroupsLie2015">Hall (<a href="#ref-hallLieGroupsLie2015" role="doc-biblioref">2015</a>)</span> Definition 3.15 冪零)</strong></span> <span class="math inline">\(\g\)</span> の昇中心列について，ある <span class="math inline">\(j\in\N\)</span> が存在して，<span class="math inline">\(\g^j=\{0\}\)</span> ならば，<span class="math inline">\(\g\)</span> は冪零 (nilpotent) であるという．</p>
-</div>
-<div id="prp-solvable-nilpotent" class="theorem proposition">
-<p><span class="theorem-title"><strong>Proposition 8</strong></span> <span class="math inline">\(\g\)</span> が冪零 <span class="math inline">\(\Rightarrow\)</span> <span class="math inline">\(\g\)</span> は可解．</p>
-</div>
-<details>
-<summary>
-証明
-</summary>
-<div class="proof">
-<p><span class="proof-title"><em>Proof</em>. </span><span class="math inline">\(\g\)</span> の導来列を <span class="math inline">\(\g_0,\g_1,\dots\)</span>，昇中心列を <span class="math inline">\(\g^0,\g^1,\dots\)</span> とする． <span class="math inline">\(\g_j\subset\g^j\)</span> を帰納法によって示す．<span class="math inline">\(j=0\)</span> の場合は明らか． <span class="math inline">\(\g_j\)</span> の任意の元 <span class="math inline">\(X\)</span> は，<span class="math inline">\(c_k\in\K\)</span> と <span class="math inline">\(X_k,Y_k\in\g_{j-1}\)</span> を用いて，<span class="math inline">\(X=\sum_{k=1}^{m}c_k[X_k,Y_k]\)</span> とかける．帰納法の仮定より，<span class="math inline">\(Y_k\in\g_{j-1}\subset\g^{j-1}\)</span> なので，<span class="math inline">\(X\in\g^{j}\)</span>.</p>
-<p><span class="math inline">\(\g\)</span> は冪零とすると，ある <span class="math inline">\(j\)</span> が存在して <span class="math inline">\(\g^j=\{0\}\)</span> だが，このとき <span class="math inline">\(g_j=\{0\}\)</span> である． したがって，<span class="math inline">\(\g\)</span> は可解．</p>
-</div>
-</details>
 <div id="exm-3.16" class="theorem example">
-<p><span class="theorem-title"><strong>Example 5 (<span class="citation" data-cites="hallLieGroupsLie2015">Hall (<a href="#ref-hallLieGroupsLie2015" role="doc-biblioref">2015</a>)</span> Proposition 3.16)</strong></span> <span class="math display">\[
-\h:=\left\{\begin{pmatrix}0&amp;a&amp;c\\0&amp;0&amp;b\\0&amp;0&amp;0\end{pmatrix}\in M_3(\R)\,\middle|\,a,b,c\in\R\right\}
-\]</span></p>
-<p>とする．<span class="math inline">\(\h\)</span> は <span class="math inline">\([X,Y]:=XY-YX\)</span> に関して冪零 Lie 代数．</p>
-</div>
-<div class="proof">
-<p><span class="proof-title"><em>Proof</em>. </span><span class="math inline">\(\h\)</span> の基底として， <span class="math display">\[
-X=\begin{pmatrix}0&amp;1&amp;0\\0&amp;0&amp;0\\0&amp;0&amp;0\end{pmatrix},
-Y=\begin{pmatrix}0&amp;0&amp;0\\0&amp;0&amp;1\\0&amp;0&amp;0\end{pmatrix},
-Z=\begin{pmatrix}0&amp;0&amp;1\\0&amp;0&amp;0\\0&amp;0&amp;0\end{pmatrix}
-\]</span></p>
-<p>がとれる．<span class="math inline">\([X,Y]=Z,[X,Z]=[Y,Z]=0\)</span> より，<span class="math inline">\([\g,\g]=\{aZ\mid a\in\R\}\)</span> である． <span class="math inline">\(\g^2=[\g,[\g,\g]]=\{0\}\)</span> となり，<span class="math inline">\(\g\)</span> は冪零．</p>
+<p><span class="theorem-title"><strong>Example 4 (<span class="citation" data-cites="hallLieGroupsLie2015">Hall (<a href="#ref-hallLieGroupsLie2015" role="doc-biblioref">2015</a>)</span> Proposition 3.16)</strong></span> 冪零 Lie 代数の例．証明は簡単．任意の元が <span class="math inline">\(Z\)</span> と可換だが，<span class="math inline">\([\g,\g]\)</span> は <span class="math inline">\(\operatorname{span}{Z}\)</span> になっているため，<span class="math inline">\([\g,[\g,\g]]=\{0\}\)</span> になる．</p>
 </div>
 <div id="exm-3.17" class="theorem example">
-<p><span class="theorem-title"><strong>Example 6 (<span class="citation" data-cites="hallLieGroupsLie2015">Hall (<a href="#ref-hallLieGroupsLie2015" role="doc-biblioref">2015</a>)</span> Proposition 3.17)</strong></span> <span class="math display">\[
-\h:=\left\{\begin{pmatrix}a&amp;b\\0&amp;c\end{pmatrix}\in M_2(\C)\,\middle|\,a,b,c\in\C\right\}
-\]</span></p>
-<p>とする．<span class="math inline">\(\h\)</span> は <span class="math inline">\([X,Y]:=XY-YX\)</span> に関して可解な Lie 代数だが，冪零ではない．</p>
-</div>
-<div class="proof">
-<p><span class="proof-title"><em>Proof</em>. </span><span class="math display">\[
-\left[
-\begin{pmatrix}a&amp;b\\0&amp;c\end{pmatrix},
-\begin{pmatrix}d&amp;e\\0&amp;f\end{pmatrix}
-\right]=
-\begin{pmatrix}ad&amp;*\\0&amp;cf\end{pmatrix}-
-\begin{pmatrix}ad&amp;*\\0&amp;cf\end{pmatrix}=
-\begin{pmatrix}0&amp;*\\0&amp;0\end{pmatrix}\in\g
-\]</span> より，<span class="math inline">\([\g,\g]\)</span> は1次元なので，括弧積は可換．よって，<span class="math inline">\(\g_2=\{0\}\)</span> となり，<span class="math inline">\(\g\)</span> は可解．</p>
-<p>一方， <span class="math display">\[
-H=\begin{pmatrix}1&amp;0\\0&amp;-1\end{pmatrix},
-X=\begin{pmatrix}0&amp;1\\0&amp;0\end{pmatrix}
-\]</span></p>
-<p>とすると，<span class="math inline">\([H,X]=2X\)</span> で，任意の <span class="math inline">\(\g^j\)</span> は <span class="math inline">\(X\)</span> を含むため，<span class="math inline">\(\g\)</span> は冪零ではない．</p>
+<p><span class="theorem-title"><strong>Example 5 (<span class="citation" data-cites="hallLieGroupsLie2015">Hall (<a href="#ref-hallLieGroupsLie2015" role="doc-biblioref">2015</a>)</span> Proposition 3.17)</strong></span> 可解だが冪零ではない例．いい反例．<span class="math inline">\([\g,\g]\)</span> が可換になって，<span class="math inline">\([[\g,\g],[\g,\g]]=\{0\}\)</span> になるが，昇中心列ではある <span class="math inline">\(X\)</span> が残り続ける．</p>
 </div>
 </section>
-<section id="the-lie-algebra-of-a-matrix-lie-group" class="level1">
-<h1>3.3 The Lie Algebra of a Matrix Lie Group</h1>
+<section id="the-lie-algebar-of-a-matrix-lie-group" class="level2">
+<h2 class="anchored" data-anchor-id="the-lie-algebar-of-a-matrix-lie-group">3.3 The Lie Algebar of a Matrix Lie Group</h2>
 <div id="def-3.18" class="theorem definition">
-<p><span class="theorem-title"><strong>Definition 11 (<span class="citation" data-cites="hallLieGroupsLie2015">Hall (<a href="#ref-hallLieGroupsLie2015" role="doc-biblioref">2015</a>)</span> Definition 3.18 線形 Lie 群の Lie 代数)</strong></span> <span class="math inline">\(G\)</span> は線形 Lie 群 (matrix Lie group) とする．</p>
-<p><span class="math display">\[
-\g:=\{X\in G\mid e^{tX}\in G,\enspace\forall t\in\R\}
-\]</span></p>
-<p>を <span class="math inline">\(G\)</span> の Lie 代数 (Lie algebra) という．</p>
+<p><span class="theorem-title"><strong>Definition 11 (<span class="citation" data-cites="hallLieGroupsLie2015">Hall (<a href="#ref-hallLieGroupsLie2015" role="doc-biblioref">2015</a>)</span> Definition 3.18 線形 Lie 群の Lie 代数)</strong></span> 線形 Lie 群に付随するような Lie 代数を定義する．線形 Lie 群の Lie 代数が（3.1節で定義した）複素 Lie 代数になるとは限らないから，ちょっと紛らわしい語だと思う．一応付録に複素線形 Lie 群の Lie 代数が複素 Lie 代数にならない例を挙げた．</p>
+<p>また，どうしてこのような定義が出てくるのかは初見ではわからないが，あとで示すように，<span class="math inline">\(\g\)</span> は（多様体としての）<span class="math inline">\(G\)</span> の単位元における接空間になっている．</p>
+<p>複素線形 Lie 群の Lie 代数が複素 Lie 代数にならないのは困る（？）ので3.6節では複素化という操作によって複素 Lie 代数をつくる．<span class="math inline">\(\g\)</span> が複素 Lie 代数にならないことは，接空間と思うとそこまで違和感がないが，どのようなときに困るのだろうか？複素多様体を考えたりする？</p>
 </div>
-<ul>
-<li><span class="math inline">\(X\in\g\iff\)</span> <span class="math inline">\(X\)</span> が生成する1パラメータ部分群が <span class="math inline">\(G\)</span> に含まれる．</li>
-</ul>
-<div id="nte-3.18" class="callout callout-style-default callout-note callout-titled">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-Note 6
-</div>
-</div>
-<div class="callout-body-container callout-body">
-<p><a href="#def-3.18" class="quarto-xref">Definition 11</a> は <a href="#cor-3.45" class="quarto-xref">Corollary 2</a> や <a href="#cor-3.46" class="quarto-xref">Corollary 3</a> によって，幾何学的な意味をもつ．</p>
-</div>
-</div>
-<div id="wrn-3.18" class="callout callout-style-default callout-warning callout-titled">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-Warning 1
-</div>
-</div>
-<div class="callout-body-container callout-body">
-<p>線形 Lie 群の Lie 代数は <a href="#def-LieAlg" class="quarto-xref">Definition 1</a> の意味での Lie 代数とは限らない． 実際，<a href="#thm-3.20" class="quarto-xref">Theorem 1</a> によって実 Lie 代数になることは示されるものの，複素 Lie 代数になる保証はない（<a href="#exm-not-complex-liealg" class="quarto-xref">Example 15</a> を参照）． このことが <a href="#def-3.36" class="quarto-xref">Definition 14</a> で Lie 代数の複素化を考える動機になる．</p>
-</div>
-</div>
-<p><span class="math inline">\(G\)</span> は線形 Lie 群，<span class="math inline">\(\g\)</span> は <span class="math inline">\(G\)</span> の Lie 代数とする．</p>
 <div id="prp-3.19" class="theorem proposition">
-<p><span class="theorem-title"><strong>Proposition 9 (<span class="citation" data-cites="hallLieGroupsLie2015">Hall (<a href="#ref-hallLieGroupsLie2015" role="doc-biblioref">2015</a>)</span> Proposition 3.19)</strong></span> <span class="math inline">\(X\in\g\)</span> とする．<span class="math inline">\(e^X\)</span> は <span class="math inline">\(G\)</span> の単位元の連結成分 <span class="math inline">\(G_0\)</span> に含まれる．</p>
+<p><span class="theorem-title"><strong>Proposition 3 (<span class="citation" data-cites="hallLieGroupsLie2015">Hall (<a href="#ref-hallLieGroupsLie2015" role="doc-biblioref">2015</a>)</span> Proposition 3.19)</strong></span> 証明の肝は，<span class="math inline">\(t\mapsto e^{tX}\)</span> が <span class="math inline">\(I\)</span> と <span class="math inline">\(e^X\)</span> を結ぶ連続曲線であること．</p>
 </div>
-<details>
-<summary>
-証明
-</summary>
-<div class="proof">
-<p><span class="proof-title"><em>Proof</em>. </span><a href="#prp-2.4" class="quarto-xref">Proposition 27</a> より，<span class="math inline">\(t\mapsto e^{tX}\)</span> は単位元と <span class="math inline">\(e^X\)</span> を通る連続曲線なので， <span class="math inline">\(e^X\)</span> は単位元の連結成分に含まれる．</p>
-</div>
-</details>
 <div id="thm-3.20" class="theorem">
-<p><span class="theorem-title"><strong>Theorem 1 (<span class="citation" data-cites="hallLieGroupsLie2015">Hall (<a href="#ref-hallLieGroupsLie2015" role="doc-biblioref">2015</a>)</span> Theorem 3.20)</strong></span> <span class="math inline">\(X,Y\in\g\)</span> に対し，以下が成立．特に，<span class="math inline">\(\g\)</span> は <span class="math inline">\([X,Y]:=XY-YX\)</span> に関して実 Lie 代数．</p>
+<p><span class="theorem-title"><strong>Theorem 1 (<span class="citation" data-cites="hallLieGroupsLie2015">Hall (<a href="#ref-hallLieGroupsLie2015" role="doc-biblioref">2015</a>)</span> Theorem 3.20)</strong></span> 証明することが多いが，<span class="math inline">\(\g\)</span> が実 Lie 代数であることを示す重要な定理．</p>
+<p>1つ目の性質は群の正規性っぽい．残り3つは実 Lie 代数であることに他ならない．</p>
 <ol type="1">
-<li>任意の <span class="math inline">\(A\in G\)</span> に対し，<span class="math inline">\(AXA^{-1}\in\g\)</span>.</li>
-<li>任意の <span class="math inline">\(s\in\R\)</span> に対し，<span class="math inline">\(sX\in\g\)</span>.</li>
-<li><span class="math inline">\(X+Y\in\g\)</span>.</li>
-<li><span class="math inline">\(XY-YX\in\g\)</span>.</li>
+<li><span class="citation" data-cites="hallLieGroupsLie2015">Hall (<a href="#ref-hallLieGroupsLie2015" role="doc-biblioref">2015</a>)</span> Proposition 2.3 の6つ目の主張を使う．</li>
+<li>明らか．</li>
+<li>基本的に指数の肩に和が乗っているものは扱いにくいので遠回りして示す．ここでは，Lie Product Fomula を使う．</li>
+<li><span class="math inline">\(XY-YX=\left.\dd{}{t}e^{tX}Ye^{-tX}\right|_{t=0}\)</span> とかけることを使う．このテクニックは以降も度々使う．</li>
 </ol>
-</div>
-<div class="proof">
-<p><span class="proof-title"><em>Proof</em>. </span></p>
-<details>
-<summary>
-任意の <span class="math inline">\(A\in G\)</span> に対し，<span class="math inline">\(AXA^{-1}\in\g\)</span>
-</summary>
-<p>任意の <span class="math inline">\(t\in\R\)</span> に対し，<a href="#prp-2.3" class="quarto-xref">Proposition 26</a> より， <span class="math display">\[
-\exp(tAXA^{-1})=Ae^{tX}A^{-1}\in G
-\]</span></p>
-が成立．よって，<span class="math inline">\(AXA^{-1}\in\g\)</span>.
-</details>
-<details>
-<summary>
-任意の <span class="math inline">\(s\in\R\)</span> に対し，<span class="math inline">\(sX\in\g\)</span>
-</summary>
-明らか．
-</details>
-<details>
-<summary>
-<span class="math inline">\(X+Y\in\g\)</span>
-</summary>
-<p>任意の <span class="math inline">\(t\in\R\)</span> に対し，<a href="#thm-2.11" class="quarto-xref">Theorem 6</a> より， <span class="math display">\[
-e^{t(X+Y)}=\lim_{m\to\infty}\left(e^{tX/m}e^{tY/m}\right)^{m}
-\]</span></p>
-である．<span class="math inline">\((e^{tX/m}e^{tY/m})^m\in G\)</span> で，<span class="math inline">\(G\)</span> は閉集合なので，<span class="math inline">\(e^{t(X+Y)}\in G\)</span>.
-</details>
-<details>
-<summary>
-<span class="math inline">\(XY-YX\in\g\)</span>
-</summary>
-Leibniz 則から， <span class="math display">\[
-\left.\dd{}{t}e^{tX}Ye^{-tX}\right|_{t=0}
-=\left.\dd{e^{tX}}{t}\right|_{t=0}Y+Y\left.\dd{e^{-tX}}{t}\right|_{t=0}
-=XY-YX
-\]</span> である．1つ目の結果から，<span class="math inline">\(e^{tX}Ye^{-tX}\in\g\)</span> である．また，2つ目と3つ目の結果から，<span class="math inline">\(\g\)</span> は <span class="math inline">\(M_n(\C)\)</span> の線形部分空間で，特に閉集合である．したがって， <span class="math display">\[
-XY-YX=\lim_{h\to0}\frac{e^{hX}Ye^{-hX}-Y}{h}\in\g.
-\]</span>
-</details>
 </div>
 <div id="def-3.21" class="theorem definition">
-<p><span class="theorem-title"><strong>Definition 12 (<span class="citation" data-cites="hallLieGroupsLie2015">Hall (<a href="#ref-hallLieGroupsLie2015" role="doc-biblioref">2015</a>)</span> Definition 3.21 複素線形 Lie 群)</strong></span> <span class="math inline">\(G\)</span> が複素 (complex) であるとは，<span class="math inline">\(\g\)</span> が <span class="math inline">\(M_n(\C)\)</span> の線形部分空間になること，すなわち <span class="math inline">\(\g\)</span> が複素 Lie 代数になることである．</p>
+<p><span class="theorem-title"><strong>Definition 12 (<span class="citation" data-cites="hallLieGroupsLie2015">Hall (<a href="#ref-hallLieGroupsLie2015" role="doc-biblioref">2015</a>)</span> Definition 3.21 複素線形 Lie 群)</strong></span> 用語の定義．</p>
 </div>
 <div id="prp-3.22" class="theorem proposition">
-<p><span class="theorem-title"><strong>Proposition 10 (<span class="citation" data-cites="hallLieGroupsLie2015">Hall (<a href="#ref-hallLieGroupsLie2015" role="doc-biblioref">2015</a>)</span> Proposition 3.22)</strong></span> <span class="math inline">\(G\)</span> が Abel 群（可換群）ならば，<span class="math inline">\(\g\)</span> は可換．</p>
-</div>
-<details>
-<summary>
-証明
-</summary>
-<div class="proof">
-<p><span class="proof-title"><em>Proof</em>. </span>任意の <span class="math inline">\(X,Y\in\g\)</span> に対し，</p>
-<p><span class="math display">\[
-\begin{align*}
-[X,Y]
-&amp;=\left.\dd{}{t}e^{tX}Ye^{-tX}\right|_{t=0}\\
-&amp;=\left.\dd{}{t}\left(\left.\dd{}{s}e^{tX}e^{sY}e^{-tX}\right|_{s=0}\right)\right|_{t=0}\\
-&amp;=\left.\dd{}{t}\left(\left.\dd{}{s}e^{sY}e^{tX}e^{-tX}\right|_{s=0}\right)\right|_{t=0}\\
-&amp;=\left.\dd{}{t}Y\right|_{t=0}=0.
-\end{align*}
-\]</span></p>
-</div>
-</details>
-</section>
-<section id="examples" class="level1">
-<h1>3.4 Examples</h1>
-<div id="exm-3.23" class="theorem example">
-<p><span class="theorem-title"><strong>Example 7 (<span class="citation" data-cites="hallLieGroupsLie2015">Hall (<a href="#ref-hallLieGroupsLie2015" role="doc-biblioref">2015</a>)</span> Proposition 3.23)</strong></span> <span class="math inline">\(\K\)</span> は <span class="math inline">\(\R,\C\)</span> のいずれかとする．以下が成立．</p>
-<ol type="1">
-<li><span class="math inline">\(\GL(n;\K):=\{A\in M_n(\K)\mid \det{A}\neq0\}\)</span> の Lie 代数 <span class="math inline">\(\gl(n;\K)\)</span> は <span class="math inline">\(\gl(n;\K)=M_n(\K)\)</span>.</li>
-<li><span class="math inline">\(\SL(n;\K):=\{A\in \GL(n;\K)\mid \det{A}=1\}\)</span> の Lie 代数は <span class="math inline">\(\sl(n;\K)\)</span><br>
-</li>
-</ol>
-</div>
-<div class="proof">
-<p><span class="proof-title"><em>Proof</em>. </span></p>
-<details>
-<summary>
-<span class="math inline">\(\gl(n;\K)=M_n(\K)\)</span>
-</summary>
-<p><span class="math inline">\(\g\)</span> を <span class="math inline">\(\GL(n;\K)\)</span> の Lie 代数とする．</p>
-<p><span class="math inline">\(M_n(\K)\subset\g\)</span>：<span class="math inline">\(X\in M_n(\K)\)</span> とすると，任意の <span class="math inline">\(t\in\R\)</span> に対し，<span class="math inline">\(e^{tX}\in\GL(n;\K)\)</span> である．よって，<span class="math inline">\(M_n(\K)\subset\g\)</span> である．</p>
-<span class="math inline">\(\g\subset M_n(\K)\)</span>：<span class="math inline">\(\K=\C\)</span> の場合は明らか． <span class="math inline">\(\K=\R\)</span> の場合も，<span class="math inline">\(X\in\g\)</span> とすると，任意の <span class="math inline">\(t\in\R\)</span> に対し，<span class="math inline">\(e^{tX}\in M_n(\R)\)</span> なので，<span class="math inline">\(X=\left.\dd{}{t}e^{tX}\right|_{t=0}\in M_n(\R)\)</span>．よって，<span class="math inline">\(\g\subset M_n(\R)\)</span>．
-</details>
-<details>
-<summary>
-<span class="math inline">\(\SL(n;\K)\)</span> の Lie 代数は <span class="math inline">\(\sl(n;\K)\)</span>
-</summary>
-<p><span class="math inline">\(\g\)</span> を <span class="math inline">\(\SL(n;\K)\)</span> の Lie 代数とする．</p>
-<p><span class="math inline">\(\sl(n;\K)\subset\g\)</span>：<span class="math inline">\(X\in \sl(n;\K)\)</span> とすると，任意の <span class="math inline">\(t\in\R\)</span> に対し，<span class="math inline">\(e^{tX}\in\GL(n;\K)\)</span> である．また，<a href="#thm-2.12" class="quarto-xref">Theorem 7</a> より， <span class="math inline">\(\det{e^{tX}}=e^{t\tr{X}}=1\)</span> なので，<span class="math inline">\(e^{tX}\in\SL(n;\K)\)</span> である．よって，<span class="math inline">\(\sl(n;\K)\subset\g\)</span>.</p>
-<p><span class="math inline">\(\g\subset \sl(n;\K)\)</span>：<span class="math inline">\(X\in\g\)</span> とすると，</p>
-<p><span class="math display">\[
-\tr{X}=\left.\dd{}{t}e^{t\tr{X}}\right|_{t=0}=\left.\dd{}{t}\det{e^{tX}}\right|_{t=0}=0.
-\]</span></p>
-したがって，<span class="math inline">\(\K=\C\)</span> ならば，<span class="math inline">\(\g\subset \sl(n;\K)\)</span>． <span class="math inline">\(\K=\R\)</span> の場合も，任意の <span class="math inline">\(t\in\R\)</span> に対し，<span class="math inline">\(e^{tX}\in M_n(\R)\)</span> なので，<span class="math inline">\(X=\left.\dd{}{t}e^{tX}\right|_{t=0}\in M_n(\R)\)</span>．よって，<span class="math inline">\(\g\subset \sl(n;\R)\)</span>．
-</details>
-</div>
-<div id="exm-3.24" class="theorem example">
-<p><span class="theorem-title"><strong>Example 8 (<span class="citation" data-cites="hallLieGroupsLie2015">Hall (<a href="#ref-hallLieGroupsLie2015" role="doc-biblioref">2015</a>)</span> Proposition 3.24)</strong></span> 以下が成立．</p>
-<ol type="1">
-<li><span class="math inline">\(\U(n):=\{A\in M_n(\C)\mid A^*A=I_n\}\)</span> の Lie 代数 <span class="math inline">\(\u(n)\)</span> は <span class="math inline">\(\u(n)=\SkewH(n):=\{X\in M_n(\C)\mid X^*=-X\}\)</span>.</li>
-<li><span class="math inline">\(\SU(n):=\{A\in \U(n)\mid \det{A}=1\}\)</span> の Lie 代数 <span class="math inline">\(\su(n)\)</span> は <span class="math inline">\(\su(n)=\SkewH(n)\cap\sl(n;\C)\)</span>.</li>
-<li><span class="math inline">\(\O(n;\K):=\{A\in M_n(\K)\mid A^\top A=I\}\)</span> の Lie 代数 <span class="math inline">\(\o(n;\K)\)</span> は <span class="math inline">\(\o(n;\K)=\Skew(n;\K):=\{X\in M_n(\K)\mid X^\top=-X\}\)</span>.</li>
-<li><span class="math inline">\(\SO(n;\K):=\{A\in \O(n;\K)\mid \det{A}=1\}\)</span> の Lie 代数 <span class="math inline">\(\so(n;\K)\)</span> は <span class="math inline">\(\so(n;\K)=\Skew(n;\K)\cap\sl(n;\K)\)</span>.</li>
-</ol>
-</div>
-<div id="cau-3.24" class="callout callout-style-default callout-caution callout-titled">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-Caution 1
-</div>
-</div>
-<div class="callout-body-container callout-body">
-<p><span class="math inline">\(\O(n;\R),\o(n;\R),\SO(n;\R),\so(n;\R)\)</span> は <span class="math inline">\(\R\)</span> を省略して，<span class="math inline">\(\O(n),\o(n),\SO(n),\so(n)\)</span> とかく．</p>
-</div>
-</div>
-<div class="proof">
-<p><span class="proof-title"><em>Proof</em>. </span></p>
-<details>
-<summary>
-<span class="math inline">\(\u(n)=\SkewH(n)\)</span>
-</summary>
-<p><span class="math display">\[
-\begin{align*}
-X\in\u(n)
-&amp;\iff e^{tX}\in\U(n)\enspace\forall{t\in\R}\\
-&amp;\iff (e^{tX})^*=e^{tX^*}=e^{-tX}\enspace\forall{t\in\R}
-\end{align*}
-\]</span></p>
-である．さらに，<span class="math inline">\(e^{tX^*}=e^{-tX}\enspace\forall{t\in\R}\iff X^*=-X\)</span> である．<span class="math inline">\((\Leftarrow)\)</span> は明らか．<span class="math inline">\((\Rightarrow)\)</span> は <span class="math inline">\(e^{tX^*}=e^{-tX}\)</span> の両辺を <span class="math inline">\(t=0\)</span> で微分することでわかる．以上より，<span class="math inline">\(X\in\u(n)\iff X\in\SkewH(n)\)</span> である．
-</details>
-<details>
-<summary>
-<span class="math inline">\(\su(n)=\SkewH(n)\cap\sl(n;\C)\)</span>
-</summary>
-<p><span class="math display">\[
-\begin{align*}
-X\in\su(n)&amp;\iff
-e^{tX}\in\SU(n)\enspace\forall{t\in\R}\\
-&amp;\iff e^{tX^*}=e^{-tX},\det{e^{tX}}=e^{t\tr{X}}=1\enspace\forall{t\in\R}\\
-&amp;\iff X^*=-X,\tr{X}=0
-\end{align*}
-\]</span></p>
-である．したがって，<span class="math inline">\(X\in\su(n)\iff X\in\Skew(n;\C)\cap\sl(n;\C)\)</span> である．
-</details>
-<details>
-<summary>
-<span class="math inline">\(\o(n;\K)=\Skew(n;\K)\)</span>
-</summary>
-<p><span class="math display">\[
-\begin{align*}
-X\in\o(n;\K)
-&amp;\iff e^{tX}\in\O(n;\K)\enspace\forall{t\in\R}\\
-&amp;\iff (e^{tX})^\top=e^{tX^\top}=e^{-tX}\enspace\forall{t\in\R},X\in M_n(\K)\\
-&amp;\iff X^\top=-X,X\in M_n(\K)
-\end{align*}
-\]</span></p>
-である．ここで，<span class="math inline">\(X\in M_n(\R)\)</span> は <span class="math inline">\(e^{tX}\in M_n(\R),X=\left.\dd{}{t} e^{tX}\right|_{t=0}\)</span> から従う． 以上より，<span class="math inline">\(X\in\o(n;\K)\iff X\in\Skew(n;\K)\)</span> である．
-</details>
-<details>
-<summary>
-<span class="math inline">\(\so(n;\K)=\Skew(n;\K)\cap\sl(n;\K)\)</span>
-</summary>
-<p><span class="math display">\[
-\begin{align*}
-X\in\so(n;\K)&amp;\iff
-e^{tX}\in\SO(n;\K)\enspace\forall{t\in\R}\\
-&amp;\iff e^{tX^\top}=e^{-tX},\det{e^{tX}}=e^{t\tr{X}}=1\enspace\forall{t\in\R},X\in M_n(\K)\\
-&amp;\iff X^\top=-X,\tr{X}=0,X\in M_n(\K)
-\end{align*}
-\]</span></p>
-である．したがって，<span class="math inline">\(X\in\so(n;\K)\iff X\in\Skew(n;\K)\cap\sl(n;\K)\)</span> である．
-</details>
-</div>
-<div id="exm-3.25" class="theorem example">
-<p><span class="theorem-title"><strong>Example 9 (<span class="citation" data-cites="hallLieGroupsLie2015">Hall (<a href="#ref-hallLieGroupsLie2015" role="doc-biblioref">2015</a>)</span> Proposition 3.25)</strong></span> <span class="math inline">\(g:=\begin{pmatrix}I_n&amp;\\&amp;-I_k\end{pmatrix},\Omega:=\begin{pmatrix}&amp;I_n\\-I_n&amp;\end{pmatrix}\)</span> とする．以下が成立．</p>
-<ol type="1">
-<li>一般化直交群 <span class="math inline">\(\O(n;k):=\{A\in M_{n+k}(\R)\mid A^\top g A=g\}\)</span> の Lie 代数 <span class="math inline">\(\o(n;k)\)</span> は <span class="math inline">\(\o(n;k)=\{X\in M_{n+k}(\R)\mid gX^\top g=-X\}\)</span>.</li>
-<li><span class="math inline">\(\SO(n;k):=\{A\in\O(n;k)\mid \det{A}=1\}\)</span> の Lie 代数 <span class="math inline">\(\so(n;k)\)</span> は <span class="math inline">\(\so(n;k)=o(n;k)\)</span>.</li>
-<li>シンプレクティック群 <span class="math inline">\(\Sp(n;\K):=\{A\in \GL(2n;\K)\mid -\Omega A^\top \Omega=A^{-1}\}\)</span> の Lie 代数 <span class="math inline">\(\sp(n;\K)\)</span> は <span class="math inline">\(\sp(n;\K)=\{X\in M_{2n}(\K)\mid \Omega X^\top \Omega = X\}\)</span>.</li>
-<li><span class="math inline">\(\Sp(n):=\Sp(n;\C)\cap\U(2n)\)</span> の Lie 代数 <span class="math inline">\(\sp(n)\)</span> は <span class="math inline">\(\sp(n)=\sp(n;\C)\cap\u(2n)\)</span>.</li>
-</ol>
-</div>
-<div class="proof">
-<p><span class="proof-title"><em>Proof</em>. </span></p>
-<details>
-<summary>
-<span class="math inline">\(\o(n;k)=\{X\in M_{n+k}(\R)\mid gA^\top g=-A\}\)</span>
-</summary>
-<p><span class="math inline">\(g=g^{-1}\)</span> に注意すると，</p>
-<p><span class="math display">\[
-\begin{align*}
-X\in\o(n;k)&amp;\iff
-e^{tX}\in\O(n;k),\enspace\forall{t\in\R}\\
-&amp;\iff e^{tX^\top}ge^{tX}=g,\forall{t\in\R},X\in M_{n+k}(\R)\\
-&amp;\iff ge^{tX^\top}g=e^{-tX},\forall{t\in\R},X\in M_{n+k}(\R)\\
-&amp;\iff gX^\top{g}=-X,X\in M_{n+k}(\R)
-\end{align*}
-\]</span></p>
-である．最後の <span class="math inline">\((\Rightarrow)\)</span> は両辺を <span class="math inline">\(t=0\)</span> で微分するとわかる．<span class="math inline">\((\Leftarrow)\)</span> は <span class="math inline">\(e^{tgX^\top g}=ge^{tX}g,\enspace\forall{t\in\R}\)</span> から従う．また，<span class="math inline">\(X\in M_{n+k}(\R)\)</span> は <span class="math inline">\(e^{tX}\in M_n(\R),X=\left.\dd{}{t}e^{tX}\right|_{t=0}\)</span> から従う． したがって，<span class="math inline">\(X\in\o(n;k)\iff X\in\{X\in M_{n+k}(\R)\mid gA^\top g=-A\}\)</span> である．
-</details>
-<details>
-<summary>
-<span class="math inline">\(\so(n;k)=\o(n;k)\)</span>
-</summary>
-<p><span class="math display">\[
-\begin{align*}
-X\in\so(n;k)&amp;\iff
-e^{tX}\in\O(n;k),\det{e^{tX}}=1,\enspace\forall{t\in\R}\\
-&amp;\iff e^{tX^\top}ge^{tX}=g,\det{e^{tX}}=1,\forall{t\in\R},X\in M_{n+k}(\R)\\
-&amp;\iff ge^{tX^\top}g=e^{-tX},\det{e^{tX}}=1,\forall{t\in\R},X\in M_{n+k}(\R)\\
-&amp;\iff ge^{tX^\top}g=e^{-tX},\forall{t\in\R},X\in M_{n+k}(\R)
-\end{align*}
-\]</span></p>
-<p>である．最後の <span class="math inline">\((\Leftarrow)\)</span> は， <span class="math display">\[
-(\det{e^{tX}})^{-1}=\det(ge^{tX}g)=\det{g}^2\det{e^{tX}}=\det{e^{tX}}
-\]</span></p>
-から従う．したがって，<span class="math inline">\(X\in\so(n;k)\iff X\in\o(n;k)\)</span> である．
-</details>
-<details>
-<summary>
-<span class="math inline">\(\sp(n;\K)=\{X\in M_{2n}(\K)\mid \Omega X^\top \Omega = X\}\)</span>
-</summary>
-<p><span class="math display">\[
-\begin{align*}
-X\in\sp(n;\K)&amp;\iff
-e^{tX}\in\Sp(n;\K),\enspace\forall{t\in\R}\\
-&amp;\iff -\Omega e^{tX^\top}\Omega=e^{-tX},\forall{t\in\R},X\in M_{2n}(\K)\\
-&amp;\iff -\Omega X^\top\Omega=-X,X\in M_{2n}(\K)
-\end{align*}
-\]</span></p>
-したがって，<span class="math inline">\(X\in\sp(n;\K)\iff X\in\{X\in M_{2n}(\K)\mid \Omega X^\top \Omega = X\}\)</span> である．
-</details>
-<details>
-<summary>
-<span class="math inline">\(\sp(n)=\sp(n;\C)\cap\u(2n)\)</span>
-</summary>
-<p><span class="math display">\[
-\begin{align*}
-X\in\sp(n)&amp;\iff
-e^{tX}\in\Sp(n),\enspace\forall{t\in\R}\\
-&amp;\iff -\Omega e^{tX^\top}\Omega=e^{-tX},e^{tX^*}=e^{-tX},\forall{t\in\R}\\
-&amp;\iff -\Omega X^\top\Omega=-X,X^*=-X
-\end{align*}
-\]</span></p>
-したがって，<span class="math inline">\(X\in\sp(n)\iff X\in\sp(n;\C)\cap\u(2n)\)</span> である．
-</details>
-</div>
-<div id="exm-3.26" class="theorem example">
-<p><span class="theorem-title"><strong>Example 10 (<span class="citation" data-cites="hallLieGroupsLie2015">Hall (<a href="#ref-hallLieGroupsLie2015" role="doc-biblioref">2015</a>)</span> Proposition 3.26)</strong></span> Heisenverg 群</p>
-<p><span class="math display">\[
-H:=\left\{\begin{pmatrix}1&amp;a&amp;b\\&amp;1&amp;c\\&amp;&amp;1\end{pmatrix}\,\middle|\,a,b,c\in\R\right\}
-\]</span></p>
-<p>の Lie 代数 <span class="math inline">\(\h\)</span> は</p>
-<p><span class="math display">\[
-\h=\left\{\begin{pmatrix}0&amp;a&amp;b\\&amp;0&amp;c\\&amp;&amp;0\end{pmatrix}\,\middle|\,a,b,c\in\R\right\}
-\]</span></p>
-</div>
-<div class="proof">
-<p><span class="proof-title"><em>Proof</em>. </span><span class="math inline">\(\g:=\left\{\begin{pmatrix}0&amp;a&amp;b\\&amp;0&amp;c\\&amp;&amp;0\end{pmatrix}\,\middle|\,a,b,c\in\R\right\}\)</span> とする．</p>
-<p><span class="math inline">\(X\in\h\)</span> とすると，任意の <span class="math inline">\(t\in\R\)</span> に対し，<span class="math inline">\(e^{tX}\in H\)</span> である．<span class="math inline">\(X=\left.\dd{}{t}e^{tX}\right|_{t=0}\)</span> だが，このとき，（対角成分を含めて）下三角成分はすべて <span class="math inline">\(0\)</span> である．よって，<span class="math inline">\(X\in\g\)</span>.</p>
-<p><span class="math inline">\(X\in\g\)</span> とすると，任意の <span class="math inline">\(m\in\N\)</span> に対し，<span class="math inline">\(X^{m}\)</span> は狭義上三角行列．したがって， <span class="math display">\[
-e^{tX}=I+\sum_{m=1}^\infty\frac{X^m}{m!}\in H,\forall{t\in\R}
-\]</span></p>
-<p>が成立し，<span class="math inline">\(X\in\h\)</span>．以上より，<span class="math inline">\(\h=\g\)</span></p>
-</div>
-<div id="exm-3.27" class="theorem example">
-<p><span class="theorem-title"><strong>Example 11 (<span class="citation" data-cites="hallLieGroupsLie2015">Hall (<a href="#ref-hallLieGroupsLie2015" role="doc-biblioref">2015</a>)</span> Example 3.27)</strong></span> <span class="math display">\[
-E_1=\frac12\begin{pmatrix}i&amp;\\&amp;-i\end{pmatrix},
-E_2=\frac12\begin{pmatrix}&amp;i\\i&amp;\end{pmatrix},
-E_3=\frac12\begin{pmatrix}&amp;-1\\1&amp;\end{pmatrix}
-\]</span></p>
-<p>は <span class="math inline">\(\su(2)\)</span> の基底で，<span class="math inline">\([E_1,E_2]=E_3,[E_2,E_3]=E_1,[E_3,E_1]=E_2\)</span> である．また，</p>
-<p><span class="math display">\[
-F_1=\begin{pmatrix}0&amp;0&amp;0\\0&amp;0&amp;-1\\0&amp;1&amp;0\end{pmatrix},
-F_2=\begin{pmatrix}0&amp;0&amp;1\\0&amp;0&amp;0\\1&amp;0&amp;0\end{pmatrix},
-F_3=\begin{pmatrix}0&amp;-1&amp;0\\1&amp;0&amp;0\\0&amp;0&amp;0\end{pmatrix}
-\]</span></p>
-<p>は <span class="math inline">\(\so(3)\)</span> の基底で，<span class="math inline">\([F_1,F_2]=F_3,[F_2,F_3]=F_1,[F_3,F_1]=F_2\)</span> である．<span class="math inline">\(\su(2)\)</span> を実 Lie 代数とみなすと，<span class="math inline">\(\phi:E_i\mapsto F_i\)</span> によって決まる線形写像は実 Lie 代数の同型写像．</p>
-</div>
-<div class="proof">
-<p><span class="proof-title"><em>Proof</em>. </span>計算のみなので省略．</p>
+<p><span class="theorem-title"><strong>Proposition 4 (<span class="citation" data-cites="hallLieGroupsLie2015">Hall (<a href="#ref-hallLieGroupsLie2015" role="doc-biblioref">2015</a>)</span> Proposition 3.22)</strong></span> 証明は簡単． <strong>?@cor-3.51</strong> で <span class="math inline">\(G\)</span> が連結なら逆も成立することを示す．</p>
 </div>
 </section>
-<section id="lie-group-and-lie-algebra-homomorpisms" class="level1">
-<h1>3.5 Lie Group and Lie Algebra Homomorpisms</h1>
-<p><span class="math inline">\(G,H\)</span> は線形 Lie 群，<span class="math inline">\(\g,\h\)</span> は <span class="math inline">\(G,H\)</span> の Lie 代数，<span class="math inline">\(\Phi:G\to H\)</span> は線形 Lie 群の準同型写像とする．</p>
-<div id="thm-3.28" class="theorem">
-<p><span class="theorem-title"><strong>Theorem 2 (<span class="citation" data-cites="hallLieGroupsLie2015">Hall (<a href="#ref-hallLieGroupsLie2015" role="doc-biblioref">2015</a>)</span> Theorem 3.28)</strong></span> 実線形写像 <span class="math inline">\(\phi:\g\to\h\)</span> で任意の <span class="math inline">\(X\in\g\)</span> に対し，<span class="math inline">\(\Phi(e^X)=e^{\phi(X)}\)</span> を満たすものが唯一存在．さらに，<span class="math inline">\(\phi\)</span> は以下を満たす．</p>
-<ol type="1">
-<li>任意の <span class="math inline">\(X\in\g,A\in G\)</span> に対し，<span class="math inline">\(\phi(AXA^{-1})=\Phi(A)\phi(X)\Phi(A)^{-1}\)</span>.</li>
-<li>任意の <span class="math inline">\(X,Y\in\g\)</span> に対し，<span class="math inline">\(\phi([X,Y])=[\phi(X),\phi(Y)]\)</span>.</li>
-<li>任意の <span class="math inline">\(X\in\g\)</span> に対し，<span class="math inline">\(\phi(X)=\left.\hphantom{|}\dd{}{t}\Phi\left(e^{tX}\right)\right|_{t=0}\)</span>.</li>
-</ol>
+<section id="examples" class="level2">
+<h2 class="anchored" data-anchor-id="examples">3.4 Examples</h2>
+<p>大量の記号が出てきて全く覚えられない．<a href="#tbl-lie" class="quarto-xref">Table 1</a> は早見表．</p>
+<p><span class="math inline">\(G\)</span> の元は <span class="math inline">\(A,B,\dots\)</span>，<span class="math inline">\(\g\)</span> の元は <span class="math inline">\(X,Y,\dots\)</span> としているが一貫していない部分があるかもしれない．</p>
+<p><span class="math inline">\(g:=\begin{pmatrix}I_n&amp;\\&amp;-I_k\end{pmatrix},\Omega:=\begin{pmatrix}&amp;I_n\\-I_n&amp;\end{pmatrix}\)</span> とする．</p>
+<div id="tbl-lie" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-tbl figure">
+<figcaption class="quarto-float-caption-top quarto-float-caption quarto-float-tbl" id="tbl-lie-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Table 1: <span class="math inline">\(G\)</span> と <span class="math inline">\(\g\)</span> の対応
+</figcaption>
+<div aria-describedby="tbl-lie-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<table class="caption-top table">
+<colgroup>
+<col style="width: 50%">
+<col style="width: 50%">
+</colgroup>
+<thead>
+<tr class="header">
+<th><span class="math inline">\(G\)</span></th>
+<th><span class="math inline">\(\g\)</span></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><span class="math inline">\(\GL(n;\K)=\{A\in M_n(\K)\mid \det{A}\neq0\}\)</span></td>
+<td><span class="math inline">\(\gl(n;\K)=M_n(\K)\)</span></td>
+</tr>
+<tr class="even">
+<td><span class="math inline">\(\SL(n;\K)=\{A\in\GL(n;\K)\mid \det{A}=1\}\)</span></td>
+<td><span class="math inline">\(\sl(n;\K)=\{X\in M_n(\K)\mid \tr{X}=0\}\)</span></td>
+</tr>
+<tr class="odd">
+<td><span class="math inline">\(\U(n)=\{A\in M_n(\C)\mid A^*A=I_n\}\)</span></td>
+<td><span class="math inline">\(\u(n)=\SkewH(n)=\{X\in M_n(\C)\mid X^*=-X\}\)</span></td>
+</tr>
+<tr class="even">
+<td><span class="math inline">\(\SU(n)=\{A\in \U(n)\mid \det{A}=1\}\)</span></td>
+<td><span class="math inline">\(\su(n)=\SkewH(n)\cap\sl(n;\C)\)</span></td>
+</tr>
+<tr class="odd">
+<td><span class="math inline">\(\O(n;\K)=\{A\in M_n(\K)\mid A^\top A=I\}\)</span></td>
+<td><span class="math inline">\(\o(n;\K)=\Skew(n;\K)=\{X\in M_n(\K)\mid X^\top=-X\}\)</span></td>
+</tr>
+<tr class="even">
+<td><span class="math inline">\(\SO(n;\K)=\{A\in \O(n;\K)\mid \det{A}=1\}\)</span></td>
+<td><span class="math inline">\(\so(n;\K)=\Skew(n;\K)\cap\sl(n;\K)\)</span></td>
+</tr>
+<tr class="odd">
+<td><span class="math inline">\(\O(n;k)=\{A\in M_{n+k}(\R)\mid A^\top g A=g\}\)</span></td>
+<td><span class="math inline">\(\o(n;k)=\{X\in M_{n+k}(\R)\mid gX^\top g=-X\}\)</span></td>
+</tr>
+<tr class="even">
+<td><span class="math inline">\(\SO(n;k)=\{A\in\O(n;k)\mid \det{A}=1\}\)</span></td>
+<td><span class="math inline">\(\so(n;k)=o(n;k)\)</span></td>
+</tr>
+<tr class="odd">
+<td><span class="math inline">\(\Sp(n;\K)=\{A\in \GL(2n;\K)\mid -\Omega A^\top \Omega=A^{-1}\}\)</span></td>
+<td><span class="math inline">\(\sp(n;\K)=\{X\in M_{2n}(\K)\mid \Omega X^\top \Omega = X\}\)</span></td>
+</tr>
+<tr class="even">
+<td><span class="math inline">\(\Sp(n):=\Sp(n;\C)\cap\U(2n)\)</span></td>
+<td><span class="math inline">\(\sp(n)=\sp(n;\C)\cap\u(2n)\)</span></td>
+</tr>
+</tbody>
+</table>
 </div>
-<div class="proof">
-<p><span class="proof-title"><em>Proof</em>. </span><span class="math inline">\(\phi(X):=\left.\dd{}{t}\Phi\left(e^{tX}\right)\right|_{t=0}\)</span> が条件を満たすことを示す．</p>
-<details>
-<summary>
-一意性
-</summary>
-<p><span class="math inline">\(\psi:\g\to\h\)</span> を条件を満たす任意の実線形写像とする．任意の <span class="math inline">\(t\in\R\)</span> に対し， <span class="math inline">\(\Phi\left(e^{tX}\right)=e^{t\psi(X)}\)</span> が成立．両辺を <span class="math inline">\(t=0\)</span> で微分すると，</p>
-<span class="math display">\[
-\psi(X)=\left.\dd{}{t}\Phi\left(e^{tX}\right)\right|_{t=0}=\phi(X).
-\]</span>
-</details>
-<details>
-<summary>
-実線形性
-</summary>
-<p><span class="math inline">\(X\in\g\)</span> に対し，<span class="math inline">\(t\mapsto\Phi\left(e^{tX}\right)\)</span> は1パラメータ部分群 (<a href="#def-2.13" class="quarto-xref">Definition 18</a>) なので，<a href="#thm-2.14" class="quarto-xref">Theorem 8</a> より，任意の <span class="math inline">\(t\in\R\)</span> に対し，<span class="math inline">\(\Phi\left(e^{tX}\right)=e^{tZ}\)</span> となる <span class="math inline">\(Z\in M_n(\C)\)</span> が唯一存在する． 両辺を <span class="math inline">\(t=0\)</span> で微分すると，<span class="math inline">\(\phi(X)=Z\)</span> が得られる．任意の <span class="math inline">\(a\in\R\)</span> に対し， <span class="math display">\[
-\phi(aX)
-=\left.\dd{}{t}\Phi\left(e^{taX}\right)\right|_{t=0}
-=\left.\dd{}{t}e^{taZ}\right|_{t=0}
-=aZ
-=a\phi(X)
-\]</span></p>
-<p>が成立．次に <span class="math inline">\(X,Y\in\g\)</span> に対し，<span class="math inline">\(\phi(X+Y)=\phi(X)+\phi(Y)\)</span> を示す．<a href="#thm-2.11" class="quarto-xref">Theorem 6</a> より，任意の <span class="math inline">\(t\in\R\)</span> に対して， <span class="math display">\[
-\begin{align*}
-\Phi\left(e^{t(X+Y)}\right)
-&amp;=\lim_{m\to\infty}\Phi\left(
-\left(e^{tX/m}e^{tY/m}\right)^{m}
-\right)\\
-&amp;=\lim_{m\to\infty}\left(
-\Phi\left(e^{tX/m}\right)\Phi\left(e^{tY/m}\right)
-\right)^{m}\\
-&amp;=\lim_{m\to\infty}\left(
-e^{t\phi(X)/m}e^{t\phi(Y)/m}
-\right)^{m}\\
-&amp;=e^{t(\phi(X)+\phi(Y))}
-\end{align*}
-\]</span></p>
-が成立．両辺を <span class="math inline">\(t=0\)</span> で微分すると，<span class="math inline">\(\phi(X+Y)=\phi(X)+\phi(Y)\)</span> が得られる．
-</details>
-<details>
-<summary>
-任意の <span class="math inline">\(X\in\g,A\in G\)</span> に対し，<span class="math inline">\(\phi(AXA^{-1})=\Phi(A)\phi(X)\Phi(A)^{-1}\)</span>
-</summary>
-<p><span class="math display">\[
-\begin{align*}
-e^{t\phi(AXA^{-1})}
-&amp;=\Phi\left(
-e^{tAXA^{-1}}
-\right)\\
-&amp;=\Phi(A)\Phi(e^{tX})\Phi(A)^{-1}\\
-&amp;=\Phi(A)e^{t\phi(X)}\Phi(A)^{-1}
-\end{align*}
-\]</span></p>
-が任意の <span class="math inline">\(t\in\R\)</span> に対して成立するので，両辺を <span class="math inline">\(t=0\)</span> で微分して，<span class="math inline">\(\phi(AXA^{-1})=\Phi(A)\phi(X)\Phi(A)^{-1}\)</span> が得られる．
-</details>
-<details>
-<summary>
-任意の <span class="math inline">\(X,Y\in\g\)</span> に対し，<span class="math inline">\(\phi([X,Y])=[\phi(X),\phi(Y)]\)</span>
-</summary>
-<p><span class="math display">\[
-\begin{align*}
-\phi([X,Y])&amp;=
-\phi\left(
-\left.\dd{}{t}e^{tX}Ye^{-tX}\right|_{t=0}
-\right)\\
-&amp;=\left.\dd{}{t}\phi\left(
-e^{tX}Ye^{-tX}
-\right)\right|_{t=0}\\
-&amp;=\left.\dd{}{t}\Phi\left(e^{tX}\right)\phi(Y)\Phi\left(e^{-tX}\right)\right|_{t=0}\\
-&amp;=\left.\dd{}{t}e^{t\phi(X)}\phi(Y)e^{-t\phi(X)}\right|_{t=0}\\
-&amp;=[\phi(X),\phi(Y)].
-\end{align*}
-\]</span></p>
-ここで，2つ目の式変形における <span class="math inline">\(\phi\)</span> と微分の順序交換は <span class="math inline">\(\phi\)</span> の線形性から従う．また，3つ目の式変形は <span class="math inline">\(\phi\)</span> の1つ目の性質を用いた．
-</details>
-</div>
-<div id="exm-3.29" class="theorem example">
-<p><span class="theorem-title"><strong>Example 12 (<span class="citation" data-cites="hallLieGroupsLie2015">Hall (<a href="#ref-hallLieGroupsLie2015" role="doc-biblioref">2015</a>)</span> Example 3.29)</strong></span> <span class="math display">\[
-V=\left\{
-  \begin{pmatrix}x_1&amp;x_2+ix_3\\x_2-ix_3&amp;-x_1\end{pmatrix}
-  \,\middle|\, x_1,x_2,x_3\in \R\right\}
-\]</span></p>
-<p>とする．<span class="math inline">\(U\in\SU(2)\)</span> に対し，<span class="math inline">\(\Phi_U:V\to V,X\mapsto UXU^*\)</span> は内積を保つ写像で， <span class="math inline">\(\Phi:\SU(2)\to\SO(3),U\mapsto\Phi_U\)</span> は Lie 群の2対1の全射準同型だった <span class="citation" data-cites="hallLieGroupsLie2015">(<a href="#ref-hallLieGroupsLie2015" role="doc-biblioref">Hall 2015</a> Proposition 1.19)</span>．</p>
-<p><a href="#exm-3.27" class="quarto-xref">Example 11</a> で構成した <span class="math inline">\(\phi\)</span> は <span class="math inline">\(\Phi\)</span> が誘導する Lie 代数の準同型写像．</p>
-</div>
-<div id="nte-3.29-modif" class="callout callout-style-default callout-tip callout-titled">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-Tip 7
-</div>
-</div>
-<div class="callout-body-container callout-body">
-<p>同一視に関する細かい議論は <a href="#exm-3.29-modif" class="quarto-xref">Example 16</a> を参照．</p>
-</div>
-</div>
-<div id="nte-3.29" class="callout callout-style-default callout-note callout-titled">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-Note 8
-</div>
-</div>
-<div class="callout-body-container callout-body">
-<p><span class="math inline">\(\phi\)</span> が同型写像でも，<span class="math inline">\(\Phi\)</span> が同型写像になるとは限らない．</p>
-</div>
-</div>
-<div class="proof">
-<p><span class="proof-title"><em>Proof</em>. </span><span class="math display">\[
-\left.\dd{}{t}\Phi\left(e^{tX}\right)Y\right|_{t=0}
-=\left.\dd{}{t}e^{tX}Ye^{-tX}\right|_{t=0}
-=[X,Y]
-\]</span></p>
-<p>より，<span class="math inline">\(\phi(X):V\to V,Y\mapsto[X,Y]\)</span> である．</p>
-<p><span class="math inline">\(V\simeq\R^3\)</span> の同一視によって， <span class="math inline">\(Y=\begin{pmatrix}x_1&amp;x_2+ix_3\\x_2-ix_3&amp;-x_1\end{pmatrix}\simeq(x_1,x_2,x_3)\)</span> に対し，</p>
-<p><span class="math display">\[
-\begin{align*}
-\phi(E_1)Y
-&amp;=\left[
-  \frac12\begin{pmatrix}i&amp;\\&amp;-i\end{pmatrix},
-  \begin{pmatrix}x_1&amp;x_2+ix_3\\x_2-ix_3&amp;-x_1\end{pmatrix}
-\right]
-=\begin{pmatrix}&amp;ix_2-x_3\\-ix_2&amp;\end{pmatrix}\\[5pt]
-&amp;\simeq\begin{pmatrix}0\\-x_3\\x_2\end{pmatrix}
-=F_1\begin{pmatrix}x_1\\x_2\\x_3\end{pmatrix},\\[10pt]
-\phi(E_2)Y
-&amp;=\left[
-  \frac12\begin{pmatrix}&amp;i\\i&amp;\end{pmatrix},
-  \begin{pmatrix}x_1&amp;x_2+ix_3\\x_2-ix_3&amp;-x_1\end{pmatrix}
-\right]
-=\begin{pmatrix}x_3&amp;-x_1\\ix_1&amp;-x_3\end{pmatrix}\\[5pt]
-&amp;\simeq\begin{pmatrix}x_3\\0\\-x_1\end{pmatrix}
-=F_2\begin{pmatrix}x_1\\x_2\\x_3\end{pmatrix},\\[10pt]
-\phi(E_3)Y
-&amp;=\left[
-  \frac12\begin{pmatrix}&amp;-1\\1&amp;\end{pmatrix},
-  \begin{pmatrix}x_1&amp;x_2+ix_3\\x_2-ix_3&amp;-x_1\end{pmatrix}
-\right]
-=\begin{pmatrix}-x_2&amp;x_1\\x_1&amp;x_2\end{pmatrix}\\[5pt]
-&amp;\simeq\begin{pmatrix}-x_2\\x_1\\0\end{pmatrix}
-=F_3\begin{pmatrix}x_1\\x_2\\x_3\end{pmatrix}
-\end{align*}
-\]</span></p>
-<p>が成立し，<span class="math inline">\(\phi(E_i)=F_i\)</span> がわかる．</p>
-</div>
-<p><span class="math inline">\(K\)</span> は線形 Lie 群，<span class="math inline">\(\Psi:H\to K\)</span> は線形 Lie 群の準同型写像，<span class="math inline">\(\phi,\psi\)</span> は <span class="math inline">\(\Phi,\Psi\)</span> が誘導する Lie 代数の準同型写像とする．</p>
-<div id="prp-3.30" class="theorem proposition">
-<p><span class="theorem-title"><strong>Proposition 11 (<span class="citation" data-cites="hallLieGroupsLie2015">Hall (<a href="#ref-hallLieGroupsLie2015" role="doc-biblioref">2015</a>)</span> Proposition 3.30)</strong></span> <span class="math inline">\(\Lambda:=\Psi\circ\Phi\)</span> が誘導する Lie 代数の準同型写像は <span class="math inline">\(\lambda=\psi\circ\phi\)</span>.</p>
-</div>
-<details>
-<summary>
-証明
-</summary>
-<div class="proof">
-<p><span class="proof-title"><em>Proof</em>. </span><span class="math inline">\(X\in\g\)</span> とする．任意の <span class="math inline">\(t\in\R\)</span> に対し，<span class="math inline">\(e^{t\lambda(X)}=\Lambda\left(e^{tX}\right)=\Psi\left(e^{t\phi(X)}\right)=e^{t(\psi\circ\phi)(X)}\)</span> が成立する．両辺を <span class="math inline">\(t=0\)</span> で微分すると，<span class="math inline">\(\lambda(X)=\psi\circ\phi(X)\)</span> が得られる．<span class="math inline">\(X\in\g\)</span> は任意だったので，<span class="math inline">\(\lambda=\psi\circ\phi\)</span>.</p>
-</div>
-</details>
-<div id="prp-3.31" class="theorem proposition">
-<p><span class="theorem-title"><strong>Proposition 12 (<span class="citation" data-cites="hallLieGroupsLie2015">Hall (<a href="#ref-hallLieGroupsLie2015" role="doc-biblioref">2015</a>)</span> Proposition 3.31)</strong></span> <span class="math inline">\(\Ker\Phi\)</span> は <span class="math inline">\(G\)</span> の閉集合で，正規部分群．<span class="math inline">\(\Ker\Phi\)</span> の Lie 代数は <span class="math inline">\(\Ker\phi\)</span>.</p>
-</div>
-<details>
-<summary>
-証明
-</summary>
-<div class="proof">
-<p><span class="proof-title"><em>Proof</em>. </span><a href="#prp-topo-ker" class="quarto-xref">Proposition 20</a> より，<span class="math inline">\(\Ker\Phi\)</span> は <span class="math inline">\(G\)</span> の閉集合で，正規部分群．</p>
-<details>
-<summary>
-<span class="math inline">\(\Ker\Phi\)</span> の Lie 代数は <span class="math inline">\(\Ker\phi\)</span>
-</summary>
-<p><span class="math inline">\(\Ker\Phi\)</span> の Lie 代数を <span class="math inline">\(\k\)</span> とする．</p>
-<p><span class="math inline">\((\k\subset\Ker\phi):\)</span></p>
-<p><span class="math inline">\(X\in\k\)</span> とする．任意の <span class="math inline">\(t\in\R\)</span> に対し，<span class="math inline">\(e^{tX}\in\Ker\Phi\)</span> である．このとき， <span class="math inline">\(e^{t\phi(X)}=\Phi\left(e^{tX}\right)=I\)</span> が成立．両辺を <span class="math inline">\(t=0\)</span> で微分すると，<span class="math inline">\(\phi(X)=0\)</span> が成立し，<span class="math inline">\(X\in\Ker\phi\)</span> である．</p>
-<p><span class="math inline">\((\Ker\phi\subset\k):\)</span></p>
-<span class="math inline">\(X\in\Ker\phi\)</span> とすると，任意の <span class="math inline">\(t\in\R\)</span> に対し，<span class="math inline">\(\Phi\left(e^{tX}\right)=e^{t\phi(X)}=I\)</span>，すなわち，<span class="math inline">\(e^{tX}\in\Ker\Phi\)</span> である．これは <span class="math inline">\(X\in\k\)</span> を意味する．
-</details>
-</div>
-</details>
-<div id="def-3.32" class="theorem definition">
-<p><span class="theorem-title"><strong>Definition 13 (<span class="citation" data-cites="hallLieGroupsLie2015">Hall (<a href="#ref-hallLieGroupsLie2015" role="doc-biblioref">2015</a>)</span> Definition 3.32 随伴)</strong></span> <span class="math inline">\(A\in G\)</span> に対し，<span class="math inline">\(\Ad_A:\g\to\g,X\mapsto AXA^{-1}\)</span> を随伴 (adjoint) という．</p>
-</div>
-<div id="prp-3.33" class="theorem proposition">
-<p><span class="theorem-title"><strong>Proposition 13 (<span class="citation" data-cites="hallLieGroupsLie2015">Hall (<a href="#ref-hallLieGroupsLie2015" role="doc-biblioref">2015</a>)</span> Proposition 3.33)</strong></span> <span class="math inline">\(\GL(\g)\)</span> を <span class="math inline">\(\g\)</span> から <span class="math inline">\(\g\)</span> 自身への正則な線形写像全体とする．<span class="math inline">\(\Ad:G\to\GL(\g),A\mapsto\Ad_A\)</span> は線形 Lie 群の準同型写像． また，任意の <span class="math inline">\(A\in G\)</span> と <span class="math inline">\(X,Y\in\g\)</span> に対し， <span class="math display">\[
-\Ad_{A}([X,Y])=[\Ad_A(X),\Ad_A(Y)].
-\]</span></p>
-</div>
-<div id="nte-3.33" class="callout callout-style-default callout-note callout-titled">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-Note 9
-</div>
-</div>
-<div class="callout-body-container callout-body">
-<p><span class="math inline">\(\GL(\g)\)</span> は <span class="math inline">\(\g\subset M_n(\C)\)</span> の元を <span class="math inline">\(\C^{n^2}\)</span> の元と同一視することで，<span class="math inline">\(\GL(\g)\simeq\GL(n^2;\C)\)</span> の同一視が可能．この同一視によって，<span class="math inline">\(\GL(\g)\)</span> は Lie 群になる．</p>
-</div>
-</div>
-<details>
-<summary>
-証明
-</summary>
-<div class="proof">
-<p><span class="proof-title"><em>Proof</em>. </span></p>
-<details>
-<summary>
-<span class="math inline">\(\Ad\)</span> は Lie 群の準同型写像．
-</summary>
-<p>任意の <span class="math inline">\(A,B\in G\)</span> と <span class="math inline">\(X\in\g\)</span> に対し， <span class="math display">\[
-\Ad_{AB}(X)=(AB)X(AB)^{-1}=A\Ad_B(X)A^{-1}=\Ad_A\circ\Ad_B(X)
-\]</span></p>
-が成立する．よって，<span class="math inline">\(\Ad\)</span> は Lie 群の準同型写像．
-</details>
-<details>
-<summary>
-<span class="math inline">\(\Ad_{A}([X,Y])=[\Ad_A(X),\Ad_A(Y)]\)</span>
-</summary>
-<span class="math display">\[
-\begin{align*}
-\Ad_{A}([X,Y])
-&amp;=A[X,Y]A^{-1}\\
-&amp;=AXYA^{-1}-AYXA^{-1}\\
-&amp;=AXA^{-1}AYA^{-1}-AYA^{-1}AXA^{-1}\\
-&amp;=[\Ad_A(X),\Ad_A(Y)].
-\end{align*}
-\]</span>
-</details>
-</div>
-</details>
-<div id="prp-3.34" class="theorem proposition">
-<p><span class="theorem-title"><strong>Proposition 14 (<span class="citation" data-cites="hallLieGroupsLie2015">Hall (<a href="#ref-hallLieGroupsLie2015" role="doc-biblioref">2015</a>)</span> Proposition 3.34)</strong></span> <span class="math inline">\(\GL(\g)\)</span> の Lie 代数 <span class="math inline">\(\gl(\g)\)</span> に対し，<span class="math inline">\(\Ad\)</span> が誘導する Lie 代数の準同型写像は <span class="math inline">\(\ad.\)</span></p>
-</div>
-<details>
-<summary>
-証明
-</summary>
-<div class="proof">
-<p><span class="proof-title"><em>Proof</em>. </span><a href="#thm-3.28" class="quarto-xref">Theorem 2</a> より，<span class="math inline">\(\phi(X):=\left.\dd{}{t}\Ad_{e^{tX}}\right|_{t=0}\)</span> が <span class="math inline">\(\Ad\)</span> によって誘導される Lie 代数の準同型写像である．</p>
-<p><span class="math display">\[
-\phi(X)(Y)
-=\left.\dd{}{t}\Ad_{e^{tX}}(Y)\right|_{t=0}
-=\left.\dd{}{t}e^{tX}Ye^{-tX}\right|_{t=0}
-=[X,Y]
-=\ad_X(Y)
-\]</span></p>
-<p>である．</p>
-<div id="nte-3.34" class="callout callout-style-default callout-note callout-titled">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-Note 10
-</div>
-</div>
-<div class="callout-body-container callout-body">
-<p>任意の <span class="math inline">\(Y\in\g\)</span> に対し，</p>
-<p><span class="math display">\[
-\phi(X)(Y)
-=\lim_{t\to0}\left(\frac{\Ad_{e^{tX}}-A_{I}}{t}\right)(Y)
-\]</span></p>
-<p>である．<span class="math inline">\(\psi_t(Y):=\left(\Ad_{e^{tX}}(Y)-\Ad_I(Y)\right)/t\)</span> は <span class="math inline">\(\psi_t\to\phi(X)\)</span> を満たす．つまり，各点 <span class="math inline">\(Y\in\g\)</span> で収束するので，</p>
-<p><span class="math display">\[
-\phi(X)(Y)=\lim_{t\to0}\psi_{t}(Y)=
-\lim_{t\to0}\frac{\Ad_{e^{tX}}(Y)-A_{I}(Y)}{t}
-\]</span></p>
-<p>が成立する．</p>
-</div>
-</div>
-</div>
-</details>
-<div id="prp-3.35" class="theorem proposition">
-<p><span class="theorem-title"><strong>Proposition 15 (<span class="citation" data-cites="hallLieGroupsLie2015">Hall (<a href="#ref-hallLieGroupsLie2015" role="doc-biblioref">2015</a>)</span> Proposition 3.35)</strong></span> 任意の <span class="math inline">\(X,Y\in M_n(\C)\)</span> に対し，</p>
-<p><span class="math display">\[
-e^{X}Ye^{-X}=\Ad_{e^X}(Y)=e^{\ad_X}(Y):=Y+\ad_{X}(Y)+\frac{1}{2}\ad_X^2(Y)+\cdots
-\]</span></p>
-</div>
-<details>
-<summary>
-証明
-</summary>
-<div class="proof">
-<p><span class="proof-title"><em>Proof</em>. </span><span class="math inline">\(Y\in\C^{n^2}\)</span> とみなすと，<span class="math inline">\(\Ad_{e^X}\)</span> や <span class="math inline">\(\ad_X\)</span> は <span class="math inline">\(M_{n^2}(\C)\)</span> の元としての表示をもつ．<a href="#thm-3.28" class="quarto-xref">Theorem 2</a> と <a href="#prp-3.34" class="quarto-xref">Proposition 14</a> の結果から，<span class="math inline">\(\Ad_{e^X}=e^{\ad_X}\)</span> が成立する．</p>
-<details>
-<summary>
-別証明
-</summary>
-<p>実際に計算して確かめる．</p>
-<p>はじめに， <span class="math display">\[
-(\ad_X)^{m}(Y)=\sum_{k=0}^{m}\binom{m}{k}X^kY(-X)^{m-k}
-\]</span></p>
-<p>を帰納法で示す．</p>
-<details>
-<summary>
-帰納法
-</summary>
-<p><span class="math inline">\((m=1):\)</span></p>
-<p><span class="math display">\[
-\ad_X(Y)
-=XY-YX
-=\sum_{k=0}^{1}\binom{1}{k}X^kY(-X)^{1-k}.
-\]</span></p>
-<p><span class="math inline">\((m\geq2):\)</span></p>
-<p><span class="math inline">\(m\)</span> での成立を仮定して，<span class="math inline">\(m+1\)</span> で成立することを示す．</p>
-<p><span class="math display">\[
-\begin{align*}
-(\ad_X)^{m+1}(Y)
-&amp;=[X,(\ad_X)^m(Y)]\\
-&amp;=\sum_{k=0}^{m}\binom{m}{k}X^{k+1}Y(-X)^{m-k}+\sum_{k=0}^{m}\binom{m}{k}X^{k+1}Y(-X)^{m+1-k}\\
-\end{align*}
-\]</span></p>
-<p>と展開できる． ここで，Pascal の三角形 <span class="math display">\[
-\binom{m+1}{k+1}=\binom{m}{k}+\binom{m}{k+1}
-\]</span></p>
-<p>より， <span class="math display">\[
-\begin{align*}
-&amp;\binom{m}{k}X^{k+1}Y(-X)^{m-k}\\
-&amp;=\binom{m+1}{k+1}X^{k+1}Y(-X)^{m-k}
--\binom{m}{k+1}X^{k+1}Y(-X)^{m-k}
-\end{align*}
-\]</span></p>
-<p>が成立することに注意すると， <span class="math display">\[
-\begin{align*}
-&amp;\sum_{k=0}^{m}\binom{m}{k}X^{k+1}Y(-X)^{m-k}\\
-&amp;=
-\sum_{k=0}^{m}\binom{m+1}{k+1}X^{k+1}Y(-X)^{m-k}
--\sum_{k=0}^{m}\binom{m}{k+1}X^{k+1}Y(-X)^{m-k}\\
-&amp;=
-\sum_{k=1}^{m+1}\binom{m+1}{k}X^{k}Y(-X)^{(m+1)-k}
--\sum_{k=1}^{m+1}\binom{m}{k}X^{k}Y(-X)^{(m+1)-k}
-\end{align*}
-\]</span></p>
-<p>となり，これを <span class="math inline">\((\ad_X)^{m+1}(Y)\)</span> に代入すると， <span class="math display">\[
-\begin{align*}
-&amp;(\ad_X)^{m+1}(Y)\\
-&amp;=
-\sum_{k=1}^{m+1}\binom{m+1}{k}X^{k}Y(-X)^{(m+1)-k}
-+\binom{m}{0}X^{0}Y(-X)^{m+1-0}\\
-&amp;=
-\sum_{k=0}^{m+1}\binom{m+1}{k}X^kY(-X)^{(m+1)-k}
-\end{align*}
-\]</span></p>
-が成立する．
-</details>
-<p><span class="math display">\[
-\begin{align*}
-e^XYe^{-X}
-&amp;=\left(\sum_{m=0}^\infty\frac{X^m}{m!}\right)Y\left(\sum_{l=0}^\infty\frac{(-X)^l}{l!}\right)\\
-&amp;=\sum_{m=0}^\infty\sum_{k=0}^{m}\frac{X^k}{k!}Y\frac{(-X)^{m-k}}{(m-k)!}\\
-&amp;=\sum_{m=0}^\infty\frac{1}{m!}\sum_{k=0}^{m}\binom{m}{k}X^{k}Y(-X)^{m-k}\\
-&amp;=\sum_{m=0}^\infty\frac{(\ad_X)^m(Y)}{m!}\\
-&amp;=e^{\ad_X}(Y).
-\end{align*}
-\]</span></p>
-</details>
-</div>
-</details>
-</section>
-<section id="the-complexification-of-a-real-lie-algebra" class="level1">
-<h1>3.6 The Complexification of a Real Lie Algebra</h1>
-<div id="def-3.36" class="theorem definition">
-<p><span class="theorem-title"><strong>Definition 14 (<span class="citation" data-cites="hallLieGroupsLie2015">Hall (<a href="#ref-hallLieGroupsLie2015" role="doc-biblioref">2015</a>)</span> Definition 3.36 複素化)</strong></span> 有限次元実ベクトル空間 <span class="math inline">\(V\)</span> の複素化 <span class="math inline">\(V_\C\)</span> とは，</p>
-<p><span class="math display">\[
-V_\C:=\{(u,v)\mid u,v\in V\}
-\]</span></p>
-<p>のことである．</p>
-</div>
-<ul>
-<li><span class="math inline">\(V_\C\)</span> は実ベクトル空間の直積として実ベクトル空間．<span class="math inline">\(i(u,v):=(-v,u)\)</span> によって複素ベクトル空間になる．</li>
-</ul>
-<p><span class="math inline">\(\g\)</span> は実 Lie 代数，<span class="math inline">\(\g_\C\)</span> をその複素化とする．</p>
-<div id="prp-3.37" class="theorem proposition">
-<p><span class="theorem-title"><strong>Proposition 16 (<span class="citation" data-cites="hallLieGroupsLie2015">Hall (<a href="#ref-hallLieGroupsLie2015" role="doc-biblioref">2015</a>)</span> Proposition 3.37)</strong></span> <span class="math inline">\(\g\)</span> から <span class="math inline">\(\g_\C\)</span> への括弧積の拡張は一意的で，<span class="math inline">\(\g_\C\)</span> は複素 Lie 代数．</p>
-</div>
-<div id="nte-3.37" class="callout callout-style-default callout-note callout-titled">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-Note 11
-</div>
-</div>
-<div class="callout-body-container callout-body">
-<p>「拡張」は（おそらく）任意の <span class="math inline">\(X,Y\in\g\)</span> に対し，<span class="math inline">\([(X,0),(Y,0)]=([X,Y],0)\)</span> となることを意味する．</p>
-</div>
-</div>
-<details>
-<summary>
-証明
-</summary>
-<div class="proof">
-<p><span class="proof-title"><em>Proof</em>. </span></p>
-<details>
-<summary>
-一意性
-</summary>
-<p><span class="math inline">\((X_1,X_2),(Y_1,Y_2)\in\g_\C\)</span> とする．双線形性の要請から， <span class="math display">\[
-\begin{align*}
-&amp;[(X_1,X_2),(Y_1,Y_2)]\\
-&amp;=[(X_1,0)+(0,X_2),(Y_1,0)+(0,Y_2)]\\
-&amp;=[(X_1,0),(Y_1,0)]+[(X_1,0),i(Y_2,0)]\\
-&amp;\hphantom{=}+[i(X_2,0),(Y_1,0)]+[i(X_2,0),i(Y_2,0)]\\
-&amp;=([X_1,Y_1],0)-([X_2,Y_2],0)+i([X_1,Y_2],0)+i([X_2,Y_1],0)\\
-&amp;=([X_1,Y_1]-[X_2,Y_2],[X_1,Y_2]+[X_2,Y_1])
-\end{align*}
-\]</span></p>
-と一意に定まる．
-</details>
-<details>
-<summary>
-双線形性
-</summary>
-<p><span class="math inline">\((X_1,X_2),(Y_1,Y_2)\in\g_\C\)</span> とする．実双線形性は遺伝するので， <span class="math display">\[
-[i(X_1,X_2),(Y_1,Y_2)]=i[(X_1,X_2),(Y_1,Y_2)]
-\]</span></p>
-を示せば十分． <span class="math display">\[
-\begin{align*}
-[i(X_1,X_2),(Y_1,Y_2)]
-&amp;=[(-X_2,X_1),(Y_1,Y_2)]\\
-&amp;=([-X_2,Y_1]-[X_1,Y_2],[-X_2,Y_2]+[X_1,Y_1])\\
-&amp;=i([X_1,Y_1]-[X_2,Y_2],[X_1,Y_2]+[X_2,Y_1])\\
-&amp;=i[(X_1,X_2),(Y_1,Y_2)].
-\end{align*}
-\]</span>
-</details>
-<details>
-<summary>
-反交換性
-</summary>
-<p><span class="math inline">\((X_1,X_2),(Y_1,Y_2)\in\g_\C\)</span> とする．</p>
-<span class="math display">\[
-\begin{align*}
-[(X_1,X_2),(Y_1,Y_2)]
-&amp;=([X_1,Y_1]-[X_2,Y_2],[X_1,Y_2]+[X_2,Y_1])\\
-&amp;=(-[Y_1,X_1]+[Y_2,X_2],-[Y_1,X_2]-[Y_2,X_1])\\
-&amp;=-[(Y_1,Y_2),(X_1,X_2)].
-\end{align*}
-\]</span>
-</details>
-<details>
-<summary>
-Jacobi 恒等式
-</summary>
-<p><span class="math inline">\((X_1,X_2),(Y_1,Y_2),(Z_1,Z_2)\in\g_\C\)</span> とする．</p>
-<p><span class="math display">\[
-\begin{align*}
-&amp;[(X_1,X_2),[(Y_1,Y_2),(Z_1,Z_2)]]\\
-&amp;=[(X_1,X_2),([Y_1,Z_1]-[Y_2,Z_2],[Y_1,Z_2]+[Y_2,Z_1])]\\
-&amp;=(
-[X_1,[Y_1,Z_1]] - [X_1,[Y_2,Z_2]] - [X_2,[Y_1,Z_2]] - [X_2,[Y_2,Z_1]],\\
-&amp;\hphantom{=}[X_1,[Y_1,Z_2]] + [X_1,[Y_2,Z_1]] + [X_2,[Y_1,Z_1]] - [X_2,[Y_2,Z_2]]
-)
-\end{align*}
-\]</span></p>
-である．各成分の各項に Jacobi 恒等式を適用することで，Jacobi 恒等式の成立が確認できる．
-</details>
-</div>
-</details>
-<div id="prp-3.38" class="theorem proposition">
-<p><span class="theorem-title"><strong>Proposition 17 (<span class="citation" data-cites="hallLieGroupsLie2015">Hall (<a href="#ref-hallLieGroupsLie2015" role="doc-biblioref">2015</a>)</span> Proposition 3.38)</strong></span> <span class="math inline">\(\g\subset M_n(\C)\)</span> とする． 任意の <span class="math inline">\(X\in\g\backslash\{0\}\)</span> に対し，<span class="math inline">\(iX\not\in\g\)</span> とする． このとき，<span class="math inline">\(\g_\C\)</span> と <span class="math inline">\(\h:=\{X+iY\mid X,Y\in\g\}\)</span> は複素 Lie 代数として同型．</p>
-</div>
-<details>
-<summary>
-証明
-</summary>
-<div class="proof">
-<p><span class="proof-title"><em>Proof</em>. </span><span class="math inline">\(\phi:\g_\C\to\h,(X,Y)\mapsto X+iY\)</span> は Lie 代数の準同型な全射である．<span class="math inline">\(\phi\)</span> が単射であることを示す．<span class="math inline">\(\phi(X_1,X_2)=\phi(Y_1,Y_2)\)</span> とする． <span class="math inline">\(Z_1:=X_1-Y_1,Z_2=X_2-Y_2\)</span> とすると，<span class="math inline">\(Z_1+iZ_2=0\)</span> より， <span class="math inline">\(\Re(Z_1)-\Im(Z_2)=0,\Im(Z_1)+\Re(Z_2)=0\)</span> である．このとき，<span class="math inline">\(Z_2=-\Im(Z_1)+i\Re(Z_1)\)</span> となるが，<span class="math inline">\(Z_1\neq0\Rightarrow iZ_1=-Z_2\not\in\g\)</span> だが，これは矛盾．したがって，<span class="math inline">\(Z_1=Z_2=0\)</span> である．以上より，<span class="math inline">\(\phi\)</span> は単射．</p>
-</div>
-</details>
-<div id="prp-3.39" class="theorem proposition">
-<p><span class="theorem-title"><strong>Proposition 18 (<span class="citation" data-cites="hallLieGroupsLie2015">Hall (<a href="#ref-hallLieGroupsLie2015" role="doc-biblioref">2015</a>)</span> Proposition 3.39)</strong></span> <span class="math inline">\(\h\)</span> は複素 Lie 代数とする． <span class="math inline">\(\iota:\g\to\g_\C,X\mapsto(X,0)\)</span>，<span class="math inline">\(\varphi:\g\to\h\)</span> は実 Lie 代数の準同型写像とする． このとき，複素 Lie 代数の準同型写像 <span class="math inline">\(\psi:\g_\C\to\h\)</span> で，<span class="math inline">\(\varphi=\psi\circ\iota\)</span> となるものが一意的に存在する．すなわち，以下の図式は可換．</p>
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><img role="img" src="data:image/svg+xml;base64,PHN2ZyBjbGFzcz0idHlwc3QtZG9jIiB2aWV3Qm94PSIwIDAgMTcwLjA3ODc0MDE1NzQ4MDMzIDE0MS43MzIyODM0NjQ1NjY5MyIgd2lkdGg9IjE3MC4wNzg3NDAxNTc0ODAzM3B0IiBoZWlnaHQ9IjE0MS43MzIyODM0NjQ1NjY5M3B0IiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHhtbG5zOnhsaW5rPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5L3hsaW5rIiB4bWxuczpoNT0iaHR0cDovL3d3dy53My5vcmcvMTk5OS94aHRtbCI+CiAgICA8Zz4KICAgICAgICA8ZyB0cmFuc2Zvcm09InRyYW5zbGF0ZSgyNC44MTk2NzAwNzg3NDAxNTYgMTYuODcyODkwODg4NjM4OTE3KSI+CiAgICAgICAgICAgIDxnIGNsYXNzPSJ0eXBzdC1ncm91cCI+CiAgICAgICAgICAgICAgICA8Zz4KICAgICAgICAgICAgICAgICAgICA8ZyB0cmFuc2Zvcm09InRyYW5zbGF0ZSg5MC41MDg0MDAwMDAwMDAwMSAyMC4yNTY1MDAwMDAwMDAwMDMpIj4KICAgICAgICAgICAgICAgICAgICAgICAgPGcgY2xhc3M9InR5cHN0LWdyb3VwIj4KICAgICAgICAgICAgICAgICAgICAgICAgICAgIDxnIHRyYW5zZm9ybT0ibWF0cml4KDAuMDAwMDAwMDAwMDAwMDAwMDYxMjMyMzM5OTU3MzY3NjYgMSAtMSAwLjAwMDAwMDAwMDAwMDAwMDA2MTIzMjMzOTk1NzM2NzY2IDAgMCkiPgogICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIDxnIHRyYW5zZm9ybT0idHJhbnNsYXRlKC0yLjc1IDApIj4KICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgPGcgY2xhc3M9InR5cHN0LWdyb3VwIiBjbGlwLXBhdGg9InVybCgjYzhFRjMzNDZFQzQyRDczRjIwRUI2NkQ5NTI5RDJEN0JEKSI+CiAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICA8Zz4KICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICA8ZyB0cmFuc2Zvcm09InRyYW5zbGF0ZSgwIDcuNTEzMDAwMDAwMDAwMDAxKSI+CiAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIDxnIGNsYXNzPSJ0eXBzdC10ZXh0IiB0cmFuc2Zvcm09InNjYWxlKDEsIC0xKSI+CiAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICA8dXNlIHhsaW5rOmhyZWY9IiNnODA3REIyNEU2ODlDN0VBRjU1RjYyREI5NjkwNTZERkQiIHg9IjAiIGZpbGw9IiMwMDAwMDAiIGZpbGwtcnVsZT0ibm9uemVybyIvPgogICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICA8L2c+CiAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgPC9nPgogICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgPC9nPgogICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICA8L2c+CiAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgPC9nPgogICAgICAgICAgICAgICAgICAgICAgICAgICAgPC9nPgogICAgICAgICAgICAgICAgICAgICAgICA8L2c+CiAgICAgICAgICAgICAgICAgICAgPC9nPgogICAgICAgICAgICAgICAgICAgIDxnIHRyYW5zZm9ybT0idHJhbnNsYXRlKDE2LjUgMTYuNSkiPgogICAgICAgICAgICAgICAgICAgICAgICA8cGF0aCBjbGFzcz0idHlwc3Qtc2hhcGUiIGZpbGw9Im5vbmUiIHN0cm9rZT0iIzAwMDAwMCIgc3Ryb2tlLXdpZHRoPSIwLjU1IiBzdHJva2UtbGluZWNhcD0icm91bmQiIHN0cm9rZS1saW5lam9pbj0ibWl0ZXIiIHN0cm9rZS1taXRlcmxpbWl0PSI0IiBkPSJNIDE2LjMyMDcgMy43NTY1IEMgMzQuNDQ5OTMyIDMuNzU2NSA1Mi41NzkxNjYgMy43NTY1IDcwLjcwODQgMy43NTY1ICIvPgogICAgICAgICAgICAgICAgICAgIDwvZz4KICAgICAgICAgICAgICAgICAgICA8ZyB0cmFuc2Zvcm09InRyYW5zbGF0ZSg1Ni40MTc1NSAxNS44NTY1MDAwMDAwMDAwMDIpIj4KICAgICAgICAgICAgICAgICAgICAgICAgPGcgY2xhc3M9InR5cHN0LXRleHQiIHRyYW5zZm9ybT0ic2NhbGUoMSwgLTEpIj4KICAgICAgICAgICAgICAgICAgICAgICAgICAgIDx1c2UgeGxpbms6aHJlZj0iI2dERTVCMzE1MTg5ODIzMkZEMDk0NDdDNjc1OEQ1NkIzNiIgeD0iMCIgZmlsbD0iIzAwMDAwMCIgZmlsbC1ydWxlPSJub256ZXJvIi8+CiAgICAgICAgICAgICAgICAgICAgICAgIDwvZz4KICAgICAgICAgICAgICAgICAgICA8L2c+CiAgICAgICAgICAgICAgICAgICAgPGcgdHJhbnNmb3JtPSJ0cmFuc2xhdGUoOTIuOTEwNjA0OTE0ODcxNTggMjguMjk0NjU5MzQxNzM0NzgyKSI+CiAgICAgICAgICAgICAgICAgICAgICAgIDxnIGNsYXNzPSJ0eXBzdC1ncm91cCI+CiAgICAgICAgICAgICAgICAgICAgICAgICAgICA8ZyB0cmFuc2Zvcm09Im1hdHJpeCgwLjcwMTYyNDM0NzkwMTYwODkgMC43MTI1NDcwMzMxMzY1MDk2IC0wLjcxMjU0NzAzMzEzNjUwOTYgMC43MDE2MjQzNDc5MDE2MDg5IDAgMCkiPgogICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIDxnIHRyYW5zZm9ybT0idHJhbnNsYXRlKC0yLjc1IDApIj4KICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgPGcgY2xhc3M9InR5cHN0LWdyb3VwIiBjbGlwLXBhdGg9InVybCgjYzdFQkE0MjM2MUUwODM0OTQ2QkU5RDNEREQwNzlDNTk1KSI+CiAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICA8Zz4KICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICA8ZyB0cmFuc2Zvcm09InRyYW5zbGF0ZSgwIDcuNTEzMDAwMDAwMDAwMDAxKSI+CiAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIDxnIGNsYXNzPSJ0eXBzdC10ZXh0IiB0cmFuc2Zvcm09InNjYWxlKDEsIC0xKSI+CiAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICA8dXNlIHhsaW5rOmhyZWY9IiNnODA3REIyNEU2ODlDN0VBRjU1RjYyREI5NjkwNTZERkQiIHg9IjAiIGZpbGw9IiMwMDAwMDAiIGZpbGwtcnVsZT0ibm9uemVybyIvPgogICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICA8L2c+CiAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgPC9nPgogICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgPC9nPgogICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICA8L2c+CiAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgPC9nPgogICAgICAgICAgICAgICAgICAgICAgICAgICAgPC9nPgogICAgICAgICAgICAgICAgICAgICAgICA8L2c+CiAgICAgICAgICAgICAgICAgICAgPC9nPgogICAgICAgICAgICAgICAgICAgIDxnIHRyYW5zZm9ybT0idHJhbnNsYXRlKDE2LjUgMTYuNSkiPgogICAgICAgICAgICAgICAgICAgICAgICA8cGF0aCBjbGFzcz0idHlwc3Qtc2hhcGUiIGZpbGw9Im5vbmUiIHN0cm9rZT0iIzAwMDAwMCIgc3Ryb2tlLXdpZHRoPSIwLjU1IiBzdHJva2UtbGluZWNhcD0icm91bmQiIHN0cm9rZS1saW5lam9pbj0ibWl0ZXIiIHN0cm9rZS1taXRlcmxpbWl0PSI0IiBzdHJva2UtZGFzaG9mZnNldD0iMCIgc3Ryb2tlLWRhc2hhcnJheT0iMyAzIiBkPSJNIDE1LjUxMjIwNSA3MS43NTk1NDQgQyAzNS4wMjc4NyA1Mi41NDMwMzQgNTQuNTQzNTMzIDMzLjMyNjUyNyA3NC4wNTkyIDE0LjExMDAyICIvPgogICAgICAgICAgICAgICAgICAgIDwvZz4KICAgICAgICAgICAgICAgICAgICA8ZyB0cmFuc2Zvcm09InRyYW5zbGF0ZSg2NC4wNjY2ODM4NzYxNjA2MSA2OS43MTg4MjQxNzgxNDM3MykiPgogICAgICAgICAgICAgICAgICAgICAgICA8ZyBjbGFzcz0idHlwc3QtdGV4dCIgdHJhbnNmb3JtPSJzY2FsZSgxLCAtMSkiPgogICAgICAgICAgICAgICAgICAgICAgICAgICAgPHVzZSB4bGluazpocmVmPSIjZ0JDMkVDRkQ5QTMwRDQ5QjQzMTVCMkQ0NUU2Q0ZEODcxIiB4PSIwIiBmaWxsPSIjMDAwMDAwIiBmaWxsLXJ1bGU9Im5vbnplcm8iLz4KICAgICAgICAgICAgICAgICAgICAgICAgPC9nPgogICAgICAgICAgICAgICAgICAgIDwvZz4KICAgICAgICAgICAgICAgICAgICA8ZyB0cmFuc2Zvcm09InRyYW5zbGF0ZSgyMi4zNTQyIDg2LjMxMykiPgogICAgICAgICAgICAgICAgICAgICAgICA8ZyBjbGFzcz0idHlwc3QtZ3JvdXAiPgogICAgICAgICAgICAgICAgICAgICAgICAgICAgPGcgdHJhbnNmb3JtPSJtYXRyaXgoLTEgMC4wMDAwMDAwMDAwMDAwMDAxMjI0NjQ2Nzk5MTQ3MzUzMiAtMC4wMDAwMDAwMDAwMDAwMDAxMjI0NjQ2Nzk5MTQ3MzUzMiAtMSAwIDApIj4KICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICA8ZyB0cmFuc2Zvcm09InRyYW5zbGF0ZSgtMi43NSAwKSI+CiAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIDxnIGNsYXNzPSJ0eXBzdC1ncm91cCIgY2xpcC1wYXRoPSJ1cmwoI2NERDBFRTQ2Nzc0RUI1Mjg3RUE4MDc2QjgyMkMyN0FBOCkiPgogICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgPGc+CiAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgPGcgdHJhbnNmb3JtPSJ0cmFuc2xhdGUoMCA3LjUxMzAwMDAwMDAwMDAwMSkiPgogICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICA8ZyBjbGFzcz0idHlwc3QtdGV4dCIgdHJhbnNmb3JtPSJzY2FsZSgxLCAtMSkiPgogICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgPHVzZSB4bGluazpocmVmPSIjZzgwN0RCMjRFNjg5QzdFQUY1NUY2MkRCOTY5MDU2REZEIiB4PSIwIiBmaWxsPSIjMDAwMDAwIiBmaWxsLXJ1bGU9Im5vbnplcm8iLz4KICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgPC9nPgogICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIDwvZz4KICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIDwvZz4KICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgPC9nPgogICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIDwvZz4KICAgICAgICAgICAgICAgICAgICAgICAgICAgIDwvZz4KICAgICAgICAgICAgICAgICAgICAgICAgPC9nPgogICAgICAgICAgICAgICAgICAgIDwvZz4KICAgICAgICAgICAgICAgICAgICA8ZyB0cmFuc2Zvcm09InRyYW5zbGF0ZSgxNi41IDE2LjUpIj4KICAgICAgICAgICAgICAgICAgICAgICAgPHBhdGggY2xhc3M9InR5cHN0LXNoYXBlIiBmaWxsPSJub25lIiBzdHJva2U9IiMwMDAwMDAiIHN0cm9rZS13aWR0aD0iMC41NSIgc3Ryb2tlLWxpbmVjYXA9InJvdW5kIiBzdHJva2UtbGluZWpvaW49Im1pdGVyIiBzdHJva2UtbWl0ZXJsaW1pdD0iNCIgZD0iTSA1Ljg1NDIgMTUuMjEzIEMgNS44NTQyIDMyLjMxMyA1Ljg1NDIgNDkuNDEzIDUuODU0MiA2Ni41MTMgIi8+CiAgICAgICAgICAgICAgICAgICAgPC9nPgogICAgICAgICAgICAgICAgICAgIDxnIHRyYW5zZm9ybT0idHJhbnNsYXRlKDE1LjcxMDE5OTk5OTk5OTk5OSA2MS4xMTk0OTk5OTk5OTk5OTUpIj4KICAgICAgICAgICAgICAgICAgICAgICAgPGcgY2xhc3M9InR5cHN0LXRleHQiIHRyYW5zZm9ybT0ic2NhbGUoMSwgLTEpIj4KICAgICAgICAgICAgICAgICAgICAgICAgICAgIDx1c2UgeGxpbms6aHJlZj0iI2czQzAyMDJBQkI2RkNDMDk5RkNFNUE0RDVFQzQzMzcwNiIgeD0iMCIgZmlsbD0iIzAwMDAwMCIgZmlsbC1ydWxlPSJub256ZXJvIi8+CiAgICAgICAgICAgICAgICAgICAgICAgIDwvZz4KICAgICAgICAgICAgICAgICAgICA8L2c+CiAgICAgICAgICAgICAgICAgICAgPGcgdHJhbnNmb3JtPSJ0cmFuc2xhdGUoMTkuNTg3Njk5OTk5OTk5OTk4IDI0LjAxMjk5OTk5OTk5OTk5OCkiPgogICAgICAgICAgICAgICAgICAgICAgICA8ZyBjbGFzcz0idHlwc3QtdGV4dCIgdHJhbnNmb3JtPSJzY2FsZSgxLCAtMSkiPgogICAgICAgICAgICAgICAgICAgICAgICAgICAgPHVzZSB4bGluazpocmVmPSIjZzQ2MzFFQjM1MTIxRTMyQzIwM0REQjFDQkM3MDg3Mjk3IiB4PSIwIiBmaWxsPSIjMDAwMDAwIiBmaWxsLXJ1bGU9Im5vbnplcm8iLz4KICAgICAgICAgICAgICAgICAgICAgICAgPC9nPgogICAgICAgICAgICAgICAgICAgIDwvZz4KICAgICAgICAgICAgICAgICAgICA8ZyB0cmFuc2Zvcm09InRyYW5zbGF0ZSg5OC4yMDg0IDI0LjAxMjk5OTk5OTk5OTk5OCkiPgogICAgICAgICAgICAgICAgICAgICAgICA8ZyBjbGFzcz0idHlwc3QtdGV4dCIgdHJhbnNmb3JtPSJzY2FsZSgxLCAtMSkiPgogICAgICAgICAgICAgICAgICAgICAgICAgICAgPHVzZSB4bGluazpocmVmPSIjZ0E3MTIyNDJCOUVERjg0RDg1QTA2RTQ2M0RFODgwMUE2IiB4PSIwIiBmaWxsPSIjMDAwMDAwIiBmaWxsLXJ1bGU9Im5vbnplcm8iLz4KICAgICAgICAgICAgICAgICAgICAgICAgPC9nPgogICAgICAgICAgICAgICAgICAgIDwvZz4KICAgICAgICAgICAgICAgICAgICA8ZyB0cmFuc2Zvcm09InRyYW5zbGF0ZSgyMi4zNTQyMDAwMDAwMDAwMDIgOTcuNzY5NTAwMDAwMDAwMDEpIj4KICAgICAgICAgICAgICAgICAgICAgICAgPGcgY2xhc3M9InR5cHN0LWdyb3VwIj4KICAgICAgICAgICAgICAgICAgICAgICAgICAgIDxnPgogICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIDxnIHRyYW5zZm9ybT0idHJhbnNsYXRlKC01Ljg1NDIgMy43NTY1MDAwMDAwMDAwMDA0KSI+CiAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIDxnIGNsYXNzPSJ0eXBzdC10ZXh0IiB0cmFuc2Zvcm09InNjYWxlKDEsIC0xKSI+CiAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICA8dXNlIHhsaW5rOmhyZWY9IiNnNDYzMUVCMzUxMjFFMzJDMjAzRERCMUNCQzcwODcyOTciIHg9IjAiIGZpbGw9IiMwMDAwMDAiIGZpbGwtcnVsZT0ibm9uemVybyIvPgogICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICA8L2c+CiAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgPC9nPgogICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIDxnIHRyYW5zZm9ybT0idHJhbnNsYXRlKC0wLjMyMTE5OTk5OTk5OTk5OTQzIDYuNDczNSkiPgogICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICA8ZyBjbGFzcz0idHlwc3QtdGV4dCIgdHJhbnNmb3JtPSJzY2FsZSgxLCAtMSkiPgogICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgPHVzZSB4bGluazpocmVmPSIjZzIwMjM0OUUwNEU5MEQzQkY3QUM0MkVGNzVERUYyRDkxIiB4PSIwIiBmaWxsPSIjMDAwMDAwIiBmaWxsLXJ1bGU9Im5vbnplcm8iLz4KICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgPC9nPgogICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIDwvZz4KICAgICAgICAgICAgICAgICAgICAgICAgICAgIDwvZz4KICAgICAgICAgICAgICAgICAgICAgICAgPC9nPgogICAgICAgICAgICAgICAgICAgIDwvZz4KICAgICAgICAgICAgICAgIDwvZz4KICAgICAgICAgICAgPC9nPgogICAgICAgIDwvZz4KICAgIDwvZz4KICAgIDxkZWZzIGlkPSJnbHlwaCI+CiAgICAgICAgPHN5bWJvbCBpZD0iZzgwN0RCMjRFNjg5QzdFQUY1NUY2MkRCOTY5MDU2REZEIiBvdmVyZmxvdz0idmlzaWJsZSI+CiAgICAgICAgICAgIDxwYXRoIGQ9Ik0gNS4wMTYgNC41NjUgQyA1LjE5MiA0LjU2NSA1LjI3OTk5OTcgNC42NTMgNS4yNzk5OTk3IDQuODI5IEMgNS4yNzk5OTk3IDQuOTYxIDUuMjEzOTk5NyA1LjA0OSA1LjA5MyA1LjA4MiBDIDQuNjIgNS4yMjUgNC4yMTMgNS40NjcgMy44NjEgNS44MDggQyAzLjM2NiA2LjMwMyAzLjA1OCA2LjgwOSAyLjkzNyA3LjMyNTk5OTcgQyAyLjkxNSA3LjQyNSAyLjg0OSA3LjQ2OSAyLjc1IDcuNDY5IEMgMi42NTEgNy40NjkgMi41ODUgNy40MjUgMi41NjMgNy4zMjU5OTk3IEMgMi40NDIgNi44MDkgMi4xMzQgNi4zMDMgMS42Mzg5OTk5IDUuODA4IEMgMS4yODcgNS40NjcgMC44OCA1LjIyNSAwLjQwNyA1LjA4MiBDIDAuMjg2IDUuMDQ5IDAuMjIgNC45NjEgMC4yMiA0LjgyOSBDIDAuMjIgNC42NTMgMC4zMDggNC41NjUgMC40ODQgNC41NjUgQyAwLjUxNyA0LjU2NSAwLjUzOSA0LjU3NiAwLjU2MSA0LjU4NyBDIDEuMzUzIDQuODE4IDEuOTkwOTk5OSA1LjMwMiAyLjQ4NiA2LjAyOCBMIDIuNDg2IC0xLjk2OSBDIDIuNDg2IC0yLjE0NSAyLjU3NCAtMi4yMzMgMi43NSAtMi4yMzMgQyAyLjkyNTk5OTkgLTIuMjMzIDMuMDE0IC0yLjE0NSAzLjAxNCAtMS45NjkgTCAzLjAxNCA2LjAyOCBDIDMuNTA5IDUuMzAyIDQuMTQ3IDQuODE4IDQuOTM5IDQuNTg3IEMgNC45NjEgNC41NzYgNC45ODMgNC41NjUgNS4wMTYgNC41NjUgWiAiLz4KICAgICAgICA8L3N5bWJvbD4KICAgICAgICA8c3ltYm9sIGlkPSJnREU1QjMxNTE4OTgyMzJGRDA5NDQ3QzY3NThENTZCMzYiIG92ZXJmbG93PSJ2aXNpYmxlIj4KICAgICAgICAgICAgPHBhdGggZD0iTSA1LjUzMyA0Ljg2MiBDIDUuMzQ2IDQuODYyIDUuMTgwOTk5OCA0LjgyOSA1LjAxNiA0Ljc3NCBDIDQuMzIzIDQuNTQyOTk5NyAzLjgzOSAzLjg2MSAzLjU2NCAzLjIzNCBDIDMuMTAyIDIuMjExIDIuOTcgMS43OTMgMi42MjkgMC42MzggQyAxLjQ5NiAwLjg2OSAwLjkyNCAxLjM4NiAwLjkyNCAyLjIgQyAwLjkyNCAyLjkzNyAxLjQ0MSA0LjAwNCAxLjgwNCA0LjQyMiBDIDEuODcgNC40OTkgMS45MDMgNC41NTQgMS45MDMgNC41ODcgQyAxLjkwMyA0LjY4NiAxLjg0OCA0Ljc0MSAxLjcyNyA0Ljc0MSBDIDEuNTQgNC43NDEgMS4yOTggNC40MjIgMS4wMDEgMy43ODQgQyAwLjcwNCAzLjE0NiAwLjU1IDIuNTc0IDAuNTUgMi4wNzkgQyAwLjU1IDAuOTM1IDEuNDE5IDAuMjA4OTk5OTkgMi40MiAtMC4wMzMgTCAxLjg1OSAtMS44MTQ5OTk5IEMgMS44MTQ5OTk5IC0xLjkzNiAxLjc5MyAtMi4wMTMgMS43OTMgLTIuMDQ2IEMgMS43OTMgLTIuMjc3IDEuOTE0IC0yLjM5OCAyLjE1NiAtMi4zOTggQyAyLjM2NSAtMi4zOTggMi41MDggLTIuMjg4IDIuNTk2IC0yLjA3OSBMIDIuOTcgLTAuMTMyIEMgMy4wOTEgLTAuMTQzIDMuMTkgLTAuMTQzIDMuMjg5IC0wLjE0MyBDIDQuMTkxIC0wLjE0MyA0Ljk5NCAwLjIwODk5OTk5IDUuNzIgMC45MTMgQyA2LjQ0NiAxLjYxNyA2LjgwOSAyLjQyIDYuODA5IDMuMzIyIEMgNi44MDkgNC4xOCA2LjM1OCA0Ljg2MiA1LjUzMyA0Ljg2MiBaIE0gNi40MTMgMy4wOCBDIDYuNDEzIDIuMzg3IDYuMDgzIDEuNzgyIDUuNDEyIDEuMjY1IEMgNC43ODUgMC44MDMgNC4xMTQgMC41NzIgMy4zODggMC41NzIgQyAzLjMyMiAwLjU3MiAzLjI1NiAwLjU3MiAzLjIwMSAwLjU4MyBDIDMuMTM1IDAuNTgzIDMuMTAyIDAuNTgzIDMuMTAyIDAuNTcyIEMgMy4yNjcgMS40NDEgMy4zNjYgMS45NTggMy40MSAyLjExMiBDIDMuNjYyOTk5OSAyLjk4MSA0LjQxMSA0LjE0NyA1LjQyMyA0LjE0NyBDIDYuMDM5IDQuMTQ3IDYuNDEzIDMuNzA3IDYuNDEzIDMuMDggWiAiLz4KICAgICAgICA8L3N5bWJvbD4KICAgICAgICA8c3ltYm9sIGlkPSJnQkMyRUNGRDlBMzBENDlCNDMxNUIyRDQ1RTZDRkQ4NzEiIG92ZXJmbG93PSJ2aXNpYmxlIj4KICAgICAgICAgICAgPHBhdGggZD0iTSA1Ljg3NCA0LjMyMyBDIDUuODc0IDQuMjI0IDUuOTI5IDQuMTE0IDYuMDUgMy45OTMgQyA2LjMwMyAzLjc1MSA2LjQzNSAzLjQ1NCA2LjQzNSAzLjEwMiBDIDYuNDM1IDIuNzgzIDYuMzM2IDIuNDQyIDYuMTI3IDIuMDU3IEMgNS43NDIgMS4zMTk5OTk5IDUuMjM2IDAuNzkyIDQuNjMxIDAuNDczIEMgNC4yNjggMC4yODYgMy45MDUgMC4xOTggMy41NDIgMC4xODcgTCA1LjMyNCA3LjI5Mjk5OTcgQyA1LjM0NiA3LjM5MiA1LjM1NyA3LjQ0NyA1LjM1NyA3LjQ2OSBDIDUuMzU3IDcuNTc5IDUuMzAyIDcuNjM0IDUuMTgwOTk5OCA3LjYzNCBDIDUuMTI2IDcuNjM0IDUuMDkzIDcuNjIzIDUuMDYgNy42MDEgQyA1LjAxNiA3LjUxMyA0Ljk5NCA3LjQzNiA0Ljk4MyA3LjM4MSBMIDMuMTkgMC4yMDg5OTk5OSBDIDIuNDA5IDAuMzA4IDIuMDI0IDAuNzA0IDIuMDI0IDEuMzg2IEMgMi4wMjQgMS42ODMgMi4yMjIgMi4zNTQgMi42MDY5OTk5IDMuMzk5IEMgMi42ODQgMy42MTkgMi43MjggMy44MDYgMi43MjggMy45NDkgQyAyLjcyOCA0LjQ5OSAyLjM0MyA0Ljg4NCAxLjc5MyA0Ljg4NCBDIDEuMjk4IDQuODg0IDAuOTI0IDQuNjA5IDAuNjQ5IDQuMDU5IEMgMC40MjkgMy42MTkgMC4zMTkgMy4zMjIgMC4zMTkgMy4xNjggQyAwLjMxOSAzLjA2OSAwLjM3NCAzLjAxNCAwLjQ5NSAzLjAxNCBDIDAuNjM4IDMuMDE0IDAuNjU5OTk5OTcgMy4wOCAwLjcwNCAzLjIzNCBDIDAuOTU3IDQuMTE0IDEuMzA5IDQuNTU0IDEuNzYgNC41NTQgQyAxLjkxNCA0LjU1NCAxLjk5MDk5OTkgNC40NTUgMS45OTA5OTk5IDQuMjU3IEMgMS45OTA5OTk5IDQuMDgxIDEuOTE0IDMuNzczIDEuNzQ5IDMuMzMzIEMgMS4zOTcgMi4zOTggMS4yMjEgMS43ODIgMS4yMjEgMS40NzQgQyAxLjIyMSAwLjUxNyAxLjg0OCAtMC4wMTEgMy4xMDIgLTAuMTEgQyAzLjAxNCAtMC40OTUgMi45MzcgLTAuODE0IDIuODcxIC0xLjA1NiBDIDIuNzA2IC0xLjY4MyAyLjYxOCAtMi4wMzUgMi42MTggLTIuMTEyIEMgMi42NTEgLTIuMiAyLjY2MiAtMi4yNTQ5OTk5IDIuODA1IC0yLjI1NDk5OTkgTCAyLjkxNSAtMi4yMTEgQyAyLjk4MSAtMi4wMzUgMy4wMzYgLTEuODcgMy4wNjkgLTEuNzI3IEwgMy40NjUgLTAuMTQzIEMgNC4zNjcgLTAuMTMyIDUuMTU5IDAuMjY0IDUuODQxIDEuMDQ1IEMgNi4yMDQgMS40NTIgNi40NjggMS44OTIgNi42NDQgMi4zNjUgQyA2Ljg3NSAyLjk3IDYuOTg1IDMuNTQyIDYuOTg1IDQuMDgxIEMgNi45ODUgNC42MiA2LjgwOSA0Ljg4NCA2LjQ2OCA0Ljg4NCBDIDYuMTgyIDQuODg0IDUuODc0IDQuNjA5IDUuODc0IDQuMzIzIFogIi8+CiAgICAgICAgPC9zeW1ib2w+CiAgICAgICAgPHN5bWJvbCBpZD0iZzNDMDIwMkFCQjZGQ0MwOTlGQ0U1QTRENUVDNDMzNzA2IiBvdmVyZmxvdz0idmlzaWJsZSI+CiAgICAgICAgICAgIDxwYXRoIGQ9Ik0gMS41NTEgLTAuMTIxIEMgMS45NjkgLTAuMTIxIDIuNDA5IDAuMDY2IDIuODcxIDAuNDI5IEMgMy4zMzMgMC43OTIgMy41NjQgMS4xNzcgMy41NjQgMS41ODQgQyAzLjU2NCAxLjY4MyAzLjUwOSAxLjczOCAzLjM4OCAxLjczOCBDIDMuMyAxLjczOCAzLjI0NSAxLjY4MyAzLjIxMiAxLjU4NCBDIDMuMDAzIDAuOTI0IDIuMzY1IDAuMTk4IDEuNTczIDAuMTk4IEMgMS40MTkgMC4xOTggMS4zNDIgMC4zMDggMS4zNDIgMC41MTcgQyAxLjM0MiAwLjY3MSAxLjQzIDEuMDIzIDEuNjA2IDEuNTczIEwgMS45OCAyLjY3MyBDIDIuMjk5IDMuNzUxIDIuNDUzIDQuMzY3IDIuNDUzIDQuNTMyIEMgMi40NTMgNC43NTIgMi4zMzIgNC44NjIgMi4xMDEgNC44NjIgQyAxLjg5MiA0Ljg2MiAxLjc0OSA0Ljc2MyAxLjY2MSA0LjU1NCBDIDEuNTQgNC4xNDcgMS40NjI5OTk5IDMuODI4IDEuNDMgMy42MDggQyAxLjMzMSAzLjM2NiAxLjIzMiAyLjk4MSAxLjExMSAyLjQ1MyBDIDEuMTExIDIuNDQyIDAuOTU3IDEuOTkwOTk5OSAwLjk1NyAxLjk4IEMgMC44NTggMS42NzE5OTk5IDAuNjE2IDEuMTQ0IDAuNjE2IDAuODE0IEMgMC42MTYgMC4yNjQgMS4wMDEgLTAuMTIxIDEuNTUxIC0wLjEyMSBaICIvPgogICAgICAgIDwvc3ltYm9sPgogICAgICAgIDxzeW1ib2wgaWQ9Imc0NjMxRUIzNTEyMUUzMkMyMDNEREIxQ0JDNzA4NzI5NyIgb3ZlcmZsb3c9InZpc2libGUiPgogICAgICAgICAgICA8cGF0aCBkPSJNIDMuMjIzIC0yLjIxMSBDIDMuNzQgLTEuNzA1IDQuMzM0IC0xLjAyMyA1LjAwNSAtMC4xNzYgTCA0LjY4NiAxLjIxIEMgNC42NTMgMS4zNjQgNC42NDIgMS41MDcgNC42NDIgMS42NSBDIDQuNjQyIDIuNzcyIDQuNjUzIDMuNTUzIDQuNjg2IDMuOTgxOTk5OSBDIDQuNzE5IDQuNDU1IDQuNzg1IDQuNzk2IDQuODg0IDUuMDE2IEwgNC43NzQgNS4xMjYgTCAzLjk4MTk5OTkgNC42ODYgQyAzLjQ4NyA0Ljc5NiAzLjA4IDQuOTYxIDIuNzYxIDUuMTgwOTk5OCBDIDIuMDU3IDQuNzYzIDEuNDYyOTk5OSA0LjM4OSAwLjk2OCA0LjA0OCBDIDAuODU4IDMuMzEwOTk5OSAwLjgwMyAyLjU4NSAwLjgwMyAxLjg0OCBDIDAuODAzIDEuNTk1IDAuODE0IDEuMjEgMC44NDcgMC43MDQgTCAxLjYwNiAtMC4yNDIgQyAxLjAwMSAtMC43NTkgMC41MTcgLTEuMTQ0IDAuMTU0IC0xLjM5NyBMIDAuMzI5OTk5OTggLTEuNjA2IEwgMC43MTUgLTEuMzk3IEMgMS40NjI5OTk5IC0yLjAwMiAyLjE2NyAtMi4yOTkgMi44MTYgLTIuMjk5IEMgMi45MDQgLTIuMjk5IDMuMDM2IC0yLjI2NiAzLjIyMyAtMi4yMTEgWiBNIDEuOTM2IDQuMjQ2IEMgMi4zNTQgNC4wNTkgMi45NyAzLjkwNSAzLjc3MyAzLjc5NSBDIDMuNzA3IDMuMTAyIDMuNjc0IDIuMjk5IDMuNjc0IDEuMzc1IEwgMi41MDggMC41MTcgQyAyLjE4OSAwLjgyNSAxLjk1OCAxLjExMSAxLjgxNDk5OTkgMS4zNzUgQyAxLjc4MiAxLjc4MiAxLjc2IDIuMjY2IDEuNzYgMi44MzggQyAxLjc2IDMuNDU0IDEuODE0OTk5OSAzLjkyNyAxLjkzNiA0LjI0NiBaIE0gMy4yMzQgLTEuNDA4IEMgMi43NjEgLTEuNDA4IDIuMjU0OTk5OSAtMS4xMzMgMS42OTQgLTAuNTgzIEMgMi4zNzYgMCAzLjA0NyAwLjUyOCAzLjcxOCAxLjAwMSBDIDMuOTA1IDAuMjA4OTk5OTkgMy45OTMgLTAuMjg2IDMuOTkzIC0wLjQ3MyBDIDMuOTkzIC0wLjk3OSAzLjcxOCAtMS40MDggMy4yMzQgLTEuNDA4IFogIi8+CiAgICAgICAgPC9zeW1ib2w+CiAgICAgICAgPHN5bWJvbCBpZD0iZ0E3MTIyNDJCOUVERjg0RDg1QTA2RTQ2M0RFODgwMUE2IiBvdmVyZmxvdz0idmlzaWJsZSI+CiAgICAgICAgICAgIDxwYXRoIGQ9Ik0gNC40ODggLTAuMzI5OTk5OTggQyA0LjY4NiAwLjMwOCA0Ljc4NSAxLjMxOTk5OTkgNC43ODUgMi43MDYgQyA0Ljc4NSAzLjIyMyA0Ljc2MyAzLjg1IDQuNzA4IDQuNTk4IEMgNC4xNjkgNC43NzQgMy43NCA1LjAwNSAzLjQyMSA1LjI5MSBDIDIuNjg0IDQuNzYzIDIuMTY3IDQuMzg5IDEuODcgNC4xNTggTCAxLjg4MSA1LjI2OSBDIDEuODgxIDUuNjU0IDEuOTQ3IDYuMDE3IDIuMDY4IDYuMzM2IEMgMi4xODkgNi42NTQ5OTk3IDIuNDUzIDcuMDE4IDIuODcxIDcuNDI1IEwgMi42MTggNy41OSBMIDEuMzQyIDYuNjQ0IEwgMS4wODkgNy40NTggTCAwLjg5MSA3LjQxNCBDIDAuOTM1IDYuNjg3OTk5NyAwLjk1NyA1Ljc4NiAwLjk1NyA0LjcxOSBDIDAuOTU3IDMuNDU0IDAuOTEzIDIuMTIzIDAuODM1OTk5OTcgMC43MjYgTCAxLjQ2Mjk5OTkgLTAuMzI5OTk5OTggTCAyLjQwOSAwLjU1IEwgMS44MTQ5OTk5IDEuNDA4IEwgMS44NyAzLjcxOCBDIDIuMjg4IDQuMDU5IDIuNjA2OTk5OSA0LjIzNSAyLjgzOCA0LjIzNSBDIDMuMTAyIDQuMjM1IDMuMzk5IDQuMTE0IDMuNzQgMy44NjEgQyAzLjgxNyAyLjg5MyAzLjg1IDIuMzEgMy44NSAyLjEyMyBDIDMuODUgMC41NSAzLjcxOCAtMC41MDYgMy40NDMgLTEuMDIzIEMgMy4zNjYgLTEuMTY2IDMuMjc3OTk5OSAtMS4yNzYgMy4xNzkgLTEuMzUzIEwgMi40NTMgLTEuOTggTCAyLjY4NCAtMi4xODkgQyAzLjQ2NSAtMS41ODQgNC4wNyAtMC45NTcgNC40ODggLTAuMzI5OTk5OTggWiAiLz4KICAgICAgICA8L3N5bWJvbD4KICAgICAgICA8c3ltYm9sIGlkPSJnMjAyMzQ5RTA0RTkwRDNCRjdBQzQyRUY3NURFRjJEOTEiIG92ZXJmbG93PSJ2aXNpYmxlIj4KICAgICAgICAgICAgPHBhdGggZD0iTSA1LjAyODEgMC42Njk5IEMgNS4xODk4IDAuODMxNiA1LjI3NDUgMC45NDcxIDUuMjc0NSAxLjAwODcgQyA1LjI3NDUgMS4xMzE5IDUuMjEyOSAxLjE5MzUgNS4wODIgMS4xOTM1IEMgNS4wMjgxIDEuMTkzNSA0Ljk3NDIgMS4xNTUgNC45MDQ5IDEuMDc4IEMgNC40MzUxOTk3IDAuNTQ2NyAzLjg0MjMgMC4yNzcxOTk5OCAzLjEyNjIgMC4yNzcxOTk5OCBDIDIuNTcxOCAwLjI3NzE5OTk4IDIuMTg2OCAwLjUyMzYgMS45NzEyIDEuMDA4NyBDIDEuNzc4NyAxLjQ0NzYgMS42ODYzIDEuOTg2NiAxLjY4NjMgMi42MjU3IEMgMS42ODYzIDMuMjAzMTk5OSAxLjc3MSAzLjcxOTEgMS45NDA0IDQuMTU4IEMgMi4xNzE0IDQuNzgxNyAyLjUzMzMgNS4wODk2OTk3IDMuMDE4NCA1LjA4OTY5OTcgQyAzLjM2NDg5OTkgNS4wODk2OTk3IDMuNzAzNyA0Ljk1MTEgNC4wNTAyIDQuNjczOSBDIDQuMzk2NyA0LjM5NjcgNC42MiA0LjA4ODcgNC43Mjc4IDMuNzQ5ODk5OSBDIDQuNzY2MyAzLjY0MjEgNC44MjAyIDMuNTg4MiA0LjkwNDkgMy41ODgyIEMgNS4wMDUgMy41ODgyIDUuMDU4OSAzLjY4MDYgNS4wNTg5IDMuODY1NCBMIDUuMDU4OSA1LjEzNTkgQyA1LjA1ODkgNS4zMjg0IDUuMDA1IDUuNDIwOCA0LjkwNDkgNS40MjA4IEMgNC44MjAyIDUuNDIwOCA0Ljc1ODU5OTggNS4zNTkyIDQuNzI3OCA1LjI0MzcgQyA0LjY5NyA1LjEyODIgNC42Mjc3IDUuMDY2NiA0LjUxMjIgNS4wNjY2IEMgNC4zNTgyIDUuMDY2NiA0LjEyNzIgNS4xMjgyIDMuODAzNzk5OSA1LjI0MzcgQyAzLjQ4MDQgNS4zNTkyIDMuMjEwOSA1LjQyMDggMi45OTUzIDUuNDIwOCBDIDIuMjk0NiA1LjQyMDggMS42ODYzIDUuMjA1MiAxLjE2MjY5OTkgNC43NzQgQyAwLjU3NzUgNC4yOTY2IDAuMjg0OSAzLjU4ODIgMC4yODQ5IDIuNjQxMSBDIDAuMjg0OSAxLjY5NCAwLjU3NzUgMC45Nzc4OTk5NyAxLjE1NSAwLjUwODIgQyAxLjY4NjMgMC4wNjkyOTk5OTYgMi4zMSAtMC4xNDYzIDMuMDEwNyAtMC4xNDYzIEMgMy43ODg0IC0wLjE0NjMgNC40NjYgMC4xMjMyIDUuMDI4MSAwLjY2OTkgWiBNIDQuNzM1NSA0Ljc3NCBMIDQuNzM1NSA0LjQ0MjkgQyA0LjY3MzkgNC41MTIyIDQuNTgxNSA0LjYxMjMgNC40NTgzIDQuNzQzMiBMIDQuNTE5OSA0Ljc0MzIgQyA0LjYwNDYgNC43NDMyIDQuNjgxNiA0Ljc1MDkgNC43MzU1IDQuNzc0IFogTSAxLjk3MTIgNC44ODk1IEMgMS45MDE4OTk5IDQuODEyNSAxLjg0MDMgNC43MjAxIDEuNzc4NyA0LjYyIEMgMS41NCA0LjIyNzMgMS4zNTUyIDMuMzAzMyAxLjM1NTIgMi42MjU3IEMgMS4zNTUyIDEuNTYzMSAxLjU4NjIgMC44MDg1IDIuMDQ4MiAwLjM1NDIgQyAxLjA4NTcgMC43MjM4IDAuNjA4MyAxLjQ4NjEgMC42MDgzIDIuNjMzNCBDIDAuNjA4MyAzLjc3MyAxLjA2MjYgNC41Mjc2IDEuOTcxMiA0Ljg4OTUgWiAiLz4KICAgICAgICA8L3N5bWJvbD4KICAgIDwvZGVmcz4KICAgIDxkZWZzIGlkPSJjbGlwLXBhdGgiPgogICAgICAgIDxjbGlwUGF0aCBpZD0iYzhFRjMzNDZFQzQyRDczRjIwRUI2NkQ5NTI5RDJEN0JEIj4KICAgICAgICAgICAgPHBhdGggZD0iTSAwIDAgTCA1LjUgMCBMIDUuNSAzLjMgTCAwIDMuMyBaICIvPgogICAgICAgIDwvY2xpcFBhdGg+CiAgICAgICAgPGNsaXBQYXRoIGlkPSJjN0VCQTQyMzYxRTA4MzQ5NDZCRTlEM0RERDA3OUM1OTUiPgogICAgICAgICAgICA8cGF0aCBkPSJNIDAgMCBMIDUuNSAwIEwgNS41IDMuMyBMIDAgMy4zIFogIi8+CiAgICAgICAgPC9jbGlwUGF0aD4KICAgICAgICA8Y2xpcFBhdGggaWQ9ImNERDBFRTQ2Nzc0RUI1Mjg3RUE4MDc2QjgyMkMyN0FBOCI+CiAgICAgICAgICAgIDxwYXRoIGQ9Ik0gMCAwIEwgNS41IDAgTCA1LjUgMy4zIEwgMCAzLjMgWiAiLz4KICAgICAgICA8L2NsaXBQYXRoPgogICAgPC9kZWZzPgo8L3N2Zz4K" class="img-fluid quarto-figure quarto-figure-center figure-img"></p>
 </figure>
 </div>
-</div>
-<details>
-<summary>
-証明
-</summary>
-<div class="proof">
-<p><span class="proof-title"><em>Proof</em>. </span><span class="math inline">\((X_1,X_2),(Y_1,Y_2)\in\g\)</span> とする．<span class="math inline">\(\psi(X_1,X_2):=\varphi(X_1)+i\varphi(X_2)\)</span> とすると，<span class="math inline">\(\varphi=\psi\circ\iota\)</span>で，<span class="math inline">\(\psi\)</span> は複素 Lie 代数の準同型写像．実際，</p>
-<p><span class="math display">\[
-\begin{align*}
-&amp;\psi([(X_1,X_2),(Y_1,Y_2)])\\
-&amp;=\psi([X_1,Y_1]-[X_2,Y_2],[X_1,Y_2]+[X_2,Y_1])\\
-&amp;=\varphi([X_1,Y_1])-\varphi([X_2,Y_2]) + i\varphi([X_1,Y_2]) + i\varphi([X_2,Y_1])\\
-&amp;=[\varphi(X_1),\varphi(Y_1)]-[\varphi(X_2),\varphi(Y_2)]+i[\varphi(X_1),\varphi(Y_2)]+i[\varphi(X_2),\varphi(Y_1)]\\
-&amp;=[\psi(X_1,X_2),\varphi(Y_1)]+i[\psi(X_1,X_2),\varphi(Y_2)]\\
-&amp;=[\psi(X_1,X_2),\psi(Y_1,Y_2)].
-\end{align*}
-\]</span></p>
-<p>この <span class="math inline">\(\psi\)</span> が一意に定まることを示す．<span class="math inline">\(\psi\)</span> の線形性から，任意の <span class="math inline">\(X,Y\in\g\)</span> に対して，<span class="math inline">\(\psi((X,Y))=\psi((X,0)+i(Y,0))=\psi(X,0)+i\psi(Y,0)=\varphi(X)+i\varphi(Y)\)</span> と一意にきまる．</p>
-</div>
-</details>
-<div id="exm-3.39" class="theorem example">
-<p><span class="theorem-title"><strong>Example 13 (<span class="citation" data-cites="hallLieGroupsLie2015">Hall (<a href="#ref-hallLieGroupsLie2015" role="doc-biblioref">2015</a>)</span> (3.17) 複素化の例)</strong></span> 以下の複素 Lie 代数の同型関係がある．</p>
-<ul>
-<li><span class="math inline">\(\gl(n;\R)_\C\simeq\gl(n;\C)\)</span></li>
-<li><span class="math inline">\(\u(n)_\C\simeq\gl(n;\C)\)</span></li>
-<li><span class="math inline">\(\su(n)_\C\simeq\sl(n;\C)\)</span></li>
-<li><span class="math inline">\(\sl(n;\R)_\C\simeq\sl(n;\C)\)</span></li>
-<li><span class="math inline">\(\so(n)_\C\simeq\so(n;\C)\)</span></li>
-<li><span class="math inline">\(\sp(n;\R)_\C\simeq\sp(n;\C)\)</span></li>
-<li><span class="math inline">\(\sp(n)_\C\simeq\sp(n;\C)\)</span></li>
-</ul>
-</div>
-<div class="proof">
-<p><span class="proof-title"><em>Proof</em>. </span></p>
-<details>
-<summary>
-<span class="math inline">\(\gl(n;\R)_\C\simeq\gl(n;\C)\)</span>
-</summary>
-<a href="#exm-3.23" class="quarto-xref">Example 7</a> より，<span class="math inline">\(\gl(n;\R)=M_n(\R),\gl(n;\C)=M_n(\C)\)</span> なので明らか．
-</details>
-<details>
-<summary>
-<span class="math inline">\(\u(n)_\C\simeq\gl(n;\C)\)</span>
-</summary>
-<p><a href="#exm-3.24" class="quarto-xref">Example 8</a> より，<span class="math inline">\(\u(n)=\SkewH(n)\)</span> である． <span class="math inline">\(X\in\u(n)\)</span> とすると，<span class="math inline">\(iX\not\in\u(n)\)</span>．実際，<span class="math inline">\(X^*=-X\)</span> より，<span class="math inline">\((iX)^*=-iX^*=iX\)</span> である．</p>
-<p><span class="math inline">\(\h:=\{X+iY\mid X,Y\in\u(n)\}\)</span> とする．<span class="math inline">\(\h\subset\gl(n;\C)\)</span> は明らか．</p>
-<p>任意の <span class="math inline">\(X\in M_n(C)\)</span> は</p>
-<p><span class="math display">\[
-X=\frac{X-X^*}{2}+i\frac{X+X^*}{2i}
-\]</span></p>
-<p>と分解できる．<span class="math inline">\((X-X^*)/2,(X+X^*)/(2i)\in\SkewH(n)\)</span> より，<span class="math inline">\(X\in\h\)</span>.</p>
-したがって，<span class="math inline">\(\u(n)_\C\simeq\h=\gl(n;\C)\)</span>.
-</details>
-<details>
-<summary>
-<span class="math inline">\(\su(n)_\C\simeq\sl(n;\C)\)</span>
-</summary>
-<p><a href="#exm-3.24" class="quarto-xref">Example 8</a> より，<span class="math inline">\(\su(n)=\SkewH(n)\cap\sl(n;\C)\)</span> で，<span class="math inline">\(\u(n)\)</span> の場合と同様に，<span class="math inline">\(X\in\su(n)\Rightarrow iX\not\in\su(n)\)</span> が成立する．</p>
-<p><span class="math inline">\(\h:=\{X+iY\mid X,Y\in\su(n)\}\)</span> とする．<span class="math inline">\(\h\subset\sl(n;\C)\)</span> は明らか．</p>
-<p>任意の <span class="math inline">\(X\in\sl(n;\C)\)</span> は</p>
-<p><span class="math display">\[
-X=\frac{X-X^*}{2}+i\frac{X+X^*}{2i}
-\]</span></p>
-と分解できて，<span class="math inline">\((X-X^*)/2,(X+X^*)/(2i)\in\SkewH(n)\cap\sl(n;\C)\)</span> より，<span class="math inline">\(X\in\h\)</span>. したがって，<span class="math inline">\(\su(n)_\C\simeq\h=\sl(n;\C)\)</span>.
-</details>
-<details>
-<summary>
-<span class="math inline">\(\sl(n;\R)_\C\simeq\sl(n;\C)\)</span>
-</summary>
-<p><span class="math inline">\(\h:=\{X+iY\mid X,Y\in\sl(n;\R)\}\)</span> とする．<span class="math inline">\(\h\subset\sl(n;\C)\)</span> は明らか． また，任意の <span class="math inline">\(X\in\sl(n;\C)\)</span> は <span class="math inline">\(X=\Re(X)+i\Im(X)\)</span> と分解できて，<span class="math inline">\(\Re(X),\Im(X)\in\sl(n;\R)\)</span> である． したがって，<span class="math inline">\(X\in\h\)</span> なので，<span class="math inline">\(\sl(n;\C)\subset\h\)</span>.</p>
-以上より，<span class="math inline">\(\h=\sl(n;\C)\)</span>.
-</details>
-<details>
-<summary>
-<span class="math inline">\(\so(n)_\C\simeq\so(n;\C)\)</span>
-</summary>
-<p><a href="#exm-3.24" class="quarto-xref">Example 8</a> より，<span class="math inline">\(\so(n;\K)=\Skew(n;\K)\cap\sl(n;\K)\)</span> である．</p>
-<p><span class="math inline">\(\h:=\{X+iY\mid X,Y\in\so(n)\}\)</span> とする．<span class="math inline">\(\h\subset\so(n;\C)\)</span> は明らか．</p>
-<p><span class="math inline">\(X\in\so(n;\C)\)</span> とする．</p>
-<p><span class="math inline">\(X=\Re(X)+i\Im(X)\)</span> とすると，<span class="math inline">\(\Re(X),\Im(X)\in\sl(n;\R)\)</span> である．また，<span class="math inline">\(\Re(X),\Im(X)\in\Skew(n;\R)\)</span> も，</p>
-<p><span class="math display">\[
-\begin{align*}
-(\Re(X))^\top &amp;= \left(\frac{X+\overline{X}}{2}\right)^\top
-=\frac{X^\top+\overline{X^\top}}{2}
-=-\frac{X+\overline{X}}{2}
-=-\Re(X)\\
-(\Im(X))^\top &amp;= \left(\frac{X-\overline{X}}{2}\right)^\top
-=\frac{X^\top-\overline{X^\top}}{2}
-=-\frac{X-\overline{X}}{2}
-=-\Im(X)
-\end{align*}
-\]</span></p>
-からわかる．よって，<span class="math inline">\(X\in\h\)</span> で，<span class="math inline">\(\so(n;\C)\subset\h\)</span> が成立．したがって，<span class="math inline">\(\h=\so(n;\C)\)</span>.
-</details>
-<details>
-<summary>
-<span class="math inline">\(X\in\sp(n;\K)\Rightarrow \Re(X),\Im(X)\in\sp(n;\R),X^\top,X^*\in\sp(n;\K)\)</span>
-</summary>
-<p><span class="math inline">\(\Re(X),\Im(X)\in\sp(n;\R)\)</span> は明らか．実際，</p>
-<p><span class="math display">\[
-\Omega\Re(X)^\top\Omega + i\Omega\Im(X)^\top\Omega
-=\Omega{X}^\top\Omega
-=\Re(X)+i\Im(X)
-\]</span></p>
-<p>より，<span class="math inline">\(\Re(X)=\Omega\Re(X)^\top\Omega,\Im(X)=\Omega\Im(X)^\top\Omega.\)</span></p>
-<p><span class="math inline">\((\Omega{X}\Omega)^\top=\Omega^\top X^\top\Omega^\top=(-\Omega)X^\top(-\Omega)=X\)</span> の両辺を転置すると，<span class="math inline">\(\Omega(X^\top)^\top\Omega=X^\top\)</span> が得られる．よって，<span class="math inline">\(X^\top\in\sp(n;\K).\)</span></p>
-<span class="math inline">\(X^*=\Re(X^\top)-i\Im(X^\top)\in\sp(n;\K).\)</span>
-</details>
-<details>
-<summary>
-<span class="math inline">\(\sp(n;\R)_\C\simeq\sp(n;\C)\)</span>
-</summary>
-<p><a href="#exm-3.25" class="quarto-xref">Example 9</a> より，<span class="math inline">\(\Omega=\begin{pmatrix}&amp;I_n\\-I_n&amp;\end{pmatrix}\)</span> とすると，<span class="math inline">\(\sp(n;\K)=\{X\in M_{2n}(\K)\mid \Omega X^\top \Omega=X\}\)</span> である．</p>
-<p><span class="math inline">\(\h:=\{X+iY\mid X,Y\in \sp(n;\R)\}\)</span> とする．<span class="math inline">\(X+iY\in\h\)</span> とすると，<span class="math inline">\(\Omega(X+iY)^\top\Omega=X+iY\)</span> より，<span class="math inline">\(h\subset\sp(n;\C).\)</span></p>
-<span class="math inline">\(X\in\sp(n;\C)\)</span> とする．<span class="math inline">\(\Re(X),\Im(X)\in\sp(n;\R)\)</span> である． <span class="math inline">\(X=\Re(X)+i\Im(X)\in\h\)</span> より，<span class="math inline">\(\sp(n;\C)\subset\h\)</span> である．したがって，<span class="math inline">\(\h=\sp(n;\C)\)</span>.
-</details>
-<details>
-<summary>
-<span class="math inline">\(\sp(n)_\C\simeq\sp(n;\C)\)</span>
-</summary>
-<p><a href="#exm-3.25" class="quarto-xref">Example 9</a> より，<span class="math inline">\(\sp(n)=\sp(n;\C)\cap\u(2n)\)</span> である．</p>
-<p><span class="math inline">\(X\in\sp(n)\Rightarrow iX\not\in\sp(n)\)</span> は <span class="math inline">\(X\in\u(2n)=\SkewH(2n)\)</span> からわかる．</p>
-<p><span class="math inline">\(\h:=\{X+iY\mid X,Y\in \sp(n)\}\)</span> とすると，<span class="math inline">\(\h\subset \sp(n;\C)\)</span> は明らか．</p>
-<p><span class="math inline">\(X\in\sp(n;\C)\)</span> に対し，<span class="math inline">\(X=(X-X^*)/2 + i(X+X^*)/(2i)\)</span> とすると，<span class="math inline">\((X-X^*)/2,(X+X^*)/(2i)\in\sp(n)\)</span> である．よって，<span class="math inline">\(X\in\h\)</span> が成立し，<span class="math inline">\(\sp(n;\C)\subset\h.\)</span></p>
-以上より，<span class="math inline">\(\h=\sp(n;\C)\)</span>.
-</details>
-</div>
-</section>
-<section id="the-exponential-map" class="level1">
-<h1>3.7 The Exponential Map</h1>
-<p><span class="math inline">\(G\)</span> は線形 Lie 群，<span class="math inline">\(\g\)</span> は <span class="math inline">\(G\)</span> の Lie 代数とする．</p>
-<div id="def-3.40" class="theorem definition">
-<p><span class="theorem-title"><strong>Definition 15 (<span class="citation" data-cites="hallLieGroupsLie2015">Hall (<a href="#ref-hallLieGroupsLie2015" role="doc-biblioref">2015</a>)</span> Definition 3.40 指数写像)</strong></span> <span class="math inline">\(\exp:\g\to G,X\mapsto e^{X}\)</span> を <span class="math inline">\(G\)</span> の指数写像という．</p>
-</div>
-<ul>
-<li>指数写像は全射でない．</li>
-</ul>
-<div id="exm-3.41" class="theorem example">
-<p><span class="theorem-title"><strong>Example 14 (<span class="citation" data-cites="hallLieGroupsLie2015">Hall (<a href="#ref-hallLieGroupsLie2015" role="doc-biblioref">2015</a>)</span> Example 3.41)</strong></span> <span class="math inline">\(e^{X}=\begin{pmatrix}-1&amp;-1\\0&amp;-1\end{pmatrix}\in\SL(2;\C)\)</span> となるような，<span class="math inline">\(X\in\sl(2;\C)\)</span> は存在しない．</p>
-</div>
-<div class="proof">
-<p><span class="proof-title"><em>Proof</em>. </span><span class="math inline">\(X\in\sl(2;\C)\)</span> を仮定して矛盾を示す． <span class="math inline">\(e^X\)</span> が相異なる固有値を持つなら，<span class="math inline">\(X\)</span> もそう．一方，<span class="math inline">\(\begin{pmatrix}-1&amp;1\\0&amp;-1\end{pmatrix}\)</span> の固有値は <span class="math inline">\(-1\)</span> のみなので，<span class="math inline">\(X\)</span> の固有値は重複する．<span class="math inline">\(\tr{X}=0\)</span> なので，<span class="math inline">\(X\)</span> の固有値は <span class="math inline">\(0\)</span> である．このとき，<span class="math inline">\(v\in\R^2\backslash\{0\}\)</span> で <span class="math inline">\(Xv=0\)</span> となるものが存在．<span class="math inline">\(e^Xv=\left(\sum_{m=0}^\infty X^m/m!\right)v=v\)</span> より，<span class="math inline">\(e^X\)</span> は固有値 <span class="math inline">\(1\)</span> をもつ．これは矛盾．よって，<span class="math inline">\(X\notin\sl(2;\C)\)</span></p>
-</div>
-<div id="thm-3.42" class="theorem">
-<p><span class="theorem-title"><strong>Theorem 3 (<span class="citation" data-cites="hallLieGroupsLie2015">Hall (<a href="#ref-hallLieGroupsLie2015" role="doc-biblioref">2015</a>)</span> Theorem 3.42)</strong></span> <span class="math inline">\(U_\varepsilon:=\{X\in\GL(n;\C)\mid \|X\|&lt;\varepsilon\}\)</span> とする．ある <span class="math inline">\(\varepsilon\in(0,\log2)\)</span> が存在し，任意の <span class="math inline">\(A\in V_\varepsilon:=\exp(U_\varepsilon)\)</span> に対し，<span class="math inline">\(A\in G\iff \log{A}\in\g\)</span>.</p>
-</div>
-<div id="nte-3.42" class="callout callout-style-default callout-note callout-titled">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-Note 12
-</div>
-</div>
-<div class="callout-body-container callout-body">
-<p><span class="math inline">\(\varepsilon\in(0,\log2)\)</span> ならば， <span class="citation" data-cites="hallLieGroupsLie2015">Hall (<a href="#ref-hallLieGroupsLie2015" role="doc-biblioref">2015</a>)</span> Theorem 2.8 より， <span class="math inline">\(X\in U_\varepsilon\)</span> に対して，<span class="math inline">\(\log{e^{X}}\)</span> が定義できて，<span class="math inline">\(X=\log{e^X}\)</span> である．</p>
-</div>
-</div>
-<div class="proof">
-<p><span class="proof-title"><em>Proof</em>. </span><span class="math inline">\((\Leftarrow)\)</span> は <span class="math inline">\(A=e^{\log{A}}\in G\)</span> から従う．<span class="math inline">\((\Rightarrow)\)</span> を示す．</p>
-<p><span class="math inline">\(M_n(\C)\simeq\C^{n^2}\simeq \R^{2n^2}\)</span> の同一視によって，<span class="math inline">\(M_n(\C)\)</span> に <span class="math inline">\(\R^{2n^2}\)</span> の標準内積を入れ，<span class="math inline">\(\g\)</span> の直交補空間を <span class="math inline">\(D\)</span> とする． <span class="math inline">\(\Phi:\g\oplus D\to M_n(\C),X+Y\mapsto e^{X}e^{Y}\)</span> とする．</p>
-<details>
-<summary>
-<span class="math inline">\(\Phi\)</span> は <span class="math inline">\(\Phi(0,0)=I\)</span> のある近傍で可逆である．
-</summary>
-<p><span class="math inline">\(Z(t)=X(t)+Y(t)\in\g\oplus D\)</span> は <span class="math inline">\(Z(0)=0,Z&#39;(0)=A\)</span> を満たす曲線とする．原点における微分 <span class="math inline">\(\Phi_{*,0}(A)\)</span> は，<a href="#prp-dexp" class="quarto-xref">Proposition 23</a> より， <span class="math display">\[
-\begin{align*}
-\Phi_{*,0}(A)
-&amp;=\left.\dd{}{t}\Phi(Z(t))\right|_{t=0}\\
-&amp;=\left.\dd{}{t}e^{X(t)}\right|_{t=0}e^{Y(0)}+e^{X(0)}\left.\dd{}{t}e^{Y(t)}\right|_{t=0}\\
-&amp;=\exp_{*,X(0)}(X&#39;(0))I+I\exp_{*,Y(0)}(Y&#39;(0))\\
-&amp;=X&#39;(t)+Y&#39;(t)=A
-\end{align*}
-\]</span></p>
-である．<span class="math inline">\(\Phi_{*,0}\)</span> は恒等写像なので，逆関数定理より，<span class="math inline">\(\Phi\)</span> は <span class="math inline">\(\Phi(0,0)=I\)</span> のある近傍で可逆である．
-</details>
-<p>ある <span class="math inline">\(\varepsilon\in(0,\log2)\)</span> が存在して，任意の <span class="math inline">\(A\in V_\varepsilon\cap G\)</span> に対して，<span class="math inline">\(\log{A}\in\g\)</span> となることを背理法で示す．</p>
-<p>任意の <span class="math inline">\(1/m\in(0,\log2)\)</span> に対し，ある <span class="math inline">\(A_m\in V_{1/m}\cap G\)</span> が存在して，<span class="math inline">\(\log{A}_m\notin\g\)</span> を仮定する．このとき，<span class="math inline">\(A_m\to I\)</span> である．</p>
-<p>十分大きく <span class="math inline">\(m\)</span> をとると，<span class="math inline">\(\Phi\)</span> が可逆となるような <span class="math inline">\(I\)</span> の近傍に <span class="math inline">\(A_m\)</span> が属するので，<span class="math inline">\(A_m=e^{X_m}e^{Y_m}\)</span> となる <span class="math inline">\(X_m\in\g,Y_m\in D\)</span> が存在．ここで，<span class="math inline">\(A_m\to I\)</span> より，<span class="math inline">\(X_m\to0,Y_m\to0\)</span> である．また，<span class="math inline">\(Y_m=0\)</span> を仮定すると，<span class="math inline">\(\log A_m=X_m\in\g\)</span> となって矛盾するため，<span class="math inline">\(Y_m\neq0\)</span> である．</p>
-<p><span class="math inline">\(A_m,e^{X_m}\in G\)</span> より，<span class="math inline">\(B_m:=e^{-X_m}A_m=e^{Y_m}\in G\)</span> である．<span class="math inline">\(D\)</span> の単位球面 <span class="math inline">\(\mathbb{S}_D\)</span> はコンパクトなので，ある <span class="math inline">\(Y\in\mathbb{S}_D\)</span> が存在して，<span class="math inline">\(Y_{m&#39;}/\|Y_{m&#39;}\|\to Y\)</span> となるような部分列が存在．<a href="#lem-3.43" class="quarto-xref">Lemma 1</a> より，<span class="math inline">\(Y\in\g\)</span> が成立するが，<span class="math inline">\(\g\cap D=\{0\}\)</span> なので矛盾．</p>
-</div>
-<div id="lem-3.43" class="theorem lemma">
-<p><span class="theorem-title"><strong>Lemma 1 (<span class="citation" data-cites="hallLieGroupsLie2015">Hall (<a href="#ref-hallLieGroupsLie2015" role="doc-biblioref">2015</a>)</span> Lemma 3.43)</strong></span> <span class="math inline">\(I\in G\)</span> に収束する <span class="math inline">\(\{B_m\}\subset G\)</span> について，<span class="math inline">\(Y_m:=\log{B}_m\)</span> は十分大きい <span class="math inline">\(m\)</span> で存在する．<span class="math inline">\(Y_m\neq0\)</span> かつ <span class="math inline">\(Y_m/\|Y_m\|\to Y\in M_n(\C)\)</span> を仮定する．このとき，<span class="math inline">\(Y\in \g\)</span>.</p>
-</div>
-<div class="proof">
-<p><span class="proof-title"><em>Proof</em>. </span><a href="#thm-2.8" class="quarto-xref">Theorem 5</a> より，<span class="math inline">\(\|B_m-I\|&lt;1\)</span> となるような十分大きい <span class="math inline">\(m\)</span> については <span class="math inline">\(Y_m\)</span> が定義できる．仮定より，任意の <span class="math inline">\(t\in\R\)</span> に対し，<span class="math inline">\(tY_m/\|Y_m\|\to tY\)</span> である． <span class="math inline">\(\|Y_m\|=\|\log B_m\|\to\|\log I\|=0\)</span> より，<span class="math inline">\(k_m:=\lceil t/\|Y_m\| \rceil\)</span> とすると， <span class="math inline">\(0\leq k_m\|Y_m\|-t&lt;\|Y_m\|\to 0\)</span> より，<span class="math inline">\(k_m\|Y_m\|\to t\)</span> がわかる．</p>
-<div id="nte-ceil" class="callout callout-style-default callout-note callout-titled">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-Note 13
-</div>
-</div>
-<div class="callout-body-container callout-body">
-<p><span class="math inline">\(x/a\leq \lceil x/a\rceil&lt;x/a +1\)</span> を整理すると， <span class="math display">\[
-x\leq \lceil x/a \rceil a&lt;x+a
-\]</span></p>
-<p>がわかる．各項に <span class="math inline">\(-x\)</span> を加えると，<span class="math inline">\(0\leq \lceil x/a\rceil a-x&lt;a\)</span> が得られる．</p>
-</div>
-</div>
-<p>したがって， <span class="math display">\[
-e^{k_mY_m}=\exp\left( k_m\|Y_m\|\frac{Y_m}{\|Y_m\|} \right)\to e^{tY}
-\]</span></p>
-<p>である．<span class="math inline">\(e^{k_mY_m}\in G\)</span> より，<span class="math inline">\(e^{tY}\in G\)</span> である．よって，<span class="math inline">\(Y\in\g\)</span>.</p>
-</div>
-</section>
-<section id="conseqences-of-theorem-3.42" class="level1">
-<h1>3.8 Conseqences of Theorem 3.42</h1>
-<p><span class="math inline">\(G,H\)</span> は線形 Lie 群，<span class="math inline">\(\g,\h\)</span> は <span class="math inline">\(G,H\)</span> の Lie 代数とする．</p>
-<div id="cor-3.44" class="theorem corollary">
-<p><span class="theorem-title"><strong>Corollary 1 (<span class="citation" data-cites="hallLieGroupsLie2015">Hall (<a href="#ref-hallLieGroupsLie2015" role="doc-biblioref">2015</a>)</span> Corollary 3.44)</strong></span> <span class="math inline">\(0\in\g\)</span> の近傍 <span class="math inline">\(U\subset\g\)</span> と <span class="math inline">\(I\in G\)</span> の近傍 <span class="math inline">\(V\subset G\)</span> が存在して．<span class="math inline">\(\exp|_U:U\to V\)</span> は同相写像．</p>
-</div>
-<details>
-<summary>
-証明
-</summary>
-<a href="#thm-3.42" class="quarto-xref">Theorem 3</a> の <span class="math inline">\(U_\varepsilon,V_\varepsilon\)</span> をとって，<span class="math inline">\(U:=U_\varepsilon\cap\g,V:=V_\varepsilon\cap G\)</span> とする．このとき，任意の <span class="math inline">\(A\in V\)</span> に対し，<span class="math inline">\(\log{A}\in U\)</span> で，<span class="math inline">\(A=e^{\log{A}}\)</span> である．よって，<span class="math inline">\(\exp|_U\)</span> は全単射．また，<span class="math inline">\(\exp|_U,\log|_V\)</span> は連続なので，<span class="math inline">\(\exp|_U\)</span> は同相写像．
-</details>
-<div id="cor-3.45" class="theorem corollary">
-<p><span class="theorem-title"><strong>Corollary 2 (<span class="citation" data-cites="hallLieGroupsLie2015">Hall (<a href="#ref-hallLieGroupsLie2015" role="doc-biblioref">2015</a>)</span> Corollary 3.45)</strong></span> <span class="math inline">\(k:=\dim\g\)</span> とする．<span class="math inline">\(G\)</span> は <span class="math inline">\(M_n(\C)\)</span> の <span class="math inline">\(k\)</span> 次元正則部分多様体で，Lie 群．</p>
-</div>
-<details>
-<summary>
-証明
-</summary>
-<div class="proof">
-<p><span class="proof-title"><em>Proof</em>. </span>(<span class="math inline">\(G\)</span> は <span class="math inline">\(M_n(\C)\)</span> の <span class="math inline">\(k\)</span> 次元正則部分多様体)：</p>
-<p>任意の <span class="math inline">\(A_0\in G\)</span> に対し，<span class="math inline">\(M_n(\C)\)</span> の <span class="math inline">\(A_0\)</span> まわりのチャート <span class="math inline">\((U,\varphi)\)</span> が存在し，<span class="math inline">\(G\cap U\)</span> が <span class="math inline">\(n-k\)</span> 個の座標関数が消えている点の集合として定まることを示す．</p>
-<p><a href="#thm-3.42" class="quarto-xref">Theorem 3</a> の <span class="math inline">\(V_\varepsilon\)</span> をとる．任意の <span class="math inline">\(A_0\in G\)</span> に対し，<span class="math inline">\(A_0V_\varepsilon:=\{A_0A\mid A\in V_\varepsilon\}\)</span> は <span class="math inline">\(A_0\)</span> の近傍である． <span class="math inline">\(A\in A_0V_\varepsilon\iff A_0^{-1}A\in V_\varepsilon\)</span> より，<span class="math inline">\(X=\log(A_0^{-1}A)\)</span> として，<span class="math inline">\(A=A_0e^{X}\)</span> とかける．</p>
-<p><span class="citation" data-cites="hallLieGroupsLie2015">Hall (<a href="#ref-hallLieGroupsLie2015" role="doc-biblioref">2015</a>)</span> Proposition 2.16 より，<span class="math inline">\(X\mapsto e^X\)</span> は滑らかで，<a href="#prp-dexp" class="quarto-xref">Proposition 23</a> より，<span class="math inline">\(\exp_{*,0}\)</span> は正則．したがって，逆関数定理より，<span class="math inline">\(I\)</span> のある近傍 <span class="math inline">\(V\)</span> で逆写像 <span class="math inline">\(\log\)</span> も滑らか．このとき，<span class="math inline">\(V\)</span> は <span class="math inline">\(V\subset V_\varepsilon\)</span> となるようにとれる． したがって，<span class="math inline">\(\varphi:A_0V\to\varphi(A_0V),A\mapsto\log(A_0^{-1}A)\)</span> は <span class="math inline">\(C^\infty\)</span> 級微分同相．</p>
-<p><span class="math inline">\(M_n(\C)\simeq \R^{2n^2}\)</span> の同一視の下で，<span class="math inline">\((A_{0}V,\varphi)\)</span> は <span class="math inline">\(M_n(\C)\)</span> のチャートである． <a href="#thm-3.42" class="quarto-xref">Theorem 3</a> より，<span class="math inline">\(A\in G\cap A_0V\iff A_0^{-1}A\in G\cap V\Rightarrow X\in\g\)</span>，すなわち，<span class="math inline">\(G\cap A_0V\)</span> は <span class="math inline">\(\g\)</span> の直交補空間 <span class="math inline">\(D\)</span> の座標関数が消えている点の集合として定まる．<span class="math inline">\(A_0\)</span> は任意だったので，<span class="math inline">\(G\)</span> は <span class="math inline">\(M_n(\C)\)</span> の <span class="math inline">\(k\)</span> 次元正則部分多様体．</p>
-<p>（<span class="math inline">\(G\)</span> は Lie 群）：</p>
-<p><span class="math inline">\(\GL(n;\C)\)</span> 上，乗法写像と逆元をとる写像は <span class="math inline">\(\R^{2n^2}\)</span> との同一視によって有理関数と見なせるので，滑らか．<span class="math inline">\(G\)</span> 上の乗法写像と逆元をとる写像はこの制限なので，滑らか．</p>
-</div>
-</details>
-<div id="cor-3.46" class="theorem corollary">
-<p><span class="theorem-title"><strong>Corollary 3 (<span class="citation" data-cites="hallLieGroupsLie2015">Hall (<a href="#ref-hallLieGroupsLie2015" role="doc-biblioref">2015</a>)</span> Corollary 3.46)</strong></span> <span class="math inline">\(\g\)</span> は <span class="math inline">\(I\in G\)</span> の接空間，すなわち， <span class="math inline">\(X\in\g\iff\)</span> <span class="math inline">\(G\)</span> 上の滑らかな曲線 <span class="math inline">\(\gamma\)</span> で <span class="math inline">\(\gamma(0)=I,X=\left.\dd{}{t}\gamma(t)\right|_{t=0}\)</span> となるものが存在．</p>
-</div>
-<details>
-<summary>
-証明
-</summary>
-<div class="proof">
-<p><span class="proof-title"><em>Proof</em>. </span><span class="math inline">\((\Rightarrow)\)</span> は <span class="math inline">\(\gamma(t):=e^{tX}\)</span> とすればよい．<span class="math inline">\((\Leftarrow)\)</span> を示す．</p>
-<p>十分小さい <span class="math inline">\(|t|\)</span> について，<span class="math inline">\(\delta(t):=\log\gamma(t)\)</span> が定義できて，<span class="math inline">\(\gamma(t)=e^{\delta(t)}\)</span> である． <span class="math inline">\(\delta(t)\)</span> は <span class="math inline">\(\g\)</span> の曲線で <span class="math inline">\(\delta(0)=0\)</span> である．<a href="#prp-dexp" class="quarto-xref">Proposition 23</a> より，</p>
-<p><span class="math display">\[
-\begin{align*}
-\gamma&#39;(0)
-=\left.\dd{}{t}e^{\delta(t)}\right|_{t=0}
-=\exp_{*,\delta(0)}(\delta&#39;(0))
-=\delta&#39;(0)
-\end{align*}
-\]</span></p>
-<p>が成立．<span class="math inline">\(\g\)</span> は<span class="math inline">\(M_n(\C)\)</span> の線形部分空間で，特に閉集合なので，<span class="math inline">\(X=\gamma&#39;(0)=\delta&#39;(0)=\lim_{t\to0}{\delta(t)}/{t}\in\g\)</span> である．</p>
-</div>
-</details>
-<div id="cor-3.47" class="theorem corollary">
-<p><span class="theorem-title"><strong>Corollary 4 (<span class="citation" data-cites="hallLieGroupsLie2015">Hall (<a href="#ref-hallLieGroupsLie2015" role="doc-biblioref">2015</a>)</span> Corollary 3.47)</strong></span> <span class="math inline">\(G\)</span> は連結とする．任意の <span class="math inline">\(A\in G\)</span> に対し，ある <span class="math inline">\(m\in\N\)</span> と <span class="math inline">\(X_1,\dots,X_m\in\g\)</span> が存在して，<span class="math inline">\(A=e^{X_1}e^{X_2}\dots e^{X_m}\)</span>.</p>
-</div>
-<details>
-<summary>
-証明
-</summary>
-<div class="proof">
-<p><span class="proof-title"><em>Proof</em>. </span><a href="#thm-3.42" class="quarto-xref">Theorem 3</a> の <span class="math inline">\(V_\varepsilon\)</span> をとる． 仮定より，連続曲線 <span class="math inline">\(A:[0,1]\to G\)</span> で，<span class="math inline">\(A(0)=I,A(1)=A\)</span> となるものが存在．</p>
-<p><a href="#lem-3.48" class="quarto-xref">Lemma 2</a> より，任意の <span class="math inline">\(\delta&gt;0\)</span> に対し，ある <span class="math inline">\(\gamma(\delta)&gt;0\)</span> が存在して，任意の <span class="math inline">\(s,t\in[0,1]\)</span> に対し， <span class="math display">\[
-|s-t|&lt;\gamma(\delta)\Rightarrow \|A(s)^{-1}A(t)-I\|&lt;\delta
-\]</span></p>
-<p>が成立する．ここで，<span class="math inline">\(\log\)</span> の連続性から，任意の <span class="math inline">\(\varepsilon&gt;0\)</span> に対して，ある <span class="math inline">\(\delta(\varepsilon)&gt;0\)</span> が存在して， <span class="math display">\[
-\|A(s)^{-1}A(t)-I\|&lt;\delta(\varepsilon)\Rightarrow \|\log(A(s)^{-1}A(t))-\log{I}\|&lt;\varepsilon
-\]</span></p>
-<p>とできる．したがって，<span class="math inline">\(\log{I}=0\)</span> に注意すると， <span class="math display">\[
-|s-t|&lt;\gamma(\delta(\varepsilon))\Rightarrow A(s)^{-1}A(t)\in V_\varepsilon
-\]</span></p>
-<p>である．</p>
-<p><span class="math inline">\([0,1]\)</span> を <span class="math inline">\(1/m&lt;\gamma(\delta(\varepsilon))\)</span> となるように <span class="math inline">\(m\)</span> 等分する．<span class="math inline">\(X_j:=\log\left(A(({j-1})/{m})^{-1}A(j/m)\right)\)</span> とすると，<span class="math inline">\(X\in\g\)</span> で，</p>
-<p><span class="math display">\[
-\begin{align*}
-A
-&amp;=A(0)^{-1}A(1)=A(0)^{-1}A\left(\frac{1}{m}\right)A\left(\frac{1}{m}\right)^{-1}\cdots
-A\left(\frac{m-1}{m}\right)^{-1}A\left(1\right)\\
-&amp;=e^{X_1}e^{X_2}\cdots e^{X_m}
-\end{align*}
-\]</span></p>
-<p>が成立する．</p>
-</div>
-</details>
-<div id="nte-3.47-2" class="callout callout-style-default callout-note callout-titled">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-Note 14
-</div>
-</div>
-<div class="callout-body-container callout-body">
-<p>適当に <span class="math inline">\(m\)</span> をとって， <span class="math display">\[
-A=A(0)^{-1}A\left(\frac{1}{m}\right)A\left(\frac{1}{m}\right)^{-1}\cdots
-A\left(\frac{m-1}{m}\right)^{-1}A\left(1\right)
-\]</span> とすると，<span class="math inline">\(e^{X_j}=A((j-1)/m))^{-1}A(j/m)\)</span> となる <span class="math inline">\(X_j\in M_n(\C)\)</span> が存在して， <span class="math inline">\(A=e^{X_1}e^{X_2}\cdots e^{X_m}\)</span> とできるが，<span class="math inline">\(X_j\in\g\)</span> とは限らない． <a href="#thm-3.42" class="quarto-xref">Theorem 3</a> は，うまく <span class="math inline">\(m\)</span> をとれば <span class="math inline">\(X_j\in\g\)</span> とできることを保証する．</p>
-</div>
-</div>
-<div id="lem-3.48" class="theorem lemma">
-<p><span class="theorem-title"><strong>Lemma 2 (<span class="citation" data-cites="hallLieGroupsLie2015">Hall (<a href="#ref-hallLieGroupsLie2015" role="doc-biblioref">2015</a>)</span> Lemma 3.48)</strong></span> <span class="math inline">\([a,b]\subset\R,A:[a,b]\to\GL(n;\C)\)</span> は連続とする．任意の <span class="math inline">\(\varepsilon&gt;0\)</span> に対し，ある <span class="math inline">\(\delta&gt;0\)</span> が存在して，<span class="math inline">\(s,t\in[a,b]\)</span> に対し，<span class="math inline">\(|s-t|&lt;\delta\Rightarrow\|A(s)^{-1}A(t)-I\|&lt;\varepsilon\)</span>.</p>
-</div>
-<details>
-<summary>
-証明
-</summary>
-<div class="proof">
-<p><span class="proof-title"><em>Proof</em>. </span><span class="math inline">\([a,b]\)</span> はコンパクトで，<span class="math inline">\(s\mapsto \|A(s)^{-1}\|\)</span> は連続なので，<span class="math inline">\(C=\max_{s\in[a,b]}\|A(s)^{-1}\|\)</span> が存在する．コンパクト集合上の連続関数は一様連続なので，ある <span class="math inline">\(\delta&gt;0\)</span> が存在し，<span class="math inline">\(|s-t|&lt;\delta\Rightarrow \|A(s)-A(t)\|&lt;\varepsilon/C\)</span> が成立する． したがって，<span class="math inline">\(|s-t|&lt;\delta\)</span> ならば， <span class="math display">\[
-\|A(s)^{-1}A(t)-I\|\leq \|A(s)^{-1}\|\|A(t)-A(s)\|&lt;\varepsilon.
-\]</span></p>
-</div>
-</details>
-<div id="cor-3.49" class="theorem corollary">
-<p><span class="theorem-title"><strong>Corollary 5 (<span class="citation" data-cites="hallLieGroupsLie2015">Hall (<a href="#ref-hallLieGroupsLie2015" role="doc-biblioref">2015</a>)</span> Corollary 3.49)</strong></span> <span class="math inline">\(G\)</span> は連結とする．<span class="math inline">\(\Phi_i:G\to H\)</span> は線形 Lie 群の準同型写像，<span class="math inline">\(\phi_i:\g\to\h\)</span> は <span class="math inline">\(\Phi_i\)</span> が誘導する Lie 代数の準同型写像とする <span class="math inline">\((i=1,2)\)</span>． <span class="math inline">\(\phi_1=\phi_2\Rightarrow\Phi_1=\Phi_2\)</span>.</p>
-</div>
-<details>
-<summary>
-証明
-</summary>
-<div class="proof">
-<p><span class="proof-title"><em>Proof</em>. </span><a href="#cor-3.47" class="quarto-xref">Corollary 4</a> より，<span class="math inline">\(A\in G\)</span> に対し，ある <span class="math inline">\(X_1,\dots,X_m\in\g\)</span> が存在して，<span class="math inline">\(A=e^{X_1}e^{X_2}\cdots e^{X_m}\)</span> とできる．</p>
-<p><span class="math display">\[
-\begin{align*}
-\Phi_1(A)
-&amp;=\Phi_1\left(e^{X_1}\right)\Phi_1\left(e^{X_2}\right)\cdots\Phi_1\left(e^{X_m}\right)\\
-&amp;=e^{\phi_1(X)}e^{\phi_1(X_2)}\cdots e^{\phi_1(X_1)}\\
-&amp;=e^{\phi_2(X)}e^{\phi_2(X_2)}\cdots e^{\phi_2(X_1)}\\
-&amp;=\Phi_2\left(e^{X_1}\right)\Phi_2\left(e^{X_2}\right)\cdots\Phi_2\left(e^{X_m}\right)\\
-&amp;=\Phi_2(A).
-\end{align*}
-\]</span></p>
-</div>
-</details>
-<div id="cor-3.50" class="theorem corollary">
-<p><span class="theorem-title"><strong>Corollary 6 (<span class="citation" data-cites="hallLieGroupsLie2015">Hall (<a href="#ref-hallLieGroupsLie2015" role="doc-biblioref">2015</a>)</span> Corollary 3.50)</strong></span> 線形 Lie 群の準同型写像 <span class="math inline">\(\Phi:G\to H\)</span> は滑らか．</p>
-</div>
-<details>
-<summary>
-証明
-</summary>
-<div class="proof">
-<p><span class="proof-title"><em>Proof</em>. </span><a href="#cor-3.45" class="quarto-xref">Corollary 2</a> より，<span class="math inline">\(A_0\in G\)</span> まわりのチャートとして，<span class="math inline">\((A_0V_\varepsilon,A\mapsto\log(A_0^{-1}A))\)</span> がとれる．任意の <span class="math inline">\(A\in A_0V_\varepsilon\)</span> に対し，<span class="math inline">\(X:=\log(A_0^{-1}A)\)</span> とすると，<span class="math inline">\(A=A_0e^X\)</span> とかける．<span class="math inline">\(\Phi(A)=\Phi(A_0)e^{\phi(X)}\)</span> なので，<span class="math inline">\(\Phi\)</span> は <span class="math inline">\(A_0\)</span> のまわりで滑らか．<span class="math inline">\(A_0\)</span> は任意だったので，<span class="math inline">\(\Phi\)</span> は滑らか．</p>
-</div>
-</details>
-<div id="cor-3.51" class="theorem corollary">
-<p><span class="theorem-title"><strong>Corollary 7 (<span class="citation" data-cites="hallLieGroupsLie2015">Hall (<a href="#ref-hallLieGroupsLie2015" role="doc-biblioref">2015</a>)</span> Corollary 3.51)</strong></span> <span class="math inline">\(G\)</span> は連結で，<span class="math inline">\(\g\)</span> は可換とする．このとき，<span class="math inline">\(G\)</span> は Abel 群（可換群）．</p>
-</div>
-<div id="nte-3.51" class="callout callout-style-default callout-note callout-titled">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-Note 15
-</div>
-</div>
-<div class="callout-body-container callout-body">
-<p><a href="#cor-3.51" class="quarto-xref">Corollary 7</a> は <span class="math inline">\(G\)</span> が連結ならば，<a href="#prp-3.22" class="quarto-xref">Proposition 10</a> の逆が成り立つことを主張している．</p>
-</div>
-</div>
-<details>
-<summary>
-証明
-</summary>
-<div class="proof">
-<p><span class="proof-title"><em>Proof</em>. </span><a href="#cor-3.47" class="quarto-xref">Corollary 4</a> より，<span class="math inline">\(A,B\in G\)</span> に対し，<span class="math inline">\(X_1,\dots,X_m\in\g\)</span> と <span class="math inline">\(Y_1,\dots,Y_l\in\g\)</span> が存在して，<span class="math inline">\(A=e^{X_1}e^{X_2}\cdots e^{X_m},B=e^{Y_1}e^{Y_2}\cdots e^{Y_l}\)</span> が成立する． <span class="citation" data-cites="hallLieGroupsLie2015">Hall (<a href="#ref-hallLieGroupsLie2015" role="doc-biblioref">2015</a>)</span> Proposition 2.3 より，各 <span class="math inline">\(e^{X_j},e^{Y_k}\)</span> は可換なので， <span class="math display">\[
-AB=e^{X_1}e^{X_2}\cdots e^{X_m}e^{Y_1}e^{Y_2}\cdots e^{Y_l}
-=e^{Y_1}e^{Y_2}\cdots e^{Y_l}e^{X_1}e^{X_2}\cdots e^{X_m}
-=BA.
-\]</span></p>
-</div>
-</details>
-<div id="cor-3.52" class="theorem corollary">
-<p><span class="theorem-title"><strong>Corollary 8 (<span class="citation" data-cites="hallLieGroupsLie2015">Hall (<a href="#ref-hallLieGroupsLie2015" role="doc-biblioref">2015</a>)</span> Corollary 3.52)</strong></span> <span class="math inline">\(G\)</span> の単位元の連結成分 <span class="math inline">\(G_0\)</span> は <span class="math inline">\(\GL(n;\C)\)</span> の閉部分群，すなわち，線形 Lie 群． <span class="math inline">\(G_0\)</span> の Lie 代数は <span class="math inline">\(\g\)</span>.</p>
-</div>
-<details>
-<summary>
-証明
-</summary>
-<div class="proof">
-<p><span class="proof-title"><em>Proof</em>. </span><a href="#prp-matsushima-3" class="quarto-xref">Proposition 19</a> より，<span class="math inline">\(G_0\)</span> は閉部分群．<span class="math inline">\(G_0\)</span> の Lie 代数 <span class="math inline">\(\g_0\)</span> が <span class="math inline">\(\g\)</span> となることを示す．<span class="math inline">\(G_0\subset G\)</span> より，<span class="math inline">\(\g_0\subset\g\)</span> である．一方，<a href="#prp-3.19" class="quarto-xref">Proposition 9</a> より，<span class="math inline">\(\g\subset\g_0\)</span> である．よって，<span class="math inline">\(\g_0=\g\)</span>.</p>
-</div>
-</details>
-</section>
-<section id="補足" class="level1">
-<h1>補足</h1>
-<section id="位相群" class="level2">
-<h2 class="anchored" data-anchor-id="位相群">位相群</h2>
-<div id="def-topo-group" class="theorem definition">
-<p><span class="theorem-title"><strong>Definition 16 (位相群)</strong></span> 群 <span class="math inline">\(G\)</span> が位相空間で，</p>
-<ul>
-<li><span class="math inline">\(G\times G\to G,(x,y)\to xy\)</span> が連続</li>
-<li><span class="math inline">\(G\to G,x\mapsto x^{-1}\)</span> が連続</li>
-</ul>
-<p>を満たすとき，<span class="math inline">\(G\)</span> は位相群 (Topological group) であるという．</p>
-</div>
-<div id="prp-matsushima-3" class="theorem proposition">
-<p><span class="theorem-title"><strong>Proposition 19 (<span class="citation" data-cites="Matsushima1984">松島 (<a href="#ref-Matsushima1984" role="doc-biblioref">1984</a>)</span> 定理 3)</strong></span> 位相群 <span class="math inline">\(G\)</span> の単位元 <span class="math inline">\(e\)</span> を含む <span class="math inline">\(G\)</span> の連結成分を <span class="math inline">\(G_0\)</span> とすると，<span class="math inline">\(G_0\)</span> は <span class="math inline">\(G\)</span> の正規部分群で，閉集合．</p>
-</div>
-<div class="proof">
-<p><span class="proof-title"><em>Proof</em>. </span>（<span class="math inline">\(G_0\)</span> は部分群）：</p>
-<p>任意の <span class="math inline">\(g\in G_0\)</span> に対し，<span class="math inline">\(G\to G,x\mapsto xg^{-1}\)</span> は同相写像なので，<span class="math inline">\(G_0g^{-1}\)</span> は <span class="math inline">\(gg^{-1}=e\)</span> を含む <span class="math inline">\(G\)</span> の連結成分である．よって，<span class="math inline">\(G_0g^{-1}=G_0\)</span> が成立する．したがって，<span class="math inline">\(h,g\in G_0\)</span> ならば，<span class="math inline">\(hg^{-1}\in G_0\)</span> となるので，<span class="math inline">\(G_0\)</span> は <span class="math inline">\(G\)</span> の部分群．</p>
-<p>（<span class="math inline">\(G_0\)</span> は正規）：</p>
-<p>任意の <span class="math inline">\(g\in G_0\)</span> に対し，<span class="math inline">\(G\to G,x\mapsto gxg^{-1}\)</span> は同相写像なので，<span class="math inline">\(gG_0g^{-1}\)</span> は <span class="math inline">\(geg^{-1}=e\)</span> を含む連結成分である．よって，<span class="math inline">\(gG_0g^{-1}=G_0\)</span> が成立する．したがって，<span class="math inline">\(G_0\)</span> は正規．</p>
-<p>（<span class="math inline">\(G_0\)</span> は閉集合）：</p>
-<p>閉包 <span class="math inline">\(\overline{G_0}\)</span> も <span class="math inline">\(e\)</span> を含む連結成分なので，<span class="math inline">\(G_0=\overline{G_0}\)</span>，すなわち，<span class="math inline">\(G_0\)</span> は閉集合．</p>
-</div>
-<div id="def-topo-hom" class="theorem definition">
-<p><span class="theorem-title"><strong>Definition 17 (位相群の準同型写像)</strong></span> <span class="math inline">\(G,H\)</span> は位相群，<span class="math inline">\(\Phi:G\to H\)</span> は群の準同型写像とする．<span class="math inline">\(\Phi\)</span> が連続なら，<span class="math inline">\(\Phi\)</span> は位相群の準同型写像であるという．</p>
-</div>
-<div id="prp-topo-ker" class="theorem proposition">
-<p><span class="theorem-title"><strong>Proposition 20</strong></span> <span class="math inline">\(G,H\)</span> は位相群，<span class="math inline">\(\Phi:G\to H\)</span> は位相群の準同型写像とする．<span class="math inline">\(\Ker\Phi\)</span> は正規部分群． さらに， <span class="math inline">\(H\)</span> の単位元 <span class="math inline">\(e_H\)</span> の1点集合 <span class="math inline">\(\{e_H\}\)</span> が閉集合（例えば <span class="math inline">\(H\)</span> が Hausdorff）ならば，<span class="math inline">\(\Ker\Phi\)</span> は閉集合．</p>
-</div>
-<div class="proof">
-<p><span class="proof-title"><em>Proof</em>. </span>（<span class="math inline">\(\Ker\Phi\)</span> は閉集合）：</p>
-<p><span class="math inline">\(\Phi\)</span> は連続なので，<span class="math inline">\(\Ker\Phi=\Phi^{-1}(\{e_H\})\)</span> は閉集合．</p>
-<p>（<span class="math inline">\(\Ker\Phi\)</span> は <span class="math inline">\(G\)</span> の部分群）：</p>
-<p>任意の <span class="math inline">\(x,y\in\Ker\Phi\)</span> に対し，<span class="math inline">\(\Phi(xy)=\Phi(x)\Phi(y)=e_H\)</span> より，<span class="math inline">\(xy\in\Ker\Phi\)</span>．また，<span class="math inline">\(e_H=\Phi(x)\Phi(x^{-1})\)</span> の両辺に左から <span class="math inline">\(\Phi(x)^{-1}\)</span> をかけると，<span class="math inline">\(\Phi(x^{-1})=\Phi(x)^{-1}=e_H\)</span>．よって，<span class="math inline">\(x^{-1}\in\Ker\Phi\)</span>． 以上より，<span class="math inline">\(\Ker\Phi\)</span> は <span class="math inline">\(G\)</span> の部分群．</p>
-<p>（<span class="math inline">\(\Ker\Phi\)</span> は正規）：</p>
-<p>任意の <span class="math inline">\(x\in G\)</span> と <span class="math inline">\(y\in\Ker\Phi\)</span> に対し，<span class="math inline">\(xyx^{-1}\in\Ker\Phi\)</span> を示す． <span class="math inline">\(\Phi(xyx^{-1})=\Phi(x)\Phi(y)\Phi(x)^{-1}=\Phi(x)\Phi(x)^{-1}=e_H\)</span> より， <span class="math inline">\(xyx^{-1}\in\Ker\Phi\)</span> である．よって，<span class="math inline">\(\Ker\Phi\)</span> は正規．</p>
-</div>
-</section>
-<section id="lie-群の中心と-lie-代数の中心" class="level2">
-<h2 class="anchored" data-anchor-id="lie-群の中心と-lie-代数の中心">Lie 群の中心と Lie 代数の中心</h2>
-<div id="prp-center-grp" class="theorem proposition">
-<p><span class="theorem-title"><strong>Proposition 21</strong></span> 群 <span class="math inline">\(G\)</span> の中心 <span class="math inline">\(Z(G):=\{x\in G\mid gx=xg\enspace\forall g\in G\}\)</span> は <span class="math inline">\(G\)</span> の正規部分群． さらに， <span class="math inline">\(G\)</span> が位相群で，単位元 <span class="math inline">\(e\)</span> の1点集合 <span class="math inline">\(\{e\}\)</span> が閉集合ならば，<span class="math inline">\(Z(G)\)</span> は閉集合．</p>
-</div>
-<div id="nte-center-grp" class="callout callout-style-default callout-note callout-titled">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-Note 16
-</div>
-</div>
-<div class="callout-body-container callout-body">
-<p>したがって，線形 Lie 群 <span class="math inline">\(G\)</span> の中心 <span class="math inline">\(Z(G)\)</span> もまた線形 Lie 群になる．</p>
-</div>
-</div>
-<div class="proof">
-<p><span class="proof-title"><em>Proof</em>. </span>（<span class="math inline">\(Z(G)\)</span> は <span class="math inline">\(G\)</span> の部分群）：</p>
-<p>任意の <span class="math inline">\(x,y\in Z(G)\)</span> と <span class="math inline">\(g\in G\)</span> に対し，<span class="math inline">\(g(xy)=(gx)y=(xg)y=x(gy)=x(yg)=(xy)g\)</span> より，<span class="math inline">\(xy\in Z(G)\)</span>．また，<span class="math inline">\(g=x^{-1}(xg)=x^{-1}(gx)\)</span> の両辺に右から <span class="math inline">\(x^{-1}\)</span> をかけると，<span class="math inline">\(gx^{-1}=x^{-1}g\)</span> となり，<span class="math inline">\(x^{-1}\in Z(G)\)</span>. 以上より，<span class="math inline">\(Z(G)\)</span> は <span class="math inline">\(G\)</span> の部分群．</p>
-<p>（<span class="math inline">\(Z(G)\)</span> は正規）：</p>
-<p>任意の <span class="math inline">\(x\in G\)</span> と <span class="math inline">\(y\in Z(G)\)</span> に対し，<span class="math inline">\(xyx^{-1}\in Z(G)\)</span> を示す．</p>
-<p><span class="math inline">\(xyx^{-1}=yxx^{-1}=y\in Z(G)\)</span>.</p>
-<p>（<span class="math inline">\(Z(G)\)</span> は閉集合）：</p>
-<p><span class="math inline">\(g\in G\)</span> に対し，<span class="math inline">\(f_g:G\to G,x\mapsto gxg^{-1}x^{-1}\)</span> とする．<span class="math inline">\(f_g\)</span> は連続なので， <span class="math display">\[
-f_g^{-1}(\{e\})
-=\{x\in G\mid gxg^{-1}x^{-1}=e\}
-=\{x\in G\mid gx=xg\}
-\]</span></p>
-<p>は閉集合．したがって，<span class="math inline">\(Z(G)=\bigcap_{g\in G}f_g^{-1}(\{e\})\)</span> も閉集合．</p>
-</div>
-<div id="prp-center-lie" class="theorem proposition">
-<p><span class="theorem-title"><strong>Proposition 22</strong></span> 線形 Lie 群 <span class="math inline">\(G\)</span> の Lie 代数を <span class="math inline">\(\g\)</span> とする．<span class="math inline">\(G\)</span> の中心 <span class="math inline">\(Z(G)\)</span> の Lie 代数は <span class="math inline">\(\g\)</span> の中心 <span class="math inline">\(Z(\g)\)</span>.</p>
-</div>
-<div class="proof">
-<p><span class="proof-title"><em>Proof</em>. </span><span class="math inline">\(Z(G)\)</span> の Lie 代数を <span class="math inline">\(\h\)</span> とする．<span class="math inline">\(Z(G)\subset G\)</span> より，<span class="math inline">\(\h\subset\g\)</span> である． <a href="#prp-3.22" class="quarto-xref">Proposition 10</a> より，<span class="math inline">\(\h\)</span> は可換なので，<span class="math inline">\(\h\subset \g\cap Z(\g)=Z(\g)\)</span>.</p>
-<p><span class="math inline">\(X\in Z(\g)\subset \g\)</span> とする．このとき，任意の <span class="math inline">\(t\in\R\)</span> に対し <span class="math inline">\(e^{tX}\in G\)</span> である．また，任意の <span class="math inline">\(A\in G\)</span> に対し，<span class="math inline">\([X,A]=0\)</span>，すなわち，<span class="math inline">\(XA=AX\)</span> に注意すると，</p>
-<p><span class="math display">\[
-Ae^{tX}
-= \sum_{m=0}^\infty\frac{1}{m!}t^mAX^m
-= \sum_{m=0}^\infty\frac{1}{m!}(tX)^mA
-=e^{tX}A
-\]</span></p>
-<p>が成立する．よって，<span class="math inline">\(e^{tX}\in Z(G)\)</span> となり，<span class="math inline">\(X\in \h\)</span> である．以上より，<span class="math inline">\(\h=Z(\g)\)</span>.</p>
-</div>
-</section>
-<section id="指数写像の微分" class="level2">
-<h2 class="anchored" data-anchor-id="指数写像の微分">指数写像の微分</h2>
-<div id="thm-5.4" class="theorem">
-<p><span class="theorem-title"><strong>Theorem 4 (<span class="citation" data-cites="hallLieGroupsLie2015">Hall (<a href="#ref-hallLieGroupsLie2015" role="doc-biblioref">2015</a>)</span> Theorem 5.4)</strong></span> <span class="math inline">\(X(t)\in M_n(\C)\)</span> は滑らかな曲線で，<span class="math inline">\(X(0)=X,X&#39;(0)=Y\)</span> とする．</p>
-<p><span class="math display">\[
-\left.\dd{}{t}e^{X(t)}\right|_{t=0}
-=e^X\frac{I-e^{-\ad_X}}{\ad_X}(Z).
-\]</span></p>
-<p>ただし， <span class="math display">\[
-\frac{I-e^{-\ad_X}}{\ad_X}:=\sum_{k=0}^{\infty}(-1)^k\frac{(\ad_X)^k}{(k+1)!}
-\]</span> である．</p>
-</div>
-<div id="prp-dexp" class="theorem proposition">
-<p><span class="theorem-title"><strong>Proposition 23</strong></span> <span class="math inline">\(X\in M_n(\C)\)</span> とする．<span class="math inline">\(\exp:M_n(\C)\to M_n(\C),X\mapsto e^{X}\)</span> の原点における微分 <span class="math inline">\(\exp_{*,0}\)</span> は恒等写像．</p>
-</div>
-<div class="proof">
-<p><span class="proof-title"><em>Proof</em>. </span><span class="math inline">\(X(t)\in M_n(\C)\)</span> は滑らかな曲線で，<span class="math inline">\(X(0)=0,X&#39;(0)=A\)</span> とする． <a href="#thm-5.4" class="quarto-xref">Theorem 4</a> と <span class="math inline">\(e^0=I,\frac{I-e^{-\ad_0}}{\ad_0}(A)=A\)</span> より，</p>
-<p><span class="math display">\[
-\exp_{*,0}(A)=\left.\dd{}{t}\exp(X(t))\right|_{t=0}=A.
-\]</span></p>
-</div>
-</section>
-<section id="複素-lie-代数にならない-lie-群の-lie-代数の例" class="level2">
-<h2 class="anchored" data-anchor-id="複素-lie-代数にならない-lie-群の-lie-代数の例">複素 Lie 代数にならない Lie 群の Lie 代数の例</h2>
-<div id="exm-not-complex-liealg" class="theorem example">
-<p><span class="theorem-title"><strong>Example 15</strong></span> <span class="math inline">\(\Omega:=\begin{pmatrix}&amp;I_n\\-I_n&amp;\end{pmatrix}\)</span> とする．</p>
-<p><span class="math inline">\(\operatorname{SpH}(n):=\{A\in \GL(2n;\C)\mid -\Omega A^*\Omega=A^{-1}\}\)</span> は線形 Lie 代数で，その Lie 代数 <span class="math inline">\(\operatorname{sph}(n)\)</span> は <span class="math inline">\(\operatorname{sph}(n)=\{X\in M_{2n}(\C)\mid \Omega X^*\Omega=X\}\)</span> だが，<span class="math inline">\(\operatorname{sph}(n)\)</span> は複素 Lie 代数ではない．</p>
-</div>
-<div class="proof">
-<p><span class="proof-title"><em>Proof</em>. </span>（<span class="math inline">\(\operatorname{SpH}(n)\)</span> は線形 Lie 群）：</p>
-<p><span class="math inline">\(f:\GL(2n;\C)\to\GL(2n;\C),A\mapsto -\Omega{A^*}\Omega{A}\)</span> とすると，<span class="math inline">\(f\)</span> は連続で，<span class="math inline">\(f^{-1}(\{I_{2n}\})=\operatorname{SpH}(n)\)</span> より，<span class="math inline">\(\operatorname{SpH}(n)\)</span> は線形 Lie 群．</p>
-<p>（<span class="math inline">\(\operatorname{SpH}(n)\)</span> の Lie 代数は <span class="math inline">\(\operatorname{sph}(n)=\{X\in M_{2n}(\C)\mid \Omega X^*\Omega=X\}\)</span>）：</p>
-<p><span class="math display">\[
-\begin{align*}
-X\in\operatorname{sph}(n)&amp;\iff
-e^{tX}\in\operatorname{SpH}(n),\enspace\forall{t\in\R}\\
-&amp;\iff -\Omega e^{tX^*}\Omega=e^{-tX},\forall{t\in\R}\\
-&amp;\iff -\Omega X^*\Omega=-X
-\end{align*}
-\]</span></p>
-<p>したがって，<span class="math inline">\(\operatorname{sph}(n)=\{X\in M_{2n}(\C)\mid \Omega X^*\Omega=X\}.\)</span></p>
-<p>（<span class="math inline">\(\operatorname{sph}(n)\)</span> は複素 Lie 代数ではない）：</p>
-<p><span class="math inline">\(X,Y\in\operatorname{sph}(n)\)</span> とする．</p>
-<p><span class="math inline">\(\Omega(X+iY)^*\Omega=\Omega(X^*-iY^*)\Omega=\Omega X^*\Omega-i\Omega Y^*\Omega=X-iY\)</span></p>
-<p>より，<span class="math inline">\(X+iY\not\in\operatorname{sph}(n).\)</span></p>
-</div>
-</section>
-<section id="operatornamesu2operatornameso3-の関係" class="level2">
-<h2 class="anchored" data-anchor-id="operatornamesu2operatornameso3-の関係"><span class="math inline">\(\operatorname{SU}(2),\operatorname{SO}(3)\)</span> の関係</h2>
-<p><span class="math inline">\(V,W\)</span> は <span class="math inline">\(n,m\)</span> 次元実内積空間とする．<span class="math inline">\(v=\{v_1,\dots,v_n\}\subset{V},w=\{w_1,\dots,w_m\}\subset{W}\)</span> は <span class="math inline">\(V,W\)</span> の基底とする．<span class="math inline">\(\End(V,W)\)</span> は <span class="math inline">\(V\)</span> から <span class="math inline">\(W\)</span> への線形写像全体とする．<span class="math inline">\(\mathcal{R}_{v,w}:\End(V,W)\to\mathcal{R}_{v,w}(\End(V,W))\subset\R^{m\times n}\)</span> は基底 <span class="math inline">\(v,w\)</span> に関する表現行列を与える線形写像とする．<span class="math inline">\(\mathcal{R}_{v,w}\)</span> は実ベクトル空間の同型写像である．</p>
-<div id="prp-3.29-append-1" class="theorem proposition">
-<p><span class="theorem-title"><strong>Proposition 24</strong></span> <span class="math inline">\(n\leq m\)</span> で，<span class="math inline">\(v,w\)</span> は正規直交基底とする．<span class="math inline">\(\psi\in\End(V,W)\)</span> が内積を保つ，すなわち，任意の <span class="math inline">\(x,y\in V\)</span> に対し，<span class="math inline">\(\langle\psi(x),\psi(y)\rangle_W=\langle x,y\rangle_V\)</span> が成立する <span class="math inline">\(\iff\mathcal{R}_{v,w}(\psi)\in\operatorname{St}(n,m)=\{Q\in\R^{m\times n}\mid Q^\top Q=I_n\}\)</span>.</p>
-</div>
-<div class="proof">
-<p><span class="proof-title"><em>Proof</em>. </span><span class="math inline">\(x=a_1v_1+\dots+a_nv_n,y=b_1v_1+\dots+b_nv_n\)</span> とする．</p>
-<p><span class="math inline">\((\Leftarrow)\)</span></p>
-<p><span class="math inline">\(\langle\,\cdot\,,\,\cdot\, \rangle_{\R^n}\)</span> は <span class="math inline">\(\R^n\)</span> の標準内積とする．</p>
-<p><span class="math display">\[
-\begin{align*}
-\langle\psi(x),\psi(y)\rangle_W
-&amp;=\langle\mathcal{R}_{v,w}(\psi)a,\mathcal{R}_{v,w}(\psi)b\rangle_{\R^m}\\
-&amp;=\langle a,\mathcal{R}_{v,w}(\psi)^\top\mathcal{R}_{v,w}(\psi)b\rangle_{\R^n}\\
-&amp;=\langle a,b\rangle_{\R^n}\\
-&amp;=\langle x,y\rangle_{V}.
-\end{align*}
-\]</span></p>
-<p><span class="math inline">\((\Rightarrow)\)</span></p>
-<p>仮定より，<span class="math inline">\(\langle a,b \rangle_{\R^n}=\langle a,\mathcal{R}_{v,w}(\psi)^\top\mathcal{R}_{v,w}(\psi)b\rangle_{\R^n}\)</span>，すなわち，<span class="math inline">\(\langle a,(\mathcal{R}_{v,w}(\psi)^\top\mathcal{R}_{v,w}(\psi)-I_n)b\rangle_{\R^n}=0\)</span> が成立する．</p>
-<p><span class="math inline">\(a\)</span> は任意なので，<span class="math inline">\(a=(\mathcal{R}_{v,w}(\psi)^\top\mathcal{R}_{v,w}(\psi)-I_n)b\)</span> とすると， <span class="math inline">\(\|(\mathcal{R}_{v,w}(\psi)^\top\mathcal{R}_{v,w}(\psi)-I_n)b\|_{\R^n}=0\)</span> である．このとき，<span class="math inline">\(\mathcal{R}_{v,w}(\psi)^\top\mathcal{R}_{v,w}(\psi)-I_n = 0\)</span> が成立する．実際，<span class="math inline">\(\mathcal{R}_{v,w}(\psi)^\top\mathcal{R}_{v,w}(\psi)-I_n\neq0\)</span> を仮定すると，ある <span class="math inline">\(b\in\R^n\)</span> が存在して，<span class="math inline">\((\mathcal{R}_{v,w}(\psi)^\top\mathcal{R}_{v,w}(\psi)-I_n)b\neq0\)</span> だが，このとき，<span class="math inline">\(\|(\mathcal{R}_{v,w}(\psi)^\top\mathcal{R}_{v,w}(\psi)-I_n)b\|_{\R^n}\neq0\)</span> となり，矛盾．</p>
-<p>以上より，<span class="math inline">\(\mathcal{R}_{v,w}(\psi)\in\operatorname{St}(n,m).\)</span></p>
-</div>
-<div id="prp-3.29-append-2" class="theorem proposition">
-<p><span class="theorem-title"><strong>Proposition 25</strong></span> <span class="math inline">\(f_t\in\End(V,W)\)</span> は <span class="math inline">\(t=0\)</span> で微分可能とする．<span class="math inline">\(\mathcal{R}_{v,w}\left(\left.\dd{}{t}f_t\right|_{t=0}\right)=\left.\dd{}{t}\mathcal{R}_{v,w}(f_t)\right|_{t=0}\)</span> が成立する．</p>
-</div>
-<div class="proof">
-<p><span class="proof-title"><em>Proof</em>. </span><span class="math inline">\(x=a_1v_1+\dots+a_nv_n\in V\)</span> とする．</p>
-<p><span class="math display">\[
-\begin{align*}
-\left.\dd{}{t}f_t(x)\right|_{t=0}
-&amp;=\left.\dd{}{t}\sum_{i=1}^{m}\left(\mathcal{R}_{v,w}(f_t)a\right)_iw_i\right|_{t=0}
-=\sum_{i=1}^{m}\left(\left.\dd{}{t}\mathcal{R}_{v,w}(f_t)\right|_{t=0}a\right)_iw_i\\
-\left.\dd{}{t}f_t(x)\right|_{t=0}
-&amp;=\left(\left.\dd{}{t}f_t\right|_{t=0}\right)(x)
-=\sum_{i=1}^{m}\left(\mathcal{R}_{v,w}\left(\left.\dd{}{t}f_t\right|_{t=0}\right)a\right)_iw_i
-\end{align*}
-\]</span></p>
-</div>
-<div id="exm-3.29-modif" class="theorem example">
-<p><span class="theorem-title"><strong>Example 16 (<span class="citation" data-cites="hallLieGroupsLie2015">Hall (<a href="#ref-hallLieGroupsLie2015" role="doc-biblioref">2015</a>)</span> Example 3.29)</strong></span> <span class="math display">\[
-V=\left\{
-  \begin{pmatrix}x_1&amp;x_2+ix_3\\x_2-ix_3&amp;-x_1\end{pmatrix}
-  \,\middle|\, x_1,x_2,x_3\in \R\right\}
-\]</span></p>
-<p>とする．<span class="math inline">\(U\in\SU(2)\)</span> に対し，<span class="math inline">\(\Phi_U:V\to V,X\mapsto UXU^*\)</span> は内積を保つ写像で， <span class="math inline">\(\Phi:\SU(2)\to\SO(3),U\mapsto\mathcal{R}_{v,v}(\Phi_U)\)</span> は Lie 群の2対1の全射準同型だった <span class="citation" data-cites="hallLieGroupsLie2015">(<a href="#ref-hallLieGroupsLie2015" role="doc-biblioref">Hall 2015</a> Proposition 1.19)</span>．</p>
-<p><a href="#exm-3.27" class="quarto-xref">Example 11</a> で構成した <span class="math inline">\(\phi\)</span> は <span class="math inline">\(\Phi\)</span> が誘導する Lie 代数の準同型写像．</p>
-</div>
-<div class="proof">
-<p><span class="proof-title"><em>Proof</em>. </span><span class="math inline">\(Y=x_1v_1+x_2v_2+x_3v_3\)</span> とする．ただし， <span class="math display">\[
-v_1=\begin{pmatrix}1&amp;\\&amp;1\end{pmatrix},
-v_2=\begin{pmatrix}&amp;1\\1&amp;\end{pmatrix},
-v_3=\begin{pmatrix}&amp;i\\-i&amp;\end{pmatrix}
-\]</span></p>
-<p>である．</p>
-<p><span class="math display">\[
-\left.\dd{}{t}\Phi_{e^{tX}}(Y)\right|_{t=0}
-=\left.\dd{}{t}e^{tX}Ye^{-tX}\right|_{t=0}
-=[X,Y]
-\]</span></p>
-<p>より，<span class="math inline">\(\phi(X)=\left.\dd{}{t}\mathcal{R}_{v,v}\left(\Phi_{e^{tX}}\right)\right|_{t=0}=\mathcal{R}_{v,v}([X,\,\cdot\,])\)</span> である．</p>
-<p><span class="math display">\[
-\begin{align*}
-[E_1,Y]
-&amp;=\left[
-  \frac12\begin{pmatrix}i&amp;\\&amp;-i\end{pmatrix},
-  \begin{pmatrix}x_1&amp;x_2+ix_3\\x_2-ix_3&amp;-x_1\end{pmatrix}
-\right]
-=\begin{pmatrix}&amp;ix_2-x_3\\-ix_2&amp;\end{pmatrix}\\[5pt]
-&amp;=0v_1-x_3v_2+x_2v_3
-=\sum_{i=1}^{3}(F_1x)_iv_i\\[10pt]
-[E_2,Y]
-&amp;=\left[
-  \frac12\begin{pmatrix}&amp;i\\i&amp;\end{pmatrix},
-  \begin{pmatrix}x_1&amp;x_2+ix_3\\x_2-ix_3&amp;-x_1\end{pmatrix}
-\right]
-=\begin{pmatrix}x_3&amp;-x_1\\ix_1&amp;-x_3\end{pmatrix}\\[5pt]
-&amp;=x_3v_1+0v_2-x_1v_3
-=\sum_{i=1}^{3}(F_2x)_iv_i\\[10pt]
-[E_3,Y]
-&amp;=\left[
-  \frac12\begin{pmatrix}&amp;-1\\1&amp;\end{pmatrix},
-  \begin{pmatrix}x_1&amp;x_2+ix_3\\x_2-ix_3&amp;-x_1\end{pmatrix}
-\right]
-=\begin{pmatrix}-x_2&amp;x_1\\x_1&amp;x_2\end{pmatrix}\\[5pt]
-&amp;=-x_2v_1+x_1v_2+0v_3
-=\sum_{i=1}^{3}(F_3x)_iv_i\\[10pt]
-\end{align*}
-\]</span></p>
-<p>が成立し，<span class="math inline">\(\phi(E_i)=F_i\)</span> がわかる．</p>
-</div>
-</section>
-<section id="章" class="level2">
-<h2 class="anchored" data-anchor-id="章">2章</h2>
-<div id="prp-2.3" class="theorem proposition">
-<p><span class="theorem-title"><strong>Proposition 26 (<span class="citation" data-cites="hallLieGroupsLie2015">Hall (<a href="#ref-hallLieGroupsLie2015" role="doc-biblioref">2015</a>)</span> Proposition 2.3)</strong></span> <span class="math inline">\(X,Y\in M_n(\C)\)</span> とする．</p>
+<div id="prp-3.23" class="theorem proposition">
+<p><span class="theorem-title"><strong>Proposition 5 (<span class="citation" data-cites="hallLieGroupsLie2015">Hall (<a href="#ref-hallLieGroupsLie2015" role="doc-biblioref">2015</a>)</span> Proposition 3.23)</strong></span> 基本は定義通りの <span class="math inline">\(G\)</span> の Lie 代数 <span class="math inline">\(\g\)</span> との包含関係を両方示すという方針．</p>
+<p>以降もそうだが，<span class="math inline">\(X\in M_n(\R)\)</span> を示すという細かいケアが要求される．とはいっても，<span class="math inline">\(X=\left.\dd{}{t}e^{tX}\right|_{t=0}\)</span> とかけて，<span class="math inline">\(e^{tX}\in M_n(\R)\)</span> であることを使うだけ．以降は <span class="math inline">\(X\in M_n(\R)\)</span> の部分は言及せずに飛ばしていいと思う．</p>
 <ol type="1">
-<li><span class="math inline">\(e^0=I\)</span></li>
-<li><span class="math inline">\((e^X)^*=e^{X^*}\)</span></li>
-<li><span class="math inline">\(e^{X}\)</span> は正則で <span class="math inline">\((e^X)^{-1}=e^{-X}\)</span></li>
-<li>任意の <span class="math inline">\(\alpha,\beta\in\R\)</span> に対し，<span class="math inline">\(e^{(\alpha+\beta)X}=e^{\alpha X}e^{\beta X}\)</span></li>
-<li><span class="math inline">\(X,Y\)</span> が可換ならば，<span class="math inline">\(e^{X+Y}=e^{X}e^{Y}=e^{Y}e^{X}\)</span></li>
-<li><span class="math inline">\(C\in\GL(n;\C)\)</span> に対し，<span class="math inline">\(e^{CXC^{-1}}=Ce^{X}C^{-1}\)</span></li>
+<li>簡単．</li>
+<li><span class="citation" data-cites="hallLieGroupsLie2015">Hall (<a href="#ref-hallLieGroupsLie2015" role="doc-biblioref">2015</a>)</span> Theorem 2.12 が本質的．</li>
 </ol>
 </div>
-<div id="prp-2.4" class="theorem proposition">
-<p><span class="theorem-title"><strong>Proposition 27 (<span class="citation" data-cites="hallLieGroupsLie2015">Hall (<a href="#ref-hallLieGroupsLie2015" role="doc-biblioref">2015</a>)</span> Proposition 2.4)</strong></span> <span class="math inline">\(X\in M_n(\C)\)</span> に対し，<span class="math inline">\(t\mapsto e^{tX}\)</span> は滑らかな曲線で， <span class="math display">\[
-\dd{}{t}e^{tX}=Xe^{tX}=e^{tX}X.
-\]</span></p>
+<div id="prp-3.24" class="theorem proposition">
+<p><span class="theorem-title"><strong>Proposition 6 (<span class="citation" data-cites="hallLieGroupsLie2015">Hall (<a href="#ref-hallLieGroupsLie2015" role="doc-biblioref">2015</a>)</span> Proposition 3.24)</strong></span> <span class="math inline">\((e^{X})^*=e^{X^*}\)</span> が本質的．<span class="math inline">\(\su(n),\so(n;\K)\)</span> は <span class="math inline">\(\det{e^{X}}=e^{\tr{X}}\)</span> も．</p>
 </div>
-<div id="thm-2.8" class="theorem">
-<p><span class="theorem-title"><strong>Theorem 5 (<span class="citation" data-cites="hallLieGroupsLie2015">Hall (<a href="#ref-hallLieGroupsLie2015" role="doc-biblioref">2015</a>)</span> Theorem 2.8)</strong></span> <span class="math display">\[
-\log{A}=\sum_{m=1}^\infty(-1)^{m+1}\frac{(A-I)^m}{m}
-\]</span></p>
-<p>は <span class="math inline">\(\|A-I\|&lt;1\)</span> を満たす任意の <span class="math inline">\(A\in M_n(\C)\)</span> に対し定義できて，連続で， <span class="math display">\[
-e^{\log{A}}=A
-\]</span></p>
-<p>を満たす．また，<span class="math inline">\(X\in M_n(\C)\)</span> が <span class="math inline">\(\|X\|&lt;\log{2}\)</span> を満たすなら，<span class="math inline">\(\|e^X-I\|&lt;1\)</span> で， <span class="math display">\[
-\log{e^X}=X.
-\]</span></p>
+<div id="prp-3.25" class="theorem proposition">
+<p><span class="theorem-title"><strong>Proposition 7 (<span class="citation" data-cites="hallLieGroupsLie2015">Hall (<a href="#ref-hallLieGroupsLie2015" role="doc-biblioref">2015</a>)</span> Proposition 3.25)</strong></span> <span class="math inline">\(g^2=I_{n+k},\Omega(-\Omega)=I_{2n}\)</span> を使う．</p>
+<ol start="2" type="1">
+<li><span class="math inline">\(\det{e^{tX}}=1\)</span> は実は自動的に満たされているということを使う．</li>
+</ol>
 </div>
-<div id="thm-2.11" class="theorem">
-<p><span class="theorem-title"><strong>Theorem 6 (<span class="citation" data-cites="hallLieGroupsLie2015">Hall (<a href="#ref-hallLieGroupsLie2015" role="doc-biblioref">2015</a>)</span> Theorem 2.11 Lie Product Formula)</strong></span> <span class="math inline">\(X,Y\in M_n(\C)\)</span> に対し， <span class="math display">\[
-e^{X+Y}=\lim_{m\to\infty}\left(e^{X/m}e^{Y/m}\right)^m
-\]</span></p>
+<div id="prp-3.26" class="theorem proposition">
+<p><span class="theorem-title"><strong>Proposition 8 (<span class="citation" data-cites="hallLieGroupsLie2015">Hall (<a href="#ref-hallLieGroupsLie2015" role="doc-biblioref">2015</a>)</span> Proposition 3.26)</strong></span> 証明は簡単．読み上げるだけでいいと思う．</p>
 </div>
-<div id="thm-2.12" class="theorem">
-<p><span class="theorem-title"><strong>Theorem 7 (<span class="citation" data-cites="hallLieGroupsLie2015">Hall (<a href="#ref-hallLieGroupsLie2015" role="doc-biblioref">2015</a>)</span> Theorem 2.12)</strong></span> <span class="math inline">\(X\in M_n(\C)\)</span> に対し，<span class="math inline">\(\det{e^X}=e^{\tr{X}}\)</span>.</p>
+<div id="exm-3.27" class="theorem example">
+<p><span class="theorem-title"><strong>Example 6</strong></span> <span class="math inline">\(\su(2),\so(3)\)</span> の間に同型写像がある話．<a href="#exm-3.29" class="quarto-xref">Example 7</a> で <span class="math inline">\(\SU(2),\SO(3)\)</span> の関係を思い出すときに使うが，証明はただ計算するだけである．</p>
 </div>
-<div id="def-2.13" class="theorem definition">
-<p><span class="theorem-title"><strong>Definition 18 (<span class="citation" data-cites="hallLieGroupsLie2015">Hall (<a href="#ref-hallLieGroupsLie2015" role="doc-biblioref">2015</a>)</span> Definition 2.13 1パラメータ部分群)</strong></span> 連続曲線 <span class="math inline">\(A:\R\to\GL(n;\C)\)</span> が <span class="math inline">\(\GL(n;\C)\)</span> の1パラメータ部分群であるとは，<span class="math inline">\(A(0)=I\)</span> と任意の <span class="math inline">\(s,t\in\R\)</span> に対し，<span class="math inline">\(A(s+t)=A(s)A(t)=A(t)A(s)\)</span> が成立すること．</p>
+</section>
+<section id="lie-group-and-lie-algebra-homomorpisms" class="level2">
+<h2 class="anchored" data-anchor-id="lie-group-and-lie-algebra-homomorpisms">3.5 Lie Group and Lie Algebra Homomorpisms</h2>
+<p>線形 Lie 群の準同型が，Lie 代数の準同型を誘導するという話．</p>
+<div id="thm-3.28" class="theorem">
+<p><span class="theorem-title"><strong>Theorem 2 (<span class="citation" data-cites="hallLieGroupsLie2015">Hall (<a href="#ref-hallLieGroupsLie2015" role="doc-biblioref">2015</a>)</span> Theorem 3.28)</strong></span> 本節の主役．性質3を定義として，一意性と各種性質を示すという方針．</p>
+<p><span class="math inline">\(\phi\)</span> の線形性を示すのはちょっと面倒くさい．2章の道具を駆使する．</p>
+<ol type="1">
+<li>正規性みたいな性質がある意味で保存されるという主張．3つ目の性質を示すときも使う．証明は難しくない．<span class="math inline">\(\Phi\)</span> が群準同型であることが肝．</li>
+<li><span class="math inline">\(\phi\)</span> は Lie 代数の準同型であるという主張．証明は式変形を追うだけ．</li>
+</ol>
 </div>
-<div id="thm-2.14" class="theorem">
-<p><span class="theorem-title"><strong>Theorem 8 (<span class="citation" data-cites="hallLieGroupsLie2015">Hall (<a href="#ref-hallLieGroupsLie2015" role="doc-biblioref">2015</a>)</span> Theorem 2.14)</strong></span> <span class="math inline">\(A\)</span> が <span class="math inline">\(\GL(n;\C)\)</span> の1パラメータ部分群ならば，ある <span class="math inline">\(X\in M_n(\C)\)</span> が一意的に存在して，<span class="math inline">\(A(t)=e^{tX}.\)</span></p>
+<div id="exm-3.29" class="theorem example">
+<p><span class="theorem-title"><strong>Example 7 (<span class="citation" data-cites="hallLieGroupsLie2015">Hall (<a href="#ref-hallLieGroupsLie2015" role="doc-biblioref">2015</a>)</span> Example 3.29)</strong></span> 正直，1章での <span class="math inline">\(\SU(2),\SO(3)\)</span> の関係がまだよくわかっていない．ただ，ここで重要なのは，Lie 群の同型でない準同型が，Lie 代数の同型を誘導するということ．</p>
+<p>証明は飛ばすことにして，時間があればでいいと思っている．</p>
+</div>
+<div id="prp-3.30" class="theorem proposition">
+<p><span class="theorem-title"><strong>Proposition 9 (<span class="citation" data-cites="hallLieGroupsLie2015">Hall (<a href="#ref-hallLieGroupsLie2015" role="doc-biblioref">2015</a>)</span> Proposition 3.30)</strong></span> 成り立っていてほしい性質が成り立ちますという主張．</p>
+</div>
+<div id="prp-3.31" class="theorem proposition">
+<p><span class="theorem-title"><strong>Proposition 10 (<span class="citation" data-cites="hallLieGroupsLie2015">Hall (<a href="#ref-hallLieGroupsLie2015" role="doc-biblioref">2015</a>)</span> Proposition 3.31)</strong></span> <span class="math inline">\(\Ker\Phi\)</span> が正規閉部分群であることは，位相群のファクト．<span class="math inline">\(\Ker\Phi\)</span> の Lie 代数が <span class="math inline">\(\Ker\phi\)</span> になることはきちんと示す．</p>
+</div>
+<div id="def-3.32" class="theorem definition">
+<p><span class="theorem-title"><strong>Definition 13 (<span class="citation" data-cites="hallLieGroupsLie2015">Hall (<a href="#ref-hallLieGroupsLie2015" role="doc-biblioref">2015</a>)</span> Definition 3.32 随伴)</strong></span> 随伴を定義する．ここで正規性っぽい形で随伴が定義されるのは興味深い．</p>
+</div>
+<div id="prp-3.33" class="theorem proposition">
+<p><span class="theorem-title"><strong>Proposition 11 (<span class="citation" data-cites="hallLieGroupsLie2015">Hall (<a href="#ref-hallLieGroupsLie2015" role="doc-biblioref">2015</a>)</span> Proposition 3.33)</strong></span> <span class="math inline">\(\Ad\)</span> は 線形 Lie 群の準同型写像で，<span class="math inline">\(\Ad_A\)</span> は <span class="math inline">\(\g\)</span> の自己同型になっているという主張． 証明は簡単．</p>
+</div>
+<div id="prp-3.34" class="theorem proposition">
+<p><span class="theorem-title"><strong>Proposition 12 (<span class="citation" data-cites="hallLieGroupsLie2015">Hall (<a href="#ref-hallLieGroupsLie2015" role="doc-biblioref">2015</a>)</span> Proposition 3.34)</strong></span> <span class="math inline">\(\Ad\)</span> が <span class="math inline">\(\ad\)</span> を誘導するという主張．証明は簡単．</p>
+</div>
+<div id="prp-3.35" class="theorem proposition">
+<p><span class="theorem-title"><strong>Proposition 13 (<span class="citation" data-cites="hallLieGroupsLie2015">Hall (<a href="#ref-hallLieGroupsLie2015" role="doc-biblioref">2015</a>)</span> Proposition 3.35)</strong></span> 同一視によって自然に導かれる主張．別証明は触れない．</p>
+</div>
+</section>
+<section id="the-complexification-of-a-real-lie-algebra" class="level2">
+<h2 class="anchored" data-anchor-id="the-complexification-of-a-real-lie-algebra">3.6 The Complexification of a Real Lie Algebra</h2>
+<p>実 Lie 代数を複素化という操作によって複素 Lie 代数にする．以降の節では複素化については扱わないが，6章以降で度々現れる．</p>
+<div id="def-3.36" class="theorem definition">
+<p><span class="theorem-title"><strong>Definition 14 (<span class="citation" data-cites="hallLieGroupsLie2015">Hall (<a href="#ref-hallLieGroupsLie2015" role="doc-biblioref">2015</a>)</span> Definition 3.36 複素化)</strong></span> 複素化の定義．教科書とちょっと定義を変えた．<a href="#prp-3.38" class="quarto-xref">Proposition 15</a> との対比のためであるが，本質的には教科書の定義と全く変わらない．</p>
+</div>
+<div id="prp-3.37" class="theorem proposition">
+<p><span class="theorem-title"><strong>Proposition 14 (<span class="citation" data-cites="hallLieGroupsLie2015">Hall (<a href="#ref-hallLieGroupsLie2015" role="doc-biblioref">2015</a>)</span> Proposition 3.37)</strong></span> 複素化は一意に決まるという主張．一意性は双線形性の要求から出る．括弧積の性質はいずれも計算して示せる．</p>
+</div>
+<div id="prp-3.38" class="theorem proposition">
+<p><span class="theorem-title"><strong>Proposition 15 (<span class="citation" data-cites="hallLieGroupsLie2015">Hall (<a href="#ref-hallLieGroupsLie2015" role="doc-biblioref">2015</a>)</span> Proposition 3.38)</strong></span> 複素化は複素数を使って定義してもいいという主張．<span class="math inline">\(iX\in\g\)</span> は構成した準同型が単射になるための要請である．</p>
+</div>
+<div id="prp-3.39" class="theorem proposition">
+<p><span class="theorem-title"><strong>Proposition 16 (<span class="citation" data-cites="hallLieGroupsLie2015">Hall (<a href="#ref-hallLieGroupsLie2015" role="doc-biblioref">2015</a>)</span> Proposition 3.39)</strong></span> 複素化の普遍性．テンソル積や直和の普遍性と似ている．</p>
+</div>
+<div id="nte-3.17" class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Note 1: <span class="citation" data-cites="hallLieGroupsLie2015">Hall (<a href="#ref-hallLieGroupsLie2015" role="doc-biblioref">2015</a>)</span> (3.17)
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>複素化の例がいろいろ書いてある．証明は飛ばして時間があれば帰ってくる．</p>
+</div>
+</div>
+</section>
+<section id="exponential-map" class="level2">
+<h2 class="anchored" data-anchor-id="exponential-map">3.7 Exponential Map</h2>
+<p>指数写像に関する章．<a href="#thm-3.42" class="quarto-xref">Theorem 3</a> の証明がメイン．</p>
+<div id="def-3.40" class="theorem definition">
+<p><span class="theorem-title"><strong>Definition 15 (<span class="citation" data-cites="hallLieGroupsLie2015">Hall (<a href="#ref-hallLieGroupsLie2015" role="doc-biblioref">2015</a>)</span> Definition 3.40 指数写像)</strong></span> 指数写像の定義．</p>
+</div>
+<div id="exm-3.41" class="theorem example">
+<p><span class="theorem-title"><strong>Example 8 (<span class="citation" data-cites="hallLieGroupsLie2015">Hall (<a href="#ref-hallLieGroupsLie2015" role="doc-biblioref">2015</a>)</span> Example 3.41)</strong></span> 指数写像が全射にならない例．<span class="math inline">\(e^X\)</span> の定義に，右から固有ベクトルをかけることで，<span class="math inline">\(e^X\)</span> の固有値が <span class="math inline">\(e^\lambda\)</span> であることがわかる．</p>
+</div>
+<div id="lem-3.43" class="theorem lemma">
+<p><span class="theorem-title"><strong>Lemma 1 (<span class="citation" data-cites="hallLieGroupsLie2015">Hall (<a href="#ref-hallLieGroupsLie2015" role="doc-biblioref">2015</a>)</span> Lemma 3.43)</strong></span> <a href="#thm-3.42" class="quarto-xref">Theorem 3</a> を示すための補題．<span class="math inline">\(\log,\exp\)</span> の連続性が証明の肝．収束列をうまくとる．</p>
+</div>
+<div id="thm-3.42" class="theorem">
+<p><span class="theorem-title"><strong>Theorem 3 (<span class="citation" data-cites="hallLieGroupsLie2015">Hall (<a href="#ref-hallLieGroupsLie2015" role="doc-biblioref">2015</a>)</span> Theorem 3.42)</strong></span> 指数写像は <span class="math inline">\(G\)</span> と <span class="math inline">\(\g\)</span> の間で局所的に全単射であるという主張． <span class="math inline">\((\Rightarrow)\)</span> が非自明な主張．<span class="math inline">\(\varepsilon\)</span> の範囲は <span class="math inline">\(\log\)</span> をいい感じに使うための技術的な要請．いい感じというのは，<span class="math inline">\(X=\log{A}\)</span> は定義できるし，<span class="math inline">\(e^X=A,\log{e^X}=X\)</span> となるという意．</p>
+<p>次の節はこの定理ありきなので，証明は丁寧に追う．以下は認める．</p>
+<ul>
+<li>逆関数定理</li>
+<li>コンパクト集合 <span class="math inline">\(C\)</span> 上の点列は <span class="math inline">\(C\)</span> 上のある点に収束する部分列をもつ．</li>
+</ul>
 </div>
 
-</section>
 </section>
 
 <div id="quarto-appendix" class="default"><section class="quarto-appendix-contents" role="doc-bibliography" id="quarto-bibliography"><h2 class="anchored quarto-appendix-heading">References</h2><div id="refs" class="references csl-bib-body hanging-indent" data-entry-spacing="0" role="list">
 <div id="ref-hallLieGroupsLie2015" class="csl-entry" role="listitem">
 Hall, Brian C. 2015. <em>Lie <span>Groups</span>, <span>Lie Algebras</span>, and <span>Representations</span>: <span>An Elementary Introduction</span></em>. Vol. 222. Graduate <span>Texts</span> in <span>Mathematics</span>. Cham: Springer International Publishing. <a href="https://doi.org/10.1007/978-3-319-13467-3">https://doi.org/10.1007/978-3-319-13467-3</a>.
-</div>
-<div id="ref-Matsushima1984" class="csl-entry" role="listitem">
-松島与三. 1984. <em>多様体入門</em>. 数学選書 5. Tokyo: 裳華房.
 </div>
 </div></section></div></main>
 <!-- /main column -->
