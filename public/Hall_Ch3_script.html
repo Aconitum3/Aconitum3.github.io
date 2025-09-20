@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 <meta name="author" content="March">
-<meta name="dcterms.date" content="2025-09-01">
+<meta name="dcterms.date" content="2025-09-20">
 
 <title>Lie Groups, Lie Algebras, and Representations Chapter 3, Lie Algebras 発表用台本</title>
 <style>
@@ -2337,6 +2337,7 @@ color: #556056;
   <li><a href="#lie-group-and-lie-algebra-homomorpisms" id="toc-lie-group-and-lie-algebra-homomorpisms" class="nav-link" data-scroll-target="#lie-group-and-lie-algebra-homomorpisms">3.5 Lie Group and Lie Algebra Homomorpisms</a></li>
   <li><a href="#the-complexification-of-a-real-lie-algebra" id="toc-the-complexification-of-a-real-lie-algebra" class="nav-link" data-scroll-target="#the-complexification-of-a-real-lie-algebra">3.6 The Complexification of a Real Lie Algebra</a></li>
   <li><a href="#exponential-map" id="toc-exponential-map" class="nav-link" data-scroll-target="#exponential-map">3.7 Exponential Map</a></li>
+  <li><a href="#consequences-of-theorem-3.42" id="toc-consequences-of-theorem-3.42" class="nav-link" data-scroll-target="#consequences-of-theorem-3.42">3.8 Consequences of Theorem 3.42</a></li>
   </ul>
 </nav>
 </div>
@@ -2361,7 +2362,7 @@ color: #556056;
     <div>
     <div class="quarto-title-meta-heading">Published</div>
     <div class="quarto-title-meta-contents">
-      <p class="date">September 1, 2025</p>
+      <p class="date">September 20, 2025</p>
     </div>
   </div>
   
@@ -2509,7 +2510,7 @@ Tip 1: 発表者のバックグラウンド
 <p><span class="theorem-title"><strong>Definition 12 (<span class="citation" data-cites="hallLieGroupsLie2015">Hall (<a href="#ref-hallLieGroupsLie2015" role="doc-biblioref">2015</a>)</span> Definition 3.21 複素線形 Lie 群)</strong></span> 用語の定義．</p>
 </div>
 <div id="prp-3.22" class="theorem proposition">
-<p><span class="theorem-title"><strong>Proposition 4 (<span class="citation" data-cites="hallLieGroupsLie2015">Hall (<a href="#ref-hallLieGroupsLie2015" role="doc-biblioref">2015</a>)</span> Proposition 3.22)</strong></span> 証明は簡単． <strong>?@cor-3.51</strong> で <span class="math inline">\(G\)</span> が連結なら逆も成立することを示す．</p>
+<p><span class="theorem-title"><strong>Proposition 4 (<span class="citation" data-cites="hallLieGroupsLie2015">Hall (<a href="#ref-hallLieGroupsLie2015" role="doc-biblioref">2015</a>)</span> Proposition 3.22)</strong></span> 証明は簡単． <a href="#cor-3.51" class="quarto-xref">Corollary 7</a> で <span class="math inline">\(G\)</span> が連結なら逆も成立することを示す．</p>
 </div>
 </section>
 <section id="examples" class="level2">
@@ -2640,7 +2641,7 @@ Table 1: <span class="math inline">\(G\)</span> と <span class="math inline">\
 </section>
 <section id="the-complexification-of-a-real-lie-algebra" class="level2">
 <h2 class="anchored" data-anchor-id="the-complexification-of-a-real-lie-algebra">3.6 The Complexification of a Real Lie Algebra</h2>
-<p>実 Lie 代数を複素化という操作によって複素 Lie 代数にする．以降の節では複素化については扱わないが，6章以降で度々現れる．</p>
+<p>実 Lie 代数を複素化という操作によって複素 Lie 代数にする．以降の節では複素化については扱わないが，6章以降で度々現れる．より一般には体の拡大として議論できるようだ．</p>
 <div id="def-3.36" class="theorem definition">
 <p><span class="theorem-title"><strong>Definition 14 (<span class="citation" data-cites="hallLieGroupsLie2015">Hall (<a href="#ref-hallLieGroupsLie2015" role="doc-biblioref">2015</a>)</span> Definition 3.36 複素化)</strong></span> 複素化の定義．教科書とちょっと定義を変えた．<a href="#prp-3.38" class="quarto-xref">Proposition 15</a> との対比のためであるが，本質的には教科書の定義と全く変わらない．</p>
 </div>
@@ -2686,6 +2687,43 @@ Note 1: <span class="citation" data-cites="hallLieGroupsLie2015">Hall (<a href=
 <li>逆関数定理</li>
 <li>コンパクト集合 <span class="math inline">\(C\)</span> 上の点列は <span class="math inline">\(C\)</span> 上のある点に収束する部分列をもつ．</li>
 </ul>
+</div>
+</section>
+<section id="consequences-of-theorem-3.42" class="level2">
+<h2 class="anchored" data-anchor-id="consequences-of-theorem-3.42">3.8 Consequences of Theorem 3.42</h2>
+<p><a href="#thm-3.42" class="quarto-xref">Theorem 3</a> の結果を使って色々な系を示す節．</p>
+<div id="cor-3.44" class="theorem corollary">
+<p><span class="theorem-title"><strong>Corollary 1 (<span class="citation" data-cites="hallLieGroupsLie2015">Hall (<a href="#ref-hallLieGroupsLie2015" role="doc-biblioref">2015</a>)</span> Corollary 3.44)</strong></span> 指数写像は <span class="math inline">\(G\)</span> と <span class="math inline">\(\g\)</span> の間で局所的に同相写像であるという主張．局所的に全単射であることが非自明だが，それは <a href="#thm-3.42" class="quarto-xref">Theorem 3</a> から直ちに従う．逆写像 <span class="math inline">\(\log\)</span> の連続性も2章で示した．</p>
+</div>
+<div id="cor-3.45" class="theorem corollary">
+<p><span class="theorem-title"><strong>Corollary 2 (<span class="citation" data-cites="hallLieGroupsLie2015">Hall (<a href="#ref-hallLieGroupsLie2015" role="doc-biblioref">2015</a>)</span> Corollary 3.45)</strong></span> <span class="math inline">\(G\)</span> が <span class="math inline">\(M_n(\C)\)</span> の正則部分多様体として Lie 群であるという主張．正則部分多様体であることを示すのが面倒．</p>
+<p>証明は丁寧に追う．以下は認める．</p>
+<ul>
+<li><span class="math inline">\(\exp\)</span> の原点における微分は恒等写像</li>
+</ul>
+</div>
+<div id="cor-3.46" class="theorem corollary">
+<p><span class="theorem-title"><strong>Corollary 3 (<span class="citation" data-cites="hallLieGroupsLie2015">Hall (<a href="#ref-hallLieGroupsLie2015" role="doc-biblioref">2015</a>)</span> Corollary 3.46)</strong></span> <span class="math inline">\(\g\)</span> は <span class="math inline">\(I\in G\)</span> の接空間であるという主張．<a href="#thm-3.42" class="quarto-xref">Theorem 3</a> の役割は，<span class="math inline">\(I\)</span> を始点とする <span class="math inline">\(G\)</span> 上の曲線 <span class="math inline">\(\gamma(t)\)</span> に対し，<span class="math inline">\(\delta(t):=\log\gamma(t)\)</span> が（十分小さい <span class="math inline">\(|t|\)</span> に関して）<span class="math inline">\(\g\)</span> 上の曲線になること．</p>
+<p>証明の肝は <span class="math inline">\(\exp\)</span> の原点における微分が恒等写像であることだが，これは認める．</p>
+</div>
+<div id="lem-3.48" class="theorem lemma">
+<p><span class="theorem-title"><strong>Lemma 2 (<span class="citation" data-cites="hallLieGroupsLie2015">Hall (<a href="#ref-hallLieGroupsLie2015" role="doc-biblioref">2015</a>)</span> Lemma 3.48)</strong></span> 証明の肝は一様連続性．</p>
+</div>
+<div id="cor-3.47" class="theorem corollary">
+<p><span class="theorem-title"><strong>Corollary 4 (<span class="citation" data-cites="hallLieGroupsLie2015">Hall (<a href="#ref-hallLieGroupsLie2015" role="doc-biblioref">2015</a>)</span> Corollary 3.47)</strong></span> <a href="#cor-3.49" class="quarto-xref">Corollary 5</a> とか <a href="#cor-3.51" class="quarto-xref">Corollary 7</a> の証明で使う．連結性は連続曲線をとるため．</p>
+<p>証明は丁寧に追う．</p>
+</div>
+<div id="cor-3.49" class="theorem corollary">
+<p><span class="theorem-title"><strong>Corollary 5 (<span class="citation" data-cites="hallLieGroupsLie2015">Hall (<a href="#ref-hallLieGroupsLie2015" role="doc-biblioref">2015</a>)</span> Corollary 3.49)</strong></span> 線形 Lie 群の準同型の構造が，Lie 代数の準同型から調べることができる．連結性は <a href="#cor-3.47" class="quarto-xref">Corollary 4</a> を使うため．証明は <a href="#cor-3.47" class="quarto-xref">Corollary 4</a> から直ちに従う．</p>
+</div>
+<div id="cor-3.50" class="theorem corollary">
+<p><span class="theorem-title"><strong>Corollary 6 (<span class="citation" data-cites="hallLieGroupsLie2015">Hall (<a href="#ref-hallLieGroupsLie2015" role="doc-biblioref">2015</a>)</span> Corollary 3.50)</strong></span> 線形 Lie 群の準同型写像は滑らかであるという主張． <span class="math inline">\(\Phi\)</span> が滑らかな写像の合成でかけることを示す．肝は <a href="#cor-3.45" class="quarto-xref">Corollary 2</a> で示した滑らかなチャートを使うこと．</p>
+</div>
+<div id="cor-3.51" class="theorem corollary">
+<p><span class="theorem-title"><strong>Corollary 7 (<span class="citation" data-cites="hallLieGroupsLie2015">Hall (<a href="#ref-hallLieGroupsLie2015" role="doc-biblioref">2015</a>)</span> Corollary 3.51)</strong></span> <span class="math inline">\(G\)</span> が連結ならば，<span class="math inline">\(\g\)</span> の可換性と <span class="math inline">\(G\)</span> の可換性は同値になるという主張．連結性は <a href="#cor-3.47" class="quarto-xref">Corollary 4</a> を使うため．証明は <a href="#cor-3.47" class="quarto-xref">Corollary 4</a> から直ちに従う．</p>
+</div>
+<div id="cor-3.52" class="theorem corollary">
+<p><span class="theorem-title"><strong>Corollary 8 (<span class="citation" data-cites="hallLieGroupsLie2015">Hall (<a href="#ref-hallLieGroupsLie2015" role="doc-biblioref">2015</a>)</span> Corollary 3.52)</strong></span> たぶん <a href="#thm-3.42" class="quarto-xref">Theorem 3</a> は不要．閉部分群であることを認めると証明はとても簡単．</p>
 </div>
 
 </section>

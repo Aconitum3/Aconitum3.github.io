@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 <meta name="author" content="March">
-<meta name="dcterms.date" content="2025-09-01">
+<meta name="dcterms.date" content="2025-09-20">
 
 <title>Lie Groups, Lie Algebras, and Representations Chapter 3, Lie Algebras 要旨</title>
 <style>
@@ -2371,7 +2371,7 @@ color: #556056;
     <div>
     <div class="quarto-title-meta-heading">Published</div>
     <div class="quarto-title-meta-contents">
-      <p class="date">September 1, 2025</p>
+      <p class="date">September 20, 2025</p>
     </div>
   </div>
   
@@ -2513,11 +2513,11 @@ Tip 1
 <i class="callout-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-Note 1: Jacobi 恒等式の解釈
+Note 1
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<p>任意の Lie 代数はある結合多元環 <span class="math inline">\(\mathcal{A}\)</span> の部分空間として埋め込まれ，括弧積は <span class="math inline">\(XY-YX\)</span> になる<span class="citation" data-cites="hallLieGroupsLie2015">(<a href="#ref-hallLieGroupsLie2015" role="doc-biblioref">Hall 2015</a> Theorem 9.10 Poincaré-Birkhoff-Witt の定理)</span>． Jacobi 恒等式は，一般に乗法が定義されていない <span class="math inline">\(\g\)</span> で括弧積が <span class="math inline">\(XY-YX\)</span> として振る舞うことを要求していると思える．</p>
+<p>任意の Lie 代数はある結合多元環 <span class="math inline">\(\mathcal{A}\)</span> の部分空間として埋め込まれ，括弧積は <span class="math inline">\(XY-YX\)</span> になる<span class="citation" data-cites="hallLieGroupsLie2015">(<a href="#ref-hallLieGroupsLie2015" role="doc-biblioref">Hall 2015</a> Theorem 9.10 Poincaré-Birkhoff-Witt の定理)</span>．</p>
 </div>
 </div>
 <details>
@@ -2612,11 +2612,27 @@ Note 3: 群の中心との関連
 <i class="callout-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-Note 4: Jacobi 恒等式の解釈 その2
+Note 4: Jacobi 恒等式の解釈
 </div>
 </div>
 <div class="callout-body-container callout-body">
 <p>Jacobi 恒等式は，<span class="math inline">\(\ad_X([Y,Z])=[\ad_X(Y),Z]+[Y,\ad_X(Z)]\)</span> とかけて，Leibniz 則と思える．</p>
+</div>
+</div>
+<div id="nte-3.7-2" class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Note 5: 随伴はなぜ「随伴」？
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p><span class="math inline">\(X,Y\in\g\)</span> に対し，<span class="math inline">\(\phi(X,Y):=\tr(\ad(X)\ad(Y))\)</span> を Killing 形式という．<span class="math inline">\(X,Y,Z\in\g\)</span> に対し， <span class="math display">\[
+\phi(\ad(Z)X,Y)+\phi(X,\ad(Z)Y)=0
+\]</span></p>
+<p>が成り立つ．随伴っぽい．</p>
 </div>
 </div>
 <div id="prp-3.8a" class="theorem proposition">
@@ -2669,7 +2685,7 @@ Note 4: Jacobi 恒等式の解釈 その2
 <i class="callout-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-Note 5: 構造定数の自由度
+Note 6: 構造定数の自由度
 </div>
 </div>
 <div class="callout-body-container callout-body">
@@ -2851,7 +2867,7 @@ X=\begin{pmatrix}0&amp;1\\0&amp;0\end{pmatrix}
 <i class="callout-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-Note 6
+Note 7
 </div>
 </div>
 <div class="callout-body-container callout-body">
@@ -3143,7 +3159,7 @@ e^{tX}\in\Sp(n),\enspace\forall{t\in\R}\\
 </details>
 </div>
 <div id="exm-3.26" class="theorem example">
-<p><span class="theorem-title"><strong>Example 10 (<span class="citation" data-cites="hallLieGroupsLie2015">Hall (<a href="#ref-hallLieGroupsLie2015" role="doc-biblioref">2015</a>)</span> Proposition 3.26)</strong></span> Heisenverg 群</p>
+<p><span class="theorem-title"><strong>Example 10 (<span class="citation" data-cites="hallLieGroupsLie2015">Hall (<a href="#ref-hallLieGroupsLie2015" role="doc-biblioref">2015</a>)</span> Proposition 3.26)</strong></span> Heisenberg 群</p>
 <p><span class="math display">\[
 H:=\left\{\begin{pmatrix}1&amp;a&amp;b\\&amp;1&amp;c\\&amp;&amp;1\end{pmatrix}\,\middle|\,a,b,c\in\R\right\}
 \]</span></p>
@@ -3190,7 +3206,7 @@ F_3=\begin{pmatrix}0&amp;-1&amp;0\\1&amp;0&amp;0\\0&amp;0&amp;0\end{pmatrix}
 </ol>
 </div>
 <div class="proof">
-<p><span class="proof-title"><em>Proof</em>. </span><span class="math inline">\(\phi(X):=\left.\dd{}{t}\Phi\left(e^{tX}\right)\right|_{t=0}\)</span> が条件を満たすことを示す．</p>
+<p><span class="proof-title"><em>Proof</em>. </span><span class="math inline">\(X\in\g\)</span> に対し，<span class="math inline">\(t\mapsto\Phi\left(e^{tX}\right)\)</span> は1パラメータ部分群 (<a href="#def-2.13" class="quarto-xref">Definition 18</a>) なので，<a href="#thm-2.14" class="quarto-xref">Theorem 8</a> より，任意の <span class="math inline">\(t\in\R\)</span> に対し，<span class="math inline">\(\Phi\left(e^{tX}\right)=e^{tZ}\)</span> となる <span class="math inline">\(Z\in M_n(\C)\)</span> が唯一存在する．<span class="math inline">\(\phi(X):=Z\)</span> とする．<span class="math inline">\(\Phi\left(e^{tX}\right)=e^{tZ}\)</span> の両辺を <span class="math inline">\(t=0\)</span> で微分することで，3つ目の性質が従う．</p>
 <details>
 <summary>
 一意性
@@ -3204,7 +3220,7 @@ F_3=\begin{pmatrix}0&amp;-1&amp;0\\1&amp;0&amp;0\\0&amp;0&amp;0\end{pmatrix}
 <summary>
 実線形性
 </summary>
-<p><span class="math inline">\(X\in\g\)</span> に対し，<span class="math inline">\(t\mapsto\Phi\left(e^{tX}\right)\)</span> は1パラメータ部分群 (<a href="#def-2.13" class="quarto-xref">Definition 18</a>) なので，<a href="#thm-2.14" class="quarto-xref">Theorem 8</a> より，任意の <span class="math inline">\(t\in\R\)</span> に対し，<span class="math inline">\(\Phi\left(e^{tX}\right)=e^{tZ}\)</span> となる <span class="math inline">\(Z\in M_n(\C)\)</span> が唯一存在する． 両辺を <span class="math inline">\(t=0\)</span> で微分すると，<span class="math inline">\(\phi(X)=Z\)</span> が得られる．任意の <span class="math inline">\(a\in\R\)</span> に対し， <span class="math display">\[
+<p>任意の <span class="math inline">\(a\in\R\)</span> に対し， <span class="math display">\[
 \phi(aX)
 =\left.\dd{}{t}\Phi\left(e^{taX}\right)\right|_{t=0}
 =\left.\dd{}{t}e^{taZ}\right|_{t=0}
@@ -3280,7 +3296,7 @@ V=\left\{
 <i class="callout-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-Tip 7
+Tip 8
 </div>
 </div>
 <div class="callout-body-container callout-body">
@@ -3293,7 +3309,7 @@ Tip 7
 <i class="callout-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-Note 8
+Note 9
 </div>
 </div>
 <div class="callout-body-container callout-body">
@@ -3385,7 +3401,7 @@ Note 8
 <i class="callout-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-Note 9
+Note 10
 </div>
 </div>
 <div class="callout-body-container callout-body">
@@ -3446,7 +3462,7 @@ Note 9
 <i class="callout-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-Note 10
+Note 11
 </div>
 </div>
 <div class="callout-body-container callout-body">
@@ -3574,7 +3590,7 @@ V_\C:=\{(u,v)\mid u,v\in V\}
 <i class="callout-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-Note 11
+Note 12
 </div>
 </div>
 <div class="callout-body-container callout-body">
@@ -3823,7 +3839,7 @@ X=\frac{X-X^*}{2}+i\frac{X+X^*}{2i}
 <i class="callout-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-Note 12
+Note 13
 </div>
 </div>
 <div class="callout-body-container callout-body">
@@ -3864,7 +3880,7 @@ Note 12
 <i class="callout-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-Note 13
+Note 14
 </div>
 </div>
 <div class="callout-body-container callout-body">
@@ -3903,7 +3919,7 @@ e^{k_mY_m}=\exp\left( k_m\|Y_m\|\frac{Y_m}{\|Y_m\|} \right)\to e^{tY}
 <p><span class="proof-title"><em>Proof</em>. </span>(<span class="math inline">\(G\)</span> は <span class="math inline">\(M_n(\C)\)</span> の <span class="math inline">\(k\)</span> 次元正則部分多様体)：</p>
 <p>任意の <span class="math inline">\(A_0\in G\)</span> に対し，<span class="math inline">\(M_n(\C)\)</span> の <span class="math inline">\(A_0\)</span> まわりのチャート <span class="math inline">\((U,\varphi)\)</span> が存在し，<span class="math inline">\(G\cap U\)</span> が <span class="math inline">\(n-k\)</span> 個の座標関数が消えている点の集合として定まることを示す．</p>
 <p><a href="#thm-3.42" class="quarto-xref">Theorem 3</a> の <span class="math inline">\(V_\varepsilon\)</span> をとる．任意の <span class="math inline">\(A_0\in G\)</span> に対し，<span class="math inline">\(A_0V_\varepsilon:=\{A_0A\mid A\in V_\varepsilon\}\)</span> は <span class="math inline">\(A_0\)</span> の近傍である． <span class="math inline">\(A\in A_0V_\varepsilon\iff A_0^{-1}A\in V_\varepsilon\)</span> より，<span class="math inline">\(X=\log(A_0^{-1}A)\)</span> として，<span class="math inline">\(A=A_0e^{X}\)</span> とかける．</p>
-<p><span class="citation" data-cites="hallLieGroupsLie2015">Hall (<a href="#ref-hallLieGroupsLie2015" role="doc-biblioref">2015</a>)</span> Proposition 2.16 より，<span class="math inline">\(X\mapsto e^X\)</span> は滑らかで，<a href="#prp-dexp" class="quarto-xref">Proposition 23</a> より，<span class="math inline">\(\exp_{*,0}\)</span> は正則．したがって，逆関数定理より，<span class="math inline">\(I\)</span> のある近傍 <span class="math inline">\(V\)</span> で逆写像 <span class="math inline">\(\log\)</span> も滑らか．このとき，<span class="math inline">\(V\)</span> は <span class="math inline">\(V\subset V_\varepsilon\)</span> となるようにとれる． したがって，<span class="math inline">\(\varphi:A_0V\to\varphi(A_0V),A\mapsto\log(A_0^{-1}A)\)</span> は <span class="math inline">\(C^\infty\)</span> 級微分同相．</p>
+<p><a href="#prp-2.16" class="quarto-xref">Proposition 28</a> より，<span class="math inline">\(X\mapsto e^X\)</span> は滑らかで，<a href="#prp-dexp" class="quarto-xref">Proposition 23</a> より，<span class="math inline">\(\exp_{*,0}\)</span> は正則．したがって，逆関数定理より，<span class="math inline">\(I\)</span> のある近傍 <span class="math inline">\(V\)</span> で逆写像 <span class="math inline">\(\log\)</span> も滑らか．このとき，<span class="math inline">\(V\)</span> は <span class="math inline">\(V\subset V_\varepsilon\)</span> となるようにとれる． したがって，<span class="math inline">\(\varphi:A_0V\to\varphi(A_0V),A\mapsto\log(A_0^{-1}A)\)</span> は <span class="math inline">\(C^\infty\)</span> 級微分同相．</p>
 <p><span class="math inline">\(M_n(\C)\simeq \R^{2n^2}\)</span> の同一視の下で，<span class="math inline">\((A_{0}V,\varphi)\)</span> は <span class="math inline">\(M_n(\C)\)</span> のチャートである． <a href="#thm-3.42" class="quarto-xref">Theorem 3</a> より，<span class="math inline">\(A\in G\cap A_0V\iff A_0^{-1}A\in G\cap V\Rightarrow X\in\g\)</span>，すなわち，<span class="math inline">\(G\cap A_0V\)</span> は <span class="math inline">\(\g\)</span> の直交補空間 <span class="math inline">\(D\)</span> の座標関数が消えている点の集合として定まる．<span class="math inline">\(A_0\)</span> は任意だったので，<span class="math inline">\(G\)</span> は <span class="math inline">\(M_n(\C)\)</span> の <span class="math inline">\(k\)</span> 次元正則部分多様体．</p>
 <p>（<span class="math inline">\(G\)</span> は Lie 群）：</p>
 <p><span class="math inline">\(\GL(n;\C)\)</span> 上，乗法写像と逆元をとる写像は <span class="math inline">\(\R^{2n^2}\)</span> との同一視によって有理関数と見なせるので，滑らか．<span class="math inline">\(G\)</span> 上の乗法写像と逆元をとる写像はこの制限なので，滑らか．</p>
@@ -3949,7 +3965,7 @@ e^{k_mY_m}=\exp\left( k_m\|Y_m\|\frac{Y_m}{\|Y_m\|} \right)\to e^{tY}
 |s-t|&lt;\gamma(\delta(\varepsilon))\Rightarrow A(s)^{-1}A(t)\in V_\varepsilon
 \]</span></p>
 <p>である．</p>
-<p><span class="math inline">\([0,1]\)</span> を <span class="math inline">\(1/m&lt;\gamma(\delta(\varepsilon))\)</span> となるように <span class="math inline">\(m\)</span> 等分する．<span class="math inline">\(X_j:=\log\left(A(({j-1})/{m})^{-1}A(j/m)\right)\)</span> とすると，<span class="math inline">\(X\in\g\)</span> で，</p>
+<p><span class="math inline">\([0,1]\)</span> を <span class="math inline">\(1/m&lt;\gamma(\delta(\varepsilon))\)</span> となるように <span class="math inline">\(m\)</span> 等分する．<span class="math inline">\(X_j:=\log\left(A(({j-1})/{m})^{-1}A(j/m)\right)\)</span> とすると，<span class="math inline">\(X_j\in\g\)</span> で，</p>
 <p><span class="math display">\[
 \begin{align*}
 A
@@ -3967,7 +3983,7 @@ A\left(\frac{m-1}{m}\right)^{-1}A\left(1\right)\\
 <i class="callout-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-Note 14
+Note 15
 </div>
 </div>
 <div class="callout-body-container callout-body">
@@ -4031,7 +4047,7 @@ A\left(\frac{m-1}{m}\right)^{-1}A\left(1\right)
 <i class="callout-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-Note 15
+Note 16
 </div>
 </div>
 <div class="callout-body-container callout-body">
@@ -4053,12 +4069,31 @@ AB=e^{X_1}e^{X_2}\cdots e^{X_m}e^{Y_1}e^{Y_2}\cdots e^{Y_l}
 <div id="cor-3.52" class="theorem corollary">
 <p><span class="theorem-title"><strong>Corollary 8 (<span class="citation" data-cites="hallLieGroupsLie2015">Hall (<a href="#ref-hallLieGroupsLie2015" role="doc-biblioref">2015</a>)</span> Corollary 3.52)</strong></span> <span class="math inline">\(G\)</span> の単位元の連結成分 <span class="math inline">\(G_0\)</span> は <span class="math inline">\(\GL(n;\C)\)</span> の閉部分群，すなわち，線形 Lie 群． <span class="math inline">\(G_0\)</span> の Lie 代数は <span class="math inline">\(\g\)</span>.</p>
 </div>
+<div id="nte-3.52" class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Note 17
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>元の証明では，<a href="#thm-3.42" class="quarto-xref">Theorem 3</a> を利用しているが不要と思われる．</p>
+</div>
+</div>
 <details>
 <summary>
 証明
 </summary>
 <div class="proof">
-<p><span class="proof-title"><em>Proof</em>. </span><a href="#prp-matsushima-3" class="quarto-xref">Proposition 19</a> より，<span class="math inline">\(G_0\)</span> は閉部分群．<span class="math inline">\(G_0\)</span> の Lie 代数 <span class="math inline">\(\g_0\)</span> が <span class="math inline">\(\g\)</span> となることを示す．<span class="math inline">\(G_0\subset G\)</span> より，<span class="math inline">\(\g_0\subset\g\)</span> である．一方，<a href="#prp-3.19" class="quarto-xref">Proposition 9</a> より，<span class="math inline">\(\g\subset\g_0\)</span> である．よって，<span class="math inline">\(\g_0=\g\)</span>.</p>
+<p><span class="proof-title"><em>Proof</em>. </span><a href="#prp-matsushima-3" class="quarto-xref">Proposition 19</a> より，<span class="math inline">\(G_0\)</span> は <span class="math inline">\(G\)</span> の閉部分群で，特に <span class="math inline">\(\GL(n;\C)\)</span> の閉部分群．<span class="math inline">\(G_0\)</span> の Lie 代数 <span class="math inline">\(\g_0\)</span> が <span class="math inline">\(\g\)</span> となることを示す．<span class="math inline">\(G_0\subset G\)</span> より，<span class="math inline">\(\g_0\subset\g\)</span> である．一方，<a href="#prp-3.19" class="quarto-xref">Proposition 9</a> より，<span class="math inline">\(\g\subset\g_0\)</span> である．よって，<span class="math inline">\(\g_0=\g\)</span>.</p>
+<details>
+<summary>
+<span class="math inline">\(G_0\)</span> が閉集合であることの証明（元の証明）
+</summary>
+<span class="math inline">\(\{A_m\}\subset G_0\)</span> は <span class="math inline">\(A\in\GL(n;\C)\)</span> に収束する点列とする．<span class="math inline">\(G\)</span> は閉集合なので，<span class="math inline">\(A\in G\)</span> である．このとき，<span class="math inline">\(A_mA^{-1}\in G\)</span> で，<span class="math inline">\(A_mA^{-1}\to I\)</span> である．<a href="#thm-3.42" class="quarto-xref">Theorem 3</a> より，十分大きい <span class="math inline">\(m\)</span> をとると，ある <span class="math inline">\(X_m\in\g\)</span> が存在し，<span class="math inline">\(A_mA^{-1}=e^{X_m}\)</span> が成立．<span class="math inline">\(A=e^{-X_m}A_m\)</span> である．<span class="math inline">\(t\mapsto e^{-tX_m}A_m\)</span> は <span class="math inline">\(A\)</span> と <span class="math inline">\(A_m\)</span> をつなぐ曲線である．また，<span class="math inline">\(A_m\in G_0\)</span> より，<span class="math inline">\(A_m\)</span> と <span class="math inline">\(I\)</span> をつなぐ曲線が存在．この2つの曲線をつなぐと，<span class="math inline">\(A\)</span> と <span class="math inline">\(I\)</span> をつなぐ曲線がつくれる．したがって，<span class="math inline">\(A\in G_0\)</span> が成立し，<span class="math inline">\(G_0\)</span> は閉集合．
+</details>
 </div>
 </details>
 </section>
@@ -4111,7 +4146,7 @@ AB=e^{X_1}e^{X_2}\cdots e^{X_m}e^{Y_1}e^{Y_2}\cdots e^{Y_l}
 <i class="callout-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-Note 16
+Note 18
 </div>
 </div>
 <div class="callout-body-container callout-body">
@@ -4329,6 +4364,9 @@ e^{X+Y}=\lim_{m\to\infty}\left(e^{X/m}e^{Y/m}\right)^m
 </div>
 <div id="thm-2.14" class="theorem">
 <p><span class="theorem-title"><strong>Theorem 8 (<span class="citation" data-cites="hallLieGroupsLie2015">Hall (<a href="#ref-hallLieGroupsLie2015" role="doc-biblioref">2015</a>)</span> Theorem 2.14)</strong></span> <span class="math inline">\(A\)</span> が <span class="math inline">\(\GL(n;\C)\)</span> の1パラメータ部分群ならば，ある <span class="math inline">\(X\in M_n(\C)\)</span> が一意的に存在して，<span class="math inline">\(A(t)=e^{tX}.\)</span></p>
+</div>
+<div id="prp-2.16" class="theorem proposition">
+<p><span class="theorem-title"><strong>Proposition 28 (<span class="citation" data-cites="hallLieGroupsLie2015">Hall (<a href="#ref-hallLieGroupsLie2015" role="doc-biblioref">2015</a>)</span> Proposition 2.16)</strong></span> 指数写像 <span class="math inline">\(\exp:M_n(\C)\to M_n(\C)\)</span> は無限回微分可能．</p>
 </div>
 
 </section>
