@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 <meta name="author" content="March">
-<meta name="dcterms.date" content="2025-11-04">
+<meta name="dcterms.date" content="2025-11-05">
 
 <title>加群とホモロジー代数入門 2.3~2.5 要旨</title>
 <style>
@@ -2364,7 +2364,7 @@ color: #556056;
     <div>
     <div class="quarto-title-meta-heading">Published</div>
     <div class="quarto-title-meta-contents">
-      <p class="date">November 4, 2025</p>
+      <p class="date">November 5, 2025</p>
     </div>
   </div>
   
@@ -2382,9 +2382,13 @@ color: #556056;
 \DeclareMathOperator{\Hom}{Hom}
 \DeclareMathOperator{\dom}{dom}
 \DeclareMathOperator{\cod}{cod}
+\DeclareMathOperator{\Im}{Im}
+\DeclareMathOperator{\Ker}{Ker}
 % Category
 \newcommand{\ComR}{\mathsf{ComRing}}
+\newcommand{\Div}{\mathsf{Div}}
 \newcommand{\Grp}{\mathsf{Grp}}
+\newcommand{\HausTop}{\mathsf{HausTop}}
 \newcommand{\Man}{\mathsf{Man}^\infty}
 \newcommand{\Meas}{\mathsf{Meas}}
 \newcommand{\Met}{\mathsf{Met}}
@@ -2462,8 +2466,18 @@ h \circ (g \circ f) = (h \circ g) \circ f
 </ul>
 <p><span class="math inline">\(\Grp\)</span> の同型射は群同型写像のことである．</p>
 </div>
+<div id="exm-grp" class="theorem example">
+<p><span class="theorem-title"><strong>Example 4 (群の圏 <span class="math inline">\(\Div\)</span>)</strong></span> 可除群とは，任意の <span class="math inline">\(n\in\mathbb{N}\)</span> に対して，<span class="math inline">\(n\)</span> 倍写像が全射になるような Abel 群である． 可除群の圏 <span class="math inline">\(\Div\)</span> は次のように定まる．</p>
+<ul>
+<li><span class="math inline">\(\Ob\Div\)</span> は可除群全体．</li>
+<li><span class="math inline">\(\Hom_\Grp(X,Y)\)</span> は <span class="math inline">\(X\)</span> から <span class="math inline">\(Y\)</span> への群準同型写像全体．</li>
+<li>恒等射は恒等写像．</li>
+<li>合成は写像の合成．</li>
+</ul>
+<p><span class="math inline">\(\Div\)</span> の同型射は群同型写像のことである．</p>
+</div>
 <div id="exm-mod" class="theorem example">
-<p><span class="theorem-title"><strong>Example 4</strong></span> <span class="math inline">\(R\)</span>-加群の圏 <span class="math inline">\(\RMod\)</span> は次のように定まる．</p>
+<p><span class="theorem-title"><strong>Example 5</strong></span> <span class="math inline">\(R\)</span>-加群の圏 <span class="math inline">\(\RMod\)</span> は次のように定まる．</p>
 <ul>
 <li><span class="math inline">\(\Ob \RMod\)</span> は <span class="math inline">\(R\)</span>-加群全体．</li>
 <li><span class="math inline">\(\Hom_\RMod(X,Y)\)</span> は <span class="math inline">\(X\)</span> から <span class="math inline">\(Y\)</span> への <span class="math inline">\(R\)</span>-加群の準同型写像全体．</li>
@@ -2473,7 +2487,7 @@ h \circ (g \circ f) = (h \circ g) \circ f
 <p><span class="math inline">\(\RMod\)</span> の同型射は <span class="math inline">\(R\)</span>-加群の同型写像のことである．</p>
 </div>
 <div id="exm-vec" class="theorem example">
-<p><span class="theorem-title"><strong>Example 5 (線形空間の圏 <span class="math inline">\(\Vect\)</span>)</strong></span> 線形空間の圏 <span class="math inline">\(\Vect\)</span> は次のように定まる．</p>
+<p><span class="theorem-title"><strong>Example 6 (線形空間の圏 <span class="math inline">\(\Vect\)</span>)</strong></span> 線形空間の圏 <span class="math inline">\(\Vect\)</span> は次のように定まる．</p>
 <ul>
 <li><span class="math inline">\(\Ob\Vect\)</span> は線形空間全体．</li>
 <li><span class="math inline">\(\Hom_\Vect(X,Y)\)</span> は <span class="math inline">\(X\)</span> から <span class="math inline">\(Y\)</span> への線形写像全体．</li>
@@ -2483,7 +2497,7 @@ h \circ (g \circ f) = (h \circ g) \circ f
 <p><span class="math inline">\(\Vect\)</span> の同型射は正則な線形写像のことである．</p>
 </div>
 <div id="exm-met" class="theorem example">
-<p><span class="theorem-title"><strong>Example 6 (距離空間の圏 <span class="math inline">\(\Met\)</span>)</strong></span> 距離空間の圏 <span class="math inline">\(\Met\)</span> は次のように定まる．</p>
+<p><span class="theorem-title"><strong>Example 7 (距離空間の圏 <span class="math inline">\(\Met\)</span>)</strong></span> 距離空間の圏 <span class="math inline">\(\Met\)</span> は次のように定まる．</p>
 <ul>
 <li><span class="math inline">\(\Ob\Met\)</span> は距離空間全体．</li>
 <li><span class="math inline">\(\Hom_\Met(X,Y)\)</span> は <span class="math inline">\(X\)</span> から <span class="math inline">\(Y\)</span> への非拡大写像全体．すなわち，<span class="math inline">\(f\in\Hom_\Met(X,Y)\)</span> ならば，連続写像であって，任意の <span class="math inline">\(x,x&#39;\in X\)</span> に対し，<span class="math inline">\(d_Y(f(x),f(x&#39;))\leq d_X(x,x&#39;)\)</span> を満たす．</li>
@@ -2493,7 +2507,7 @@ h \circ (g \circ f) = (h \circ g) \circ f
 <p><span class="math inline">\(\Met\)</span> の同型射は等長変換，すなわち距離を保つ同相写像のことである．</p>
 </div>
 <div id="exm-man" class="theorem example">
-<p><span class="theorem-title"><strong>Example 7 (滑らかな多様体の圏 <span class="math inline">\(\Man\)</span>)</strong></span> 滑らかな多様体の圏 <span class="math inline">\(\Man\)</span> は次のように定まる．</p>
+<p><span class="theorem-title"><strong>Example 8 (滑らかな多様体の圏 <span class="math inline">\(\Man\)</span>)</strong></span> 滑らかな多様体の圏 <span class="math inline">\(\Man\)</span> は次のように定まる．</p>
 <ul>
 <li><span class="math inline">\(\Ob\Man\)</span> は滑らかな多様体全体．</li>
 <li><span class="math inline">\(\Hom_\Man(X,Y)\)</span> は <span class="math inline">\(X\)</span> から <span class="math inline">\(Y\)</span> への滑らかな写像全体．</li>
@@ -2503,7 +2517,7 @@ h \circ (g \circ f) = (h \circ g) \circ f
 <p><span class="math inline">\(\Man\)</span> の同型射は <span class="math inline">\(C^\infty\)</span> 級微分同相写像のことである．</p>
 </div>
 <div id="exm-meas" class="theorem example">
-<p><span class="theorem-title"><strong>Example 8 (可測空間の圏 <span class="math inline">\(\Meas\)</span>)</strong></span> 可測空間の圏 <span class="math inline">\(\Meas\)</span> は次のように定まる．</p>
+<p><span class="theorem-title"><strong>Example 9 (可測空間の圏 <span class="math inline">\(\Meas\)</span>)</strong></span> 可測空間の圏 <span class="math inline">\(\Meas\)</span> は次のように定まる．</p>
 <ul>
 <li><span class="math inline">\(\Ob\Meas\)</span> は可測空間全体．</li>
 <li><span class="math inline">\(\Hom_\Meas(X,Y)\)</span> は <span class="math inline">\(X\)</span> から <span class="math inline">\(Y\)</span> への可測写像全体．</li>
@@ -2513,7 +2527,7 @@ h \circ (g \circ f) = (h \circ g) \circ f
 <p><span class="math inline">\(\Meas\)</span> の同型射は可測全単射のことである．</p>
 </div>
 <div id="exm-msp" class="theorem example">
-<p><span class="theorem-title"><strong>Example 9 (測度空間の圏 <span class="math inline">\(\MSp\)</span>)</strong></span> 測度空間の圏 <span class="math inline">\(\MSp\)</span> は次のように定まる．</p>
+<p><span class="theorem-title"><strong>Example 10 (測度空間の圏 <span class="math inline">\(\MSp\)</span>)</strong></span> 測度空間の圏 <span class="math inline">\(\MSp\)</span> は次のように定まる．</p>
 <ul>
 <li><span class="math inline">\(\Ob\MSp\)</span> は測度空間全体．</li>
 <li><span class="math inline">\(\Hom_\MSp(X,Y)\)</span> は <span class="math inline">\(X\)</span> から <span class="math inline">\(Y\)</span> への測度を保つ可測写像全体．すなわち，<span class="math inline">\(f\in\Hom_\MSp(X,Y)\)</span> ならば，<span class="math inline">\(Y\)</span> 上の任意の可測集合 <span class="math inline">\(B\)</span> に対し，<span class="math inline">\(\mu_Y(B)=\mu_X(f^{-1}(B))\)</span> が成り立つ．</li>
@@ -2553,7 +2567,7 @@ h \circ (g \circ f) = (h \circ g) \circ f
 <li><span class="math inline">\((Z,j_\lambda)\)</span> も直和の普遍性を満たすならば，同型射 <span class="math inline">\(f\in\Hom_\C(\coprod_{\lambda\in\Lambda}X_\lambda,Z)\)</span> で，任意の <span class="math inline">\(\lambda\in\Lambda\)</span> に対し，<span class="math inline">\(f \circ i_\lambda = j_\lambda\)</span> を満たすものが一意的に存在する（命題 2.3.4）．</li>
 </ul>
 <div id="exm-set-directproduct" class="theorem example">
-<p><span class="theorem-title"><strong>Example 10 (集合の圏 <span class="math inline">\(\Set\)</span> の直積)</strong></span> <span class="math inline">\(\Set\)</span> の直積は通常の直積と射影の族の組である．</p>
+<p><span class="theorem-title"><strong>Example 11 (集合の圏 <span class="math inline">\(\Set\)</span> の直積)</strong></span> <span class="math inline">\(\Set\)</span> の直積は通常の直積と射影の族の組である．</p>
 <ul>
 <li><span class="math inline">\(\Lambda\)</span> は添え字集合，<span class="math inline">\(\lambda\in\Lambda\)</span> に対し，<span class="math inline">\(X_\lambda\)</span> は集合とする．</li>
 <li><span class="math inline">\(X:=\{(x_\lambda)_{\lambda\in\Lambda}\mid x_\lambda \in X_\lambda\}\)</span> とする．</li>
@@ -2563,7 +2577,7 @@ h \circ (g \circ f) = (h \circ g) \circ f
 <p><span class="math inline">\(f\)</span> の一意性を示す．<span class="math inline">\(f&#39;:Y\to X\)</span> も任意の <span class="math inline">\(\lambda\in\Lambda\)</span> に対し，<span class="math inline">\(f_\lambda=p_\lambda\circ f&#39;\)</span> を満たすとする．<span class="math inline">\(f\neq f&#39;\)</span> を仮定すると，ある <span class="math inline">\(\lambda&#39;\in\Lambda\)</span> と <span class="math inline">\(y\in Y\)</span> が存在して，<span class="math inline">\(p_{\lambda&#39;}\circ f\neq p_{\lambda&#39;}\circ f&#39;\)</span> が成立し，矛盾が生じる．よって，<span class="math inline">\(f=f&#39;\)</span>．</p>
 </div>
 <div id="exm-set-directsum" class="theorem example">
-<p><span class="theorem-title"><strong>Example 11 (集合の圏 <span class="math inline">\(\Set\)</span> の直和)</strong></span> <span class="math inline">\(\Set\)</span> の直和は非交和を用いて構成できる．</p>
+<p><span class="theorem-title"><strong>Example 12 (集合の圏 <span class="math inline">\(\Set\)</span> の直和)</strong></span> <span class="math inline">\(\Set\)</span> の直和は非交和を用いて構成できる．</p>
 <ul>
 <li><span class="math inline">\(\Lambda\)</span> は添え字集合，<span class="math inline">\(\lambda\in\Lambda\)</span> に対し，<span class="math inline">\(X_\lambda\)</span> は集合とする．</li>
 <li><span class="math inline">\(X:=\{(x_\lambda,\lambda)\mid x_\lambda \in X_\lambda,\lambda\in\Lambda\}\)</span> とする．</li>
@@ -2573,7 +2587,7 @@ h \circ (g \circ f) = (h \circ g) \circ f
 <p><span class="math inline">\(f\)</span> の一意性を示す．<span class="math inline">\(f&#39;:X\to Y\)</span> も任意の <span class="math inline">\(\lambda\in\Lambda\)</span> に対し，<span class="math inline">\(f_\lambda=f&#39;\circ i_\lambda\)</span> を満たすとする．<span class="math inline">\(f\neq f&#39;\)</span> を仮定すると，ある <span class="math inline">\((x_\lambda,\lambda)\in X\)</span> が存在して，<span class="math inline">\(f(x_\lambda,\lambda)\neq f&#39;(x_\lambda,\lambda)\)</span> が成立する．これは <span class="math inline">\((f\circ i_\lambda)(x_\lambda)\neq(f&#39;\circ i_\lambda)(x_\lambda)\)</span> を意味するので，矛盾である．よって，<span class="math inline">\(f=f&#39;\)</span>．</p>
 </div>
 <div id="exm-top-direct" class="theorem example">
-<p><span class="theorem-title"><strong>Example 12 (位相空間の圏 <span class="math inline">\(\Top\)</span> の直積・直和)</strong></span> <span class="math inline">\(\Top\)</span> の直積は直積位相空間と射影の族の組である．</p>
+<p><span class="theorem-title"><strong>Example 13 (位相空間の圏 <span class="math inline">\(\Top\)</span> の直積・直和)</strong></span> <span class="math inline">\(\Top\)</span> の直積は直積位相空間と射影の族の組である．</p>
 <ul>
 <li><span class="math inline">\(\Lambda\)</span> は添え字集合，<span class="math inline">\(\lambda\in\Lambda\)</span> に対し，<span class="math inline">\(X_\lambda\)</span> は位相空間とする．<span class="math inline">\(X_\lambda\)</span> の位相を <span class="math inline">\(\O_\lambda\)</span> とする．</li>
 <li><span class="math inline">\(X:=\{(x_\lambda)_{\lambda\in\Lambda}\mid x_\lambda \in X_\lambda\}\)</span> とする．</li>
@@ -2590,7 +2604,7 @@ h \circ (g \circ f) = (h \circ g) \circ f
 <p><span class="math inline">\((X,i_\lambda)\)</span> が直和の普遍性を満たすことを示す． <span class="math inline">\(Y\)</span> を集合，<span class="math inline">\(f_\lambda:X_\lambda\to Y\)</span> は連続とする． <span class="math inline">\(f:X\to Y,(x_\lambda,\lambda)\mapsto f_\lambda(x_\lambda)\)</span> は，任意の <span class="math inline">\(\lambda\in\Lambda\)</span> に対し，<span class="math inline">\(f_\lambda = f\circ i_\lambda\)</span> を満たす． <span class="math inline">\(f\)</span> の連続性を示す．<span class="math inline">\(Y\)</span> の開集合 <span class="math inline">\(G\)</span> に対し， <span class="math inline">\((f\circ i_\lambda)^{-1}(G)=f_\lambda^{-1}(G)\)</span> である．<span class="math inline">\(f^{-1}(G)\)</span> が開集合でないと仮定すると，ある <span class="math inline">\(\lambda&#39;\in\Lambda\)</span> が存在して，<span class="math inline">\(i_{\lambda&#39;}^{-1}(f^{-1}(G))\)</span> は開集合にならない．しかし，これは <span class="math inline">\(f_{\lambda&#39;}\)</span> の連続性に矛盾するので，<span class="math inline">\(f^{-1}(G)\)</span> は開集合．よって，<span class="math inline">\(f\)</span> は連続である．</p>
 </div>
 <div id="exm-meas-direct" class="theorem example">
-<p><span class="theorem-title"><strong>Example 13 (可測空間の圏 <span class="math inline">\(\Meas\)</span> の直積・直和)</strong></span> <span class="math inline">\(\Meas\)</span> の直積は直積可測空間と射影の族の組である．</p>
+<p><span class="theorem-title"><strong>Example 14 (可測空間の圏 <span class="math inline">\(\Meas\)</span> の直積・直和)</strong></span> <span class="math inline">\(\Meas\)</span> の直積は直積可測空間と射影の族の組である．</p>
 <ul>
 <li><span class="math inline">\(\Lambda\)</span> は添え字集合，<span class="math inline">\(\lambda\in\Lambda\)</span> に対し，<span class="math inline">\(X_\lambda\)</span> は可測空間とする．<span class="math inline">\(X_\lambda\)</span> の <span class="math inline">\(\sigma\)</span>-加法族を <span class="math inline">\(\mathscr{B}_\lambda\)</span> とする．</li>
 <li><span class="math inline">\(X:=\{(x_\lambda)_{\lambda\in\Lambda}\mid x_\lambda \in X_\lambda\}\)</span> とする．</li>
@@ -2607,7 +2621,7 @@ h \circ (g \circ f) = (h \circ g) \circ f
 <p><span class="math inline">\((X,i_\lambda)\)</span> は直和の普遍性を満たす．</p>
 </div>
 <div id="exm-msp-direct" class="theorem example">
-<p><span class="theorem-title"><strong>Example 14 (測度空間の圏 <span class="math inline">\(\MSp\)</span> の直積・直和)</strong></span> 直積測度空間は <span class="math inline">\(\MSp\)</span> の直積にはならない (<span class="citation" data-cites="Iwane2016">岩根 (<a href="#ref-Iwane2016" role="doc-biblioref">2016</a>)</span>)． 直積測度空間は以下のように定まる．</p>
+<p><span class="theorem-title"><strong>Example 15 (測度空間の圏 <span class="math inline">\(\MSp\)</span> の直積・直和)</strong></span> 直積測度空間は <span class="math inline">\(\MSp\)</span> の直積にはならない (<span class="citation" data-cites="Iwane2016">岩根 (<a href="#ref-Iwane2016" role="doc-biblioref">2016</a>)</span>)． 直積測度空間は以下のように定まる．</p>
 <ul>
 <li><span class="math inline">\(X_1,X_2\)</span> は（2つ以上の点を含む）測度空間とする．<span class="math inline">\(X_i\)</span> の <span class="math inline">\(\sigma\)</span>-加法族を <span class="math inline">\(\mathscr{B}_i\)</span> とする．</li>
 <li><span class="math inline">\(X:=\{(x_1,x_2)\mid x_i \in X_i\}\)</span> とする．</li>
@@ -2638,7 +2652,7 @@ h \circ (g \circ f) = (h \circ g) \circ f
 <p><span class="math inline">\(\mu_X\)</span> の定義から，<span class="math inline">\(i_\lambda\)</span> は測度を保たない．</p>
 </div>
 <div id="exm-met-direct" class="theorem example">
-<p><span class="theorem-title"><strong>Example 15 (距離空間の圏 <span class="math inline">\(\Met\)</span> の直積・直和)</strong></span> 添え字集合 <span class="math inline">\(\Lambda\)</span> が高々可算集合の場合のみを考える． <span class="math inline">\(\Met\)</span> の直積は直積距離空間と射影の族の組である．</p>
+<p><span class="theorem-title"><strong>Example 16 (距離空間の圏 <span class="math inline">\(\Met\)</span> の直積・直和)</strong></span> 添え字集合 <span class="math inline">\(\Lambda\)</span> が高々可算集合の場合のみを考える． <span class="math inline">\(\Met\)</span> の直積は直積距離空間と射影の族の組である．</p>
 <ul>
 <li><span class="math inline">\(X_\lambda\)</span> は距離空間とする．</li>
 <li><span class="math inline">\(X:=\{(x_\lambda)_{\lambda\in\Lambda}\mid x_\lambda \in X_\lambda\}\)</span> とする．</li>
@@ -2746,7 +2760,7 @@ d_{X}(f(y),f(y&#39;))
 <tr class="even">
 <td>測度空間の圏 <span class="math inline">\(\MSp\)</span></td>
 <td>–</td>
-<td>–</td>
+<td>空測度空間</td>
 <td>–</td>
 <td></td>
 </tr>
@@ -2798,7 +2812,7 @@ d_{X}(f(y),f(y&#39;))
 <li><span class="math inline">\((V,i&#39;,j&#39;)\)</span> も <span class="math inline">\(f,g\)</span> の余ファイバー積の普遍性を満たすならば，同型射 <span class="math inline">\(u\in\Hom_\C(X\sqcup_Z Y,V)\)</span> で，<span class="math inline">\(i&#39;=u\circ i,j&#39;=u\circ j\)</span> を満たすものが一意的に存在する．</li>
 </ul>
 <div id="exm-set-fiber-product" class="theorem example">
-<p><span class="theorem-title"><strong>Example 16 (集合の圏 <span class="math inline">\(\Set\)</span> のファイバー積)</strong></span> <span class="math inline">\(\Set\)</span> では，<span class="math inline">\(f:X\to Z,g:Y\to Z\)</span> のファイバー積は常に存在する．</p>
+<p><span class="theorem-title"><strong>Example 17 (集合の圏 <span class="math inline">\(\Set\)</span> のファイバー積)</strong></span> <span class="math inline">\(\Set\)</span> では，<span class="math inline">\(f:X\to Z,g:Y\to Z\)</span> のファイバー積は常に存在する．</p>
 <ul>
 <li><span class="math inline">\(W:=\{(x,y)\in X\times Y\mid f(x)=g(y)\}\)</span> とする．</li>
 <li><span class="math inline">\(p:W\to X,(x,y)\mapsto x\)</span>, <span class="math inline">\(q:W\to Y,(x,y)\mapsto y\)</span> とする．</li>
@@ -2812,7 +2826,7 @@ d_{X}(f(y),f(y&#39;))
 </ul>
 </div>
 <div id="exm-set-fiber-sum" class="theorem example">
-<p><span class="theorem-title"><strong>Example 17 (集合の圏 <span class="math inline">\(\Set\)</span> の余ファイバー積)</strong></span> <span class="math inline">\(\Set\)</span> では，<span class="math inline">\(f:Z\to X,g:Z\to Y\)</span> の余ファイバー積も常に存在する．</p>
+<p><span class="theorem-title"><strong>Example 18 (集合の圏 <span class="math inline">\(\Set\)</span> の余ファイバー積)</strong></span> <span class="math inline">\(\Set\)</span> では，<span class="math inline">\(f:Z\to X,g:Z\to Y\)</span> の余ファイバー積も常に存在する．</p>
 <ul>
 <li><span class="math inline">\(x\in X,y\in Y\)</span> の同値関係 <span class="math inline">\(x\sim y\)</span> を，<span class="math inline">\(x\)</span> と <span class="math inline">\(y\)</span> の二項関係「ある <span class="math inline">\(z\)</span> が存在して，<span class="math inline">\(f(z)=x,g(z)=y\)</span> 」を含む最小のものとして定める．</li>
 <li><span class="math inline">\(W:=(X+Y)/\sim\)</span> とする．</li>
@@ -2826,8 +2840,8 @@ d_{X}(f(y),f(y&#39;))
 <li><span class="math inline">\(Z\subset X,Y=\{y\}\)</span> で，<span class="math inline">\(f\)</span> が包含写像ならば，<span class="math inline">\(x\sim y\iff x\in Z\)</span> で，<span class="math inline">\(X\sqcup_Z \{y\}=\{\{x\}\mid x\in X\backslash Z\}\cup\{Z\cup\{y\}\}\)</span> となる．<span class="math inline">\(Z\)</span> を1点に潰した集合になっている．</li>
 </ul>
 </div>
-<div id="exm-ring-tensor-product" class="theorem example">
-<p><span class="theorem-title"><strong>Example 18 (（復習）環のテンソル積)</strong></span> <span class="math inline">\(A,B,C\)</span> は可換環，<span class="math inline">\(f:A\to B,g:A\to C\)</span> は環準同型とする．<span class="math inline">\(B,C\)</span> には環準同型によって， <span class="math inline">\(A\)</span>-加群の構造が入る．</p>
+<div id="def-ring-tensor-product" class="theorem definition">
+<p><span class="theorem-title"><strong>Definition 8 (（復習）環のテンソル積)</strong></span> <span class="math inline">\(A,B,C\)</span> は可換環，<span class="math inline">\(f:A\to B,g:A\to C\)</span> は環準同型とする．<span class="math inline">\(B,C\)</span> には環準同型によって， <span class="math inline">\(A\)</span>-加群の構造が入る．</p>
 <p><span class="math inline">\(A\)</span>-加群のテンソル積 <span class="math inline">\(B\otimes_A C\)</span> とは，<span class="math inline">\(F:=\bigoplus_{(b,c)\in B\times C}\mathbb{Z}(b,c)\)</span> を <span class="math display">\[
 \begin{align*}
 &amp;(b+b&#39;,c)-(b,c)-(b&#39;,c),(b,c+c&#39;)-(b,c)-(b,c&#39;),\\
@@ -2845,16 +2859,217 @@ d_{X}(f(y),f(y&#39;))
 <section id="mono-epi" class="level2">
 <h2 class="anchored" data-anchor-id="mono-epi">mono, epi</h2>
 <div id="def-mono_epi" class="theorem definition">
-<p><span class="theorem-title"><strong>Definition 8 (mono,epi)</strong></span> <span class="math inline">\(X,Y\in\Ob\C,f\in\Hom_\C(X,Y)\)</span> とする．</p>
+<p><span class="theorem-title"><strong>Definition 9 (mono,epi)</strong></span> <span class="math inline">\(X,Y\in\Ob\C,f\in\Hom_\C(X,Y)\)</span> とする．</p>
 <ul>
 <li><span class="math inline">\(f\)</span> が mono であるとは，任意の <span class="math inline">\(Z\in\Ob\C\)</span> に対し，<span class="math inline">\(\Hom_\C(Z,X)\to\Hom_\C(Z,Y):g\mapsto f\circ g\)</span> が単射であること．</li>
 <li><span class="math inline">\(f\)</span> が epi であるとは，任意の <span class="math inline">\(Z\in\Ob\C\)</span> に対し，<span class="math inline">\(\Hom_\C(Y,Z)\to\Hom_\C(X,Z):g\mapsto g\circ f\)</span> が単射であること．</li>
 </ul>
 </div>
+<div id="prp-mono_epi" class="theorem proposition">
+<p><span class="theorem-title"><strong>Proposition 1</strong></span> <span class="math inline">\(X,Y,Z\in\Ob\C,f\in\Hom_\C(X,Y),g\in\Hom_\C(Y,Z)\)</span> とする．</p>
+<ul>
+<li><span class="math inline">\(f,g\)</span> が mono なら <span class="math inline">\(g\circ f\)</span> も mono である．</li>
+<li><span class="math inline">\(f,g\)</span> が mono なら <span class="math inline">\(g\circ f\)</span> も epi である．</li>
+<li><span class="math inline">\(g\circ f\)</span> が mono なら <span class="math inline">\(f\)</span> も mono である．</li>
+<li><span class="math inline">\(g\circ f\)</span> が epi なら <span class="math inline">\(g\)</span> も epi である．</li>
+</ul>
+</div>
+<div id="exm-set-mono_epi" class="theorem example">
+<p><span class="theorem-title"><strong>Example 20 (集合の圏 <span class="math inline">\(\Set\)</span> の mono, epi)</strong></span> <span class="math inline">\(f:X\to Y\)</span> とする．</p>
+<ul>
+<li><span class="math inline">\(f\)</span> が mono <span class="math inline">\(\iff\)</span> <span class="math inline">\(f\)</span> が単射．</li>
+<li><span class="math inline">\(f\)</span> が epi <span class="math inline">\(\iff\)</span> <span class="math inline">\(f\)</span> が全射．</li>
+</ul>
+</div>
+<div class="proof">
+<p><span class="proof-title"><em>Proof</em>. </span><span class="math inline">\(f\)</span> が mono <span class="math inline">\(\iff\)</span> <span class="math inline">\(f\)</span> が単射：</p>
+<p><span class="math inline">\(f\)</span> が mono <span class="math inline">\(\Rightarrow\)</span> <span class="math inline">\(f\)</span> が単射 を示す．<span class="math inline">\(f(x)=f(x&#39;)\)</span> ならば <span class="math inline">\(x=x&#39;\)</span> を示せばよい． <span class="math inline">\(Z=\{z\},g(z)=x,g&#39;(z)=x&#39;\)</span> とする．仮定より，<span class="math inline">\(f\circ g(z) = f\circ g&#39;(z)\)</span> ならば <span class="math inline">\(g(z)=g&#39;(z)\)</span> である．これは <span class="math inline">\(f(x)=f(x)&#39; \Rightarrow x=x&#39;\)</span> に他ならない．よって <span class="math inline">\(f\)</span> は単射．</p>
+<p><span class="math inline">\(f\)</span> が mono <span class="math inline">\(\Leftarrow\)</span> <span class="math inline">\(f\)</span> が単射 を示す．任意の集合 <span class="math inline">\(Z\)</span> と <span class="math inline">\(g:Z\to X,g&#39;:Z\to X\)</span> に対し，<span class="math inline">\(f\circ g=f\circ g&#39;\)</span> ならば <span class="math inline">\(g=g&#39;\)</span> となることを示せばよい．各点 <span class="math inline">\(z\)</span> で <span class="math inline">\(f\circ g(z)=f\circ g&#39;(z)\)</span> ならば，<span class="math inline">\(f\)</span> は単射なので，<span class="math inline">\(g(z)=g&#39;(z)\)</span> である．よって，<span class="math inline">\(g=g&#39;\)</span> で <span class="math inline">\(f\)</span> が mono であることがわかる．</p>
+<p><span class="math inline">\(f\)</span> が epi <span class="math inline">\(\iff\)</span> <span class="math inline">\(f\)</span> が全射：</p>
+<p>対偶 <span class="math inline">\(f\)</span> が epi でない <span class="math inline">\(\Leftarrow\)</span> <span class="math inline">\(f\)</span> が全射でない を示す． <span class="math inline">\(g\circ f=g&#39;\circ f\)</span> だが，<span class="math inline">\(g\neq g&#39;\)</span> となるような <span class="math inline">\(g:Y\to Z,g&#39;:Y\to Z\)</span> の存在を示せればよい． 仮定より，<span class="math inline">\(y_0\in Y\backslash f(X)\)</span> が存在する．<span class="math inline">\(Z=\{0,1\},g=0,g&#39;=1_{\{y_0\}}\)</span> とする． <span class="math inline">\(g\circ f=g&#39;\circ f\)</span> だが，<span class="math inline">\(g\neq g&#39;\)</span> である．よって，<span class="math inline">\(f\)</span> は epi でない．</p>
+<p><span class="math inline">\(f\)</span> が epi <span class="math inline">\(\Leftarrow\)</span> <span class="math inline">\(f\)</span> が全射 を示す． 任意の集合 <span class="math inline">\(Z\)</span> と <span class="math inline">\(g:Y\to Z,g&#39;:Y\to Z\)</span> に対し，<span class="math inline">\(g\circ f=g&#39;\circ f\)</span> ならば <span class="math inline">\(g=g&#39;\)</span> となることを示せばよい． 任意の <span class="math inline">\(y\in Y\)</span> に対し，ある <span class="math inline">\(x\in X\)</span> が存在して <span class="math inline">\(y=f(x)\)</span> とかける．よって，<span class="math inline">\(g\circ f(x)=g&#39;\circ f(x)\Rightarrow g(y)=g&#39;(y)\)</span> が成り立ち，<span class="math inline">\(f\)</span> が epi であることがわかる．</p>
+</div>
+<ul>
+<li>証明から，対象が集合で射が写像なら，<span class="math inline">\(f\)</span> が単射 <span class="math inline">\(\Rightarrow\)</span> <span class="math inline">\(f\)</span> が mono と <span class="math inline">\(f\)</span> が全射 <span class="math inline">\(\Rightarrow\)</span> <span class="math inline">\(f\)</span> が epi は常に成立することがわかる．</li>
+<li>ある１点集合 <span class="math inline">\(Z=\{z\}\)</span> が対象で，任意の2点 <span class="math inline">\(x,x&#39;\in X\)</span> に対して，<span class="math inline">\(g(z)=x,g&#39;(z)=x&#39;\)</span> が射になるなら，<span class="math inline">\(f\)</span> が mono <span class="math inline">\(\Rightarrow\)</span> <span class="math inline">\(f\)</span> が単射も成立する．</li>
+<li>2点集合 <span class="math inline">\(Z=\{0,1\}\)</span> が対象で，<span class="math inline">\(g=0,g&#39;=1_{\{y_0\}}\)</span> が射になるなら，<span class="math inline">\(f\)</span> が epi <span class="math inline">\(\Rightarrow\)</span> <span class="math inline">\(f\)</span> が全射も成立する．</li>
+</ul>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 20%">
+<col style="width: 20%">
+<col style="width: 20%">
+<col style="width: 20%">
+<col style="width: 20%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>圏</th>
+<th>mono</th>
+<th>epi</th>
+<th>同型射</th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>集合の圏 <span class="math inline">\(\Set\)</span></td>
+<td>単射</td>
+<td>全射</td>
+<td>全単射</td>
+<td></td>
+</tr>
+<tr class="even">
+<td><span class="math inline">\(R\)</span>-加群の圏 <span class="math inline">\(\RMod\)</span></td>
+<td>単射準同型</td>
+<td>全射準同型</td>
+<td>同型写像</td>
+<td></td>
+</tr>
+<tr class="odd">
+<td>単位元付き可換環の圏 <span class="math inline">\(\ComR\)</span></td>
+<td>単射準同型</td>
+<td>?</td>
+<td>同型写像</td>
+<td></td>
+</tr>
+<tr class="even">
+<td>位相空間の圏 <span class="math inline">\(\Top\)</span></td>
+<td>連続単射</td>
+<td>連続全射</td>
+<td>同相写像</td>
+<td></td>
+</tr>
+<tr class="odd">
+<td>Hausdorff 空間の圏 <span class="math inline">\(\HausTop\)</span></td>
+<td>連続単射</td>
+<td>像が稠密な連続写像</td>
+<td>同相写像</td>
+<td></td>
+</tr>
+<tr class="even">
+<td>滑らかな多様体の圏 <span class="math inline">\(\Man\)</span></td>
+<td>滑らかな単射</td>
+<td>像が稠密で滑らかな写像</td>
+<td><span class="math inline">\(C^\infty\)</span> 級微分同相写像</td>
+<td></td>
+</tr>
+<tr class="odd">
+<td>距離空間の圏 <span class="math inline">\(\Met\)</span></td>
+<td>非拡大単射</td>
+<td>像が稠密な非拡大写像</td>
+<td>等長変換</td>
+<td></td>
+</tr>
+<tr class="even">
+<td>可測空間の圏 <span class="math inline">\(\Meas\)</span></td>
+<td>可測単射</td>
+<td>可測全射</td>
+<td>可測全単射</td>
+<td></td>
+</tr>
+<tr class="odd">
+<td>測度空間の圏 <span class="math inline">\(\MSp\)</span></td>
+<td>?</td>
+<td>測度を保つ可測全射</td>
+<td>測度を保つ可測全単射</td>
+<td></td>
+</tr>
+<tr class="even">
+<td>確率空間の圏 <span class="math inline">\(\Prob\)</span></td>
+<td>?</td>
+<td>測度を保つ可測全射</td>
+<td>測度を保つ可測全単射</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li><span class="math inline">\(\Top\)</span> において，epi <span class="math inline">\(\Rightarrow\)</span> 連続全射 は <span class="math inline">\(Z=\{0,1\}\)</span> に密着位相 <span class="math inline">\(\{\emptyset,Z\}\)</span> を入れると，<span class="math inline">\(g,g&#39;\)</span> が連続写像になることから示せる．</li>
+<li><span class="math inline">\(\RMod\)</span> は <a href="#prp-rmod-mono_epi" class="quarto-xref">Proposition 2</a> による．</li>
+<li><span class="math inline">\(\ComR\)</span> は <a href="#prp-comr-mono" class="quarto-xref">Proposition 3</a> と <a href="#prp-comr-epi" class="quarto-xref">Proposition 4</a> による．</li>
+<li><span class="math inline">\(\Meas\)</span> において，epi <span class="math inline">\(\Rightarrow\)</span> 可測全射 は <span class="math inline">\(Z=\{0,1\}\)</span> に自明な <span class="math inline">\(\sigma\)</span>-加法族 <span class="math inline">\(\{\emptyset,Z\}\)</span> を入れると，<span class="math inline">\(g,g&#39;\)</span> が可測写像になることから示せる．</li>
+<li><span class="math inline">\(\MSp,\Prob\)</span> において，epi <span class="math inline">\(\Rightarrow\)</span> 測度を保つ可測全射 は <span class="math inline">\(Z=\{0,1\}\)</span> に自明な <span class="math inline">\(\sigma\)</span>-加法族 <span class="math inline">\(\{\emptyset,Z\}\)</span> を入れて，<span class="math inline">\(\mu_Z(Z):=\mu_Y(Y)\)</span> とすると，<span class="math inline">\(g,g&#39;\)</span> が測度を保つ可測写像になることから示せる．</li>
+<li><span class="math inline">\(\MSp,\Prob\)</span> の mono の特徴づけは難しい．</li>
+<li><span class="math inline">\(\Met\)</span> において，epi <span class="math inline">\(\Rightarrow\)</span> 像が稠密な非拡大写像 は <a href="#prp-haustop-epi" class="quarto-xref">Proposition 5</a> の証明で，<span class="math inline">\(Z\)</span> の距離を <span class="math display">\[
+  \begin{align*}
+  d_Z(\{(y,i)\},\{(y&#39;,j)\})&amp;:=
+  \begin{cases}
+      1&amp;\text{if}\enspace i\neq j\\
+      d_Y(y,y&#39;)&amp;\text{if}\enspace i=j,
+  \end{cases}\\
+  d_Z(\{(y,0),(y,1)\},\{(y&#39;,0),(y&#39;,1)\})&amp;:=d_Y(y,y&#39;),\\
+  d_Z(\{(y,i)\},\{(y&#39;,0),(y&#39;,1)\})&amp;:=1
+  \end{align*}
+  \]</span> によって定めると，<span class="math inline">\(g,g&#39;\)</span> が非拡大写像になっていることからわかる．</li>
+</ul>
+<div id="prp-rmod-mono_epi" class="theorem proposition">
+<p><span class="theorem-title"><strong>Proposition 2 (<span class="math inline">\(R\)</span>-加群の圏 <span class="math inline">\(\RMod\)</span> の mono, epi)</strong></span> <span class="math inline">\(f:X\to Y\)</span> は準同型とする．</p>
+<ul>
+<li><span class="math inline">\(f\)</span> が mono <span class="math inline">\(\iff\)</span> <span class="math inline">\(f\)</span> が単射．</li>
+<li><span class="math inline">\(f\)</span> が epi <span class="math inline">\(\iff\)</span> <span class="math inline">\(f\)</span> が全射．</li>
+</ul>
+</div>
+<div class="proof">
+<p><span class="proof-title"><em>Proof</em>. </span><span class="math inline">\(f\)</span> が mono <span class="math inline">\(\Rightarrow\)</span> <span class="math inline">\(f\)</span> が単射：</p>
+<p><span class="math inline">\(\Ker{f}=\{0\}\)</span> を示せばよい． <span class="math inline">\(Z=\Ker{f},g:Z\to X,x\mapsto x,g&#39;:Z\to X,x\mapsto0\)</span> とすると，<span class="math inline">\(f\circ g=f\circ g&#39;\)</span> である． 仮定より <span class="math inline">\(f\)</span> は mono なので，<span class="math inline">\(g=g&#39;=0\)</span>，すなわち <span class="math inline">\(\Ker{f}=\{0\}\)</span> である．よって，<span class="math inline">\(f\)</span> は単射．</p>
+<p><span class="math inline">\(f\)</span> が epi <span class="math inline">\(\Rightarrow\)</span> <span class="math inline">\(f\)</span> が全射：</p>
+<p><span class="math inline">\(\Im{f}=Y\)</span> を示せばよい． <span class="math inline">\(Z=Y/\Im{f},g(y):=[y],g&#39;([y]):=\Im{f}\)</span> とすると，<span class="math inline">\(g\circ f=g&#39;\circ f\)</span> である． 仮定より <span class="math inline">\(f\)</span> は epi なので，<span class="math inline">\(g=g&#39;=\Im{f}\)</span>，すなわち <span class="math inline">\(\Im{f}=Y\)</span> である．よって，<span class="math inline">\(f\)</span> は全射．</p>
+</div>
+<div id="prp-comr-mono" class="theorem proposition">
+<p><span class="theorem-title"><strong>Proposition 3</strong></span> 可換環の圏 <span class="math inline">\(\ComR\)</span> では，環準同型 <span class="math inline">\(f:X\to Y\)</span> が mono であることと <span class="math inline">\(f\)</span> が単射であることは同値．</p>
+</div>
+<div class="proof">
+<p><span class="proof-title"><em>Proof</em>. </span><span class="math inline">\(f\)</span> が mono <span class="math inline">\(\Rightarrow\)</span> <span class="math inline">\(f\)</span> が単射：</p>
+<p><span class="math inline">\(f\)</span> が単射でないと仮定して矛盾を導く．仮定より，相異なる <span class="math inline">\(x,x&#39;\in X\)</span> が存在して <span class="math inline">\(f(x)=f(x&#39;)\)</span> が成り立つ． <span class="math inline">\(Z=\mathbb{Z}[a],g:Z\to X,P(a)\mapsto P(x),g&#39;:Z\to X,P(a)\mapsto P(x&#39;)\)</span> とすると，<span class="math inline">\(g,g&#39;\)</span> は環準同型で，<span class="math inline">\(f\circ g=f\circ g&#39;\)</span> である． 仮定より，<span class="math inline">\(f\)</span> は mono なので，<span class="math inline">\(g=g&#39;\)</span> である．<span class="math inline">\(P(a)=a\)</span> なる多項式を考えると，<span class="math inline">\(x=x&#39;\)</span> となって矛盾が生じる．よって，<span class="math inline">\(f\)</span> は単射．</p>
+</div>
+<div id="prp-comr-epi" class="theorem proposition">
+<p><span class="theorem-title"><strong>Proposition 4</strong></span> 可換環の圏 <span class="math inline">\(\ComR\)</span> において，<span class="math inline">\(\mathbb{Z}\)</span> から <span class="math inline">\(\mathbb{Q}\)</span> への包含写像 <span class="math inline">\(f\)</span> は epi である．</p>
+</div>
+<div class="proof">
+<p><span class="proof-title"><em>Proof</em>. </span>任意の可換環 <span class="math inline">\(Z\)</span> と環準同型 <span class="math inline">\(g:\mathbb{Q}\to Z,g&#39;:\mathbb{Q}\to Z\)</span> に対し，<span class="math inline">\(g\circ f=g&#39;\circ f\Rightarrow g=g&#39;\)</span> を示せばよい． <span class="math inline">\(g\neq g\)</span> を仮定して矛盾を導く．仮定より，ある <span class="math inline">\(q\in\mathbb{Q}\)</span> が存在して，<span class="math inline">\(g(q)\neq g&#39;(q)\)</span> である．<span class="math inline">\(q\)</span> はある <span class="math inline">\(l,m\in\mathbb{Z}\)</span> を用いて，<span class="math inline">\(q=l/m\)</span> と表せるので，<span class="math inline">\(g(l)/g(q)\neq g&#39;(l)/g&#39;(q)\)</span> である． ところが，これは <span class="math inline">\(g(l)=g&#39;(l),g(q)=g&#39;(q)\)</span> に矛盾する．よって，<span class="math inline">\(g=g&#39;\)</span> である．</p>
+</div>
+<div id="prp-haustop-epi" class="theorem proposition">
+<p><span class="theorem-title"><strong>Proposition 5</strong></span> Hausdorff 空間の圏 <span class="math inline">\(\HausTop\)</span> では，連続写像 <span class="math inline">\(f:X\to Y\)</span> が epi であることと <span class="math inline">\(f\)</span> の像が稠密であることは同値．</p>
+</div>
+<div class="proof">
+<p><span class="proof-title"><em>Proof</em>. </span><span class="math inline">\(f\)</span> が epi <span class="math inline">\(\Rightarrow\)</span> <span class="math inline">\(f\)</span> の像が稠密：</p>
+<p>対偶 <span class="math inline">\(f\)</span> が epi でない <span class="math inline">\(\Leftarrow\)</span> <span class="math inline">\(f\)</span> の像が稠密でない を示す． <span class="math inline">\(g\circ f=g&#39;\circ f\)</span> だが，<span class="math inline">\(g\neq g&#39;\)</span> となるような連続写像 <span class="math inline">\(g:Y\to Z,g&#39;:Y\to Z\)</span> の存在を示せればよい． <span class="math inline">\(Y+Y:=\{(y,i)\mid y\in Y,i=0,1\}\)</span> に同値関係 <span class="math inline">\((y,i)\sim(y&#39;,j)\iff y=y&#39;\in\overline{\Im{f}}\)</span> を定める．<span class="math inline">\(Z:=(Y+Y)/\sim\)</span> とすると， <span class="math inline">\(Z=\{\{(y,i)\}\mid y\in Y\backslash\overline{\Im{f}},i=0,1\}\cup\{\{(y,0),(y,1)\}\mid y\in \overline{\Im{f}}\}\)</span> である．<span class="math inline">\(Z\)</span> は商位相に関して Hausdorff で，<span class="math inline">\(g(y):=[(y,0)],g&#39;(y):=[(y,1)]\)</span> は <span class="math inline">\(g\circ f=g&#39;\circ f\)</span> を満たす連続写像だが，<span class="math inline">\(g\neq g&#39;\)</span> である．</p>
+<p><span class="math inline">\(f\)</span> が epi <span class="math inline">\(\Leftarrow\)</span> <span class="math inline">\(f\)</span> の像が稠密：</p>
+<p>任意の位相空間 <span class="math inline">\(Z\)</span> と連続写像 <span class="math inline">\(g:Y\to Z,g&#39;:Y\to Z\)</span> に対し，<span class="math inline">\(g\circ f=g&#39;\circ f\)</span> ならば <span class="math inline">\(g=g&#39;\)</span> となることを示せばよい．<span class="math inline">\(g\neq g&#39;\)</span> を仮定して矛盾を導く． 仮定より，<span class="math inline">\(y\in Y\)</span> が存在して，<span class="math inline">\(g(y)\neq g&#39;(y)\)</span> である．<span class="math inline">\(Y\)</span> は Hausdorff なので，disjoint な開近傍 <span class="math inline">\(B_{g(y)},B_{g&#39;(y)}\)</span> が存在する． 一方で，<span class="math inline">\(g^{-1}(B_{g(y)})\cap g&#39;^{-1}(B_{g&#39;(y)})\neq\emptyset\)</span> で，<span class="math inline">\(f\)</span> の稠密性から，ある <span class="math inline">\(x\in X\)</span> が存在して，<span class="math inline">\(f(x)\in g^{-1}(B_{g(y)})\cap g&#39;^{-1}(B_{g&#39;(y)})\)</span> である．これは，<span class="math inline">\(g\circ f(x)=g&#39;\circ f(x)\in B_{g(y)}\cap B_{g&#39;(y)}\)</span> を導き矛盾を生む． よって，<span class="math inline">\(g=g&#39;\)</span> である．</p>
+</div>
+<div id="prp-man-epi" class="theorem proposition">
+<p><span class="theorem-title"><strong>Proposition 6</strong></span> 滑らかな多様体の圏 <span class="math inline">\(\Man\)</span> では，滑らかな写像 <span class="math inline">\(f:X\to Y\)</span> が epi であることと <span class="math inline">\(f\)</span> の像が稠密であることは同値．</p>
+</div>
+<div class="proof">
+<p><span class="proof-title"><em>Proof</em>. </span><span class="math inline">\(f\)</span> が epi <span class="math inline">\(\Rightarrow\)</span> <span class="math inline">\(f\)</span> の像が稠密：</p>
+<p>対偶 <span class="math inline">\(f\)</span> が epi でない <span class="math inline">\(\Leftarrow\)</span> <span class="math inline">\(f\)</span> の像が稠密でない を示す． <span class="math inline">\(g\circ f=g&#39;\circ f\)</span> だが，<span class="math inline">\(g\neq g&#39;\)</span> となるような連続写像 <span class="math inline">\(g:Y\to Z,g&#39;:Y\to Z\)</span> の存在を示せればよい．<span class="math inline">\(Z=\mathbb{R}\)</span> とする． 仮定より，<span class="math inline">\(y\in Y\backslash\overline{f(X)}\)</span> の開近傍 <span class="math inline">\(B_y\)</span> で，<span class="math inline">\(\overline{f(X)}\)</span> と disjoint なものが存在する．1の分割を用いて，滑らかな関数 <span class="math inline">\(g:Y\to\mathbb{R}\)</span> で，<span class="math inline">\(g(y)=1\)</span> かつ <span class="math inline">\(\operatorname{supp}g\subset B_y\)</span> を満たすものを構成できる． <span class="math inline">\(g&#39;=0\)</span> とすると，<span class="math inline">\(g\circ f=g&#39;\circ f\)</span> だが，<span class="math inline">\(g\neq g\)</span> である．</p>
+<p><span class="math inline">\(f\)</span> が epi <span class="math inline">\(\Leftarrow\)</span> <span class="math inline">\(f\)</span> の像が稠密：</p>
+<p><span class="math inline">\(\HausTop\)</span> の場合と同様．</p>
+</div>
+<div id="prp-div-mono" class="theorem proposition">
+<p><span class="theorem-title"><strong>Proposition 7</strong></span> 可除群の圏 <span class="math inline">\(\Div\)</span> において，<span class="math inline">\(\mathbb{Q}\)</span> から <span class="math inline">\(\mathbb{Q}/\mathbb{Z}\)</span> への射影 <span class="math inline">\(f\)</span> は mono である．</p>
+</div>
+<div class="proof">
+<p><span class="proof-title"><em>Proof</em>. </span>任意の可除群 <span class="math inline">\(Z\)</span> と準同型 <span class="math inline">\(g:Z\to\mathbb{Q},g&#39;:Z\to\mathbb{Q}\)</span> に対して， <span class="math inline">\(f\circ g=f\circ g&#39;\Rightarrow g=g&#39;\)</span> を示せばよい．<span class="math inline">\(h=g-g&#39;\)</span> とすると， <span class="math inline">\(f\circ h=0\Rightarrow h=0\)</span> を示せばよいことになる．<span class="math inline">\(x\in Z\)</span> とする．任意の <span class="math inline">\(n\in\mathbb{N}\)</span> に対し，ある <span class="math inline">\(y\in Z\)</span> が存在して <span class="math inline">\(x=ny\)</span> が成り立つ．<span class="math inline">\(f\circ h=0\)</span> より，<span class="math inline">\(\Im{h}\subset\mathbb{Z}\)</span> なので，<span class="math inline">\(h(x)=nh(y)\in n\mathbb{Z}\)</span> である．<span class="math inline">\(n\)</span> は任意だったので，<span class="math inline">\(h(x)=0\)</span> で， <span class="math inline">\(x\)</span> も任意だったので，<span class="math inline">\(h=0\)</span> が得られた．</p>
+</div>
 </section>
 </section>
 <section id="関手" class="level1">
 <h1>2.4 関手</h1>
+<div id="def-covariant-functor" class="theorem definition">
+<p><span class="theorem-title"><strong>Definition 10 (共変関手)</strong></span>  </p>
+<ul>
+<li><span class="math inline">\(\C,\C&#39;\)</span> を圏とする．</li>
+<li><span class="math inline">\(F_\Ob:\Ob\C\to\Ob\C&#39;\)</span> とする．</li>
+<li><span class="math inline">\(X,Y\in\Ob\C\)</span> に対し，<span class="math inline">\(F_{\Hom_\C(X,Y)}:\Hom_\C(X,Y)\to\Hom_{\C&#39;}(F_\Ob(X),F_\Ob(X))\)</span> とする．</li>
+</ul>
+<p><span class="math inline">\(\C\)</span> から <span class="math inline">\(\C&#39;\)</span> への共変関手とは，次を満たす写像の組 <span class="math inline">\((F_\Ob,F_{\Hom_\C(\,\cdot\,,\,\cdot\,)})\)</span> のことである．</p>
+<ol type="1">
+<li><span class="math inline">\(F_{\Hom_\C(X,X)}(1_X)=1_{F_{\Ob}(X)}\)</span>.</li>
+<li><span class="math inline">\(f\in\Hom_\C(X,Y),g\in\Hom_\C(Y,Z)\)</span> に対し，<span class="math inline">\(F_{\Hom_\C(X,Z)}(g\circ f)=F_{\Hom_\C(Y,Z)}(g)\circ F_{\Hom_\C(X,Y)}(f)\)</span>.</li>
+</ol>
+</div>
 </section>
 <section id="充満性忠実性部分圏" class="level1 unnumbered">
 
