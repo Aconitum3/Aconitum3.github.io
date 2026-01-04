@@ -2423,7 +2423,7 @@ color: #556056;
 <h1>deconvolution density estimation に関する文献紹介</h1>
 <section id="mathbbr-上の-deconvolution-density-estimation" class="level2">
 <h2 class="anchored" data-anchor-id="mathbbr-上の-deconvolution-density-estimation"><span class="math inline">\(\mathbb{R}\)</span> 上の deconvolution density estimation</h2>
-<p><span class="citation" data-cites="Stefanski1990">Stefanski and Carroll (<a href="#ref-Stefanski1990" role="doc-biblioref">1990</a>)</span> の方法を紹介する． 確率変数 <span class="math inline">\(Y\)</span> に興味があるが，独立なノイズ <span class="math inline">\(Z\)</span> が加算された <span class="math inline">\(X=Y+Z\)</span> だけが観測できるという状況を考える．<span class="math inline">\(X_1,\dots,X_n\)</span> をつかって，<span class="math inline">\(Y\)</span> の分布を推定したい． ここでは，ノイズ分布の密度 <span class="math inline">\(f_Z\)</span> は既知とする．<span class="math inline">\(X\)</span> の分布の <span class="math inline">\(f_X\)</span> は畳み込みによって， <span class="math display">\[
+<p><span class="citation" data-cites="Stefanski1990">Stefanski and Carroll (<a href="#ref-Stefanski1990" role="doc-biblioref">1990</a>)</span> の方法を紹介する． 確率変数 <span class="math inline">\(Y\)</span> に興味があるが，独立なノイズ <span class="math inline">\(Z\)</span> が加算された <span class="math inline">\(X=Y+Z\)</span> だけが観測できるという状況を考える．<span class="math inline">\(X_1,\dots,X_n\)</span> をつかって，<span class="math inline">\(Y\)</span> の分布を推定したい． ここでは，ノイズ分布の密度 <span class="math inline">\(f_Z\)</span> は既知とする．<span class="math inline">\(X\)</span> の分布の密度 <span class="math inline">\(f_X\)</span> は畳み込みによって， <span class="math display">\[
 f_X(x)=\int_{-\infty}^{\infty} f_Y(x-z)f_Z(z)\d{z}
 \]</span></p>
 <p>と計算できる．有界で原点対称なカーネル <span class="math inline">\(K:\R\to\R\)</span> は <span class="math inline">\(\int K(x)\d{x}=1\)</span> を満たすとする．</p>
@@ -2562,7 +2562,7 @@ f_X(x)=\int f_Y(z^{-1}x)f_Z(z)\d{z}
 &amp;=\int f_{X}(x)\Pi_{j}(x^{-1})\d{x}\\
 &amp;=\iint f_{Y}(z^{-1}x)f_{Z}(z)\Pi_{j}(x^{-1})\d{z}\d{x}\\
 &amp;=\iint f_{Y}(y)f_{Z}(z)\Pi_{j}(y^{-1}z^{-1})\d{z}\d{y}\\
-&amp;=\left(\int f_{Y}(y)\Pi_{j}(y^{-1})\d{y}\right)\left(\int f_{Z}(z)\Pi_{j}(z^{-1}\d{z}\right)\\
+&amp;=\left(\int f_{Y}(y)\Pi_{j}(y^{-1})\d{y}\right)\left(\int f_{Z}(z)\Pi_{j}(z^{-1})\d{z}\right)\\
 &amp;=\phi_{Y}(j)\phi_Z(j)
 \end{align*}
 \]</span></p>
