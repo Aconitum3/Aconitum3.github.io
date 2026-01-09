@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 <meta name="author" content="March">
-<meta name="dcterms.date" content="2026-01-04">
+<meta name="dcterms.date" content="2026-01-09">
 
 <title>Lie Groups, Lie Algebras, and Representations Chapter 6 要旨</title>
 <style>
@@ -2369,7 +2369,7 @@ color: #556056;
     <div>
     <div class="quarto-title-meta-heading">Published</div>
     <div class="quarto-title-meta-contents">
-      <p class="date">January 4, 2026</p>
+      <p class="date">January 9, 2026</p>
     </div>
   </div>
   
@@ -2423,7 +2423,7 @@ color: #556056;
 <h1>deconvolution density estimation に関する文献紹介</h1>
 <section id="mathbbr-上の-deconvolution-density-estimation" class="level2">
 <h2 class="anchored" data-anchor-id="mathbbr-上の-deconvolution-density-estimation"><span class="math inline">\(\mathbb{R}\)</span> 上の deconvolution density estimation</h2>
-<p><span class="citation" data-cites="Stefanski1990">Stefanski and Carroll (<a href="#ref-Stefanski1990" role="doc-biblioref">1990</a>)</span> の方法を紹介する． 確率変数 <span class="math inline">\(Y\)</span> に興味があるが，独立なノイズ <span class="math inline">\(Z\)</span> が加算された <span class="math inline">\(X=Y+Z\)</span> だけが観測できるという状況を考える．<span class="math inline">\(X_1,\dots,X_n\)</span> をつかって，<span class="math inline">\(Y\)</span> の分布を推定したい． ここでは，ノイズ分布の密度 <span class="math inline">\(f_Z\)</span> は既知とする．<span class="math inline">\(X\)</span> の分布の密度 <span class="math inline">\(f_X\)</span> は畳み込みによって， <span class="math display">\[
+<p><span class="citation" data-cites="Stefanski1990">Stefanski and Carroll (<a href="#ref-Stefanski1990" role="doc-biblioref">1990</a>)</span> の方法を紹介する． 確率変数 <span class="math inline">\(Y\)</span> に興味があるが，独立なノイズ <span class="math inline">\(Z\)</span> が加算された <span class="math inline">\(X=Y+Z\)</span> だけが観測できるという状況を考える．<span class="math inline">\(X_1,\dots,X_n\)</span> をつかって，<span class="math inline">\(Y\)</span> の分布を推定したい． ここでは，ノイズ分布の密度 <span class="math inline">\(f_Z\)</span> は既知とする．<span class="math inline">\(X\)</span> が従う分布の密度 <span class="math inline">\(f_X\)</span> は畳み込みによって， <span class="math display">\[
 f_X(x)=\int_{-\infty}^{\infty} f_Y(x-z)f_Z(z)\d{z}
 \]</span></p>
 <p>と計算できる．有界で原点対称なカーネル <span class="math inline">\(K:\R\to\R\)</span> は <span class="math inline">\(\int K(x)\d{x}=1\)</span> を満たすとする．</p>
@@ -2483,19 +2483,19 @@ K^*(u)=\frac{1}{2\pi}\int_{-\infty}^{\infty}e^{itu}\frac{\hat\phi_{K}(t)}{\phi_Z
 <div class="proof">
 <p><span class="proof-title"><em>Proof</em>. </span>コンパクト群 <span class="math inline">\(G\)</span> の表現を <span class="math inline">\((\Pi,V)\)</span> とする．<span class="math inline">\(V\)</span> に任意の内積 <span class="math inline">\(\ang{\,\cdot\,,\,\cdot\,}_0\)</span> を定めて， <span class="math inline">\(\Pi\)</span> がユニタリになるような新たな内積 <span class="math inline">\(\ang{\,\cdot\,,\,\cdot\,}\)</span> を</p>
 <p><span class="math display">\[
-\ang{v_1,v_2}:=\int_{G}\ang{\Pi(g)v_1,\Pi(g)v_2}\d{g}
+\ang{v_1,v_2}:=\int_{G}\ang{\Pi(g)v_1,\Pi(g)v_2}_{0}\d{g}
 \]</span></p>
 <p>で定める．ただし，<span class="math inline">\(\mathrm{d}g\)</span> は <span class="math inline">\(\int_{G}\d{g}=1\)</span> を満たす Haar 測度． <span class="math inline">\(\ang{\,\cdot\,,\,\cdot\,}\)</span> がユニタリであることを示す．</p>
 <p><span class="math display">\[
 \begin{align*}
 \ang{\Pi(g)v_1,\Pi(g)v_2}
-&amp;=\int_{G}\ang{\Pi(g)\Pi(g&#39;)v_1,\Pi(g)\Pi(g&#39;)v_2}\d{g&#39;}\\
-&amp;=\int_{G}\ang{\Pi(gg&#39;)v_1,\Pi(gg&#39;)\d{g&#39;}}\\
-&amp;=\int_{G}\ang{\Pi(h)v_1,\Pi(h)v_1}\d{h}\\
+&amp;=\int_{G}\ang{\Pi(g)\Pi(g&#39;)v_1,\Pi(g)\Pi(g&#39;)v_2}_{0}\d{g&#39;}\\
+&amp;=\int_{G}\ang{\Pi(gg&#39;)v_1,\Pi(gg&#39;)v_2}_{0}\d{g&#39;}\\
+&amp;=\int_{G}\ang{\Pi(h)v_1,\Pi(h)v_2}_{0}\d{h}\\
 &amp;=\ang{v_1,v_2}
 \end{align*}
 \]</span></p>
-<p>2つの表現 <span class="math inline">\((\Pi,V),(\Pi,(V,\ang{\,\cdot\,,\,\cdot\,}))\)</span> が同値なことは，<span class="math inline">\(G\)</span>-準同型 (intertwining map) 全単射 として恒等写像がとれることからすぐにわかる．</p>
+<p>2つの表現 <span class="math inline">\((\Pi,V),(\Pi,(V,\ang{\,\cdot\,,\,\cdot\,}))\)</span> が同値なことは，<span class="math inline">\(G\)</span>-準同型 (intertwining map) 全単射として恒等写像がとれることからすぐにわかる．</p>
 </div>
 </details>
 <div id="prp-irreq" class="theorem proposition">
@@ -2567,13 +2567,26 @@ f_X(x)=\int f_Y(z^{-1}x)f_Z(z)\d{z}
 \end{align*}
 \]</span></p>
 <p>が成り立つ．<span class="math inline">\(\phi_{Z}(j)\)</span> は可逆と仮定すると，<span class="math inline">\(\phi_{Y}(j)=\phi_{X}(j)\phi_{Z}(j)^{-1}\)</span> である．</p>
-<div id="tip-phiz" class="callout callout-style-default callout-tip callout-titled">
+<div id="tip-pij" class="callout callout-style-default callout-tip callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
 Tip 1
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>これらの既約表現は Laplacian の固有関数をつかって表せるようだ．</p>
+</div>
+</div>
+<div id="tip-phiz" class="callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Tip 2
 </div>
 </div>
 <div class="callout-body-container callout-body">
@@ -2595,7 +2608,7 @@ K^*(g) = \sum_{j\in J_{m}}d_j\tr[\phi_{Z}(j)^{-1}\Pi_{j}(g)]
 \]</span></p>
 <p>とも表せる．</p>
 <ul>
-<li>コンパクト Lie 群であることのポイントは，既約表現が（Lie 代数を使って？）分類できること．</li>
+<li>コンパクト Lie 群であることのポイントは既約表現が（Lie 代数を使って？）分類できること．</li>
 <li>コンパクト群であることのポイントは Fourier 変換ができること．</li>
 </ul>
 </section>
