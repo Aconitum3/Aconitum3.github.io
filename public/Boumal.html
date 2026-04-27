@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 <meta name="author" content="とり">
-<meta name="dcterms.date" content="2026-04-18">
+<meta name="dcterms.date" content="2026-04-27">
 
 <title>An introduction to optimization on smooth manifolds 2-3章</title>
 <style>
@@ -2321,6 +2321,9 @@ color: #556056;
   <li><a href="#smooth-maps-on-embedded-submanifolds" id="toc-smooth-maps-on-embedded-submanifolds" class="nav-link" data-scroll-target="#smooth-maps-on-embedded-submanifolds">3.3 Smooth maps on embedded submanifolds</a></li>
   <li><a href="#the-differential-of-a-smooth-map" id="toc-the-differential-of-a-smooth-map" class="nav-link" data-scroll-target="#the-differential-of-a-smooth-map">3.4 The differential of a smooth map</a></li>
   <li><a href="#vector-fields-and-the-tangent-bundle" id="toc-vector-fields-and-the-tangent-bundle" class="nav-link" data-scroll-target="#vector-fields-and-the-tangent-bundle">3.5 Vector fields and the tangent bundle</a></li>
+  <li><a href="#moving-on-a-manifold-retractions" id="toc-moving-on-a-manifold-retractions" class="nav-link" data-scroll-target="#moving-on-a-manifold-retractions">3.6 Moving on a manifold: retractions</a></li>
+  <li><a href="#riemannian-manifolds-and-submanifolds" id="toc-riemannian-manifolds-and-submanifolds" class="nav-link" data-scroll-target="#riemannian-manifolds-and-submanifolds">3.7 Riemannian manifolds and submanifolds</a></li>
+  <li><a href="#riemannian-gradients" id="toc-riemannian-gradients" class="nav-link" data-scroll-target="#riemannian-gradients">3.8 Riemannian gradients</a></li>
   </ul></li>
   <li><a href="#付録" id="toc-付録" class="nav-link" data-scroll-target="#付録">付録</a></li>
   </ul>
@@ -2347,7 +2350,7 @@ color: #556056;
     <div>
     <div class="quarto-title-meta-heading">Published</div>
     <div class="quarto-title-meta-contents">
-      <p class="date">April 18, 2026</p>
+      <p class="date">April 27, 2026</p>
     </div>
   </div>
   
@@ -2370,9 +2373,12 @@ color: #556056;
 \newcommand{\X}{\mathfrak{X}}
 \newcommand{\SO}{\mathrm{SO}}
 \newcommand{\Sym}{\mathrm{Sym}}
+\newcommand{\Ret}{\mathrm{R}}
 \DeclareMathOperator{\tr}{tr}
+\DeclareMathOperator{\Proj}{Proj}
 \DeclareMathOperator{\grad}{grad}
 \DeclareMathOperator{\rank}{rank}
+\DeclareMathOperator{\Im}{im}
 \newcommand{\norm}[1]{\|#1\|}
 \newcommand{\ang}[1]{\langle{#1}\rangle}
 \]</span></p>
@@ -2439,7 +2445,6 @@ p(R\mid M,\kappa)=\frac{1}{Z(\kappa)}\exp(\kappa\tr(M^\top X)),\quad M\in\SO(d),
 <li><span class="math inline">\(\M\)</span> が線形部分空間なら，<span class="math inline">\(\M\)</span> を線形多様体という．</li>
 <li><span class="math inline">\(h\)</span> を（ <span class="math inline">\(x\)</span> における）局所定義関数 (local defining function) という．</li>
 </ul>
-<p>以降，埋め込まれた部分多様体のことを単に部分多様体とよぶ．</p>
 <p><a href="#def-3.10" class="quarto-xref">Definition 1</a> の1つ目の仮定は <span class="math inline">\(\M\)</span> は局所的には <span class="math inline">\(h=0\)</span> を満たす点の集合と見なせるということ．また，<span class="math inline">\(h\)</span> の Taylor 展開 <span class="math display">\[
 h(x+tv) = h(x) + t\D h(x)[v] + O(t^2)
 \]</span></p>
@@ -2454,7 +2459,7 @@ h(x+tv) = h(x) + t\D h(x)[v] + O(t^2)
 <p><span class="theorem-title"><strong>Definition 2 (Definition 3.11 微分同相写像)</strong></span> 滑らかな写像 <span class="math inline">\(F\colon U\to V\)</span> が微分同相であるとは，<span class="math inline">\(F\)</span> が全単射で，<span class="math inline">\(F^{-1}\)</span> も滑らかであること．</p>
 </div>
 <div id="thm-3.12" class="theorem">
-<p><span class="theorem-title"><strong>Theorem 1 (Theorem 3.12)</strong></span> <span class="math inline">\(\dim\E=d\)</span> とする．<span class="math inline">\(\M\subset\E\)</span> が次元 <span class="math inline">\(n\)</span> の（滑らかな）部分多様体であることは， 各点 <span class="math inline">\(x\in\M\)</span> で <span class="math inline">\(x\)</span> のある近傍 <span class="math inline">\(U\)</span> から <span class="math inline">\(\R^d\)</span> のある開集合 <span class="math inline">\(V\)</span> への微分同相写像 <span class="math inline">\(F\colon U\to V\)</span>が存在して，<span class="math inline">\(F(\M\cap U)=\{y\in\R^d\mid y_{n+1}=\cdots=y_{d}=0\}\cap V\)</span> となることと同値．</p>
+<p><span class="theorem-title"><strong>Theorem 1 (Theorem 3.12)</strong></span> <span class="math inline">\(\dim\E=d\)</span> とする．<span class="math inline">\(\M\subset\E\)</span> が次元 <span class="math inline">\(n\)</span> の（滑らかな）埋め込まれた部分多様体であることは， 各点 <span class="math inline">\(x\in\M\)</span> で <span class="math inline">\(x\)</span> のある近傍 <span class="math inline">\(U\)</span> から <span class="math inline">\(\R^d\)</span> のある開集合 <span class="math inline">\(V\)</span> への微分同相写像 <span class="math inline">\(F\colon U\to V\)</span>が存在して，<span class="math inline">\(F(\M\cap U)=\{y\in\R^d\mid y_{n+1}=\cdots=y_{d}=0\}\cap V\)</span> となることと同値．</p>
 </div>
 <p><a href="#thm-3.12" class="quarto-xref">Theorem 1</a> の証明には次の逆関数定理を用いる．</p>
 <div id="thm-3.13" class="theorem">
@@ -2474,7 +2479,7 @@ F(y)\coloneqq (y_{1},\dots,y_{n},h_{1}(y),\dots,h_{d-n}(y))^\top
 <p><span class="theorem-title"><strong>Definition 3 (Definition 3.14)</strong></span> <span class="math inline">\(\M\subset\E\)</span> に対して， <span class="math display">\[\T_{x}\M\coloneqq\{c&#39;(0)\mid\text{$c\colon I\to\M$ は $c(0)=x$ で滑らか, $I$ は $0$ を含む開区間} \}.\]</span></p>
 </div>
 <div id="thm-3.15" class="theorem">
-<p><span class="theorem-title"><strong>Theorem 3 (Theorem 3.15)</strong></span> <span class="math inline">\(\M\subset\E\)</span> を部分多様体とする．<span class="math inline">\(x\in\M\)</span> に対して，</p>
+<p><span class="theorem-title"><strong>Theorem 3 (Theorem 3.15)</strong></span> <span class="math inline">\(\M\subset\E\)</span> を埋め込まれた部分多様体とする．<span class="math inline">\(x\in\M\)</span> に対して，</p>
 <ul>
 <li><span class="math inline">\(\M\)</span> が開部分多様体なら，<span class="math inline">\(\T_{x}\M=\E\)</span>.</li>
 <li>そうでないなら，<span class="math inline">\(\T_{x}\M=\ker\D h(x)\)</span>. ただし，<span class="math inline">\(h\)</span> は <span class="math inline">\(x\)</span> における局所定義関数．</li>
@@ -2530,7 +2535,7 @@ c&#39;(0)=\D F^{-1}(\gamma(t))[\gamma&#39;(t)]|_{t=0}=\D F^{-1}(F(x))\begin{bmat
 <li><span class="math inline">\(\Sym(2)_1\)</span> は <span class="math inline">\(\Sym(2)\)</span> 上，開でも閉でもないし，連結でもない．</li>
 </ul>
 <div id="prp-3.20" class="theorem proposition">
-<p><span class="theorem-title"><strong>Proposition 1 (Proposition 3.20 埋め込まれた部分多様体の直積)</strong></span> <span class="math inline">\(\M,\M&#39;\)</span> はそれぞれ，<span class="math inline">\(\E,\E&#39;\)</span> の部分多様体とする． <span class="math inline">\(\M\times \M&#39;\)</span> は <span class="math inline">\(\E\times \E&#39;\)</span> の部分多様体で，<span class="math inline">\(\dim(\M\times\M&#39;)=\dim\M+\dim\M&#39;\)</span>． また，<span class="math display">\[\T_{(x,x&#39;)}(\M\times\M&#39;)=\T_x\M\times\T_{x&#39;}\M&#39;.\]</span></p>
+<p><span class="theorem-title"><strong>Proposition 1 (Proposition 3.20 埋め込まれた部分多様体の直積)</strong></span> <span class="math inline">\(\M,\M&#39;\)</span> はそれぞれ，<span class="math inline">\(\E,\E&#39;\)</span> に埋め込まれた部分多様体とする． <span class="math inline">\(\M\times \M&#39;\)</span> は <span class="math inline">\(\E\times \E&#39;\)</span> に埋め込まれた部分多様体で，<span class="math inline">\(\dim(\M\times\M&#39;)=\dim\M+\dim\M&#39;\)</span>． また，<span class="math display">\[\T_{(x,x&#39;)}(\M\times\M&#39;)=\T_x\M\times\T_{x&#39;}\M&#39;.\]</span></p>
 </div>
 <div class="proof">
 <p><span class="proof-title"><em>Proof</em>. </span>局所定義関数として，それぞれの局所定義関数の組 <span class="math inline">\((h,h&#39;)\)</span> が取れる．あとは，<span class="math inline">\(\R^{\dim\E-\dim\M}\times\R^{\dim\E&#39;-\dim\M&#39;}\)</span> を <span class="math inline">\(\R^{(\dim\E+\dim\E&#39;)-(\dim\M+\dim\M&#39;)}\)</span> と同一視すればよい．</p>
@@ -2549,7 +2554,7 @@ c&#39;(0)=\D F^{-1}(\gamma(t))[\gamma&#39;(t)]|_{t=0}=\D F^{-1}(F(x))\begin{bmat
 <section id="smooth-maps-on-embedded-submanifolds" class="level2">
 <h2 class="anchored" data-anchor-id="smooth-maps-on-embedded-submanifolds">3.3 Smooth maps on embedded submanifolds</h2>
 <div id="def-3.30" class="theorem definition">
-<p><span class="theorem-title"><strong>Definition 5 (Definition 3.30 滑らかな写像)</strong></span> <span class="math inline">\(\M,\M&#39;\)</span> はそれぞれ，<span class="math inline">\(\E,\E&#39;\)</span> の部分多様体とする． <span class="math inline">\(F\colon\M\to\M&#39;\)</span> が <span class="math inline">\(x\in\M\)</span> で滑らかとは，<span class="math inline">\(x\)</span> のある近傍 <span class="math inline">\(U\subset\E\)</span> 上の滑らかな写像 <span class="math inline">\(\overline{F}\colon U\to\E&#39;\)</span> が存在して，<span class="math inline">\(\M\cap U\)</span> 上 <span class="math inline">\(F=\overline{F}\)</span> となること．</p>
+<p><span class="theorem-title"><strong>Definition 5 (Definition 3.30 滑らかな写像)</strong></span> <span class="math inline">\(\M,\M&#39;\)</span> はそれぞれ，<span class="math inline">\(\E,\E&#39;\)</span> の埋め込まれた部分多様体とする． <span class="math inline">\(F\colon\M\to\M&#39;\)</span> が <span class="math inline">\(x\in\M\)</span> で滑らかとは，<span class="math inline">\(x\)</span> のある近傍 <span class="math inline">\(U\subset\E\)</span> 上の滑らかな写像 <span class="math inline">\(\overline{F}\colon U\to\E&#39;\)</span> が存在して，<span class="math inline">\(\M\cap U\)</span> 上 <span class="math inline">\(F=\overline{F}\)</span> となること．</p>
 </div>
 <ul>
 <li><span class="math inline">\(F\)</span> が滑らかとは，各点 <span class="math inline">\(x\in\M\)</span> で滑らかなこと．</li>
@@ -2557,21 +2562,24 @@ c&#39;(0)=\D F^{-1}(\gamma(t))[\gamma&#39;(t)]|_{t=0}=\D F^{-1}(F(x))\begin{bmat
 </ul>
 <p><span class="math inline">\(F\)</span> の拡張 <span class="math inline">\(\overline{F}\)</span> は大域的にとることもできる：</p>
 <div id="prp-3.31" class="theorem proposition">
-<p><span class="theorem-title"><strong>Proposition 3 (Proposition 3.31）)</strong></span> <span class="math inline">\(\M,\M&#39;\)</span> はそれぞれ，<span class="math inline">\(\E,\E&#39;\)</span> の部分多様体とする． <span class="math inline">\(F\colon\M\to\M&#39;\)</span> が滑らかであることは，<span class="math inline">\(\M\)</span> のある近傍から <span class="math inline">\(\E&#39;\)</span> への滑らかな写像 <span class="math inline">\(\overline{F}\)</span> で，<span class="math inline">\(F=\overline{F}|_\M\)</span> を満たすものが存在することと同値．</p>
+<p><span class="theorem-title"><strong>Proposition 3 (Proposition 3.31）)</strong></span> <span class="math inline">\(\M,\M&#39;\)</span> はそれぞれ，<span class="math inline">\(\E,\E&#39;\)</span> の埋め込まれた部分多様体とする． <span class="math inline">\(F\colon\M\to\M&#39;\)</span> が滑らかであることは，<span class="math inline">\(\M\)</span> のある近傍から <span class="math inline">\(\E&#39;\)</span> への滑らかな写像 <span class="math inline">\(\overline{F}\)</span> で，<span class="math inline">\(F=\overline{F}|_\M\)</span> を満たすものが存在することと同値．</p>
 </div>
 <div id="def-3.32" class="theorem definition">
-<p><span class="theorem-title"><strong>Definition 6 (Definition 3.32 スカラー場)</strong></span> <span class="math inline">\(\M\)</span> の（滑らかな）スカラー場とは，<span class="math inline">\(\M\)</span> 上の（滑らかな）関数のこと．滑らかなスカラー場全体を <span class="math inline">\(\mathfrak{F}(\M)\)</span> で表す．</p>
+<p><span class="theorem-title"><strong>Definition 6 (Definition 3.32 スカラー場)</strong></span> 多様体 <span class="math inline">\(\M\)</span> の（滑らかな）スカラー場とは，<span class="math inline">\(\M\)</span> 上の（滑らかな）関数のこと．滑らかなスカラー場全体を <span class="math inline">\(\mathfrak{F}(\M)\)</span> で表す．</p>
 </div>
 </section>
 <section id="the-differential-of-a-smooth-map" class="level2">
 <h2 class="anchored" data-anchor-id="the-differential-of-a-smooth-map">3.4 The differential of a smooth map</h2>
 <div id="def-3.34" class="theorem definition">
-<p><span class="theorem-title"><strong>Definition 7 (Definition 3.34 滑らかな写像の微分)</strong></span> 滑らかな写像 <span class="math inline">\(F\colon\M\to\M&#39;\)</span> の <span class="math inline">\(x\in\M\)</span> における微分 <span class="math inline">\(\D F(x)\colon\T_{x}\M\to\T_{F(x)}\M&#39;\)</span> とは，以下で定まる線形写像のこと： <span class="math display">\[
+<p><span class="theorem-title"><strong>Definition 7 (Definition 3.34 滑らかな写像の微分)</strong></span> 埋め込まれた多様体 <span class="math inline">\(\M,\M&#39;\)</span> の間の滑らかな写像 <span class="math inline">\(F\colon\M\to\M&#39;\)</span> の <span class="math inline">\(x\in\M\)</span> における微分 <span class="math inline">\(\D F(x)\colon\T_{x}\M\to\T_{F(x)}\M&#39;\)</span> とは，以下で定まる線形写像のこと： <span class="math display">\[
 \D F(x)[v]\coloneqq\left.\frac{\mathrm{d}}{\mathrm{d}t}F(c(t))\right|_{t=0}=(F\circ c)&#39;(0).
 \]</span> ただし，<span class="math inline">\(c\)</span> は <span class="math inline">\(c(0)=x,c&#39;(0)=v\)</span> を満たす <span class="math inline">\(\M\)</span> 上の滑らかな曲線．</p>
 </div>
+<ul>
+<li>連鎖律から，<span class="math inline">\(F\colon\M\to\M&#39;\)</span> と <span class="math inline">\(F&#39;\colon\M&#39;\to\M&#39;&#39;\)</span> に対して，<span class="math display">\[\D(F&#39;\circ F)(x)[v]=\D F&#39;(F(x))[\D F(x)[v]].\]</span></li>
+</ul>
 <div id="prp-3.35" class="theorem proposition">
-<p><span class="theorem-title"><strong>Proposition 4 (Proposition 3.35)</strong></span> <span class="math inline">\(F\colon\M\to\M&#39;\)</span> は滑らかで，<span class="math inline">\(\overline{F}\)</span> は <span class="math inline">\(x\in\M\)</span> における拡張とする．このとき， <span class="math inline">\(\D F(x)=\D \overline{F}|_{\T_{x}\M}\)</span>.</p>
+<p><span class="theorem-title"><strong>Proposition 4 (Proposition 3.35)</strong></span> <span class="math inline">\(F\colon\M\to\M&#39;\)</span> は滑らかで，<span class="math inline">\(\overline{F}\)</span> は <span class="math inline">\(x\in\M\)</span> における拡張とする．このとき， <span class="math inline">\(\D F(x)=\D \overline{F}(x)|_{\T_{x}\M}\)</span>.</p>
 </div>
 <div class="proof">
 <p><span class="proof-title"><em>Proof</em>. </span><span class="math inline">\(x\)</span> のある近傍 <span class="math inline">\(U\)</span> が存在して <span class="math inline">\(\M\cap U\)</span> 上，<span class="math inline">\(F=\overline{F}\)</span> である．したがって， <span class="math display">\[
@@ -2594,7 +2602,7 @@ c&#39;(0)=\D F^{-1}(\gamma(t))[\gamma&#39;(t)]|_{t=0}=\D F^{-1}(F(x))\begin{bmat
 <li><span class="math inline">\(x\in\M\)</span> をある <span class="math inline">\(v\in\T_{x}\M\)</span> に対応させる写像 <span class="math inline">\(V\)</span> のことを <span class="math inline">\(\M\)</span> 上のベクトル場という．</li>
 </ul>
 <div id="def-3.42" class="theorem definition">
-<p><span class="theorem-title"><strong>Definition 8 (Definition 3.42 ベクトル束)</strong></span> <span class="math inline">\(\M\)</span> のベクトル束 <span class="math inline">\(\T\M\)</span> とは，接空間の非交差和のこと： <span class="math display">\[\T\M\coloneqq\{(x,v)\mid x\in\M,v\in\T_x\M\}.\]</span></p>
+<p><span class="theorem-title"><strong>Definition 8 (Definition 3.42 ベクトル束)</strong></span> 多様体 <span class="math inline">\(\M\)</span> のベクトル束 <span class="math inline">\(\T\M\)</span> とは，接空間の非交差和のこと： <span class="math display">\[\T\M\coloneqq\{(x,v)\mid x\in\M,v\in\T_x\M\}.\]</span></p>
 </div>
 <ul>
 <li><span class="math inline">\(\T(\M\times \M&#39;)=\T\M\times \T\M&#39;\)</span> である．</li>
@@ -2634,14 +2642,143 @@ H(x,v)\coloneqq\begin{bmatrix}h(x)\\\D h(x)[v]\end{bmatrix}
 <p>ただし，<span class="math inline">\(\mathcal{L}(x,v)[\dot{x}]\coloneqq\frac{\mathrm{d}}{\mathrm{d}t}\D h(x+t\dot{x})[v]|_{t=0}\)</span> とした．ブロック三角行列の性質から，<span class="math inline">\(\rank\D H(x,v)\geq\rank\D h+\rank\D h=2(d-n)\)</span> が成り立つ（<a href="#lem-blockmatrixrank" class="quarto-xref">Lemma 2</a>）． また，<span class="math inline">\(H\)</span> は <span class="math inline">\(\R^{2(d-n)}\)</span> への写像なので，<span class="math inline">\(\rank\D H(x,v)\leq 2(d-n)\)</span>．よって，<span class="math inline">\(\rank\D H(x,v)=2(d-n)\)</span>．</p>
 </div>
 <div id="def-3.44" class="theorem definition">
-<p><span class="theorem-title"><strong>Definition 9 (Definition 3.44 ベクトル場)</strong></span> <span class="math inline">\(\M\)</span> 上の（滑らかな）ベクトル場とは，（滑らかな）写像 <span class="math inline">\(V\colon\M\to\T\M\)</span> で，<span class="math inline">\(V(x)\in\T_{x}\M\)</span> を満たすもののこと．滑らかなベクトル場全体を <span class="math inline">\(\X(\M)\)</span> で表す．</p>
+<p><span class="theorem-title"><strong>Definition 9 (Definition 3.44 ベクトル場)</strong></span> 多様体 <span class="math inline">\(\M\)</span> 上の（滑らかな）ベクトル場とは，（滑らかな）写像 <span class="math inline">\(V\colon\M\to\T\M\)</span> で，<span class="math inline">\(V(x)\in\T_{x}\M\)</span> を満たすもののこと．滑らかなベクトル場全体を <span class="math inline">\(\X(\M)\)</span> で表す．</p>
 </div>
 <div id="prp-3.45" class="theorem proposition">
-<p><span class="theorem-title"><strong>Proposition 5 (Proposition 3.45)</strong></span> <span class="math inline">\(\M\)</span> 上のベクトル場 <span class="math inline">\(V\)</span> が滑らかであることは，<span class="math inline">\(\M\)</span> のある近傍上の滑らかなベクトル場 <span class="math inline">\(\overline{{V}}\)</span> で <span class="math inline">\(\overline{V}|_\M\)</span> を満たすものが存在することと同値．</p>
+<p><span class="theorem-title"><strong>Proposition 5 (Proposition 3.45)</strong></span> 埋め込まれた部分多様体 <span class="math inline">\(\M\)</span> 上のベクトル場 <span class="math inline">\(V\)</span> が滑らかであることは，<span class="math inline">\(\M\)</span> のある近傍上の滑らかなベクトル場 <span class="math inline">\(\overline{{V}}\)</span> で <span class="math inline">\(\overline{V}|_\M\)</span> を満たすものが存在することと同値．</p>
 </div>
 <div class="proof">
 <p><span class="proof-title"><em>Proof</em>. </span><span class="math inline">\((\Leftarrow)\)</span> は明らかなので，<span class="math inline">\((\Rightarrow)\)</span> を示す．</p>
 <p><a href="#prp-3.31" class="quarto-xref">Proposition 3</a> より，<span class="math inline">\(\M\)</span> のある近傍 <span class="math inline">\(U\)</span> から <span class="math inline">\(\E\times\E\)</span> の滑らかな写像 <span class="math inline">\(W\)</span> で，<span class="math inline">\(V=W|_\M\)</span> を満たすものが存在する．<span class="math inline">\(W(x)=(W_1(x),W_2(x))\)</span> とすると，<span class="math inline">\(W_1,W_2\)</span> はどちらも滑らか．しかし，<span class="math inline">\(U\)</span> 上 <span class="math inline">\(W_1(x)=x\)</span> とは限らないので，<span class="math inline">\(W\)</span> は開部分多様体 <span class="math inline">\(U\)</span> 上のベクトル場とは限らない．<span class="math inline">\(\overline{V}(x)\coloneqq(x,W_2(x))\)</span> とすると，これは，<span class="math inline">\(U\)</span> 上のベクトル場で，<span class="math inline">\(V=\overline{V}|_\M\)</span> である．</p>
+</div>
+</section>
+<section id="moving-on-a-manifold-retractions" class="level2">
+<h2 class="anchored" data-anchor-id="moving-on-a-manifold-retractions">3.6 Moving on a manifold: retractions</h2>
+<div id="def-3.47" class="theorem definition">
+<p><span class="theorem-title"><strong>Definition 10 (Definition 3.47 レトラクション)</strong></span> 多様体 <span class="math inline">\(\M\)</span> 上のレトラクションとは，滑らかな写像 <span class="math inline">\(\Ret\colon\T\M\to\M,(x,v)\mapsto\Ret_x(v)\)</span> で，曲線 <span class="math inline">\(c(t)\coloneqq\Ret_x(tv)\)</span> が <span class="math inline">\(c(0)=x,c&#39;(0)=v\)</span> を満たすもののこと．</p>
+</div>
+<ul>
+<li>レトラクションが与えられると，各点 <span class="math inline">\(x\in\M\)</span> で速度が <span class="math inline">\(v\in\T_x\M\)</span> であるような曲線が定まる．</li>
+<li>多様体上の勾配降下法では，レトラクションが定める曲線に沿って点を更新する．</li>
+<li>線形多様体のレトラクションの例：<span class="math inline">\(\Ret_x(v)\coloneqq x+v\)</span> (Example 3.48)．</li>
+<li>球面 <span class="math inline">\(S^{d-1}\)</span> のレトラクションの例 (Example 3.49)：
+<ul>
+<li><span class="math inline">\(\Ret_x(v)\coloneqq (x+v)/\norm{x+v}\)</span> （射影して球面に戻す）</li>
+<li><span class="math inline">\(\Ret_x(v)\coloneqq\cos(\norm{v})x+\sin(\norm{v})v/\norm{v}\)</span> （<span class="math inline">\(v\)</span> が定める大円に沿って動く）</li>
+</ul></li>
+<li>行列 Lie 群のレトラクションは <span class="math inline">\(\Ret_X(V)\coloneqq X\exp(X^{-1} V)\)</span> で構成できる（が計算コストが高いらしい）．これがレトラクションの定義を満たすことは行列指数関数の微分が恒等写像になることからわかる．
+<ul>
+<li><span class="math inline">\(\SO(d)\)</span> などでは，<span class="math inline">\(\Ret_X(V)\coloneqq\mathrm{QR}(X+V)_Q\)</span> とできる（らしい）（行列指数関数よりは高速らしい）．<span class="math inline">\(X+tV=Q(t)R(t)\)</span> とすると，<span class="math inline">\(V=\dot{Q}(0)R(0)+Q(0)\dot{R}(0)=\dot{Q}(0)+Q\dot{R}(0)\)</span> となって，接空間の構造から，<span class="math inline">\(\dot{R}(0)=0\)</span> が示される．</li>
+</ul></li>
+</ul>
+<div id="prp-Ret" class="theorem proposition">
+<p><span class="theorem-title"><strong>Proposition 6</strong></span> <span class="math inline">\(\Ret\colon\T\M\to\M\)</span> について，以下は同値</p>
+<ol type="1">
+<li><span class="math inline">\(\Ret\)</span> はレトラクション．</li>
+<li><span class="math inline">\(\Ret_x(0)=x,\D\Ret_x(0)[v]=v\)</span> （曲線を用いない特徴づけ）.</li>
+</ol>
+</div>
+<div class="proof">
+<p><span class="proof-title"><em>Proof</em>. </span><span class="math inline">\(c(0)=\Ret_x(0)\)</span> と <span class="math inline">\(c&#39;(0)=\D\Ret_x(0)[v]\)</span> からわかる．</p>
+</div>
+</section>
+<section id="riemannian-manifolds-and-submanifolds" class="level2">
+<h2 class="anchored" data-anchor-id="riemannian-manifolds-and-submanifolds">3.7 Riemannian manifolds and submanifolds</h2>
+<div id="def-3.53" class="theorem definition">
+<p><span class="theorem-title"><strong>Definition 11 (Definition 3.53 Riemann 多様体)</strong></span> 多様体 <span class="math inline">\(\M\)</span> が Riemann 多様体であるとは，各点 <span class="math inline">\(x\in\M\)</span> の接空間 <span class="math inline">\(\T_x\M\)</span> で内積 <span class="math inline">\(\ang{\,\cdot\,,\,\cdot\,}_x\)</span> が定まっていて，内積が以下を満たすこと：</p>
+<p>任意の <span class="math inline">\(V,W\in\X(\M)\)</span> に対して，<span class="math inline">\(x\mapsto\ang{V(x),W(x)}\)</span> が滑らか．</p>
+</div>
+<ul>
+<li><span class="math inline">\(\ang{\,\cdot\,,\,\cdot\,}_x\)</span> を Riemann 計量という．</li>
+</ul>
+<div id="prp-3.54" class="theorem proposition">
+<p><span class="theorem-title"><strong>Proposition 7 (Proposition 3.54 誘導計量)</strong></span> <span class="math inline">\(\M\)</span> は内積空間 <span class="math inline">\(\E\)</span> に埋め込まれた部分多様体とする．<span class="math inline">\(x\in\M\)</span> に対して，<span class="math inline">\(\ang{u,v}_x\coloneqq\ang{u,v},\enspace u,v\in\T_x\M\)</span> で定めると，<span class="math inline">\(\M\)</span> は Riemann 多様体．</p>
+</div>
+<ul>
+<li>このような <span class="math inline">\(\M\)</span> を <span class="math inline">\(\E\)</span> の Riemann 部分多様体という (Definition 3.55)．</li>
+<li><span class="math inline">\(\S^{d-1}\)</span> は <span class="math inline">\(\R^d\)</span> の Riemann 部分多様体で，Riemann 計量は，<span class="math inline">\(\ang{u,v}_x=u^\top v\)</span> (Example 3.56).</li>
+<li>Riemann 多様体 <span class="math inline">\(\M,\M&#39;\)</span> の直積 <span class="math inline">\(\M\times\M&#39;\)</span> は，Riemann 計量 <span class="math inline">\(\ang{(u,u&#39;),(v,v&#39;)}_{(x,x&#39;)}\coloneqq\ang{u,v}_{x}^\M+\ang{u&#39;,v&#39;}_{x&#39;}^{\M&#39;}\)</span> に関して Riemann 多様体になる (Example 3.57)．</li>
+</ul>
+</section>
+<section id="riemannian-gradients" class="level2">
+<h2 class="anchored" data-anchor-id="riemannian-gradients">3.8 Riemannian gradients</h2>
+<div id="def-3.58" class="theorem definition">
+<p><span class="theorem-title"><strong>Definition 12 (Definition 3.58 Riemann 勾配)</strong></span> <span class="math inline">\(\M\)</span> は Riemann 多様体，<span class="math inline">\(f\colon\M\to\R\)</span> は滑らかとする．<span class="math inline">\(f\)</span> の Riemann 勾配 <span class="math inline">\(\grad f\)</span> とは，以下を満たすベクトル場のこと： <span class="math display">\[
+\D f(x)[v]=\ang{v,\grad f(x)}_x,\quad \forall (x,v)\in\T\M.
+\]</span></p>
+</div>
+<div id="prp-3.58" class="theorem proposition">
+<p><span class="theorem-title"><strong>Proposition 8</strong></span> Riemann 勾配は存在すれば一意．</p>
+</div>
+<div class="proof">
+<p><span class="proof-title"><em>Proof</em>. </span><span class="math inline">\(\M\)</span> 上のベクトル場 <span class="math inline">\(U,V\)</span> が Riemann 勾配の定義を満たすとする．<span class="math inline">\(U=V\)</span> を示す． <span class="math display">\[
+\D f(x)[v] = \ang{v,U(x)}_x=\ang{v,V(x)}_x,\quad \forall (x,v)\in\T\M
+\]</span></p>
+<p>より，任意の <span class="math inline">\(x\in\M\)</span> に対して，<span class="math inline">\(\ang{v,U(x)-V(x)}_x=0,\enspace\forall v\in\T_x\M\)</span> が成り立っている．これは，<span class="math inline">\(U(x)=V(x)\)</span> を意味する．よって，<span class="math inline">\(U=V\)</span> である．</p>
+</div>
+<div id="prp-3.59" class="theorem proposition">
+<p><span class="theorem-title"><strong>Proposition 9 (Proposition 3.59)</strong></span> <span class="math inline">\(\M\)</span> は Riemann 多様体，<span class="math inline">\(f\colon\M\to\R\)</span> は滑らかとする． <span class="math inline">\(\Ret\)</span> を <span class="math inline">\(\M\)</span> 上のレトラクションとすると， <span class="math display">\[
+\grad f(x) = \grad(f\circ\Ret_x)(0),\quad\forall x\in\M.
+\]</span></p>
+</div>
+<div class="proof">
+<p><span class="proof-title"><em>Proof</em>. </span>微分の連鎖律から，任意の <span class="math inline">\((x,v)\in\T\M\)</span> に対して， <span class="math display">\[
+\D(f\circ\Ret_x)(0)[v]=\D f(\Ret_x(0))[\D\Ret_x(0)[v]]=\D f(x)[v]=\ang{v,\grad f(x)}_x.
+\]</span></p>
+</div>
+<div id="prp-riemannian-grad-embbeded" class="theorem proposition">
+<p><span class="theorem-title"><strong>Proposition 10</strong></span> <span class="math inline">\(\M\)</span> を <span class="math inline">\(\E\)</span> の Riemann 部分多様体とする．<span class="math inline">\(f\colon\M\to\R\)</span> は滑らかとする．<span class="math inline">\(\overline{f}\)</span> を <span class="math inline">\(f\)</span> の <span class="math inline">\(\M\)</span> のある近傍における拡張とすると， <span class="math display">\[
+\ang{v,\grad f(x)}_x=\ang{v,\grad\overline{f}(x)}_x,\quad\forall (x,v)\in\T\M.
+\]</span></p>
+</div>
+<div class="proof">
+<p><span class="proof-title"><em>Proof</em>. </span><a href="#prp-3.35" class="quarto-xref">Proposition 4</a> より，<span class="math inline">\(\D f(x)=\D\overline{f}(x)|_{\T_x\M}\)</span> なので明らか．</p>
+</div>
+<p><span class="math inline">\(\M\)</span> を <span class="math inline">\(\E\)</span> の Riemann 部分多様体とする．<span class="math inline">\(\T_x\M\subset\E\)</span> なので， <span class="math display">\[
+\grad\overline{f}(x)=\grad\overline{f}(x)_{\|} + \grad\overline{f}(x)_{\perp},\quad\grad\overline{f}(x)_{\|}\in\T_x\M,\,\grad\overline{f}(x)_\perp\in(\T_x\M)^\perp
+\]</span></p>
+<p>と（<span class="math inline">\(\E\)</span> の内積に関して）直交分解できる．</p>
+<div id="prp-riemannian-grad-embbeded2" class="theorem proposition">
+<p><span class="theorem-title"><strong>Proposition 11</strong></span> <span class="math display">\[\grad f(x)=\grad\overline{f}(x)_{\|},\quad \forall x\in\M.\]</span></p>
+</div>
+<div class="proof">
+<p><span class="proof-title"><em>Proof</em>. </span>任意の <span class="math inline">\((x,v)\in\T\M\)</span> に対して， <span class="math display">\[
+\ang{v,\grad f(x)}_x=\ang{v,\grad\overline{f}(x)}_x
+=\ang{v,\grad\overline{f}(x)_{\|}+\grad\overline{f}(x)_{\perp}}_x
+=\ang{v,\grad\overline{f}(x)_{\|}}_x
+\]</span></p>
+<p>が成り立つので，<span class="math inline">\(\grad f(x)=\grad\overline{f}(x)_{\|},\quad \forall x\in\M.\)</span></p>
+</div>
+<div id="def-3.60" class="theorem definition">
+<p><span class="theorem-title"><strong>Definition 13 (Definition 3.60 直交射影)</strong></span> <span class="math inline">\(\M\)</span> を <span class="math inline">\(\E\)</span> の Riemann 部分多様体とする．<span class="math inline">\(\T_x\M\)</span> への直交射影 <span class="math inline">\(\Proj_x\colon\E\to\E\)</span> とは以下を満たす線形写像のこと：</p>
+<ol type="1">
+<li><span class="math inline">\(\Im(\Proj_x)=\T_x\M\)</span>.</li>
+<li><span class="math inline">\(\Proj_x\circ\Proj_x=\Proj_x\)</span>.</li>
+<li><span class="math inline">\(\ang{u-\Proj_x(u),v}=0,\quad \forall v\in\T_x\M, \forall u\in\E.\)</span></li>
+</ol>
+</div>
+<div id="prp-3.61" class="theorem proposition">
+<p><span class="theorem-title"><strong>Proposition 12 (Proposition 3.61)</strong></span> <span class="math inline">\(\M\)</span> を <span class="math inline">\(\E\)</span> の Riemann 部分多様体とする．<span class="math inline">\(f\colon\M\to\R\)</span> は滑らかとする．<span class="math inline">\(\overline{f}\)</span> を <span class="math inline">\(f\)</span> の <span class="math inline">\(\M\)</span> のある近傍における拡張とすると， <span class="math display">\[\grad f(x)=\Proj_x(\grad\overline{f}(x)),\quad \forall x\in\M.\]</span></p>
+</div>
+<div class="proof">
+<p><span class="proof-title"><em>Proof</em>. </span><a href="#prp-riemannian-grad-embbeded2" class="quarto-xref">Proposition 11</a> の <span class="math inline">\(\grad\overline{f}(x)\)</span> は <span class="math inline">\(\Proj_x(\grad\overline{f}(x))\)</span></p>
+</div>
+<ul>
+<li><span class="math inline">\(\M\)</span> が <span class="math inline">\(\E\)</span> の開部分多様体なら，<span class="math inline">\(\T_x\M=\E\)</span> なので，<span class="math inline">\(\Proj_x\)</span> は恒等写像．</li>
+<li><span class="math inline">\(\S^{d-1}\)</span> の直交射影は，<span class="math inline">\(\Proj_x(u)=u-(x^\top u)x=(I_d-xx^\top)u\)</span> (Example 3.62).</li>
+<li><span class="math inline">\(f(x)=x^\top Ax,\enspace A\in\Sym(d)\)</span> の Riemann 勾配は，<span class="math display">\[\grad f(x)=(I_d-xx^\top)(2Ax)=2(Ax-(x^\top Ax)x).\]</span></li>
+</ul>
+<div id="prp-3.63" class="theorem proposition">
+<p><span class="theorem-title"><strong>Proposition 13 (Proposition 3.63)</strong></span> <span class="math inline">\(\Proj_x\)</span> は自己随伴： <span class="math display">\[\ang{u,\Proj_x(v)}=\ang{\Proj_x(u),v},\quad\forall u,v\in\E.\]</span></p>
+</div>
+<div class="proof">
+<p><span class="proof-title"><em>Proof</em>. </span><span class="math display">\[
+\begin{align*}
+0&amp;=\ang{u-\Proj_x(u),\Proj_x(v)}\\
+&amp;=\ang{u,\Proj_x(v)}-\ang{\Proj_x(u),v-(v-\Proj_x(v))}\\
+&amp;=\ang{u,\Proj_x(v)}-\ang{\Proj_x(u),v}+\cancel{\Proj_x(u),v-\Proj_x(v)}.
+\end{align*}
+\]</span></p>
 </div>
 </section>
 </section>
