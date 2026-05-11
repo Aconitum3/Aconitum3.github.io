@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 <meta name="author" content="とり">
-<meta name="dcterms.date" content="2026-04-27">
+<meta name="dcterms.date" content="2026-04-29">
 
 <title>An introduction to optimization on smooth manifolds 2-3章</title>
 <style>
@@ -2324,6 +2324,7 @@ color: #556056;
   <li><a href="#moving-on-a-manifold-retractions" id="toc-moving-on-a-manifold-retractions" class="nav-link" data-scroll-target="#moving-on-a-manifold-retractions">3.6 Moving on a manifold: retractions</a></li>
   <li><a href="#riemannian-manifolds-and-submanifolds" id="toc-riemannian-manifolds-and-submanifolds" class="nav-link" data-scroll-target="#riemannian-manifolds-and-submanifolds">3.7 Riemannian manifolds and submanifolds</a></li>
   <li><a href="#riemannian-gradients" id="toc-riemannian-gradients" class="nav-link" data-scroll-target="#riemannian-gradients">3.8 Riemannian gradients</a></li>
+  <li><a href="#local-frames" id="toc-local-frames" class="nav-link" data-scroll-target="#local-frames">3.9 Local frames</a></li>
   </ul></li>
   <li><a href="#付録" id="toc-付録" class="nav-link" data-scroll-target="#付録">付録</a></li>
   </ul>
@@ -2350,7 +2351,7 @@ color: #556056;
     <div>
     <div class="quarto-title-meta-heading">Published</div>
     <div class="quarto-title-meta-contents">
-      <p class="date">April 27, 2026</p>
+      <p class="date">April 29, 2026</p>
     </div>
   </div>
   
@@ -2779,6 +2780,94 @@ H(x,v)\coloneqq\begin{bmatrix}h(x)\\\D h(x)[v]\end{bmatrix}
 &amp;=\ang{u,\Proj_x(v)}-\ang{\Proj_x(u),v}+\cancel{\Proj_x(u),v-\Proj_x(v)}.
 \end{align*}
 \]</span></p>
+</div>
+</section>
+<section id="local-frames" class="level2">
+<h2 class="anchored" data-anchor-id="local-frames">3.9 Local frames</h2>
+<div id="def-3.68" class="theorem definition">
+<p><span class="theorem-title"><strong>Definition 14 (Definition 3.68 局所枠)</strong></span> <span class="math inline">\(n\)</span> 次元多様体 <span class="math inline">\(\M\)</span> の点 <span class="math inline">\(x\in\M\)</span> の周りの局所枠とは，<span class="math inline">\(x\)</span> のある近傍 <span class="math inline">\(U\)</span> 上の滑らかなベクトル場の組 <span class="math inline">\(W_1,\dots,W_n\)</span> で，<span class="math inline">\(y\in U\)</span> に対して，<span class="math inline">\(W_1(y),\dots,W_n(y)\)</span> が <span class="math inline">\(\T_y\M\)</span> の基底になるようなもののこと．</p>
+</div>
+<div id="prp-3.69" class="theorem proposition">
+<p><span class="theorem-title"><strong>Proposition 14 (Proposition 3.69)</strong></span> <span class="math inline">\(\M\)</span> は <span class="math inline">\(\E\)</span> に埋め込まれた部分多様体とする．このとき，<span class="math inline">\(x\in\M\)</span> の周りの局所枠が存在する．</p>
+</div>
+<div class="proof">
+<p><span class="proof-title"><em>Proof</em>. </span><span class="math inline">\(\dim\E=d,\dim\M=n\)</span> とする．<a href="#thm-3.12" class="quarto-xref">Theorem 1</a> より，<span class="math inline">\(x\in\M\)</span> のある近傍 <span class="math inline">\(U\)</span> から，<span class="math inline">\(\R^d\)</span> のある開集合 <span class="math inline">\(V\)</span> への微分同相写像 <span class="math inline">\(F\colon U\to V\)</span> で， <span class="math display">\[
+F(\M\cap U)=\{y\in\R^d\mid y_{n+1}=\cdots=y_d=0\}\cap V
+\]</span> を満たすものがとれる．<span class="math inline">\(e_1,\dots,e_d\)</span> を <span class="math inline">\(\R^d\)</span> の標準基底として， <span class="math display">\[
+W_i(y)\coloneqq\left(t\mapsto F^{-1}(F(y)+te_i)\right)&#39;(0)
+\]</span></p>
+<p>が局所枠の定義を満たすことを確かめる．</p>
+<div id="tip-3.69" class="callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Tip 1
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p><span class="math inline">\(t\mapsto F(y)+te_i\)</span> は <span class="math inline">\(F(\M\cap U)\)</span> 上の曲線で，それを <span class="math inline">\(F^{-1}\)</span> で引き戻して，<span class="math inline">\(\M\cap U\)</span> 上の曲線をつくっている．</p>
+</div>
+</div>
+<p><span class="math display">\[
+W_i(y)=\D F^{-1}(F(y))[e_i]=(\D F(y))^{-1}[e_i]
+\]</span></p>
+<p><span class="math inline">\(\D F(y)\)</span> は可逆なので，線形独立な系 <span class="math inline">\(e_1,\dots,e_n\)</span> は線形独立な系 <span class="math inline">\(W_1(y),\dots,W_n(y)\)</span> にうつる．</p>
+</div>
+<ul>
+<li>枠は大域的にとることもできる．例えば，<span class="math inline">\(\S^1\)</span> など．<span class="math inline">\(\S^2\)</span> では無理（らしい）．</li>
+</ul>
+<div id="prp-3.70" class="theorem proposition">
+<p><span class="theorem-title"><strong>Proposition 15 (Proposition 3.70)</strong></span> <span class="math inline">\(\E\)</span> に埋め込まれた Riemann 多様体 <span class="math inline">\(\M\)</span> 上の滑らかな関数 <span class="math inline">\(f\)</span> の勾配ベクトル場 <span class="math inline">\(\grad f\)</span> は滑らか．</p>
+</div>
+<div class="proof">
+<p><span class="proof-title"><em>Proof</em>. </span><span class="math inline">\(x\in\M\)</span> の近傍 <span class="math inline">\(U\)</span> で定義された局所枠 <span class="math inline">\(W_1,\dots,W_n\)</span> をとる． <span class="math display">\[
+\grad f(y)=g_1(y)W_1(y)+\cdots+g_n(y)W_n(y),\quad y\in U
+\]</span> と，基底展開できる．<span class="math inline">\(g_i\)</span> が滑らかであることを示せばよい．上の式より， <span class="math display">\[
+\begin{align*}
+&amp;\begin{bmatrix}
+\ang{W_1(y),W_1(y)}_y&amp;\cdots&amp;\ang{W_n(y),W_1(y)}_y\\
+\vdots&amp;\ddots&amp;\vdots\\
+\ang{W_n(y),W_1(y)}_y&amp;\cdots&amp;\ang{W_n(y),W_n(y)}_y
+\end{bmatrix}
+\begin{bmatrix}g_1(y)\\\vdots\\g_n(y)\end{bmatrix}\\
+&amp;=
+\begin{bmatrix}
+\ang{\grad f(y),W_1(y)}_y\\\vdots\\\ang{\grad f(y),W_n(y)}_y
+\end{bmatrix}
+=
+\begin{bmatrix}
+\D f(y)[W_1(y)]\\\vdots\\\D f(y)[W_n(y)]
+\end{bmatrix}
+\end{align*}
+\]</span></p>
+<p>である．この線型方程式を <span class="math inline">\(g_1,\dots,g_n\)</span> に関して解けば，<span class="math inline">\(g_i\)</span> が滑らかなことがわかる．</p>
+</div>
+<div id="def-oneform" class="theorem definition">
+<p><span class="theorem-title"><strong>Definition 15 (1形式)</strong></span> 多様体 <span class="math inline">\(\M\)</span> の1形式とは，滑らかなベクトル場を滑らかなスカラー場（関数）にうつす線形写像 <span class="math inline">\(X\colon\X(\M)\to\mathfrak{F}(\M)\)</span> で，<span class="math inline">\(g\in\mathfrak{F}(\M),V\in\X(\M)\)</span> に対して，<span class="math inline">\(X(gV)=gX(V)\)</span> を満たすもののこと．</p>
+</div>
+<ul>
+<li><span class="math inline">\(\D f(V)(x)\coloneqq\D f(x)[V(x)]\)</span> は1形式．</li>
+<li><span class="math inline">\(U\in\X(\M)\)</span> に対して，<span class="math inline">\(X(V)(x)\coloneqq\ang{U(x),V(x)}_x\)</span> は1形式．</li>
+</ul>
+<div id="prp-3.71" class="theorem proposition">
+<p><span class="theorem-title"><strong>Proposition 16 (Proposition 3.71)</strong></span> Riemann 多様体 <span class="math inline">\(\M\)</span> 上の1形式 <span class="math inline">\(X\)</span> に対して，ある <span class="math inline">\(U\in\X(\M)\)</span> が一意的に存在して， <span class="math inline">\(X(V)=\ang{U,V}\)</span> が成り立つ．</p>
+</div>
+<div class="proof">
+<p><span class="proof-title"><em>Proof</em>. </span><span class="math inline">\(V(x)=0\Rightarrow X(V)(x)=0\)</span> は認める（局所枠と5章の道具を使う）．</p>
+<p>ステップ1：<span class="math inline">\(V_1,V_2\in\X(\M)\)</span> に対して，<span class="math inline">\(V_1(x)=V_2(x)\Rightarrow X(V_1)(x)=X(V_2)(x)\)</span></p>
+<p><span class="math inline">\(V\coloneqq V_1-V_2\)</span> とすると，<span class="math inline">\(V(x)=0\)</span> なので，<span class="math inline">\(0=X(V)(x)=X(V_1)(x)-X(V_2)(x)\)</span> である．</p>
+<p>ステップ2：あるベクトル場 <span class="math inline">\(U\)</span> が存在して，<span class="math inline">\(X(V)(x)=\ang{U(x),V(x)}_x\)</span></p>
+<p>ステップ1の結果から，<span class="math inline">\(X(V)(x)\)</span> は <span class="math inline">\(V(x)\)</span> にのみ依存する．<span class="math inline">\(X\)</span> の線形性から，ある <span class="math inline">\(U(x)\)</span> が存在して，<span class="math inline">\(X(V)(x)=\ang{U(x),V(x)}_x\)</span> が各点 <span class="math inline">\(x\)</span> で成立．</p>
+<p>ステップ3：<span class="math inline">\(U\)</span> は滑らか</p>
+<p><span class="math inline">\(x\in\M\)</span> の近傍 <span class="math inline">\(\mathcal{U}\)</span> で定義された局所枠 <span class="math inline">\(W_1,\dots,W_n\)</span> をとる． <span class="math display">\[
+U|_\mathcal{U}=g_1W_1+\cdots+g_nW_n
+\]</span></p>
+<p>と基底展開できる．<span class="math inline">\(g_1,\dots,g_n\)</span> が <span class="math inline">\(x\)</span> で滑らかであることを示せばよい． <a href="#prp-3.45" class="quarto-xref">Proposition 5</a> より，拡張 <span class="math inline">\(\overline{W}_1,\dots,\overline{W}_n\in\X(\M)\)</span> がとれるので， <span class="math display">\[
+X(\overline{W}_j)(y)=\ang{U(y),\overline{W}_j(y)}_y=\sum_{i=1}^n g_i(y)\ang{W_i(y),W_j(y)}_y,\quad y\in\mathcal{U}
+\]</span></p>
+<p>が成り立つ．<span class="math inline">\(g_1(y),\dots,g_n(y)\)</span> に関する線型方程式を解けば，<span class="math inline">\(g_1,\dots,g_n\)</span> が <span class="math inline">\(x\)</span> で滑らかなことがわかる．</p>
 </div>
 </section>
 </section>
