@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 <meta name="author" content="とり">
-<meta name="dcterms.date" content="2026-05-18">
+<meta name="dcterms.date" content="2026-05-23">
 
 <title>Asymptotic Statistics Chapter 7 Local Asymptotic Normality</title>
 <style>
@@ -2336,11 +2336,21 @@ color: #556056;
   <li><a href="#最尤推定量の漸近正規性5.5-7.2" id="toc-最尤推定量の漸近正規性5.5-7.2" class="nav-link" data-scroll-target="#最尤推定量の漸近正規性5.5-7.2">最尤推定量の漸近正規性（5.5, 7.2）</a></li>
   </ul></li>
   <li><a href="#maximum-likelihood" id="toc-maximum-likelihood" class="nav-link" data-scroll-target="#maximum-likelihood">7.4 Maximum Likelihood</a></li>
+  <li><a href="#limit-distributions-under-alternatives" id="toc-limit-distributions-under-alternatives" class="nav-link" data-scroll-target="#limit-distributions-under-alternatives">7.5 Limit Distributions under Alternatives</a></li>
+  <li><a href="#local-asymptotic-normality" id="toc-local-asymptotic-normality" class="nav-link" data-scroll-target="#local-asymptotic-normality">7.6 Local Asymptotic Normality</a></li>
   <li><a href="#付録" id="toc-付録" class="nav-link" data-scroll-target="#付録">付録</a>
   <ul class="collapse">
   <li><a href="#対数関数の剰余項" id="toc-対数関数の剰余項" class="nav-link" data-scroll-target="#対数関数の剰余項">対数関数の剰余項</a></li>
   <li><a href="#可測選択定理" id="toc-可測選択定理" class="nav-link" data-scroll-target="#可測選択定理">可測選択定理</a></li>
-  <li><a href="#集合の収束" id="toc-集合の収束" class="nav-link" data-scroll-target="#集合の収束">集合の収束</a></li>
+  <li><a href="#集合の収束" id="toc-集合の収束" class="nav-link" data-scroll-target="#集合の収束">集合の収束</a>
+  <ul class="collapse">
+  <li><a href="#hausdroff-収束" id="toc-hausdroff-収束" class="nav-link" data-scroll-target="#hausdroff-収束">Hausdroff 収束</a></li>
+  <li><a href="#painlevé-kuratowski-収束" id="toc-painlevé-kuratowski-収束" class="nav-link" data-scroll-target="#painlevé-kuratowski-収束">Painlevé-Kuratowski 収束</a></li>
+  <li><a href="#wijsman-収束" id="toc-wijsman-収束" class="nav-link" data-scroll-target="#wijsman-収束">Wijsman 収束</a></li>
+  <li><a href="#つの収束の関係" id="toc-つの収束の関係" class="nav-link" data-scroll-target="#つの収束の関係">3つの収束の関係</a></li>
+  <li><a href="#応用" id="toc-応用" class="nav-link" data-scroll-target="#応用">応用</a></li>
+  </ul></li>
+  <li><a href="#thm-7.12-のためのいくつかの補題" id="toc-thm-7.12-のためのいくつかの補題" class="nav-link" data-scroll-target="#thm-7.12-のためのいくつかの補題">Theorem 4 のためのいくつかの補題</a></li>
   </ul></li>
   </ul>
 </nav>
@@ -2366,7 +2376,7 @@ color: #556056;
     <div>
     <div class="quarto-title-meta-heading">Published</div>
     <div class="quarto-title-meta-contents">
-      <p class="date">May 18, 2026</p>
+      <p class="date">May 23, 2026</p>
     </div>
   </div>
   
@@ -2588,7 +2598,7 @@ P_{\theta_0}[\log p_{\theta_0+h}-\log p_{\theta_0}]
 \end{align*}
 \]</span></p>
 <p><strong>二段目</strong>：<span class="math inline">\(Y_h\coloneqq W_h^2/\norm{h}^2,X_h\coloneqq|Y_hr(W_h)|\)</span> について，<span class="math inline">\(X_h\leq Y_h/2+\dot{l}^2/16.\)</span></p>
-<p><a href="#lem-log-remainder" class="quarto-xref">Lemma 8</a> より，<span class="math inline">\(|x^2r(x)|\leq x^2/2+(\log(1+x))^2/4\)</span> なので， <span class="math display">\[
+<p><a href="#lem-log-remainder" class="quarto-xref">Lemma 7</a> より，<span class="math inline">\(|x^2r(x)|\leq x^2/2+(\log(1+x))^2/4\)</span> なので， <span class="math display">\[
 X_h\leq \frac{1}{2}Y_h+\frac{1}{4\norm{h}^2}(\log(1+W_h))^2
 \leq \frac{1}{2}Y_h+\frac{1}{16}\dot{l}^2.
 \]</span></p>
@@ -2688,7 +2698,7 @@ $\Theta\subset\R^d$ は開集合とする．統計モデル $(P_\theta)_{\theta\
 \forall N\in\mathbb{N},\,\exists n\geq N,\quad
 \Pr\left(\sup_{\norm{h}\leq M}|Z_n(h)|&gt;\varepsilon\right)&gt;\delta.
 \]</span></p>
-<p>可測選択定理 (<a href="#lem-7.12-measurable-selection" class="quarto-xref">Lemma 9</a>) から， <span class="math display">\[
+<p>可測選択定理 (<a href="#lem-7.12-measurable-selection" class="quarto-xref">Lemma 8</a>) から， <span class="math display">\[
 h_n(\omega) \in \left\{ h\in\R^d\,\middle|\, \norm{h}\leq M,\, |Z_n(h)(\omega)|\geq\sup_{\norm{h&#39;}\leq M}|Z_n(h&#39;)(\omega)|-1/n \right\}
 \]</span></p>
 <p>を満たす確率変数 <span class="math inline">\(h_n\)</span> が選べる．構成から，<span class="math inline">\(h_n=\largeop\)</span> である．また，<a href="#lem-19.31" class="quarto-xref">Lemma 3</a> より，<span class="math inline">\(Z_n(h_n)\parrow0\)</span> が成り立つ．とくに，<span class="math inline">\(|Z_n(h_n)|+1/n\parrow0\)</span> である．ところが， <span class="math display">\[
@@ -2735,13 +2745,13 @@ n\geq N_k\Rightarrow \Pr\left(\sup_{\norm{h}\leq k}Y_n(h)\geq \frac{1}{k}\right)
 <li><span class="math inline">\(\theta_{0}\)</span> の（<span class="math inline">\(\R^d\)</span> 上の）近傍 <span class="math inline">\(U_{\theta_{0}}\)</span> と <span class="math inline">\(\dot{l}\in L^2(P)\)</span> が存在し，任意の <span class="math inline">\(x\in\X\)</span> に対して，<span class="math display">\[|\log p_{\theta_{1}}(x)-\log p_{\theta_{2}}(x)|\leq\dot{l}(x)\|\theta_{1}-\theta_{2}\|\quad \forall \theta_ 1,\theta_{2}\in U_{\theta_{0}}.\]</span></li>
 <li><span class="math inline">\(\theta_0\)</span> における Fisher 情報行列 <span class="math inline">\(I_{\theta_{0}}\)</span> は正則．</li>
 </ol>
-<p>このとき，最尤推定量 <span class="math inline">\(\hat\theta_{n}\)</span> が <span class="math inline">\(\theta_0\)</span> の一致推定量で，<span class="math inline">\(H_n\coloneqq\sqrt{n}(\Theta-\theta_0)\)</span> がある空でない閉凸集合 <span class="math inline">\(H\)</span> に Wijsman-収束するなら，<span class="math inline">\(I_{\theta_0}^{1/2}H\)</span> への射影を <span class="math inline">\(\Pi\)</span> とすると， <span class="math display">\[
+<p>このとき，最尤推定量 <span class="math inline">\(\hat\theta_{n}\)</span> が <span class="math inline">\(\theta_0\)</span> の一致推定量で，<span class="math inline">\(H_n\coloneqq\sqrt{n}(\Theta-\theta_0)\)</span> がある空でない閉凸集合 <span class="math inline">\(H\)</span> に PK-収束するなら，<span class="math inline">\(I_{\theta_0}^{1/2}H\)</span> への射影を <span class="math inline">\(\Pi\)</span> とすると， <span class="math display">\[
 I_{\theta_0}^{1/2}\sqrt{n}(\hat\theta_n-\theta_0)\warrow \Pi\gamma.
 \]</span></p>
 <p>ただし，<span class="math inline">\(\gamma\)</span> は <span class="math inline">\(d\)</span> 次元標準正規分布．</p>
 </div>
 <div class="proof">
-<p><span class="proof-title"><em>Proof</em>. </span><span class="math inline">\(\hat h_n\coloneqq\sqrt{n}(\hat\theta_n-\theta_0)\)</span> とする． Portmanteau (vi) を検証する．つまり，<span class="math inline">\(Z\sim\gamma\)</span> と任意の閉集合 <span class="math inline">\(F\subset\R^d\)</span> に対して， <span class="math inline">\(\limsup\Pr(\hat h_n\in F)\leq\limsup\Pr(\Pi Z\in I_{\theta_0}^{1/2}F)\)</span> を示す．</p>
+<p><span class="proof-title"><em>Proof</em>. </span><span class="math inline">\(\hat h_n\coloneqq\sqrt{n}(\hat\theta_n-\theta_0)\)</span> とする． Portmanteau (vi) を検証する．つまり，<span class="math inline">\(Z\sim\gamma\)</span> と任意の閉集合 <span class="math inline">\(F\subset\R^d\)</span> に対して， <span class="math inline">\(\limsup\Pr(\hat h_n\in F)\leq\Pr(\Pi Z\in I_{\theta_0}^{1/2}F)\)</span> を示す．</p>
 <p><a href="#lem-7.12" class="quarto-xref">Lemma 6</a> の <span class="math inline">\(M_n\)</span> をとって，<span class="math inline">\(B_n\coloneqq\{h\in\R^d\mid\norm{h}\leq M_n\}\)</span> とする． <span class="math inline">\(Q_n(h),q_n(h),\Delta_n\)</span> を以下で定める： <span class="math display">\[
 \begin{align*}
 Q_n(h)&amp;\coloneqq n\P_n\left[\log\frac{p_{\theta_0+h/\sqrt{n}}}{p_{\theta_0}}\right],\\
@@ -2750,7 +2760,7 @@ q_n(h)&amp;\coloneqq h^\top\G_n\dot{l}_{\theta_0}-\frac{1}{2}h^\top I_{\theta_0}
 \end{align*}
 \]</span></p>
 <p><a href="#lem-7.12" class="quarto-xref">Lemma 6</a> より，<span class="math inline">\(\Delta_n=\smallop\)</span> である．</p>
-<p>第二段：任意の <span class="math inline">\(h\in H_n\cap B_n\)</span> に対して，<span class="math inline">\(\hat h_n\in F\cap B_n\)</span> ならば，<span class="math display">\[\sup_{h\in F\cap B_n\cap H_n}q_n(h)\geq \sup_{h\in B_n\cap H_n}q_n(h)-2\Delta_n.\]</span></p>
+<p><strong>第一段</strong>：任意の <span class="math inline">\(h\in H_n\cap B_n\)</span> に対して，<span class="math inline">\(\hat h_n\in F\cap B_n\)</span> ならば，<span class="math display">\[\sup_{h\in F\cap B_n\cap H_n}q_n(h)\geq \sup_{h\in B_n\cap H_n}q_n(h)-2\Delta_n.\]</span></p>
 <p>まず，<span class="math inline">\(\hat h_n\in F\cap B_n\)</span> ならば， <span class="math display">\[
 Q_n(\hat h_n)=\sup_{h\in F\cap B_n\cap H_n}Q_n(h)
 = \sup_{h\in B_n\cap H_n}Q_n(h)
@@ -2769,48 +2779,158 @@ Q_n(\hat h_n)=\sup_{h\in F\cap B_n\cap H_n}Q_n(h)
 &amp;\leq \sup_{h\in F\cap B_n\cap H_n}q_n(h)+\Delta_n.
 \end{align*}
 \]</span></p>
-<p><strong>第三段</strong>：</p>
-<p><span class="math display">\[
+<p><strong>第二段</strong>：<span class="math inline">\(\limsup_n\Pr(\hat h_n\in F)\leq \Pr(\Pi Z\in I_{\theta_0}^{1/2}F)\)</span></p>
+<p><span class="math inline">\(Z_n\coloneqq I_{\theta_0}^{-1/2}\G_n\dot{l}_{\theta_0}\)</span> とする． また，集合 <span class="math inline">\(A\)</span> に対して，<span class="math inline">\(\tilde{A}\coloneqq I_{\theta_0}^{1/2}A\)</span> とする． <span class="math display">\[
 q_{n}(h)=h^\top\G_n\dot{l}_{\theta_0}-\frac{1}{2}h^\top I_{\theta_0}h
-=-\frac{1}{2}\norm{I_{\theta_0}^{-1/2}\G_n\dot{l}_{\theta_0}-I_{\theta_0}^{1/2}h}^2+\frac{1}{2}\norm{I_{\theta_0}^{-1/2}\G_n\dot{l}_{\theta_0}}^2
+=-\frac{1}{2}\norm{Z_n-I_{\theta_0}^{1/2}h}^2+\frac{1}{2}\norm{Z_n}^2
 \]</span></p>
 <p>に注意すると，第二段の結果から， <span class="math display">\[
 \begin{align*}
 &amp;\hphantom{\iff}\hat h_n\in F\cap B_n\\[10pt]
 &amp;\Longrightarrow \sup_{h\in F\cap B_n\cap H_n}q_n(h)\geq \sup_{h\in B_n\cap H_n}q_n(h)+\smallop\\[10pt]
-&amp;\iff \inf_{h\in F\cap B_n\cap H_n}\norm{I_{\theta_0}^{-1/2}\G_n\dot{l}_{\theta_0}-I_{\theta_0}^{1/2}h}\leq \inf_{h\in B_n\cap H_n}\norm{I_{\theta_0}^{-1/2}\G_n\dot{l}_{\theta_0}-I_{\theta_0}^{1/2}h}+\smallop\\[10pt]
-&amp;\Longrightarrow \inf_{h\in F\cap H}\norm{I_{\theta_0}^{-1/2}\G_n\dot{l}_{\theta_0}-I_{\theta_0}^{1/2}h}\leq \inf_{h\in H}\norm{I_{\theta_0}^{-1/2}\G_n\dot{l}_{\theta_0}-I_{\theta_0}^{1/2}h}+\smallop
+&amp;\iff d(Z_n,\tilde{F}\cap\tilde{B}_n\cap\tilde{H}_n)^2\leq d(Z_n,\tilde{B}_n\cap\tilde{H}_n)^2+\smallop\\[10pt]
+&amp;\Longrightarrow d(Z_n,\tilde{F}\cap\tilde{B}_n\cap\tilde{H}_n)\leq d(Z_n,\tilde{B}_n\cap\tilde{H}_n)+\smallop\\[10pt]
+&amp;\Longrightarrow d(Z_n,\tilde{F}\cap\tilde{H}_n)\leq d(Z_n,\tilde{B}_n\cap\tilde{H}_n)+\smallop\\[10pt]
+&amp;\Longrightarrow d(Z_n,\tilde{F}\cap\tilde{H}_n)\leq d(Z_n,\tilde{H}_n)+\smallop\\[10pt]
+&amp;\Longrightarrow \min\{d(Z_n,\tilde{F}\cap\tilde{H}),M\}\leq d(Z_n,\tilde{H})+\smallop,\quad \forall M&gt;0.
 \end{align*}
 \]</span></p>
-<p>最後の <span class="math inline">\(\Rightarrow\)</span> では，<a href="#lem-7.12-2" class="quarto-xref">Lemma 15</a> を用いた．</p>
-<p><span class="math inline">\(I_{\theta_0}^{1/2}\G_n\dot{l}_{\theta_0}\warrow \gamma\)</span> と <span class="math inline">\(x\mapsto\inf_{y\in A}\norm{x-y}\)</span> の連続性から，Portmanteau (vi) より， <span class="math display">\[
+<ul>
+<li>3つ目の変形は，<a href="#lem-7.12-1" class="quarto-xref">Lemma 12</a> による．</li>
+<li>5つ目の変形は，<a href="#lem-7.13" class="quarto-xref">Lemma 11</a> と <a href="#lem-7.12-2" class="quarto-xref">Lemma 13</a> による．</li>
+<li>最後の変形は，<a href="#lem-7.13" class="quarto-xref">Lemma 11</a> による．</li>
+</ul>
+<p><span class="math inline">\(Z_n\warrow \gamma\)</span> と <span class="math inline">\(x\mapsto d(x,A)\)</span> の連続性から，Portmanteau (vi) より， <span class="math display">\[
 \begin{align*}
 &amp;\limsup\Pr(\hat h_n\in F)\\
-&amp;\leq\limsup\Pr(\hat h_n\in F\cap B_n)+\cancel{\limsup_n\Pr(\hat h_n\notin B_n)}\\
-&amp;\leq\limsup\Pr\left(
-\inf_{h\in F\cap H}\norm{I_{\theta_0}^{-1/2}\G_n\dot{l}_{\theta_0}-I_{\theta_0}^{1/2}h}\leq \inf_{h\in H}\norm{I_{\theta_0}^{-1/2}\G_n\dot{l}_{\theta_0}-I_{\theta_0}^{1/2}h}+\smallop
-\right)\\
-&amp;\leq\Pr\left(
-\inf_{h\in F\cap H}\norm{Z-I_{\theta_0}^{1/2}h}\leq \inf_{h\in H}\norm{Z-I_{\theta_0}^{1/2}h}
-\right)\\
-&amp;=\Pr(\Pi Z\in I_{\theta_0}^{1/2}F).
+&amp;\leq\limsup\Pr(\hat h_n\in F\cap B_n)+\cancel{\limsup\Pr(\hat h_n\notin B_n)}\\
+&amp;\leq\limsup\Pr\left( \min\{d(Z_n,\tilde{F}\cap\tilde{H}),M\}\leq d(Z_n,\tilde{H})+\smallop \right)\\
+&amp;\leq\Pr\left( \min\{d(Z,\tilde{F}\cap\tilde{H}),M\}\leq d(Z,\tilde{H}) \right)\\
 \end{align*}
 \]</span></p>
-<p>ただし，最後の等式は閉凸集合 <span class="math inline">\(I_{\theta_0}^{1/2}H\)</span> 上の射影 <span class="math inline">\(\Pi\)</span> の一意性による： <span class="math display">\[
+<p><span class="math inline">\(M&gt;0\)</span> は任意だったので，上極限をとって， <span class="math display">\[
+\limsup\Pr(\hat h_n\in F)\leq \Pr(d(Z,\tilde{F}\cap\tilde{H})\leq d(Z,\tilde{H}))
+\]</span></p>
+<p>が得られる． <span class="math display">\[
 \begin{align*}
-&amp;\hphantom{\iff}\inf_{h\in F\cap H}\norm{Z-I_{\theta_0}^{1/2}h}\leq \inf_{h\in H}\norm{Z-I_{\theta_0}^{1/2}h}\\
-&amp;\iff \inf_{h\in I_{\theta_0}^{1/2}F\cap I_{\theta_0}^{1/2}H}\norm{Z-h}=\inf_{h\in I_{\theta_0}^{1/2}H}\norm{Z-h}=\norm{Z-\Pi Z}\\
-&amp;\iff \Pi Z\in I_{\theta_0}^{1/2}F.
+&amp;\hphantom{\iff}d(x,\tilde{F}\cap\tilde{H})\leq d(x,\tilde{H})\\
+&amp;\iff d(x,\tilde{F}\cap\tilde{H})=d(x,\tilde{H})\\
+&amp;\iff \Pi x\in \tilde{F}\cap\tilde{H}\\
+&amp;\iff \Pi x\in \tilde{F}
 \end{align*}
+\]</span></p>
+<p>に注意すると， <span class="math display">\[
+\limsup\Pr(\hat h_n\in F)\leq \Pr(\Pi Z\in\tilde{F}).
 \]</span></p>
 </div>
-<div id="lem-7.13" class="theorem lemma">
-<p><span class="theorem-title"><strong>Lemma 7 (<span class="citation" data-cites="VanderVaartAsymptoticStatistics1998">Van der Vaart (<a href="#ref-VanderVaartAsymptoticStatistics1998" role="doc-biblioref">1998</a>)</span> Lemma 7.13)</strong></span> <span class="math inline">\(\R^d\)</span> 上の集合列 <span class="math inline">\(H_n\)</span> はある空でない <span class="math inline">\(H\)</span> に収束するとする．また，<span class="math inline">\(\R^d\)</span> 上の確率変数列 <span class="math inline">\(X_n\)</span> はある確率変数に分布収束するとする．このとき，以下が成立：</p>
+</section>
+<section id="limit-distributions-under-alternatives" class="level1">
+<h1>7.5 Limit Distributions under Alternatives</h1>
+<p>統計量 <span class="math inline">\(T_n\)</span> は帰無分布 <span class="math inline">\(P_\theta\)</span> の下で漸近線形と仮定する：</p>
+<p><span class="math display">\[
+\sqrt{n}(T_n-\mu_{\theta})=\frac{1}{\sqrt{n}}\sum_{i=1}^{n}\psi_{\theta}(X_i)+o_{P_{\theta}}(1).
+\]</span></p>
+<p>このとき，（<span class="math inline">\(P_\theta[\psi_\theta]=0\)</span> かつ <span class="math inline">\(P_\theta[\psi_\theta\psi_\theta^\top]\)</span> が存在すれば）<span class="math inline">\(\sqrt{n}(T_n-\mu_{\theta})\overset{P_{\theta}}{\warrow}N(0,P_{\theta}[\psi_\theta\psi_\theta^\top])\)</span> である．対立分布 <span class="math inline">\(P_{\theta+h/\sqrt{n}}\)</span> の下で <span class="math inline">\(\sqrt{n}(T_n-\mu_\theta)\)</span> はどのように振る舞うだろうか？</p>
+<div id="prp-ch7.5" class="theorem proposition">
+<p><span class="theorem-title"><strong>Proposition 1</strong></span> 統計モデル <span class="math inline">\((P_\theta)_{\theta\in\Theta}\)</span> は QMD とする．このとき， <span class="math display">\[
+\sqrt{n}(T_n-\mu_\theta)\overset{P_{\theta+h/\sqrt{n}}}{\warrow}N(P_{\theta}[(h^\top \dot{l}_{\theta})\psi_{\theta}],P_{\theta}[\psi_\theta\psi_\theta^\top]).
+\]</span></p>
+</div>
+<div class="proof">
+<p><span class="proof-title"><em>Proof</em>. </span>Theorem 7.2 から，対数尤度比は帰無分布 <span class="math inline">\(P_\theta\)</span> の下で漸近線形： <span class="math display">\[
+\begin{align*}
+\log\frac{P_{\theta+h/\sqrt{n}}^n}{P_\theta^n}
+&amp;=\frac{1}{\sqrt{n}}\sum_{i=1}^{n}h^\top\dot{l}_\theta(X_i)-\frac{1}{2}h^\top I_\theta h+o_{P_\theta}(1)\\
+&amp;\overset{P_\theta}{\warrow} N\left(-\frac{1}{2}h^\top I_\theta h,h^\top I_\theta h\right).
+\end{align*}
+\]</span></p>
+<p>統計量 <span class="math inline">\(\sqrt{n}(T_n-\mu_\theta)\)</span> と対数尤度比の同時分布も正規分布に分布収束する： <span class="math display">\[
+\begin{align*}
+&amp;\left(\sqrt{n}(T_n-\mu_\theta),\log\frac{P_{\theta+h/\sqrt{n}}^n}{P_\theta^n}\right)\\
+&amp;\overset{P_\theta}{\warrow} N\left(
+\begin{pmatrix}0\\-\frac{1}{2}h^\top I_\theta h\end{pmatrix}
+\begin{pmatrix}P_\theta[\psi_\theta\psi_\theta^\top]&amp;P_\theta[(h^\top\dot{l}_\theta)\psi_\theta]\\P_\theta[(h^\top\dot{l}_\theta)\psi_\theta^\top]&amp;h^\top I_\theta h\end{pmatrix}
+\right)
+\end{align*}
+\]</span></p>
+<p>Le Cam の第三補題より， <span class="math display">\[
+\sqrt{n}(T_n-\mu_\theta)\overset{P_{\theta+h/\sqrt{n}}}{\warrow}N(P_{\theta}[(h^\top \dot{l}_{\theta})\psi_{\theta}],P_{\theta}[\psi_\theta\psi_\theta^\top]).
+\]</span></p>
+</div>
+</section>
+<section id="local-asymptotic-normality" class="level1">
+<h1>7.6 Local Asymptotic Normality</h1>
+<div id="def-7.14" class="theorem definition">
+<p><span class="theorem-title"><strong>Definition 4 (<span class="citation" data-cites="VanderVaartAsymptoticStatistics1998">Van der Vaart (<a href="#ref-VanderVaartAsymptoticStatistics1998" role="doc-biblioref">1998</a>)</span> Definition 7.14 LAN)</strong></span> 統計モデルの列 <span class="math inline">\((P_{n,\theta})_{\theta\in\Theta}\)</span> が <span class="math inline">\(\theta\)</span> において Locally Asymptotic Normal (LAN) であるとは，ある行列 <span class="math inline">\(r_n,I_\theta\)</span> と確率ベクトル <span class="math inline">\(\Delta_{n,\theta}\overset{P_\theta}{\warrow}N(0,I_\theta)\)</span> が存在して，任意の収束列 <span class="math inline">\(h_n\to h\)</span> に対して，以下が成り立つこと： <span class="math display">\[
+\log\frac{P_{n,\theta+r_n^{-1}h_n}}{P_{n,\theta}}
+=h^\top\Delta_{n,\theta}(X_i)-\frac{1}{2}h^\top I_\theta h+o_{P_{n,\theta}}(1)\\
+\]</span></p>
+</div>
+<ul>
+<li><span class="math inline">\((P_{\theta})_{\theta\in\Theta}\)</span> が QMD ならば，Theorem 7.2 より，<span class="math inline">\((P_\theta^n)_{\theta\in\Theta}\)</span> は LAN (Example 7.15).</li>
+</ul>
+<div id="exm-7.16" class="theorem example">
+<p><span class="theorem-title"><strong>Example 1 (<span class="citation" data-cites="VanderVaartAsymptoticStatistics1998">Van der Vaart (<a href="#ref-VanderVaartAsymptoticStatistics1998" role="doc-biblioref">1998</a>)</span> Example 7.16 AR(1) 過程)</strong></span> 以下のデータ生成過程を考える： <span class="math display">\[
+X_i = \theta X_{i-1}+Z_i,\quad Z_1,\dots,Z_n\overset{i.i.d.}{\sim}N(0,\sigma^2),X_0\sim N(0,\sigma_0^2).
+\]</span></p>
+<p>対数尤度は以下のように求まる： <span class="math display">\[
+\begin{align*}
+l_{\theta}
+&amp;=\log p_\theta(X_0)+\sum_{i=1}^{n}\log p_\theta(X_i\mid X_0,\dots,X_{i-1})\\
+&amp;=-\frac{1}{\sigma^2}\sum_{i=1}^{n}(X_i-\theta X_{i-1})^2+C(X_0,\sigma_0^2,\sigma^2)
+\end{align*}
+\]</span></p>
+<p>対数尤度比は以下のように求まる： <span class="math display">\[
+\begin{align*}
+\log\frac{P_{n,\theta+h_n/\sqrt{n}}}{P_{n,\theta}}
+&amp;=-\frac{1}{2\sigma^2}\sum_{i=1}^{n}\left((X_i-\theta X_{i-1})^2 - (X_i-(\theta+h_n/\sqrt{n})X_{i-1})^2\right)\\
+&amp;=-\frac{1}{2\sigma^2}\sum_{i=1}^{n}\left(-2\frac{h_n}{\sqrt{n}}X_iX_{i-1} + (\theta^2-(\theta+h_n/\sqrt{n})^2)X_{i-1}^2\right)\\
+&amp;=-\frac{1}{2\sigma^2}\sum_{i=1}^{n}\left(-2\frac{h_n}{\sqrt{n}}X_iX_{i-1} - (2\theta h_n/\sqrt{n}+h_n^2/n)X_{i-1}^2\right)\\
+&amp;=-\frac{1}{2\sigma^2}\sum_{i=1}^{n}\left(-2\frac{h_n}{\sqrt{n}}(X_i-\theta X_{i-1})X_{i-1} - \frac{h_n^2}{n}X_{i-1}^2\right)\\
+&amp;=h_n\frac{1}{\sqrt{n}}\sum_{i=1}^{n}\frac{(X_i-\theta X_{i-1})X_{i-1}}{\sigma^2} - \frac{1}{2}h_n^2\frac{1}{n}\sum_{i=1}^{n}\frac{X_{i-1}^2}{\sigma^2}
+\end{align*}
+\]</span></p>
+<p>最後の式を CLT などで整理すると LAN がわかる．</p>
+</div>
+<div id="exm-7.17" class="theorem example">
+<p><span class="theorem-title"><strong>Example 2 (<span class="citation" data-cites="VanderVaartAsymptoticStatistics1998">Van der Vaart (<a href="#ref-VanderVaartAsymptoticStatistics1998" role="doc-biblioref">1998</a>)</span> Example 7.17 定常 Gauss 過程)</strong></span> <span class="math inline">\((X_t)_{t\in\mathbb{Z}}\)</span> を平均 <span class="math inline">\(0\)</span> の定常 Gauss 過程とする．このとき，任意の <span class="math inline">\(h\in\mathbb{Z}\)</span> に対して，<span class="math inline">\((X_h,\dots,X_{h+n})\)</span> の共分散行列 <span class="math inline">\(V_\theta\)</span> は，あるスペクトル密度 <span class="math inline">\(f_\theta\)</span> を用いて表せる： <span class="math display">\[
+(V_\theta)_{h+s,h+t}=\int_{-\pi}^{\pi}e^{i(s-t)\lambda}f_\theta(\lambda)\d\lambda.
+\]</span></p>
+<p><span class="math inline">\((X_1,\dots,X_n)\sim N(0,V_\theta)\)</span> とする．以下を仮定する：</p>
 <ol type="1">
-<li><span class="math inline">\(\inf_{x\in H_n}\norm{X_n-x}\warrow \inf_{x\in H}\norm{X-x}.\)</span></li>
-<li>任意の閉集合 <span class="math inline">\(F\)</span> に対して，<span class="math inline">\(\inf_{x\in H_n\cap F}\norm{X_n-x}\geq\inf_{x\in H\cap F}\norm{X-x}+\smallop.\)</span></li>
-<li>任意の開集合 <span class="math inline">\(G\)</span> に対して，<span class="math inline">\(\inf_{x\in H_n\cap G}\norm{X_n-x}\leq\inf_{x\in H\cap G}\norm{X-x}+\smallop.\)</span></li>
+<li>ある <span class="math inline">\(C&gt;c&gt;0\)</span> が存在して，<span class="math inline">\(f_\theta\in[c,C].\)</span></li>
+<li>ある <span class="math inline">\(\dot{l}_\theta\colon\R\to\R^d\)</span> が存在して，<span class="math display">\[\int\left(f_{\theta+h}-f_\theta-h^\top\dot{l}_\theta f_\theta\right)^2\d\lambda=o(\norm{h}^2).\]</span></li>
 </ol>
+<p>このとき，<span class="math inline">\(N(0,V_\theta)\)</span> は LAN： <span class="math display">\[
+r_n=\sqrt{n},\quad
+\Delta_{n,\theta}=\frac{\sqrt{n}}{4\pi}\int (I_n-\mathrm{E}_\theta I_n)\frac{\dot{l}_\theta}{f_\theta}\d\lambda,\quad
+I_\theta = \frac{1}{4\pi}\int \dot{l}_\theta\dot{l}_\theta^\top\d\lambda.
+\]</span></p>
+<p>ただし，<span class="math inline">\(I_n\)</span> はペリオドグラム： <span class="math display">\[
+I_n(\lambda)\coloneqq\frac{1}{2\pi n}\left|\sum_{t=1}^{n}X_te^{it\lambda}\right|^2.
+\]</span></p>
+</div>
+<div id="exm-7.18" class="theorem example">
+<p><span class="theorem-title"><strong>Example 3 (<span class="citation" data-cites="VanderVaartAsymptoticStatistics1998">Van der Vaart (<a href="#ref-VanderVaartAsymptoticStatistics1998" role="doc-biblioref">1998</a>)</span> Example 7.18 Almost regular densities)</strong></span> 密度 <span class="math inline">\(f(x-\theta)\)</span> をもつ位置分布族を考える．</p>
+<ul>
+<li><span class="math inline">\(f\)</span> が滑らかなら，これは QMD (Example 7.8)で，特に <span class="math inline">\(\sqrt{n}\)</span> のオーダーで LAN．</li>
+<li><span class="math inline">\(f(x)=\max\{1-|x|,0\}\)</span> や <span class="math inline">\(f(x)=xe^{-x}1_{\{x&gt;0\}}\)</span> などでは，<span class="math inline">\(\sqrt{n}\)</span> のオーダーで LAN が成立しないが，<span class="math inline">\(\sqrt{n\log n}\)</span> のオーダーでは成立する．</li>
+</ul>
+<p><span class="math inline">\(f\)</span> に以下を仮定する：</p>
+<ul>
+<li>ある <span class="math inline">\(c_1,\dots,c_k\)</span> の近傍 <span class="math inline">\(U_1,\dots,U_k\)</span> を除いて絶対連続とする．</li>
+<li><span class="math inline">\(f&#39;/\sqrt{f}\)</span> は <span class="math inline">\((\bigcup_j U_j)^c\)</span> 上で二乗可積分．</li>
+<li><span class="math inline">\(f(c_j)=0\)</span></li>
+<li>ある定数 <span class="math inline">\(a_1,\dots,a_k,b_1,\dots,b_k\)</span> が存在して，<span class="math display">\[x\mapsto f(x)-\left(a_j1_{\{x&lt;c_j\}}+b_j1_{\{x&gt;c_j\}}\right)|x-c_j|,\quad x\in U_j\]</span> は <span class="math inline">\(C^2\)</span> 級．</li>
+</ul>
+<p>このとき，このモデルは <span class="math inline">\(\theta=0\)</span> で LAN： <span class="math display">\[
+\begin{align*}
+r_n&amp;=\sqrt{n\log n},\quad I_0=\sum_{j}(a_j+b_j),\\
+\Delta_{n,0}&amp;=\frac{1}{\sqrt{n\log n}}\sum_{i=1}^{n}\sum_{j=1}^k
+\left(\frac{1_{\{X_i-c_j\in V_n\}}}{X_i-c_j}-\int_{V_n}\frac{1}{x}f(x+c_j)\d x\right).
+\end{align*}
+\]</span></p>
+<p>ただし，<span class="math inline">\(V_n\coloneqq(n^{-1/2}(\log n)^{-1/4},(\log n)^{-1})\)</span></p>
 </div>
 </section>
 <section id="付録" class="level1">
@@ -2818,7 +2938,7 @@ q_{n}(h)=h^\top\G_n\dot{l}_{\theta_0}-\frac{1}{2}h^\top I_{\theta_0}h
 <section id="対数関数の剰余項" class="level2">
 <h2 class="anchored" data-anchor-id="対数関数の剰余項">対数関数の剰余項</h2>
 <div id="lem-log-remainder" class="theorem lemma">
-<p><span class="theorem-title"><strong>Lemma 8</strong></span> <span class="math inline">\(g(x)\coloneqq \log(1+x)-x+x^2/2\)</span> とする． <span class="math display">\[
+<p><span class="theorem-title"><strong>Lemma 7</strong></span> <span class="math inline">\(g(x)\coloneqq \log(1+x)-x+x^2/2\)</span> とする． <span class="math display">\[
 |g(x)|\leq \frac{1}{2}x^2+\frac{1}{4}(\log(1+x))^2
 \]</span></p>
 </div>
@@ -2853,7 +2973,7 @@ F(y)=\cancel{F(0)+F&#39;(0)y}+\frac{1}{2}F&#39;&#39;(c_y)y^2\geq-\frac{1}{4}y^2.
 <p>を仮定する．このとき，任意の <span class="math inline">\(\omega\in\Omega\)</span> に対し，<span class="math inline">\(f(\omega)\in\Psi(\omega)\)</span> を満たす可測写像 <span class="math inline">\(f\colon\Omega\to\X\)</span> が存在．</p>
 </div>
 <div id="lem-7.12-measurable-selection" class="theorem lemma">
-<p><span class="theorem-title"><strong>Lemma 9</strong></span> 記号は <a href="#lem-7.12" class="quarto-xref">Lemma 6</a> の通りとする．このとき，<a href="#lem-7.12" class="quarto-xref">Lemma 6</a> の仮定の下で， 任意の <span class="math inline">\(M&gt;0\)</span> について，（十分大きな <span class="math inline">\(n\)</span> をとれば） <span class="math display">\[
+<p><span class="theorem-title"><strong>Lemma 8</strong></span> 記号は <a href="#lem-7.12" class="quarto-xref">Lemma 6</a> の通りとする．このとき，<a href="#lem-7.12" class="quarto-xref">Lemma 6</a> の仮定の下で， 任意の <span class="math inline">\(M&gt;0\)</span> について，（十分大きな <span class="math inline">\(n\)</span> をとれば） <span class="math display">\[
 h_n(\omega) \in \left\{ h\in\R^d\,\middle|\, \norm{h}\leq M,\, |Z_n(h)(\omega)|\geq\sup_{\norm{h&#39;}\leq M}|Z_n(h&#39;)(\omega)|-1/n \right\}
 \]</span></p>
 <p>を満たす確率変数 <span class="math inline">\(h_n\)</span> が存在する．</p>
@@ -2886,30 +3006,87 @@ h_n(\omega) \in \left\{ h\in\R^d\,\middle|\, \norm{h}\leq M,\, |Z_n(h)(\omega)|\
 </section>
 <section id="集合の収束" class="level2">
 <h2 class="anchored" data-anchor-id="集合の収束">集合の収束</h2>
-<div id="lem-met-cont-1" class="theorem lemma">
-<p><span class="theorem-title"><strong>Lemma 10</strong></span> <span class="math inline">\((\X,d)\)</span> は距離空間とする．空でない <span class="math inline">\(A\subset\X\)</span> に対して，<span class="math inline">\(d(x,A)\coloneqq\inf_{a\in A}d(x,a)\)</span> は 1-Lipschitz.</p>
+<ul>
+<li><span class="math inline">\((\X,d)\)</span> は距離空間とする．空でない部分集合 <span class="math inline">\(A\subset\X\)</span> と <span class="math inline">\(x\in\X\)</span> に対して，<span class="math inline">\(d(x,A)\coloneqq\inf_{a\in A}d(x,a)\)</span> とする．<span class="math inline">\(d(x,\emptyset)\coloneqq\infty\)</span> とする．</li>
+<li><span class="math inline">\(\X\)</span> が適正であるとは，任意の有界閉集合がコンパクトであること．</li>
+</ul>
+<div id="lem-point-set-dist" class="theorem lemma">
+<p><span class="theorem-title"><strong>Lemma 9</strong></span> 空でない <span class="math inline">\(A\subset\X\)</span> に対して，以下が成立：</p>
+<ol type="1">
+<li><span class="math inline">\(x\mapsto d(x,A)\)</span> は 1-Lipschitz.</li>
+<li><span class="math inline">\(d(x,A)=d(x,\bar{A}).\)</span></li>
+<li><span class="math inline">\(d(x,A)=0\iff x\in\bar{A}.\)</span></li>
+<li><span class="math inline">\(\X\)</span> は適正で，<span class="math inline">\(A\)</span> は閉集合とする．任意の <span class="math inline">\(x\in\X\)</span> に対して，ある <span class="math inline">\(y\in A\)</span> が存在して，<span class="math inline">\(d(x,y)=d(x,A).\)</span></li>
+</ol>
 </div>
 <div class="proof">
-<p><span class="proof-title"><em>Proof</em>. </span>三角不等式から，<span class="math inline">\(d(x,a)\leq d(y,a)+d(x,y)\)</span> が任意の <span class="math inline">\(x,y\in\X\)</span> で成り立つ．<span class="math inline">\(a\in A\)</span> に関して下限をとって， <span class="math display">\[
+<p><span class="proof-title"><em>Proof</em>. </span><strong>(1)</strong>：三角不等式から，<span class="math inline">\(d(x,a)\leq d(y,a)+d(x,y)\)</span> が任意の <span class="math inline">\(x,y\in\X\)</span> で成り立つ．<span class="math inline">\(a\in A\)</span> に関して下限をとって， <span class="math display">\[
 d(x,A)\leq d(y,A)+d(x,y)
 \]</span></p>
 <p>が成り立つ．<span class="math inline">\(d(y,A)\leq d(x,A)+d(x,y)\)</span> も同様にして得られる．これらを整理すると， <span class="math display">\[
 |d(x,A)-d(y,A)|\leq d(x,y)
 \]</span></p>
 <p>が得られる．これは 1-Lipschitz を意味する．</p>
+<p><strong>(2)</strong>：定義から，<span class="math inline">\(d(x,A)\geq d(x,\bar{A})\)</span> である．<span class="math inline">\(d(x,A)\leq d(x,\bar{A})\)</span> を示す． <span class="math inline">\(x\in\X\)</span> を固定する．下限の定義から，任意の <span class="math inline">\(\varepsilon&gt;0\)</span> について，ある <span class="math inline">\(\bar{a}\in\bar{A}\)</span> が存在して， <span class="math display">\[
+d(x,\bar{a})&lt;d(x,\bar{A})+\frac{\varepsilon}{2}
+\]</span></p>
+<p>とできる．また，<span class="math inline">\(\bar{a}\)</span> に対して，閉包の定義から，ある <span class="math inline">\(a\in A\)</span> が存在して，<span class="math inline">\(d(a,\bar{a})&lt;\varepsilon/2\)</span> が成り立つ．以上より，</p>
+<p><span class="math display">\[
+d(x,A)\leq d(x,a)\leq d(x,\bar{a})+d(a,\bar{a})&lt;d(x,\bar{A})+\varepsilon.
+\]</span></p>
+<p><span class="math inline">\(\varepsilon\)</span> は任意なので，<span class="math inline">\(d(x,A)\leq d(x,\bar{A})\)</span> である．</p>
+<p><strong>(3)</strong>：<span class="math inline">\((\Leftarrow)\)</span> は2つ目の結果から直ちに従う．<span class="math inline">\((\Rightarrow)\)</span> を示す．下限の定義から，任意の <span class="math inline">\(\varepsilon&gt;0\)</span> について，ある <span class="math inline">\(a\in A\)</span> が存在して，<span class="math inline">\(d(x,a)&lt;d(x,A)+\varepsilon=\varepsilon\)</span> とできる．これは，<span class="math inline">\(x\in\bar{A}\)</span> を意味する．</p>
+<p><strong>(4)</strong>：<span class="math inline">\(B\coloneqq A\cap\{z\in\X\mid d(x,z)\leq d(x,A)+1\}\)</span> は空でない有界閉集合なので，コンパクト．よって，連続関数 <span class="math inline">\(z\mapsto d(x,z)\)</span> は <span class="math inline">\(B\)</span> 上で最小値 <span class="math inline">\(y\in B\)</span> をもつ．</p>
+<p>任意の <span class="math inline">\(a\in A\)</span> について，<span class="math inline">\(a\in B\)</span> ならば，<span class="math inline">\(d(x,y)\leq d(x,a)\)</span> である．<span class="math inline">\(a\notin B\)</span> ならば，<span class="math inline">\(d(x,a)&gt;d(x,A)+1\geq d(x,y)\)</span> である．よって，<span class="math inline">\(d(x,y)=d(x,A).\)</span></p>
 </div>
+<section id="hausdroff-収束" class="level3">
+<h3 class="anchored" data-anchor-id="hausdroff-収束">Hausdroff 収束</h3>
+<div id="def-hausdorff-metric" class="theorem definition">
+<p><span class="theorem-title"><strong>Definition 5 (Hausdorff 距離)</strong></span> 距離空間 <span class="math inline">\((\X,d)\)</span> 上の空でない集合 <span class="math inline">\(A,B\)</span> の Hausdorff 距離は以下で定義される： <span class="math display">\[
+d_H(A,B)\coloneqq\max\left\{ \sup_{x\in A}d(x,B),\sup_{x\in B}d(x,A) \right\}.
+\]</span></p>
+</div>
+<div id="prp-hausdorff" class="theorem proposition">
+<p><span class="theorem-title"><strong>Proposition 2</strong></span> 距離空間 <span class="math inline">\((\X,d)\)</span> 上の Hausdorff 距離 <span class="math inline">\(d_H\)</span> について，以下が成立：</p>
+<ol type="1">
+<li><span class="math inline">\(d_H(A,B)=0\iff \bar{A}=\bar{B}.\)</span></li>
+<li><span class="math inline">\(d_H(A,B)=d_H(B,A).\)</span></li>
+<li><span class="math inline">\(d_H(A,B)\leq d_H(A,C)+d_H(B,C).\)</span></li>
+</ol>
+</div>
+<div class="proof">
+<p><span class="proof-title"><em>Proof</em>. </span><strong>(1)</strong>：<span class="math inline">\((\Leftarrow)\)</span> は明らか．<span class="math inline">\((\Rightarrow)\)</span> も <a href="#lem-point-set-dist" class="quarto-xref">Lemma 9</a> の3つ目から直ちに従う．</p>
+<p><strong>(2)</strong>：明らか．</p>
+<p><strong>(3)</strong>：<span class="math inline">\(a\in A,b\in B,c\in C\)</span> とする．<span class="math inline">\(d(a,b)\leq d(a,c)+d(c,b)\)</span> を <span class="math inline">\(b\)</span> に関して下限をとってから，<span class="math inline">\(c\)</span> に関して下限をとる： <span class="math display">\[
+d(a,B)\leq \inf_{c\in C} \Big(d(a,c)+d(c,B)\Big)\leq \inf_{c\in C}d(a,c)+\sup_{c\in C}d(c,B).
+\]</span></p>
+<p><span class="math inline">\(a\)</span> に関して上限をとると， <span class="math display">\[
+\sup_{a\in A}d(a,B)\leq \sup_{a\in A}d(a,C)+\sup_{c\in C}d(c,B)
+\leq d_H(A,C)+d_H(B,C)
+\]</span></p>
+<p>が得られる．<span class="math inline">\(\sup_{b\in B}d(b,A)\)</span> も同様に評価して， <span class="math display">\[
+d_H(A,B)\leq d_H(A,C)+d_H(B,C)
+\]</span></p>
+<p>を得る．</p>
+</div>
+</section>
+<section id="painlevé-kuratowski-収束" class="level3">
+<h3 class="anchored" data-anchor-id="painlevé-kuratowski-収束">Painlevé-Kuratowski 収束</h3>
 <div id="def-PK-conv" class="theorem definition">
-<p><span class="theorem-title"><strong>Definition 4 (Painlevé-Kuratowski 収束)</strong></span> 距離空間 <span class="math inline">\((\X,d)\)</span> 上の集合列 <span class="math inline">\(A_n\)</span> が <span class="math inline">\(A\)</span> に PK-収束するとは以下が成り立つこと：</p>
+<p><span class="theorem-title"><strong>Definition 6 (Painlevé-Kuratowski 収束)</strong></span> 空でない部分集合列 <span class="math inline">\(A_n\subset\X\)</span> が <span class="math inline">\(A\subset\X\)</span> に PK-収束（弱 Hausdorff 収束）するとは，以下が成立すること：</p>
 <ol type="1">
 <li><span class="math inline">\(A=\{a\in \X\mid \exists a_n\in A_n,\, a=\lim_{n}a_n \}.\)</span></li>
 <li>任意の部分列 <span class="math inline">\(a_{n_k}\in A_{n_k}\)</span> について，<span class="math inline">\(a=\lim_{k}a_{n_k}\Rightarrow a\in A.\)</span></li>
 </ol>
 </div>
-<div id="def-W-conv" class="theorem definition">
-<p><span class="theorem-title"><strong>Definition 5 (Wijsman 収束)</strong></span> 距離空間 <span class="math inline">\((\X,d)\)</span> 上の集合列 <span class="math inline">\(A_n\)</span> が <span class="math inline">\(A\)</span> に Wijsman-収束するとは，任意の <span class="math inline">\(x\in\X\)</span> について，<span class="math inline">\(d(x,A_n)\to d(x,A)\)</span> が成り立つこと．</p>
-</div>
+<ul>
+<li>1つ目の条件から，PK-収束先は一意的．</li>
+<li>2つ目の条件から，任意の部分列 <span class="math inline">\(A_{n_k}\)</span> は <span class="math inline">\(A\)</span> に PK-収束する．</li>
+<li><a href="#prp-PK-conv" class="quarto-xref">Proposition 3</a> から，<span class="math inline">\(A_n\)</span> が <span class="math inline">\(A\)</span> に PK-収束することと，<span class="math inline">\(\bar{A}_n\)</span> が <span class="math inline">\(A\)</span> に PK-収束することは同値．</li>
+<li>1つ目の条件を満たすが，2つ目の条件を満たさない反例：<span class="math display">\[A=[0,1],A_{2m}=[0,1]\cup\{2\},A_{2m+1}=[0,1].\]</span></li>
+</ul>
 <div id="prp-PK-conv" class="theorem proposition">
-<p><span class="theorem-title"><strong>Proposition 1</strong></span> 距離空間 <span class="math inline">\((\X,d)\)</span> 上の集合列 <span class="math inline">\(A_n\)</span> に対して， <span class="math display">\[
+<p><span class="theorem-title"><strong>Proposition 3</strong></span> 空でない部分集合列 <span class="math inline">\(A_n\subset\X\)</span> に対して， <span class="math display">\[
 \begin{align*}
 \Li A_n&amp;\coloneqq\left\{x\in\X\,\middle|\, \lim_{n\to\infty}d(x,A_n)=0\right\},\\
 \Ls A_n&amp;\coloneqq\left\{x\in\X\,\middle|\, \liminf_{n\to\infty}d(x,A_n)=0\right\}
@@ -2931,57 +3108,52 @@ d(x,a_n)&lt;d(x,A_n)+\frac{1}{n}
 <p>一段目の結果から，PK-収束の1つ目の条件 <span class="math inline">\(\iff A=\Li A_n\)</span> である．また，二段目の結果もあわせて，<span class="math inline">\((\Leftarrow)\)</span> が示される．</p>
 <p><span class="math inline">\((\Rightarrow)\)</span>：<span class="math inline">\(A=\Ls A_n\)</span> を示せばよい．仮定から，<span class="math inline">\(\Ls A_n\subset A=\Li A_n\subset\Ls A_n\)</span> が成り立つので，<span class="math inline">\(\Ls A_n=A\)</span> である．</p>
 </div>
-<div id="lem-Ls-is-closed" class="theorem lemma">
-<p><span class="theorem-title"><strong>Lemma 11</strong></span> 距離空間 <span class="math inline">\((\X,d)\)</span> 上の集合列 <span class="math inline">\(A_n\)</span> に対して，<span class="math inline">\(\Ls A_n\)</span> は閉集合</p>
+<div id="prp-PK-conv2" class="theorem proposition">
+<p><span class="theorem-title"><strong>Proposition 4</strong></span> 以下が成立：</p>
+<ol type="1">
+<li><p>部分集合列 <span class="math inline">\(A_n\subset\X\)</span> に対して，<span class="math inline">\(\Ls A_n\)</span> は閉集合．特に，<span class="math inline">\(A_n\)</span> が <span class="math inline">\(A\)</span> に PK-収束するなら，<span class="math inline">\(A\)</span> は閉集合．</p></li>
+<li><p><span class="math inline">\(\X\)</span> は適正で，部分集合列 <span class="math inline">\(A_n\subset\X\)</span> は <span class="math inline">\(A\subset\X\)</span> に PK-収束するとする．<span class="math inline">\(x\in\X\)</span> に収束する点列 <span class="math inline">\(x_n\in\X\)</span> と閉集合 <span class="math inline">\(F\subset\X\)</span> に対して，<span class="math display">\[\liminf_n d(x_n,A_n\cap F)\geq d(x,A\cap F).\]</span> 特に，<span class="math inline">\(\liminf_n d(x,A_n\cap F)\geq d(x,A\cap F).\)</span></p></li>
+</ol>
 </div>
 <div class="proof">
-<p><span class="proof-title"><em>Proof</em>. </span><span class="math inline">\(\Ls A_n\)</span> 上の点列 <span class="math inline">\(x_k\)</span> は <span class="math inline">\(x\in\X\)</span> に収束するとする． <span class="math inline">\(d(x,A_n)\leq d(x,x_k)+d(x_k,A_n)\)</span> が成り立つので，両辺の下極限をとると， <span class="math display">\[
+<p><span class="proof-title"><em>Proof</em>. </span><strong>(1)</strong>：</p>
+<p><span class="math inline">\(\Ls A_n\)</span> 上の点列 <span class="math inline">\(x_k\)</span> は <span class="math inline">\(x\in\X\)</span> に収束するとする． <span class="math inline">\(d(x,A_n)\leq d(x,x_k)+d(x_k,A_n)\)</span> が成り立つので，両辺の下極限をとると， <span class="math display">\[
 \liminf_n d(x,A_n)\leq d(x,x_k)
 \]</span> である．つぎに，<span class="math inline">\(k\)</span> に関して極限をとると，<span class="math inline">\(\liminf_n d(x,A_n)=0\)</span> がでる．よって，<span class="math inline">\(x\in \Ls A_n.\)</span></p>
-</div>
-<div id="lem-W-PK" class="theorem lemma">
-<p><span class="theorem-title"><strong>Lemma 12</strong></span> 距離空間 <span class="math inline">\((\X,d)\)</span> 上の集合列 <span class="math inline">\(A_n\)</span> が <span class="math inline">\(A\)</span> に Wijsman-収束するなら，<span class="math inline">\(A_n\)</span> は <span class="math inline">\(\cl(A)\)</span> に PK-収束する．</p>
-</div>
-<div class="proof">
-<p><span class="proof-title"><em>Proof</em>. </span><span class="math inline">\(d(x,A)=d(x,\cl(A))\)</span> なので，<span class="math inline">\(A_n\)</span> が <span class="math inline">\(A\)</span> に Wijsman-収束するなら，<span class="math inline">\(\cl(A)\)</span> にも Wijsman-収束する． よって，<span class="math inline">\(A\)</span> は閉集合としても一般性を失わない．</p>
-<p><strong>一段目</strong>：<span class="math inline">\(A\subset \Li A_n\)</span></p>
-<p><span class="math inline">\(x\in A\)</span> とする．仮定より，<span class="math inline">\(d(x,A_n)\to d(x,A)=0\)</span> が成り立つ．よって，<span class="math inline">\(x\in \Li A_n.\)</span></p>
-<p><strong>二段目</strong>：<span class="math inline">\(\Ls A_n\subset A\)</span></p>
-<p><span class="math inline">\(x\in\Ls A_n\)</span> とする．<span class="math inline">\(\liminf_n d(x,A_n)=0\)</span> である．仮定より，<span class="math inline">\(\liminf_n d(x,A_n)=d(x,A)\)</span> なので，<span class="math inline">\(d(x,A)=0\)</span> これは，<span class="math inline">\(x\in A\)</span> を意味する．</p>
-<p><strong>三段目</strong>：<span class="math inline">\(A_n\)</span> は <span class="math inline">\(A\)</span> に PK-収束する．</p>
-<p>一段目と二段目の結果から，<span class="math inline">\(A\subset\Li A_n\subset \Ls A_n\subset A\)</span> が成り立つので，包含関係はすべて等号で成り立つ．</p>
-</div>
-<div id="lem-PK-is-W" class="theorem lemma">
-<p><span class="theorem-title"><strong>Lemma 13</strong></span> <span class="math inline">\(\R^m\)</span> 上の集合列 <span class="math inline">\(A_n\)</span> が <span class="math inline">\(A\)</span> に PK-収束するなら，Wijsman-収束する．</p>
-</div>
-<div class="proof">
-<p><span class="proof-title"><em>Proof</em>. </span><span class="math inline">\(d(x,A_n)=d(x,\cl(A_n))\)</span> なので，<span class="math inline">\(\cl(A_n)\)</span> は <span class="math inline">\(A\)</span> に PK-収束する． したがって，<span class="math inline">\(A_n\)</span> は閉集合としても一般性を失わない．</p>
-<p><span class="math inline">\(\limsup_n d(x,A_n)\leq d(x,A)\leq \liminf_n d(x,A_n)\)</span> を示す．</p>
-<p><strong>一段目</strong>：<span class="math inline">\(\limsup_n d(x,A_n)\leq d(x,A)\)</span></p>
-<p><span class="math inline">\(A=\Li A_n\)</span> なので，<span class="math inline">\(y\in A\)</span> に収束する点列 <span class="math inline">\(y_n\in A_n\)</span> がとれる．このとき， <span class="math display">\[
-\limsup_n d(x,A_n)\leq \limsup_n d(x,y_n)=d(x,y)
-\]</span></p>
-<p>が成り立つ．<span class="math inline">\(y\)</span> は任意だったので，下限をとって，<span class="math inline">\(\limsup_n d(x,A_n)\leq d(x,A).\)</span></p>
-<p><strong>二段目</strong>：<span class="math inline">\(d(x,A)\leq \liminf_n d(x,A_n)\)</span></p>
-<p><span class="math inline">\(L\coloneqq\liminf_n d(x,A_n)\)</span> とする．このとき，部分列 <span class="math inline">\(A_{n_k}\)</span> が存在して，<span class="math inline">\(\lim_k d(x,A_{n_k})=L\)</span> が成り立つ．また，<span class="math inline">\(A_{n_k}\)</span> は <span class="math inline">\(\R^m\)</span> の閉集合なので，ある <span class="math inline">\(y_{n_k}\in A_{n_k}\)</span> が存在して，<span class="math inline">\(d(x,y_{n_k})=d(x,A_{n_k})\)</span> とできる．<span class="math inline">\(d(x,y_{n_k})\to L\)</span> なので，<span class="math inline">\(y_{n_k}\)</span> は有界点列．</p>
-<p><span class="math inline">\(\R^m\)</span> の有界点列は収束する部分列をもつので，<span class="math inline">\(y\in\R^m\)</span> と部分列 <span class="math inline">\(y_{n_{k_l}}\)</span> が存在して，<span class="math inline">\(y_{n_{k_l}}\to y\)</span> である．このとき，PK-収束の定義から，<span class="math inline">\(y\in A\)</span> である．</p>
-<p><span class="math display">\[
-d(x,A)\leq d(x,y)=\lim_{l}d(x,y_{n_{k_l}})=L.
+<p><strong>(2)</strong>：</p>
+<p><span class="math inline">\(L\coloneqq\liminf_n d(x_n,A_n\cap F)\)</span> とする．<span class="math inline">\(L=\infty\)</span> の場合は明らか．<span class="math inline">\(L&lt;\infty\)</span> とする．</p>
+<p>ある部分列 <span class="math inline">\(A_{n_k}\)</span> が存在して，<span class="math inline">\(d(x_{n_k},A_{n_k}\cap F)\to L\)</span> が成り立つ．このとき，十分大きな <span class="math inline">\(k\)</span> について，<span class="math inline">\(d(x_{n_k},A_{n_k}\cap F)&lt;\infty\)</span> なので，<span class="math inline">\(A_{n_k}\cap F\neq\emptyset\)</span> である．よって，ある点列 <span class="math inline">\(a_{k}\in A_{n_k}\cap F\)</span> が存在して，<span class="math inline">\(d(x_{n_k},a_{k})\to L\)</span> が成り立つ．このとき，<span class="math inline">\(x_{n_k}\)</span> は収束列なので，<span class="math inline">\(a_{k}\)</span> は有界．よって，部分列 <span class="math inline">\(a_{k_l}\)</span> と <span class="math inline">\(a\in \X\)</span> が存在して，<span class="math inline">\(a_{k_l}\to a\)</span> が成り立つ．PK-収束の仮定から，<span class="math inline">\(a\in A\)</span> である．さらに，<span class="math inline">\(a_{k_l}\in F\)</span> なので，<span class="math inline">\(a\in F\)</span> である．以上より， <span class="math display">\[
+L=\lim_l d(x_{n_{k_l}},a_{k_l})=d(x,a)\geq d(x,A\cap F).
 \]</span></p>
 </div>
-<div id="lem-unif-conv" class="theorem lemma">
-<p><span class="theorem-title"><strong>Lemma 14</strong></span> 距離空間 <span class="math inline">\((X,d)\)</span> 上の集合列 <span class="math inline">\(A_n\)</span> は <span class="math inline">\(A\)</span> に Wijsman-収束するとする． このとき，<span class="math inline">\(d(x,A_n)\)</span> は <span class="math inline">\(d(x,A)\)</span> に広義一様収束する．</p>
+</section>
+<section id="wijsman-収束" class="level3">
+<h3 class="anchored" data-anchor-id="wijsman-収束">Wijsman 収束</h3>
+<div id="def-Wijsman" class="theorem definition">
+<p><span class="theorem-title"><strong>Definition 7 (Wijsman 収束)</strong></span> 空でない部分集合列 <span class="math inline">\(A_n\subset\X\)</span> が <span class="math inline">\(A\subset\X\)</span> に Wijsman 収束するとは，任意の <span class="math inline">\(x\in\X\)</span> について，<span class="math inline">\(d(x,A_n)\to d(x,A)\)</span> が成り立つこと．</p>
+</div>
+<ul>
+<li><span class="math inline">\(A_n\)</span> が <span class="math inline">\(A\)</span> に Wijsman 収束することと，<span class="math inline">\(\bar{A}_n\)</span> が <span class="math inline">\(A\)</span> に Wijsman 収束することは同値．</li>
+<li><span class="math inline">\(d(x,A)=d(x,\bar{A})\)</span> より，Wijsman 収束先は一意でない．ただし，閉包をとれば一意的（<a href="#prp-conv-relation" class="quarto-xref">Proposition 6</a> と PK-収束先の一意性による）．</li>
+</ul>
+<div id="prp-Wijsman" class="theorem proposition">
+<p><span class="theorem-title"><strong>Proposition 5</strong></span> 空でない部分集合列 <span class="math inline">\(A_n\)</span> は <span class="math inline">\(A\)</span> に Wijsman 収束するとする．以下が成立：</p>
+<ol type="1">
+<li><span class="math inline">\(d(x,A_n)\)</span> は <span class="math inline">\(d(x,A)\)</span> に広義一様収束する．</li>
+<li><span class="math inline">\(x\in\X\)</span> に収束する点列 <span class="math inline">\(x_n\in\X\)</span> と開集合 <span class="math inline">\(G\subset\X\)</span> に対して，<span class="math display">\[\limsup_n d(x_n,A_n\cap G)\leq d(x,A\cap G).\]</span> 特に，<span class="math inline">\(\limsup_n d(x,A_n\cap G)\leq d(x,A\cap G).\)</span></li>
+</ol>
 </div>
 <div class="proof">
-<p><span class="proof-title"><em>Proof</em>. </span><span class="math inline">\(f_n(x)\coloneqq d(x,A_n),f(x)\coloneqq d(x,A)\)</span> とする．Wijsman-収束の仮定より，<span class="math inline">\(f_n(x)\to f(x)\)</span> が各点で成り立つ．</p>
+<p><span class="proof-title"><em>Proof</em>. </span><strong>(1)</strong>：</p>
+<p><span class="math inline">\(f_n(x)\coloneqq d(x,A_n),f(x)\coloneqq d(x,A)\)</span> とする．Wijsman 収束の仮定より，<span class="math inline">\(f_n(x)\to f(x)\)</span> が各点で成り立つ．</p>
 <p>コンパクト集合 <span class="math inline">\(K\subset X\)</span> を任意にとる．<span class="math inline">\(\varepsilon&gt;0\)</span> とする．<span class="math inline">\(B(x,\varepsilon)\)</span> を中心 <span class="math inline">\(x\)</span> で半径 <span class="math inline">\(\varepsilon\)</span> の開球とすると，コンパクト性から，有限個の点 <span class="math inline">\(x_1,\dots,x_m\in K\)</span> を選んで， <span class="math display">\[
 K\subset\bigcup_{i=1}^{m}B(x_i,\varepsilon)
 \]</span></p>
 <p>とできる．また，十分大きな <span class="math inline">\(N\)</span> をとって， <span class="math display">\[
-n\geq N \Rightarrow |f_n(x_i)-f_n(x_i)|&lt;\varepsilon,\quad \forall i=1,\dots,m
+n\geq N \Rightarrow |f_n(x_i)-f(x_i)|&lt;\varepsilon,\quad \forall i=1,\dots,m
 \]</span></p>
 <p>とできる．</p>
-<p>任意に <span class="math inline">\(x\in K\)</span> をとる．ある <span class="math inline">\(i\)</span> が存在して，<span class="math inline">\(d(x,x_i)&lt;\varepsilon\)</span> である．<span class="math inline">\(n\geq N\)</span> について，<span class="math inline">\(f_n,f\)</span> が 1-Lipshitz であることに注意すると， <span class="math display">\[
+<p>任意に <span class="math inline">\(x\in K\)</span> をとる．ある <span class="math inline">\(i\)</span> が存在して，<span class="math inline">\(d(x,x_i)&lt;\varepsilon\)</span> である．<span class="math inline">\(n\geq N\)</span> について，<span class="math inline">\(f_n,f\)</span> が 1-Lipschitz であることに注意すると， <span class="math display">\[
 \begin{align*}
 |f_n(x)-f(x)|
 &amp;\leq |f_n(x)-f_n(x_i)|+|f_n(x_i)-f(x_i)|+|f(x_i)-f(x)|\\
@@ -2990,15 +3162,80 @@ n\geq N \Rightarrow |f_n(x_i)-f_n(x_i)|&lt;\varepsilon,\quad \forall i=1,\dots,m
 \end{align*}
 \]</span></p>
 <p><span class="math inline">\(x\)</span> に関して上限をとると，<span class="math inline">\(\sup_{x\in K}|f_n(x)-f(x)|&lt;3\varepsilon\)</span> である．これは広義一様収束を意味する．</p>
+<p><strong>(2)</strong>：</p>
+<p><span class="math inline">\(A\cap G=\emptyset\)</span> の場合は明らか．<span class="math inline">\(A\cap G\neq \emptyset\)</span> とする．</p>
+<p><span class="math inline">\(x\in\X\)</span> を固定する． <span class="math inline">\(y\in A\cap G\)</span> をとる．Wijsman 収束の仮定から，<span class="math inline">\(d(y,A_n)\to d(y,A)=0.\)</span> よって，ある点列 <span class="math inline">\(a_n\in A_n\)</span> が存在して <span class="math inline">\(d(a_n,y)\to0\)</span> が成り立つ． <span class="math inline">\(y\in G\)</span> なので，ある <span class="math inline">\(N\in\mathbb{N}\)</span> が存在して， <span class="math display">\[
+n\geq N \Rightarrow a_n \in G \Rightarrow d(x_n,A_n\cap G)\leq d(x_n,a_n).
+\]</span></p>
+<p>上極限をとると，<span class="math inline">\(\limsup_n d(x_n,A_n\cap G)\leq d(x,y)\)</span> である．<span class="math inline">\(y\)</span> は任意だったので，下限をとる： <span class="math display">\[
+\limsup_n d(x_n,A_n\cap G)\leq d(x,A\cap G).
+\]</span></p>
 </div>
-<div id="lem-7.12-2" class="theorem lemma">
-<p><span class="theorem-title"><strong>Lemma 15</strong></span> <span class="math inline">\(\R^d\)</span> 上の確率変数列 <span class="math inline">\(X_n\)</span> は確率有界とする．<span class="math inline">\(f\colon\R^d\to\R\)</span> に広義一様収束する <span class="math inline">\(f_n\colon\R^d\to\R\)</span> について， <span class="math display">\[
+</section>
+<section id="つの収束の関係" class="level3">
+<h3 class="anchored" data-anchor-id="つの収束の関係">3つの収束の関係</h3>
+<div id="prp-conv-relation" class="theorem proposition">
+<p><span class="theorem-title"><strong>Proposition 6</strong></span> 空でない部分集合列 <span class="math inline">\(A_n\subset \X\)</span> と <span class="math inline">\(A\subset\X\)</span> に対して，以下が成立：</p>
+<ol type="1">
+<li><span class="math inline">\(A_n\)</span> は <span class="math inline">\(A\)</span> に Hausdorff 収束 <span class="math inline">\(\Rightarrow\)</span> <span class="math inline">\(A_n\)</span> は <span class="math inline">\(A\)</span> に Wijsman 収束．</li>
+<li><span class="math inline">\(A_n\)</span> は <span class="math inline">\(A\)</span> に Wijsman 収束 <span class="math inline">\(\Rightarrow\)</span> <span class="math inline">\(A_n\)</span> は <span class="math inline">\(\bar{A}\)</span> に PK-収束．</li>
+<li>あるコンパクト集合 <span class="math inline">\(K\subset\X\)</span> が存在して，<span class="math inline">\(A_n\subset K,A\subset K\)</span> ならば，<span class="math inline">\(A_n\)</span> は <span class="math inline">\(A\)</span> に PK-収束 <span class="math inline">\(\Rightarrow\)</span> <span class="math inline">\(A_n\)</span> は <span class="math inline">\(A\)</span> に Hausdorff 収束．</li>
+<li><span class="math inline">\(\X\)</span> が適正（有界閉集合がコンパクト）ならば，<span class="math inline">\(A_n\)</span> は <span class="math inline">\(A\)</span> に PK-収束 <span class="math inline">\(\Rightarrow\)</span> <span class="math inline">\(A_n\)</span> は <span class="math inline">\(A\)</span> に Wijsman 収束．</li>
+</ol>
+</div>
+<div class="proof">
+<p><span class="proof-title"><em>Proof</em>. </span><strong>(1)</strong>：<span class="math inline">\(d_H(A_n,A)\to0\)</span> を仮定して，<span class="math inline">\(d(x,A_n)\to d(x,A)\)</span> を示す．</p>
+<p>任意の <span class="math inline">\(y\in A_n\)</span> に対して， <span class="math display">\[
+d(x,A)\leq d(x,y)+d(y,A)\leq d(x,y)+d_H(A,A_n)
+\]</span></p>
+<p>が成り立つ．<span class="math inline">\(y\)</span> に関して下限をとって，<span class="math inline">\(d(x,A)\leq d(x,A_n)+d_H(A,A_n)\)</span> である． 同様にして，<span class="math inline">\(d(x,A_n)\leq d(x,A)+d_H(A,A_n)\)</span> も得られる．極限をとると，<span class="math inline">\(d(x,A_n)\to d(x,A)\)</span> である．</p>
+<p><strong>(2)</strong>：</p>
+<p><strong>一段目</strong>：<span class="math inline">\(\bar{A}\subset \Li A_n\)</span></p>
+<p><span class="math inline">\(x\in\bar{A}\)</span> とする．仮定より，<span class="math inline">\(d(x,A_n)\to d(x,\bar{A})=0\)</span> が成り立つ．よって，<span class="math inline">\(x\in \Li A_n.\)</span></p>
+<p><strong>二段目</strong>：<span class="math inline">\(\Ls A_n\subset\bar{A}\)</span></p>
+<p><span class="math inline">\(x\in\Ls A_n\)</span> とする．<span class="math inline">\(\liminf_n d(x,A_n)=0\)</span> である．仮定より，<span class="math inline">\(\liminf_n d(x,A_n)=d(x,\bar{A})\)</span> なので，<span class="math inline">\(d(x,\bar{A})=0\)</span> これは，<span class="math inline">\(x\in\bar{A}\)</span> を意味する．</p>
+<p><strong>三段目</strong>：<span class="math inline">\(A_n\)</span> は <span class="math inline">\(\bar{A}\)</span> に PK-収束する．</p>
+<p>一段目と二段目の結果から，<span class="math inline">\(\bar{A}\subset\Li A_n\subset \Ls A_n\subset\bar{A}\)</span> が成り立つので，包含関係はすべて等号で成り立つ．</p>
+<p><strong>(3)</strong>：</p>
+<p><strong>一段目</strong>：<span class="math inline">\(\sup_{x\in A_n}d(x,A)\to0\)</span></p>
+<p>背理法で示す．<span class="math inline">\(\sup_{x\in A_n}d(x,A)\)</span> は <span class="math inline">\(0\)</span> に収束しないとする．このとき，ある <span class="math inline">\(\varepsilon&gt;0\)</span> と部分列 <span class="math inline">\(A_{n_k}\)</span> が存在して，<span class="math inline">\(\sup_{x\in A_{n_k}}d(x,A)\geq \varepsilon/2\)</span> とできる．上限の定義から，<span class="math inline">\(x_{k}\in A_{n_k}\)</span> が存在して， <span class="math display">\[
+d(x_k,A)&gt;\sup_{x\in A_{n_k}}d(x,A)-\frac{\varepsilon}{2}\geq \frac{\varepsilon}{2}
+\]</span></p>
+<p>が成り立つ．<span class="math inline">\(\X\)</span> はコンパクトなので，<span class="math inline">\(x_k\)</span> は収束する部分列 <span class="math inline">\(x_{k_l}\to x^\ast\)</span> をもつ．PK-収束の仮定から，<span class="math inline">\(x^\ast\in A\)</span> である．このとき，<span class="math inline">\(d(x_{k_l},A)\leq d(x_{k_l},x^\ast)\to0\)</span> だが，これは <span class="math inline">\(d(x_{k_l},A)&gt; \varepsilon/2\)</span> に矛盾する．</p>
+<p><strong>二段目</strong>：<span class="math inline">\(\sup_{x\in A}d(x,A_n)\to0\)</span></p>
+<p>背理法で示す．<span class="math inline">\(\sup_{x\in A}d(x,A_n)\)</span> は <span class="math inline">\(0\)</span> に収束しないとする．このとき，ある <span class="math inline">\(\varepsilon&gt;0\)</span> と部分列 <span class="math inline">\(A_{n_k}\)</span> が存在して，<span class="math inline">\(\sup_{x\in A}d(x,A_{n_k})\geq \varepsilon/2\)</span> とできる．上限の定義から，<span class="math inline">\(x_{k}\in A\)</span> が存在して， <span class="math display">\[
+d(x_k,A_{n_k})&gt;\sup_{x\in A}d(x,A_{n_k})-\frac{\varepsilon}{2}\geq \frac{\varepsilon}{2}
+\]</span></p>
+<p>が成り立つ．<span class="math inline">\(\X\)</span> はコンパクトなので，<span class="math inline">\(x_k\)</span> は収束する部分列 <span class="math inline">\(x_{k_l}\to x^\ast\)</span> をもつ．<span class="math inline">\(PK\)</span>-収束先である <span class="math inline">\(A\)</span> は閉集合なので，<span class="math inline">\(x^\ast\in A\)</span> である．よって，ある点列 <span class="math inline">\(a_n\in A_n\)</span> が存在して，<span class="math inline">\(a_n\to x^\ast\)</span> である．このとき， <span class="math display">\[
+d(x_{k_l},A_{n_{k_l}})\leq d(x_{k_l},x^\ast)+d(x^\ast,a_{n_{k_l}})\to0
+\]</span></p>
+<p>だが，これは <span class="math inline">\(d(x_{k_l},A_{n_{k_l}})&gt;\varepsilon/2\)</span> に矛盾する．</p>
+<p><strong>(4)</strong>：</p>
+<p>まず，<span class="math inline">\(\bar{A}_n\)</span> は <span class="math inline">\(A\)</span> に PK-収束する．<span class="math inline">\(\bar{A}_n\)</span> が <span class="math inline">\(A\)</span> に Wijsman 収束すれば，<span class="math inline">\(A_n\)</span> も <span class="math inline">\(A\)</span> に Wijsman 収束するので，はじめから <span class="math inline">\(A_n\)</span> は閉集合としても一般性を失わない．</p>
+<p><span class="math inline">\(\limsup_n d(x,A_n)\leq d(x,A)\leq \liminf_n d(x,A_n)\)</span> を示せばよい．</p>
+<p><strong>一段目</strong>：<span class="math inline">\(\limsup_n d(x,A_n)\leq d(x,A)\)</span></p>
+<p><span class="math inline">\(A=\Li A_n\)</span> なので，<span class="math inline">\(y\in A\)</span> に収束する点列 <span class="math inline">\(y_n\in A_n\)</span> がとれる．このとき， <span class="math display">\[
+\limsup_n d(x,A_n)\leq \limsup_n d(x,y_n)=d(x,y)
+\]</span></p>
+<p>が成り立つ．<span class="math inline">\(y\)</span> は任意だったので，下限をとって，<span class="math inline">\(\limsup_n d(x,A_n)\leq d(x,A).\)</span></p>
+<p><strong>二段目</strong>：<span class="math inline">\(d(x,A)\leq \liminf_n d(x,A_n)\)</span></p>
+<p><span class="math inline">\(L\coloneqq\liminf_n d(x,A_n)\)</span> とする．このとき，部分列 <span class="math inline">\(A_{n_k}\)</span> が存在して，<span class="math inline">\(\lim_k d(x,A_{n_k})=L\)</span> が成り立つ．また，<span class="math inline">\(A_{n_k}\)</span> は閉集合なので，ある <span class="math inline">\(y_{n_k}\in A_{n_k}\)</span> が存在して，<span class="math inline">\(d(x,y_{n_k})=d(x,A_{n_k})\)</span> とできる．<span class="math inline">\(d(x,y_{n_k})\to L\)</span> なので，<span class="math inline">\(y_{n_k}\)</span> は有界点列．</p>
+<p>適正距離空間の有界点列は収束する部分列をもつので，<span class="math inline">\(y\in\X\)</span> と部分列 <span class="math inline">\(y_{n_{k_l}}\)</span> が存在して，<span class="math inline">\(y_{n_{k_l}}\to y\)</span> である．このとき，PK-収束の定義から，<span class="math inline">\(y\in A\)</span> である．</p>
+<p><span class="math display">\[
+d(x,A)\leq d(x,y)=\lim_{l}d(x,y_{n_{k_l}})=L.
+\]</span></p>
+</div>
+</section>
+<section id="応用" class="level3">
+<h3 class="anchored" data-anchor-id="応用">応用</h3>
+<div id="prp-local-unif-conv-smallop" class="theorem proposition">
+<p><span class="theorem-title"><strong>Proposition 7</strong></span> <span class="math inline">\(\X\)</span> 上の確率要素の列 <span class="math inline">\(X_n\)</span> は確率有界とする．<span class="math inline">\(f\colon\X\to\R\)</span> に広義一様収束する <span class="math inline">\(f_n\colon\X\to\R\)</span> について， <span class="math display">\[
 f_n(X_n)=f(X_n)+\smallop
 \]</span></p>
 </div>
 <div class="proof">
-<p><span class="proof-title"><em>Proof</em>. </span><span class="math inline">\(f_n(X_n)-f(X_n)=\smallop\)</span> を示せばよい．</p>
-<p>原点中心で半径 <span class="math inline">\(M\)</span> の開球を <span class="math inline">\(B_M\)</span> とすると，<span class="math inline">\(\lim_M\limsup_n\Pr(X_n\notin B_M)=0\)</span> である．</p>
+<p><span class="proof-title"><em>Proof</em>. </span><span class="math inline">\(f_n(X_n)-f(X_n)=\smallop\)</span> を示せばよい．<span class="math inline">\(x_0\in\X\)</span> を固定する．</p>
+<p><span class="math inline">\(x_0\)</span> 中心で半径 <span class="math inline">\(M\)</span> の開球を <span class="math inline">\(B_M\)</span> とすると，<span class="math inline">\(\lim_M\limsup_n\Pr(X_n\notin B_M)=0\)</span> である．</p>
 <p><span class="math display">\[
 \begin{align*}
 &amp;\Pr(|f_{n}(X_{n})-f(X_{n})|&gt;\varepsilon)\\
@@ -3007,6 +3244,100 @@ f_n(X_n)=f(X_n)+\smallop
 &amp;\to0.
 \end{align*}
 \]</span></p>
+</div>
+<div id="lem-continuous-mapping" class="theorem lemma">
+<p><span class="theorem-title"><strong>Lemma 10</strong></span> 距離空間 <span class="math inline">\(\X\)</span> 上の確率要素の列 <span class="math inline">\(X_n\)</span> は確率有界とする． 関数列 <span class="math inline">\(f_n\colon\X\to[0,\infty]\)</span> と連続関数 <span class="math inline">\(f\colon\X\to[0,\infty]\)</span> に対して，以下を仮定する： <span class="math display">\[
+x_n\to x\Rightarrow \liminf_n f_n(x_n)\geq f(x).
+\]</span></p>
+<p>このとき，任意の <span class="math inline">\(M&gt;0\)</span> に対して，<span class="math inline">\(f_n(X_n)\geq \min\{f(X_n),M\}+\smallop.\)</span></p>
+</div>
+<div class="proof">
+<p><span class="proof-title"><em>Proof</em>. </span><span class="math inline">\(g(x)\coloneqq\min\{f(x),M\}\)</span> とする．<span class="math inline">\(Y_n\coloneqq \max\{0,g(X_n)-f_n(X_n)\}=\smallop\)</span> を示せばよい．実際，<span class="math inline">\(Y_n=\smallop\)</span> ならば， <span class="math display">\[
+f_n(X_n)\geq g(X_n)-Y_n = \min\{f(X_n),M\}+\smallop.
+\]</span></p>
+<p><span class="math inline">\(X_n\)</span> は確率有界なので，任意の <span class="math inline">\(\delta&gt;0\)</span> に対して，あるコンパクト集合 <span class="math inline">\(K\)</span> が存在して， <span class="math display">\[
+\limsup_n \Pr(X_n\notin K)&lt;\delta.
+\]</span></p>
+<p><span class="math inline">\(\varepsilon&gt;0\)</span> を任意にとって，<span class="math inline">\(E_n\coloneqq\{x\in\X\mid f_n(x)\leq g(x)-\varepsilon\}\)</span> とする．</p>
+<p><strong>一段目</strong>：ある <span class="math inline">\(N\in\mathbb{N}\)</span> が存在して，<span class="math inline">\(n\geq N\Rightarrow E_n\cap K=\emptyset.\)</span></p>
+<p>背理法で示す．部分列 <span class="math inline">\(x_{k}\in E_{n_k}\cap K\)</span> がとれると仮定する．このとき，<span class="math inline">\(K\)</span> のコンパクト性から，ある部分列 <span class="math inline">\(x_{k_l}\)</span> と <span class="math inline">\(x\in\X\)</span> が存在して，<span class="math inline">\(x_{k_l}\to x\)</span> が成り立つ．仮定から， <span class="math display">\[
+\liminf_l f_{n_{k_l}}(x_{k_l})\geq f(x)\geq g(x).
+\]</span></p>
+<p>ところが，<span class="math inline">\(x_{k_l}\in E_{n_{k_l}}\)</span> なので，<span class="math inline">\(g\)</span> の連続性から， <span class="math display">\[
+\liminf_l f_{n_{k_l}}(x_{k_l})\leq g(x)-\varepsilon
+\]</span></p>
+<p>となり矛盾する．</p>
+<p><strong>二段目</strong>：<span class="math inline">\(Y_n=\smallop\)</span></p>
+<p><span class="math display">\[
+\begin{align*}
+\Pr(Y_n\geq\varepsilon)
+&amp;=\Pr(f_n(X_n)\leq g(X_n) -\varepsilon)\\
+&amp;=\Pr(X_n\in E_n)\\
+&amp;\leq \Pr(X_n\in E_n\cap K)+\Pr(X_n\not\in K).
+\end{align*}
+\]</span></p>
+<p>上極限をとって，<span class="math inline">\(\limsup_n\Pr(Y_n\geq\varepsilon)&lt;\delta\)</span> が得られる．<span class="math inline">\(\delta\)</span> は任意だったので， <span class="math inline">\(Y_n=\smallop.\)</span></p>
+</div>
+<div id="lem-7.13" class="theorem lemma">
+<p><span class="theorem-title"><strong>Lemma 11 (<span class="citation" data-cites="VanderVaartAsymptoticStatistics1998">Van der Vaart (<a href="#ref-VanderVaartAsymptoticStatistics1998" role="doc-biblioref">1998</a>)</span> Lemma 7.13)</strong></span> 適正距離空間 <span class="math inline">\(\X\)</span> 上の確率要素の列 <span class="math inline">\(X_n\)</span> は確率有界と仮定する． また，空でない部分集合列 <span class="math inline">\(A_n\subset\X\)</span> は <span class="math inline">\(A\subset\X\)</span> に PK-収束すると仮定する． このとき，以下が成立：</p>
+<ol type="1">
+<li><span class="math inline">\(X_n\warrow X\)</span> ならば，<span class="math inline">\(d(X_n,A_n)\warrow d(X,A).\)</span></li>
+<li>任意の <span class="math inline">\(M&gt;0\)</span> と閉集合 <span class="math inline">\(F\subset\X\)</span> に対して，<span class="math inline">\(d(X_n,A_n\cap F)\geq \min\{d(X_n,A\cap F),M\}+\smallop.\)</span></li>
+</ol>
+</div>
+<div class="proof">
+<p><span class="proof-title"><em>Proof</em>. </span><strong>(1)</strong>：</p>
+<p>連続写像定理より，<span class="math inline">\(d(X_n,A)\warrow d(X,A)\)</span> である．また，<a href="#prp-Wijsman" class="quarto-xref">Proposition 5</a> と <a href="#prp-local-unif-conv-smallop" class="quarto-xref">Proposition 7</a> より，<span class="math inline">\(d(X_n,A_n)=d(X_n,A)+\smallop\)</span> である．Slutsky の定理より， <span class="math display">\[
+d(X_n,A_n)\warrow d(X,A).
+\]</span></p>
+<p><strong>(2)</strong>：</p>
+<p><a href="#prp-PK-conv2" class="quarto-xref">Proposition 4</a> と <a href="#lem-continuous-mapping" class="quarto-xref">Lemma 10</a> から従う．</p>
+</div>
+</section>
+</section>
+<section id="thm-7.12-のためのいくつかの補題" class="level2">
+<h2 class="anchored" data-anchor-id="thm-7.12-のためのいくつかの補題"><a href="#thm-7.12" class="quarto-xref">Theorem 4</a> のためのいくつかの補題</h2>
+<div id="lem-7.12-1" class="theorem lemma">
+<p><span class="theorem-title"><strong>Lemma 12</strong></span> 非負確率変数 <span class="math inline">\(X_n,Y_n\)</span> について，<span class="math inline">\(X_n^2\leq Y_n^2+\smallop\)</span> とする． このとき，<span class="math inline">\(X_n\leq Y_n+\smallop\)</span></p>
+</div>
+<div class="proof">
+<p><span class="proof-title"><em>Proof</em>. </span><span class="math inline">\(X_n^2\leq Y_n^2+R_n\)</span> とする．</p>
+<p><span class="math display">\[
+X_n \leq \sqrt{Y_n^2+R_n}\leq Y_n + \sqrt{R_n} = Y_n+\smallop.
+\]</span></p>
+</div>
+<div id="lem-7.12-2" class="theorem lemma">
+<p><span class="theorem-title"><strong>Lemma 13</strong></span> <span class="math inline">\(\X\)</span> 上の確率要素の列 <span class="math inline">\(X_n\)</span> は確率有界とする． また，部分集合列 <span class="math inline">\(A_n\subset\X\)</span> に対して，<span class="math inline">\(d(X_n,A_n)=\largeop\)</span> を仮定する． 部分集合列 <span class="math inline">\(B_n\subset\X\)</span> に以下を仮定する：</p>
+<p>任意のコンパクト集合 <span class="math inline">\(K\subset\X\)</span> に対して，ある <span class="math inline">\(N\in\mathbb{N}\)</span> が存在して， <span class="math display">\[n\geq N\Rightarrow K\subset B_n.\]</span></p>
+<p>このとき，<span class="math inline">\(d(X_n,A_n\cap B_n)=d(X_n,A_n)+\smallop.\)</span></p>
+</div>
+<div class="proof">
+<p><span class="proof-title"><em>Proof</em>. </span><span class="math inline">\(\varepsilon&gt;0,\delta&gt;0\)</span> を任意にとる．仮定より，</p>
+<ul>
+<li>コンパクト集合 <span class="math inline">\(K\)</span> が存在して，<span class="math inline">\(\Pr(X_n\notin K)&lt;\varepsilon/2.\)</span></li>
+<li>ある <span class="math inline">\(M&gt;0\)</span> が存在して，<span class="math inline">\(\Pr(d(X_n,A_n)&gt;M)\leq\varepsilon/2.\)</span></li>
+</ul>
+<p><span class="math display">\[
+E_n\coloneqq\{X_n\notin K\}\cup\{d(X_n,A_n)&gt;M\}
+\]</span></p>
+<p>とすると，<span class="math inline">\(\Pr(E_n)&lt;\varepsilon\)</span> である．</p>
+<p><span class="math inline">\(F\coloneqq\{x\in\X\mid d(x,K)\leq M+\delta\}\)</span> はコンパクト集合なので，ある <span class="math inline">\(N\in\mathbb{N}\)</span> が存在して，<span class="math inline">\(n\geq N\Rightarrow F\subset B_n.\)</span></p>
+<p><span class="math inline">\(\omega\in E_n^c\)</span> を固定する．以下を満たすような <span class="math inline">\(a\in A_n\)</span> が存在する： <span class="math display">\[
+d(X_n(\omega),a)\leq d(X_n(\omega),A_n)+\delta\leq M+\delta.
+\]</span></p>
+<p><span class="math display">\[
+d(a,K)\leq d(a,X_n(\omega))+d(X_n(\omega),K)\leq M+\delta
+\]</span></p>
+<p>より，<span class="math inline">\(a\in F\)</span> である．特に，<span class="math inline">\(n\geq N\)</span> ならば <span class="math inline">\(a\in A_n\cap B_n\)</span> である． したがって，<span class="math inline">\(n\geq N\)</span> ならば， <span class="math display">\[
+d(X_n(\omega),A_n\cap B_n)\leq d(X_n(\omega),a)\leq d(X_n(\omega),A_n)+\delta.
+\]</span></p>
+<p>以上のことと，<span class="math inline">\(d(X_n(\omega),A_n)\leq d(X_n(\omega),A_n\cap B_n)\)</span> とあわせると， <span class="math display">\[
+E_n^c \subset \{|d(X_n,A_n\cap B_n)-d(X_n,A_n)|\leq \delta\}
+\]</span></p>
+<p>が得られた．したがって， <span class="math display">\[
+\Pr(|d(X_n,A_n\cap B_n)-d(X_n,A_n)|&gt;\delta)\leq \Pr(E_n)&lt;\varepsilon.
+\]</span></p>
+<p>これは，<span class="math inline">\(d(X_n,A_n\cap B_n)=d(X_n,A_n)+\smallop\)</span> を意味する．</p>
 </div>
 
 </section>
