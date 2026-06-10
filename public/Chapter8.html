@@ -26513,6 +26513,7 @@ color: #556056;
   <li><a href="#portmanteau" id="toc-portmanteau" class="nav-link" data-scroll-target="#portmanteau">Portmanteau</a></li>
   <li><a href="#scheffé-の補題" id="toc-scheffé-の補題" class="nav-link" data-scroll-target="#scheffé-の補題">Scheffé の補題</a></li>
   <li><a href="#convergence-determining-class" id="toc-convergence-determining-class" class="nav-link" data-scroll-target="#convergence-determining-class">Convergence-determining Class</a></li>
+  <li><a href="#正則な推定量に関する補足" id="toc-正則な推定量に関する補足" class="nav-link" data-scroll-target="#正則な推定量に関する補足">正則な推定量に関する補足</a></li>
   </ul></li>
   </ul>
 </nav>
@@ -26878,7 +26879,7 @@ Tip 1
 \]</span></p>
 <p>ただし，最後の不等式で <a href="#lem-8.5" class="quarto-xref">Lemma 1</a> を用いた．</p>
 <p><span class="math inline">\(\Lambda\coloneqq\lambda I\)</span> とすると，<span class="math inline">\(G_\Lambda\warrow N(0,A\Sigma A^\top),\enspace (\lambda\to\infty)\)</span> である．これは，<span class="math inline">\(G_\Lambda\warrow AX\mid H=0\)</span> を意味する．</p>
-<p><span class="math inline">\(\ell\)</span> が subconvex であることと <a href="#lem-portmanteau" class="quarto-xref">Lemma 6</a> より， <span class="math display">\[
+<p><span class="math inline">\(\ell\)</span> が subconvex であることと <a href="#lem-portmanteau" class="quarto-xref">Lemma 5</a> より， <span class="math display">\[
 \liminf_\lambda \E[\ell(G_\Lambda)]\geq \E[\ell(AX)\mid H=0].
 \]</span></p>
 <p>以上より， <span class="math display">\[
@@ -27012,122 +27013,18 @@ L_\theta=N(0,\dot{\psi}_\theta I_{\theta}^{-1}\dot{\psi}_\theta^\top)\ast M_\the
 <li>Hodges 推定量のようにある点では MLE を改善する推定量は存在するが，そのような点は高々零集合までしかない．</li>
 </ul>
 <div class="proof">
-<p><span class="proof-title"><em>Proof</em>. </span><a href="#lem-8.10" class="quarto-xref">Lemma 3</a> より，ある部分列 <span class="math inline">\(n_m\)</span> が存在して， <span class="math display">\[
+<p><span class="proof-title"><em>Proof</em>. </span><a href="#lem-8.10" class="quarto-xref">Lemma 2</a> より，ある部分列 <span class="math inline">\(n_m\)</span> が存在して， <span class="math display">\[
 N\coloneqq \left\{(\theta,h)\in\Theta\times\R^k\,\middle|\, \sqrt{n_m}\left(T_{n_m}-\psi\left(\theta+\frac{h}{\sqrt{n_m}}\right)\right)\warrow[\theta+h/{\sqrt{n_k}}]L_\theta\right\}^c
 \]</span></p>
 <p>は <span class="math inline">\(\lambda^{2k}\)</span> 零集合． このとき，<span class="math inline">\(\lambda^k\)</span>-a.e. <span class="math inline">\(\theta\)</span> に対して，<span class="math inline">\(N_\theta\coloneqq\{h\in\R^k\mid (\theta,h)\in N\}\)</span> は <span class="math inline">\(\lambda^k\)</span> 零集合になる． つまり，<span class="math inline">\(\lambda^k\)</span>-a.e. <span class="math inline">\(\theta\)</span> に対して， <span class="math display">\[
 \sqrt{n_m}\left(T_{n_k}-\psi\left(\theta+\frac{h}{\sqrt{n_m}}\right)\right)\warrow[\theta+h/{\sqrt{n_m}}]L_\theta,\quad \lambda^k\text{-a.e.}\enspace h.
 \]</span></p>
-<p>これは，<span class="math inline">\(\lambda^k\)</span>-a.e. <span class="math inline">\(\theta\)</span> に対して <span class="math inline">\(T_{n_m}\)</span> が正則であることを意味する．したがって，<a href="#thm-8.8" class="quarto-xref">Theorem 3</a> より，ある確率測度 <span class="math inline">\(M_\theta\)</span> が存在して， <span class="math display">\[
+<p><span class="math inline">\(\lambda^k\)</span> 零集合は <span class="math inline">\(\R^k\)</span> で稠密なので，<a href="#lem-regular-density" class="quarto-xref">Lemma 8</a> より <span class="math inline">\(\lambda^k\)</span>-a.e. <span class="math inline">\(\theta\)</span> に対して <span class="math inline">\(T_{n_m}\)</span> は正則． したがって，<a href="#thm-8.8" class="quarto-xref">Theorem 3</a> より，ある確率測度 <span class="math inline">\(M_\theta\)</span> が存在して， <span class="math display">\[
 L_\theta=N(0,\dot{\psi}_\theta I_\theta^{-1}\dot{\psi}_\theta^\top)\ast M_\theta,\quad \lambda^k\text{-a.e.}\enspace\theta.
 \]</span></p>
 </div>
-<div id="lem-regular-density" class="theorem lemma">
-<p><span class="theorem-title"><strong>Lemma 2</strong></span> <span class="math inline">\(\Theta\subset\R^k\)</span> は開集合，<span class="math inline">\(\psi\colon\Theta\to\R^d\)</span> は微分可能とする．統計モデル <span class="math inline">\((P_\theta)_{\theta\in\Theta}\)</span> に以下を仮定する：</p>
-<ol type="1">
-<li><span class="math inline">\((P_{\theta})_{\theta\in\Theta}\)</span> は <span class="math inline">\(\Theta\)</span> 上で QMD.</li>
-<li>Fisher 情報行列 <span class="math inline">\(I_\theta\)</span> は <span class="math inline">\(\Theta\)</span> 上で正則．</li>
-</ol>
-<p><span class="math inline">\(H\subset\R^k\)</span> は稠密とする．<span class="math inline">\(\psi(\theta)\)</span> の推定量 <span class="math inline">\(T_n\)</span> に以下を仮定する：</p>
-<p>ある <span class="math inline">\(L_\theta\)</span> が存在して， <span class="math display">\[
-\sqrt{n}\left(T_n-\psi\left(\theta+\frac{h}{\sqrt{n}}\right)\right)\warrow[\theta+h/\sqrt{n}]L_\theta,\enspace\forall h\in H.
-\]</span></p>
-<p>このとき，<span class="math inline">\(T_n\)</span> は正則な推定量．</p>
-</div>
-<div class="proof">
-<p><span class="proof-title"><em>Proof</em>. </span>仮定より，<span class="math inline">\((P_\theta^n)_{\theta\in\Theta}\)</span> は LAN： <span class="math display">\[
-\log\frac{\mathrm{d}P_{\theta+h/\sqrt{n}}^n}{\mathrm{d}P_\theta^n}=h^\top\Delta_{n,\theta}-\frac12h^\top I_\theta h+o_{P_\theta}(1).
-\]</span></p>
-<p>ただし，<span class="math inline">\(\Delta_{n,\theta}\coloneqq n^{-1/2}\sum_{i=1}^{n}\dot{l}_\theta(X_i)\warrow[\theta]N(0,I_\theta)\)</span> である．</p>
-<div id="tip-lem-regular-density-1" class="callout callout-style-default callout-tip callout-titled">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-Tip 2
-</div>
-</div>
-<div class="callout-body-container callout-body">
-<p>Example 6.5 より，<span class="math inline">\(P_{\theta+h/\sqrt{n}}^n\)</span> と <span class="math inline">\(P_\theta^n\)</span> は相互に近接している.</p>
-</div>
-</div>
-<p><span class="math inline">\(T_{n,\theta}\coloneqq\sqrt{n}(T_n-\psi(\theta))\)</span> とすると，仮定より， <span class="math display">\[
-T_{n,\theta+h/\sqrt{n}}=T_{n,\theta}-\sqrt{n}\left(\psi\left(\theta+\frac{h}{\sqrt{n}}\right)-\psi(\theta)\right)\warrow[\theta+h/\sqrt{n}]L_\theta,\quad \forall h\in H.
-\]</span></p>
-<p>したがって，<span class="math inline">\(\sqrt{n}(\psi(\theta+h/\sqrt{n})-\psi(\theta))\to\dot{\psi}_\theta h\)</span> に注意すると， <span class="math display">\[
-T_{n,\theta}\warrow[\theta+h/\sqrt{n}]L_\theta\ast\delta_{\dot{\psi}_\theta h},\quad\forall h\in H
-\]</span></p>
-<p>が成り立つ．</p>
-<div id="tip-lem-regular-density-2" class="callout callout-style-default callout-tip callout-titled">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-Tip 3
-</div>
-</div>
-<div class="callout-body-container callout-body">
-<p><span class="math inline">\(T_{n,\theta}=O_{P_{\theta+h/\sqrt{n}}}(1)\)</span> である．特に，相互近接性から <span class="math inline">\(T_{n,\theta}=O_{P_\theta}(1)\)</span> である．</p>
-</div>
-</div>
-<p><span class="math inline">\((T_{n,\theta},\Delta_{n,\theta})=O_{P_\theta}(1)\)</span> なので，Prokhorov の定理より，任意の部分列 <span class="math inline">\(n_m\)</span> に対して，ある部分列 <span class="math inline">\(n_{m_l}\)</span> と確率ベクトル <span class="math inline">\((T_\theta,\Delta_\theta)\)</span> が存在して， <span class="math display">\[
-(T_{n_{m_l},\theta},\Delta_{n_{m_l},\theta})\warrow[\theta](T_\theta,\Delta_\theta).
-\]</span></p>
-<p>したがって，Theorem 6.6 より，任意の <span class="math inline">\(h\in\R^k\)</span> に対して， <span class="math display">\[
-\lim_l\E_{\theta+h/\sqrt{n_{m_l}}}[\exp(it^\top T_{n_{m_l},\theta})]
-=
-\E\left[\exp(it^\top T_\theta)\exp\left(h^\top\Delta_\theta-\frac12h^\top I_\theta h\right)\right].
-\]</span></p>
-<p>ここで，<span class="math inline">\(L_\theta\)</span> の特性関数を <span class="math inline">\(\phi_{L_\theta}(t)\)</span> とすると， <span class="math display">\[
-\lim_l \E_{\theta+h/{\sqrt{n_{m_l}}}}[\exp(it^\top T_{n_{m_l},\theta})]
-=\phi_{L_\theta}(t)\exp(it^\top\dot{\psi}_\theta h),\quad\forall h\in H.
-\]</span></p>
-<p>つまり，任意の <span class="math inline">\(h\in H\)</span> に対して， <span class="math display">\[
-\E\left[\exp(it^\top T_\theta)\exp\left(h^\top\Delta_\theta-\frac12h^\top I_\theta h\right)\right]
-=\phi_{L_\theta}(t)\exp(it^\top\dot{\psi}_\theta h).
-\]</span></p>
-<p><strong>主張</strong>：任意の <span class="math inline">\(h\in\R^k\)</span> に対して上の等式が成立．特に，<span class="math inline">\(T_{n_{m_l},\theta}\warrow[\theta+h/\sqrt{n_{m_l}}]L_\theta\ast\delta_{\dot{\psi}_\theta h}\)</span> である．</p>
-<div id="tip-lem-regular-density-3" class="callout callout-style-default callout-tip callout-titled">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-Tip 4
-</div>
-</div>
-<div class="callout-body-container callout-body">
-<p>部分列 <span class="math inline">\(n_m\)</span> は任意だったので，これは <span class="math inline">\(T_{n,\theta+h/\sqrt{n}}\warrow[\theta+h/\sqrt{n}]L_\theta,\enspace\forall h\in\R^k\)</span> を意味する．</p>
-</div>
-</div>
-<p>両辺の <span class="math inline">\(h\)</span> に関する連続性を示せば，連続関数の稠密性から主張が従う．右辺の連続性は明らか．左辺について示す．<span class="math inline">\(h_m\to h\)</span> に対して， <span class="math display">\[
-f_m(T_\theta,\Delta_\theta)\coloneqq
-\exp(it^\top T_\theta)\exp\left(h_m^\top\Delta_\theta-\frac12h_m^\top I_\theta h_m\right)
-\]</span> とする． <span class="math inline">\(h_m\)</span> は有界なので，<span class="math inline">\(\norm{h_m}\leq R\)</span> を満たす <span class="math inline">\(R&gt;0\)</span> が存在する． <span class="math display">\[
-|f_m(T_\theta,\Delta_\theta)|
-\leq\exp(h_m^\top\Delta_\theta)
-\leq\exp(\norm{h_m}\norm{\Delta_\theta})
-\leq\exp(R\norm{\Delta_\theta})
-\]</span></p>
-<p>より，優収束定理が使えて <span class="math inline">\(\lim_m\E[f_m(T_\theta,\Delta_\theta)]=\E[\lim_m f_m(T_\theta,\Delta_\theta)]\)</span> が成り立つ．これは左辺の連続性を意味する．</p>
-<div id="tip-lem-regular-density-4" class="callout callout-style-default callout-tip callout-titled">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-Tip 5
-</div>
-</div>
-<div class="callout-body-container callout-body">
-<p><span class="math inline">\(\Delta_\theta\sim N(0,I_\theta)\)</span> より，<span class="math inline">\(\exp(R\norm{\Delta_\theta})\)</span> は可積分．</p>
-</div>
-</div>
-</div>
 <div id="lem-8.10" class="theorem lemma">
-<p><span class="theorem-title"><strong>Lemma 3 (<span class="citation" data-cites="VanderVaartAsymptoticStatistics1998">Van der Vaart (<a href="#ref-VanderVaartAsymptoticStatistics1998" role="doc-biblioref">1998</a>)</span> Lemma 8.10)</strong></span> <span class="math inline">\(\Theta\subset\R^k\)</span> は（空でない）可測集合，<span class="math inline">\(\psi\colon\Theta\to\R^d\)</span> は可測とする． 統計的実験の列 <span class="math inline">\((P_{n,\theta})_{\theta\in\Theta}\)</span> と推定量 <span class="math inline">\(T_n\)</span> に以下を仮定する：</p>
+<p><span class="theorem-title"><strong>Lemma 2 (<span class="citation" data-cites="VanderVaartAsymptoticStatistics1998">Van der Vaart (<a href="#ref-VanderVaartAsymptoticStatistics1998" role="doc-biblioref">1998</a>)</span> Lemma 8.10)</strong></span> <span class="math inline">\(\Theta\subset\R^k\)</span> は（空でない）可測集合，<span class="math inline">\(\psi\colon\Theta\to\R^d\)</span> は可測とする． 統計的実験の列 <span class="math inline">\((P_{n,\theta})_{\theta\in\Theta}\)</span> と推定量 <span class="math inline">\(T_n\)</span> に以下を仮定する：</p>
 <ol type="1">
 <li>任意の可測集合 <span class="math inline">\(A\)</span> と任意の <span class="math inline">\(n\)</span> に対して，<span class="math inline">\(\theta\mapsto P_{n,\theta}(A)\)</span> は可測．</li>
 <li>ある数列 <span class="math inline">\(r_n\)</span> と確率測度 <span class="math inline">\(L_\theta\)</span> が存在して，<span class="math inline">\(\{\theta\in\Theta\mid r_n(T_n-\psi(\theta))\warrow[\theta] L_\theta\}^c\)</span> は Lebesgue 測度零集合．</li>
@@ -27145,7 +27042,7 @@ Tip 5
 <i class="callout-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-Tip 6
+Tip 2
 </div>
 </div>
 <div class="callout-body-container callout-body">
@@ -27154,15 +27051,15 @@ Tip 6
 \]</span> に対して，<span class="math inline">\(\tilde{N}\cap(\Theta\times R^k)\)</span> が零集合であることを示したいので，<span class="math inline">\(\tilde{N}\)</span> が零集合であることを示せばよい．</p>
 </div>
 </div>
-<p><a href="#lem-cdc" class="quarto-xref">Lemma 8</a> の <span class="math inline">\(\F\)</span> をとる．<span class="math inline">\(\lambda^k\)</span> は <span class="math inline">\(\R^k\)</span> 上の Lebesgue 測度とする．</p>
+<p><a href="#lem-cdc" class="quarto-xref">Lemma 7</a> の <span class="math inline">\(\F\)</span> をとる．<span class="math inline">\(\lambda^k\)</span> は <span class="math inline">\(\R^k\)</span> 上の Lebesgue 測度とする．</p>
 <p><span class="math inline">\(T_{n,\theta}\coloneqq r_n(T_n-\psi(\theta))\)</span> とすると，</p>
 <p><span class="math display">\[
 \E_{\theta}[f(T_{n,\theta})]\to L_{\theta}[f],\quad \forall f\in\F,\enspace\lambda^k\text{-a.e.}\enspace\theta.
 \]</span></p>
 <p>いま，<span class="math inline">\(\F\)</span> は高々可算なので，<span class="math inline">\(\F=\{f_1,f_2,\dots\}\)</span> と並べることができる． 部分列 <span class="math inline">\(n_m\)</span> を次のように構成する：</p>
 <ol type="1">
-<li><span class="math inline">\(f_1\in\F\)</span> に対して，<span class="math inline">\(g_n(\theta)\coloneqq\E_\theta[f_1(T_{n,\theta})],g(\theta)\coloneqq L_{\theta}[f_1]\)</span> として，<a href="#lem-8.10a" class="quarto-xref">Lemma 4</a> を適用すると，ある部分列 <span class="math inline">\(n_{m}^{(1)}\)</span> が存在して，<span class="math display">\[N_1\coloneqq\left\{(\theta,h)\in\R^{2k}\,\middle|\, \E_{\theta+\gamma_{n_m^{(1)}}h}\left[f_1\left(T_{n_m^{(1)},\theta+\gamma_{n_m^{(1)}}h}\right)\right]\to L_\theta[f_1]\right\}^c\]</span> は <span class="math inline">\(\lambda^{2k}\)</span> 零集合．</li>
-<li><span class="math inline">\(f_k\in\F\)</span> に対して，<span class="math inline">\(g_n(\theta)\coloneqq\E_\theta[f_k(T_{n,\theta})]\)</span> として，<span class="math inline">\(g_{n_m^{(k-1)}},g\)</span> に対して，<a href="#lem-8.10a" class="quarto-xref">Lemma 4</a> を適用すると，<span class="math inline">\(n_m^{(k-1)}\)</span> のある部分列 <span class="math inline">\(n_{m}^{(k)}\)</span> が存在して，<span class="math display">\[N_k\coloneqq\left\{(\theta,h)\in\R^{2k}\,\middle|\, \E_{\theta+\gamma_{n_m^{(k)}}h}\left[f_k\left(T_{n_m^{(k)},\theta+\gamma_{n_m^{(k)}}h}\right)\right]\to L_\theta[f_k]\right\}^c\]</span> は <span class="math inline">\(\lambda^{2k}\)</span> 零集合．</li>
+<li><span class="math inline">\(f_1\in\F\)</span> に対して，<span class="math inline">\(g_n(\theta)\coloneqq\E_\theta[f_1(T_{n,\theta})],g(\theta)\coloneqq L_{\theta}[f_1]\)</span> として，<a href="#lem-8.10a" class="quarto-xref">Lemma 3</a> を適用すると，ある部分列 <span class="math inline">\(n_{m}^{(1)}\)</span> が存在して，<span class="math display">\[N_1\coloneqq\left\{(\theta,h)\in\R^{2k}\,\middle|\, \E_{\theta+\gamma_{n_m^{(1)}}h}\left[f_1\left(T_{n_m^{(1)},\theta+\gamma_{n_m^{(1)}}h}\right)\right]\to L_\theta[f_1]\right\}^c\]</span> は <span class="math inline">\(\lambda^{2k}\)</span> 零集合．</li>
+<li><span class="math inline">\(f_k\in\F\)</span> に対して，<span class="math inline">\(g_n(\theta)\coloneqq\E_\theta[f_k(T_{n,\theta})]\)</span> として，<span class="math inline">\(g_{n_m^{(k-1)}},g\)</span> に対して，<a href="#lem-8.10a" class="quarto-xref">Lemma 3</a> を適用すると，<span class="math inline">\(n_m^{(k-1)}\)</span> のある部分列 <span class="math inline">\(n_{m}^{(k)}\)</span> が存在して，<span class="math display">\[N_k\coloneqq\left\{(\theta,h)\in\R^{2k}\,\middle|\, \E_{\theta+\gamma_{n_m^{(k)}}h}\left[f_k\left(T_{n_m^{(k)},\theta+\gamma_{n_m^{(k)}}h}\right)\right]\to L_\theta[f_k]\right\}^c\]</span> は <span class="math inline">\(\lambda^{2k}\)</span> 零集合．</li>
 <li><span class="math inline">\(n_m\coloneqq n_m^{(m)}\)</span> とする．</li>
 </ol>
 <ul>
@@ -27172,12 +27069,12 @@ Tip 6
 <p>に注意すると，任意の <span class="math inline">\((\theta,h)\in N^c=\bigcap_{l=1}^\infty N_l^c\)</span> に対して， <span class="math display">\[
 \E_{\theta+\gamma_{n_m}h}[f(T_{n_m,\theta+\gamma_{n_m}h})]\to L_{\theta}[f],\quad\forall f\in\F.
 \]</span></p>
-<p>したがって，<a href="#lem-cdc" class="quarto-xref">Lemma 8</a> より，任意の <span class="math inline">\((\theta,h)\in N^c\)</span> に対して， <span class="math display">\[
+<p>したがって，<a href="#lem-cdc" class="quarto-xref">Lemma 7</a> より，任意の <span class="math inline">\((\theta,h)\in N^c\)</span> に対して， <span class="math display">\[
 T_{n_m,\theta+\gamma_{n_m}h}\warrow[\theta+\gamma_{n_m}h] L_{\theta}.
 \]</span></p>
 </div>
 <div id="lem-8.10a" class="theorem lemma">
-<p><span class="theorem-title"><strong>Lemma 4</strong></span> <span class="math inline">\(\lambda^k\)</span> は <span class="math inline">\(\R^k\)</span> 上の Lebesgue 測度， <span class="math inline">\(g_n\)</span> は <span class="math inline">\(\R^k\)</span> 上の可測関数で一様に有界とする．<span class="math inline">\(\R^k\)</span> 上のある可測関数 <span class="math inline">\(g\)</span> が存在して，<span class="math inline">\(g_n\to g,\enspace\lambda^{k}\)</span>-a.e. を仮定する．</p>
+<p><span class="theorem-title"><strong>Lemma 3</strong></span> <span class="math inline">\(\lambda^k\)</span> は <span class="math inline">\(\R^k\)</span> 上の Lebesgue 測度， <span class="math inline">\(g_n\)</span> は <span class="math inline">\(\R^k\)</span> 上の可測関数で一様に有界とする．<span class="math inline">\(\R^k\)</span> 上のある可測関数 <span class="math inline">\(g\)</span> が存在して，<span class="math inline">\(g_n\to g,\enspace\lambda^{k}\)</span>-a.e. を仮定する．</p>
 <p>このとき，任意の <span class="math inline">\(\gamma_n\to0\)</span> に対して，ある部分列 <span class="math inline">\(n_m\)</span> が存在して， <span class="math display">\[
 g_{n_m}(\theta+\gamma_{n_m} h)\to g(\theta),\quad \lambda^{2k}\text{-a.e.}\enspace(\theta,h).
 \]</span></p>
@@ -27201,7 +27098,7 @@ g_{n_m}(\theta+\gamma_{n_m} h)\to g(\theta),\quad \lambda^{2k}\text{-a.e.}\enspa
 </ol>
 <p>にわけて示す．</p>
 <p><strong>一段目</strong>：<span class="math inline">\(\E[|g_n(\Theta+\gamma_n H)-g(\Theta+\gamma_n H)|]\to0\)</span></p>
-<p><span class="math inline">\(p,p_n\)</span> をそれぞれ <span class="math inline">\(N(0,I),N(0,(1+\gamma_n^2)I)\)</span> の密度とする． <span class="math inline">\(p_n\to p,\enspace\lambda^k\)</span>-a.e. および，<span class="math inline">\(1=\norm{p_n}_{L_1(\lambda)}\to\norm{p}_{L_1(\lambda)}=1\)</span> である．<a href="#lem-scheffe" class="quarto-xref">Lemma 7</a> より， <span class="math display">\[
+<p><span class="math inline">\(p,p_n\)</span> をそれぞれ <span class="math inline">\(N(0,I),N(0,(1+\gamma_n^2)I)\)</span> の密度とする． <span class="math inline">\(p_n\to p,\enspace\lambda^k\)</span>-a.e. および，<span class="math inline">\(1=\norm{p_n}_{L_1(\lambda)}\to\norm{p}_{L_1(\lambda)}=1\)</span> である．<a href="#lem-scheffe" class="quarto-xref">Lemma 6</a> より， <span class="math display">\[
 \norm{p_n-p}_{L_1(\lambda)}\to0.
 \]</span></p>
 <ul>
@@ -27278,7 +27175,7 @@ g_{n_m}(\theta+\gamma_{n_m} h)\to g(\theta),\quad \lambda^{2k}\text{-a.e.}\enspa
 <p><span class="theorem-title"><strong>Definition 4 (下半連続関数)</strong></span> 関数 <span class="math inline">\(f:\mathfrak{X}\to\mathbb{R}\)</span> が下半連続 (lower semicontinuous) であるとは，<span class="math inline">\(\{x\in\mathfrak{X}\mid f(x)\leq t\}\)</span> が 各点 <span class="math inline">\(t\in\mathbb{R}\)</span> で閉集合となることである．</p>
 </div>
 <div id="lem-lsc" class="theorem lemma">
-<p><span class="theorem-title"><strong>Lemma 5</strong></span> <span class="math inline">\(f:\X\to\R\)</span> は下に有界な下半連続関数とする．このとき，有界な Lipschitz 関数列 <span class="math inline">\(\{l_{n}\}\)</span> で，<span class="math inline">\(l_{n}\nearrow f\quad (n\to\infty)\)</span> となるものが存在．</p>
+<p><span class="theorem-title"><strong>Lemma 4</strong></span> <span class="math inline">\(f:\X\to\R\)</span> は下に有界な下半連続関数とする．このとき，有界な Lipschitz 関数列 <span class="math inline">\(\{l_{n}\}\)</span> で，<span class="math inline">\(l_{n}\nearrow f\quad (n\to\infty)\)</span> となるものが存在．</p>
 </div>
 <div class="proof">
 <p><span class="proof-title"><em>Proof</em>. </span>仮定より，ある <span class="math inline">\(M&gt;0\)</span> が存在し，<span class="math inline">\(f&gt;M\)</span> である．<span class="math inline">\(g=f-M\)</span> とすると，<span class="math inline">\(g\)</span> は正の下半連続関数である．このとき，各 <span class="math inline">\(t&gt;0\)</span> に対し，<span class="math inline">\(G_{t}=\{x\in\mathfrak{X}\mid g(x)&gt;t\}\)</span> は開集合である．また，<span class="math inline">\(k\in\mathbb{N}\)</span> に対し <span class="math display">\[
@@ -27294,7 +27191,7 @@ l_{n}(x):=\max_{i\leq n}h_{i}(x)
 \]</span> と定義すると，<span class="math inline">\(l_n\)</span> は Lipschitz 連続（結構な行間）．また，<span class="math inline">\(l_{n}(x)\nearrow g(x)\)</span> である．</p>
 </div>
 <div id="lem-portmanteau" class="theorem lemma">
-<p><span class="theorem-title"><strong>Lemma 6 (Portmanteau)</strong></span> 以下は同値：</p>
+<p><span class="theorem-title"><strong>Lemma 5 (Portmanteau)</strong></span> 以下は同値：</p>
 <ol type="1">
 <li><span class="math inline">\(P_n\warrow P.\)</span></li>
 <li>任意の下に有界な下半連続関数 <span class="math inline">\(f\colon\X\to\R\)</span> に対し，<span class="math inline">\(\liminf P_nf\geq Pf.\)</span></li>
@@ -27307,7 +27204,7 @@ l_{n}(x):=\max_{i\leq n}h_{i}(x)
 <li>任意の開集合 <span class="math inline">\(G\)</span> に対して，<span class="math inline">\(\liminf P_n(G)\geq P(G).\)</span></li>
 </ol>
 <p><span class="math inline">\((3)\Rightarrow(2)\)</span>：</p>
-<p><span class="math inline">\(f:\X\to\R\)</span> を任意の下に有界な下半連続関数とする．<a href="#lem-lsc" class="quarto-xref">Lemma 5</a> より，有界 Lipschitz 関数列 <span class="math inline">\(\{l_{m}:\X\to\R\}\)</span> で，<span class="math inline">\(l_{m}\nearrow f\quad (m\to\infty)\)</span> となるものが存在． 仮定より， <span class="math display">\[
+<p><span class="math inline">\(f:\X\to\R\)</span> を任意の下に有界な下半連続関数とする．<a href="#lem-lsc" class="quarto-xref">Lemma 4</a> より，有界 Lipschitz 関数列 <span class="math inline">\(\{l_{m}:\X\to\R\}\)</span> で，<span class="math inline">\(l_{m}\nearrow f\quad (m\to\infty)\)</span> となるものが存在． 仮定より， <span class="math display">\[
 \liminf_{n\to\infty}P_{n}f\geq \liminf_{n\to\infty}P_{n}l_{m}=Pl_{m}
 \]</span> が成立．単調収束定理より， <span class="math display">\[
 \liminf_{n\to\infty}P_{n}f\geq\lim_{m\to\infty}Pl_{m}=P\lim_{m\to\infty}l_{m}
@@ -27322,7 +27219,7 @@ l_{n}(x):=\max_{i\leq n}h_{i}(x)
 <section id="scheffé-の補題" class="level2">
 <h2 class="anchored" data-anchor-id="scheffé-の補題">Scheffé の補題</h2>
 <div id="lem-scheffe" class="theorem lemma">
-<p><span class="theorem-title"><strong>Lemma 7 (Scheffé の補題)</strong></span> 測度空間 <span class="math inline">\((S,\mathscr{A},\mu)\)</span> 上の可積分関数 <span class="math inline">\(g_n,g\)</span> に対し，<span class="math inline">\(g_n\to g,\enspace \mu\)</span>-a.e. を仮定する．このとき，以下は同値：</p>
+<p><span class="theorem-title"><strong>Lemma 6 (Scheffé の補題)</strong></span> 測度空間 <span class="math inline">\((S,\mathscr{A},\mu)\)</span> 上の可積分関数 <span class="math inline">\(g_n,g\)</span> に対し，<span class="math inline">\(g_n\to g,\enspace \mu\)</span>-a.e. を仮定する．このとき，以下は同値：</p>
 <ol type="1">
 <li><span class="math inline">\(\norm{g_n-g}_{L_1(\mu)}\to0.\)</span></li>
 <li><span class="math inline">\(\norm{g_n}_{L_1(\mu)}\to\norm{g}_{L_1(\mu)}.\)</span></li>
@@ -27352,7 +27249,7 @@ l_{n}(x):=\max_{i\leq n}h_{i}(x)
 <section id="convergence-determining-class" class="level2">
 <h2 class="anchored" data-anchor-id="convergence-determining-class">Convergence-determining Class</h2>
 <div id="lem-cdc" class="theorem lemma">
-<p><span class="theorem-title"><strong>Lemma 8</strong></span> <span class="math inline">\(\R^d\)</span> 上の一様有界な連続関数の族 <span class="math inline">\(\F\)</span> で高々可算なものが存在し，以下は同値：</p>
+<p><span class="theorem-title"><strong>Lemma 7</strong></span> <span class="math inline">\(\R^d\)</span> 上の一様有界な連続関数の族 <span class="math inline">\(\F\)</span> で高々可算なものが存在し，以下は同値：</p>
 <p><span class="math inline">\(\R^d\)</span> 上の確率測度 <span class="math inline">\(P_n,P\)</span> に対して，</p>
 <ol type="1">
 <li><span class="math inline">\(P_n\warrow P.\)</span></li>
@@ -27387,6 +27284,113 @@ x\in B_1\subset\bar{B_1}\subset B_2\subset G.
 <p>以上より， <span class="math display">\[
 \liminf P_n(G)\geq P(G).
 \]</span></p>
+</div>
+</section>
+<section id="正則な推定量に関する補足" class="level2">
+<h2 class="anchored" data-anchor-id="正則な推定量に関する補足">正則な推定量に関する補足</h2>
+<div id="lem-regular-density" class="theorem lemma">
+<p><span class="theorem-title"><strong>Lemma 8</strong></span> <span class="math inline">\(\Theta\subset\R^k\)</span> は開集合，<span class="math inline">\(\psi\colon\Theta\to\R^d\)</span> は <span class="math inline">\(\theta\)</span> で微分可能とする．統計モデル <span class="math inline">\((P_\theta)_{\theta\in\Theta}\)</span> に以下を仮定する：</p>
+<ol type="1">
+<li><span class="math inline">\((P_{\theta})_{\theta\in\Theta}\)</span> は <span class="math inline">\(\theta\)</span> で QMD.</li>
+<li>Fisher 情報行列 <span class="math inline">\(I_\theta\)</span> は <span class="math inline">\(\theta\)</span> で正則．</li>
+</ol>
+<p><span class="math inline">\(H\subset\R^k\)</span> は稠密とする．<span class="math inline">\(\psi(\theta)\)</span> の推定量 <span class="math inline">\(T_n\)</span> に以下を仮定する：</p>
+<p>ある <span class="math inline">\(L_\theta\)</span> が存在して， <span class="math display">\[
+\sqrt{n}\left(T_n-\psi\left(\theta+\frac{h}{\sqrt{n}}\right)\right)\warrow[\theta+h/\sqrt{n}]L_\theta,\enspace\forall h\in H.
+\]</span></p>
+<p>このとき，<span class="math inline">\(T_n\)</span> は正則な推定量．</p>
+</div>
+<div class="proof">
+<p><span class="proof-title"><em>Proof</em>. </span>仮定より，<span class="math inline">\((P_\theta^n)_{\theta\in\Theta}\)</span> は LAN： <span class="math display">\[
+\log\frac{\mathrm{d}P_{\theta+h/\sqrt{n}}^n}{\mathrm{d}P_\theta^n}=h^\top\Delta_{n,\theta}-\frac12h^\top I_\theta h+o_{P_\theta}(1).
+\]</span></p>
+<p>ただし，<span class="math inline">\(\Delta_{n,\theta}\coloneqq n^{-1/2}\sum_{i=1}^{n}\dot{l}_\theta(X_i)\warrow[\theta]N(0,I_\theta)\)</span> である．</p>
+<div id="tip-lem-regular-density-1" class="callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Tip 3
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Example 6.5 より，<span class="math inline">\(P_{\theta+h/\sqrt{n}}^n\)</span> と <span class="math inline">\(P_\theta^n\)</span> は相互に近接している.</p>
+</div>
+</div>
+<p><span class="math inline">\(T_{n,\theta}\coloneqq\sqrt{n}(T_n-\psi(\theta))\)</span> とすると，仮定より， <span class="math display">\[
+T_{n,\theta+h/\sqrt{n}}=T_{n,\theta}-\sqrt{n}\left(\psi\left(\theta+\frac{h}{\sqrt{n}}\right)-\psi(\theta)\right)\warrow[\theta+h/\sqrt{n}]L_\theta,\quad \forall h\in H.
+\]</span></p>
+<p>したがって，<span class="math inline">\(\sqrt{n}(\psi(\theta+h/\sqrt{n})-\psi(\theta))\to\dot{\psi}_\theta h\)</span> に注意すると， <span class="math display">\[
+T_{n,\theta}\warrow[\theta+h/\sqrt{n}]L_\theta\ast\delta_{\dot{\psi}_\theta h},\quad\forall h\in H
+\]</span></p>
+<p>が成り立つ．</p>
+<div id="tip-lem-regular-density-2" class="callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Tip 4
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p><span class="math inline">\(T_{n,\theta}=O_{P_{\theta+h/\sqrt{n}}}(1)\)</span> である．特に，相互近接性から <span class="math inline">\(T_{n,\theta}=O_{P_\theta}(1)\)</span> である．</p>
+</div>
+</div>
+<p><span class="math inline">\((T_{n,\theta},\Delta_{n,\theta})=O_{P_\theta}(1)\)</span> なので，Prokhorov の定理より，任意の部分列 <span class="math inline">\(n_m\)</span> に対して，ある部分列 <span class="math inline">\(n_{m_l}\)</span> と確率ベクトル <span class="math inline">\((T_\theta,\Delta_\theta)\)</span> が存在して， <span class="math display">\[
+(T_{n_{m_l},\theta},\Delta_{n_{m_l},\theta})\warrow[\theta](T_\theta,\Delta_\theta).
+\]</span></p>
+<p>したがって，Theorem 6.6 より，任意の <span class="math inline">\(h\in\R^k\)</span> に対して， <span class="math display">\[
+\lim_l\E_{\theta+h/\sqrt{n_{m_l}}}[\exp(it^\top T_{n_{m_l},\theta})]
+=
+\E\left[\exp(it^\top T_\theta)\exp\left(h^\top\Delta_\theta-\frac12h^\top I_\theta h\right)\right].
+\]</span></p>
+<p>ここで，<span class="math inline">\(L_\theta\)</span> の特性関数を <span class="math inline">\(\phi_{L_\theta}(t)\)</span> とすると， <span class="math display">\[
+\lim_l \E_{\theta+h/{\sqrt{n_{m_l}}}}[\exp(it^\top T_{n_{m_l},\theta})]
+=\phi_{L_\theta}(t)\exp(it^\top\dot{\psi}_\theta h),\quad\forall h\in H.
+\]</span></p>
+<p>つまり，任意の <span class="math inline">\(h\in H\)</span> に対して， <span class="math display">\[
+\E\left[\exp(it^\top T_\theta)\exp\left(h^\top\Delta_\theta-\frac12h^\top I_\theta h\right)\right]
+=\phi_{L_\theta}(t)\exp(it^\top\dot{\psi}_\theta h).
+\]</span></p>
+<p><strong>主張</strong>：任意の <span class="math inline">\(h\in\R^k\)</span> に対して上の等式が成立．特に，<span class="math inline">\(T_{n_{m_l},\theta}\warrow[\theta+h/\sqrt{n_{m_l}}]L_\theta\ast\delta_{\dot{\psi}_\theta h}\)</span> である．</p>
+<div id="tip-lem-regular-density-3" class="callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Tip 5
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>部分列 <span class="math inline">\(n_m\)</span> は任意だったので，これは <span class="math inline">\(T_{n,\theta+h/\sqrt{n}}\warrow[\theta+h/\sqrt{n}]L_\theta,\enspace\forall h\in\R^k\)</span> を意味する．</p>
+</div>
+</div>
+<p>両辺の <span class="math inline">\(h\)</span> に関する連続性を示せば，連続関数の稠密性から主張が従う．右辺の連続性は明らか．左辺について示す．<span class="math inline">\(h_m\to h\)</span> に対して， <span class="math display">\[
+f_m(T_\theta,\Delta_\theta)\coloneqq
+\exp(it^\top T_\theta)\exp\left(h_m^\top\Delta_\theta-\frac12h_m^\top I_\theta h_m\right)
+\]</span> とする． <span class="math inline">\(h_m\)</span> は有界なので，<span class="math inline">\(\norm{h_m}\leq R\)</span> を満たす <span class="math inline">\(R&gt;0\)</span> が存在する． <span class="math display">\[
+|f_m(T_\theta,\Delta_\theta)|
+\leq\exp(h_m^\top\Delta_\theta)
+\leq\exp(\norm{h_m}\norm{\Delta_\theta})
+\leq\exp(R\norm{\Delta_\theta})
+\]</span></p>
+<p>より，優収束定理が使えて <span class="math inline">\(\lim_m\E[f_m(T_\theta,\Delta_\theta)]=\E[\lim_m f_m(T_\theta,\Delta_\theta)]\)</span> が成り立つ．これは左辺の連続性を意味する．</p>
+<div id="tip-lem-regular-density-4" class="callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Tip 6
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p><span class="math inline">\(\Delta_\theta\sim N(0,I_\theta)\)</span> より，<span class="math inline">\(\exp(R\norm{\Delta_\theta})\)</span> は可積分．</p>
+</div>
+</div>
 </div>
 
 </section>
