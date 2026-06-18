@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 <meta name="author" content="とり">
-<meta name="dcterms.date" content="2026-06-17">
+<meta name="dcterms.date" content="2026-06-18">
 
 <title>Asymptotic Statistics Chapter 8 Efficiency of Estimators</title>
 <style>
@@ -26540,7 +26540,7 @@ color: #556056;
     <div>
     <div class="quarto-title-meta-heading">Published</div>
     <div class="quarto-title-meta-contents">
-      <p class="date">June 17, 2026</p>
+      <p class="date">June 18, 2026</p>
     </div>
   </div>
   
@@ -27312,7 +27312,7 @@ T(X)\coloneqq X+\nabla\log f(X)
 </div>
 <ul>
 <li>矢野恵佑先生（統数研）の講義資料（高次元確率・統計2025年度，総研大）を参考にした．</li>
-<li><span class="math inline">\(f(x)\coloneqq\norm{x}^{-(k-2)}\)</span> とした場合が <a href="#exm-8.12" class="quarto-xref">Example 2</a> に対応する．<span class="math inline">\(k=2\)</span> だと2つ目の仮定が満たされない．<span class="math inline">\(k=1\)</span> だと1つ目の仮定が満たされない． <span class="math display">\[
+<li><span class="math inline">\(f(x)\coloneqq\norm{x}^{-(k-2)}\)</span> とした場合が <a href="#exm-8.12" class="quarto-xref">Example 2</a> に対応する．<span class="math inline">\(k=2\)</span> だと2つ目の仮定が満たされない．<span class="math inline">\(k=1\)</span> だと3つ目の仮定が満たされない． <span class="math display">\[
 \Delta f^{1/2}(x)=-\frac14(k-2)^2\norm{x}^{-k/2-1}.
 \]</span></li>
 </ul>
@@ -27415,7 +27415,12 @@ Tip 6
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<p>各 <span class="math inline">\(T_{n,j},\psi_j\)</span> について，ある <span class="math inline">\(\ell_j\)</span> が存在して，locally asymptotically minimax ならば， <a href="#prp-8.6" class="quarto-xref">Proposition 3</a> より，<span class="math inline">\(T_{n,j}=\nabla\psi_j^\top X\)</span> が a.s. で成立する．全体としては，<span class="math inline">\(T_n=\dot{\psi}_\theta X\)</span> が a.s. で成立するので，<span class="math inline">\(T_n\)</span> も locally asymptotically minimax になる．</p>
+<p>各 <span class="math inline">\(T_{n,j},\psi_j\)</span> について，ある <span class="math inline">\(\ell_j\)</span> が存在して locally asymptotically minimax ならば，<span class="math inline">\(T_n\)</span> も locally asymptotically minimax になる．</p>
+<p>実際，一段目のランダム化統計量 <span class="math inline">\(T\)</span> をとると，各 <span class="math inline">\(T_j,\ell_j\)</span> に対して， <span class="math display">\[
+\sup_{h\in\R^k}\E_h[\ell_j(T_j-\nabla\psi_j(\theta)^\top h)]
+\leq N(0,\nabla{\psi}(\theta)I_{\theta}^{-1}\nabla{\psi}(\theta)^\top)[\ell_j].
+\]</span></p>
+<p><a href="#prp-8.6" class="quarto-xref">Proposition 3</a> より，<span class="math inline">\(T_{j}=\nabla\psi_j^\top X\)</span> が a.s. で成立する．全体としては，<span class="math inline">\(T_n=\dot{\psi}_\theta X\)</span> が a.s. で成立するので，<span class="math inline">\(T_n\)</span> も locally asymptotically minimax になる．</p>
 </div>
 </div>
 </section>
