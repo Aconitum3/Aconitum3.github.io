@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 <meta name="author" content="とり">
-<meta name="dcterms.date" content="2026-06-11">
+<meta name="dcterms.date" content="2026-06-26">
 
 <title>Lie Groups, Lie Algebras, and Representations Chapter 10 Further Properties of the Representations</title>
 <style>
@@ -2371,7 +2371,7 @@ color: #556056;
     <div>
     <div class="quarto-title-meta-heading">Published</div>
     <div class="quarto-title-meta-contents">
-      <p class="date">June 11, 2026</p>
+      <p class="date">June 26, 2026</p>
     </div>
   </div>
   
@@ -2414,10 +2414,12 @@ color: #556056;
 \newcommand{\d}{\,\mathrm{d}}
 \newcommand{\dd}[3][]{\frac{\text{d}^{#1}{#2}}{\text{d}^{#1}{#3}}}
 \DeclarePairedDelimiter{\ang}{\langle}{\rangle}
-\DeclareMathOperator{\Ker}{Ker}
-\DeclareMathOperator{\Im}{Im}
+\DeclareMathOperator{\Ker}{ker}
+\DeclareMathOperator{\Im}{im}
+\newcommand{\Hom}{\mathrm{Hom}}
 \DeclareMathOperator{\Conv}{Conv}
 \DeclareMathOperator{\vspan}{span}
+\DeclareMathOperator{\mult}{mult}
 \DeclareMathOperator{\div}{div}
 \DeclareMathOperator{\grad}{grad}
 \]</span></p>
@@ -2733,8 +2735,8 @@ Tip 6: <span class="citation" data-cites="hallLieGroupsLie2015">Hall (<a href="
 <p><strong>二段目</strong>：<span class="math inline">\(c_\mu=\ang{\mu+\delta,\mu+\delta}-\ang{\delta,\delta}\)</span></p>
 <p><span class="math inline">\(\k\)</span> の正規直交基底 <span class="math inline">\(H_j,Y_\alpha,Z_\alpha\)</span> を次のように構成する．</p>
 <ol type="1">
-<li><span class="math inline">\(\k\)</span> の極大可換代数 <span class="math inline">\(\t\)</span> の正規直交基底 <span class="math inline">\(H_1,\dots,H_j\)</span> をとる．</li>
-<li><span class="math inline">\(\g\)</span> の正単純ルート <span class="math inline">\(\alpha\)</span> に対して，単位ベクトル <span class="math inline">\(X_\alpha\in\g_\alpha\)</span> をとる．</li>
+<li><span class="math inline">\(\k\)</span> の極大可換部分代数 <span class="math inline">\(\t\)</span> の正規直交基底 <span class="math inline">\(H_1,\dots,H_j\)</span> をとる．</li>
+<li><span class="math inline">\(\g\)</span> の正ルート <span class="math inline">\(\alpha\)</span> に対して，単位ベクトル <span class="math inline">\(X_\alpha\in\g_\alpha\)</span> をとる．</li>
 <li><span class="math inline">\(Y_\alpha\coloneqq(X_\alpha+X_\alpha^\ast)/(\sqrt{2}i),\enspace Z_\alpha\coloneqq(X_\alpha-X_\alpha^\ast)/\sqrt{2}\)</span> とする．</li>
 </ol>
 <p>（正規直交することは確認していません…）</p>
@@ -2763,14 +2765,14 @@ Z_\alpha^2&amp;=\frac{1}{2}(X_\alpha^2-X_\alpha X_\alpha^\ast-X_\alpha^\ast X_\a
 \]</span></p>
 <p>以上より，<span class="math inline">\(c_\mu=\ang{\mu,\mu}+\ang{\mu,2\delta}=\ang{\mu-\delta,\mu-\delta}-\ang{\delta,\delta}.\)</span></p>
 <p><strong>三段目</strong>：<span class="math inline">\(c_\mu\geq0\)</span> で，<span class="math inline">\(c_\mu=0\iff\mu=0\)</span></p>
-<p><span class="math inline">\(\mu\)</span> は優元なので，任意の正単純ルート <span class="math inline">\(\alpha\)</span> に対して，<span class="math inline">\(\ang{\mu,\alpha}\geq0\)</span> である．したがって，<span class="math inline">\(\ang{\mu,2\delta}\)</span> は非負． よって，<span class="math inline">\(c_\mu\geq0\)</span> である．さらに，<span class="math inline">\(c_\mu=0\iff \mu=0\)</span> である．</p>
+<p><span class="math inline">\(\mu\)</span> は優元なので，任意の正ルート <span class="math inline">\(\alpha\)</span> に対して，<span class="math inline">\(\ang{\mu,\alpha}\geq0\)</span> である．したがって，<span class="math inline">\(\ang{\mu,2\delta}\)</span> は非負． よって，<span class="math inline">\(c_\mu\geq0\)</span> である．さらに，<span class="math inline">\(c_\mu=0\iff \mu=0\)</span> である．</p>
 </div>
 <div id="lem-10.7" class="theorem lemma">
 <p><span class="theorem-title"><strong>Lemma 2 (<span class="citation" data-cites="hallLieGroupsLie2015">Hall (<a href="#ref-hallLieGroupsLie2015" role="doc-biblioref">2015</a>)</span> Lemma 10.7)</strong></span> <span class="math inline">\(X\in\g_\alpha\)</span> は単位ベクトルとすると，<span class="math inline">\([X,X^\ast]=\alpha.\)</span></p>
 </div>
 <div class="proof">
 <p><span class="proof-title"><em>Proof</em>. </span><strong>一段目</strong>：<span class="math inline">\(X^\ast\in\g_{-\alpha},[X,X^\ast]\in\h\)</span> （7章の復習）</p>
-<p><span class="math inline">\(X_1,X_2\in\k\)</span> をもちいて，<span class="math inline">\(X=X_1+iX_2\)</span> と表せる．<span class="math inline">\(X^\ast\coloneqq -X_1+iX_2=-\overline{X}\)</span> である． <span class="math inline">\(\ad\)</span> は歪 Hermite なので，その固有値は純虚数になる．このことに注意すると， <span class="math display">\[
+<p><span class="math inline">\(X_1,X_2\in\k\)</span> を用いて，<span class="math inline">\(X=X_1+iX_2\)</span> と表せる．<span class="math inline">\(X^\ast\coloneqq -X_1+iX_2=-\overline{X}\)</span> である． <span class="math inline">\(\ad\)</span> は歪 Hermite なので，その固有値は純虚数になる．このことに注意すると， <span class="math display">\[
 \begin{align*}
 \overline{[H,X]}&amp;=[H,X_1]-i[H,X_2]=[H,\overline{X}],\\
 [H,X^\ast]&amp;=-\overline{[H,X]}=-\overline{\ang{\alpha,H}X}=-\ang{\alpha,H}X^\ast.
@@ -2792,12 +2794,588 @@ Z_\alpha^2&amp;=\frac{1}{2}(X_\alpha^2-X_\alpha X_\alpha^\ast-X_\alpha^\ast X_\a
 </section>
 <section id="complete-reducibility" class="level1">
 <h1>10.3 Complete Reducibility</h1>
+<div id="thm-10.9" class="theorem">
+<p><span class="theorem-title"><strong>Theorem 2 (<span class="citation" data-cites="hallLieGroupsLie2015">Hall (<a href="#ref-hallLieGroupsLie2015" role="doc-biblioref">2015</a>)</span> Theorem 10.9)</strong></span> 半単純 Lie 代数の有限次元表現は完全可約．</p>
+</div>
+<ul>
+<li>5章の結果を使っても示せるが，Casimir 元の性質を用いて代数的に示す．</li>
+</ul>
+<div class="proof">
+<p><span class="proof-title"><em>Proof</em> (5章の結果による証明). </span><span class="math inline">\(\g\)</span> を半単純 Lie 代数とする．このとき，あるコンパクト行列 Lie 群 <span class="math inline">\(K\)</span> が存在して，その Lie 代数 <span class="math inline">\(\k\)</span> に対して，<span class="math inline">\(\g\simeq \k_\C\)</span> が成り立つのだった．ここで，<span class="math inline">\(K\)</span> として特に単連結なものがとれる．</p>
+<p><span class="math inline">\((\pi,V)\)</span> を <span class="math inline">\(\g\)</span> の有限次元表現とする．Theorem 5.6 より，<span class="math inline">\(\k\)</span> の有限次元表現 <span class="math inline">\((\pi|_\k,V)\)</span> は <span class="math inline">\(K\)</span> の上の有限次元表現 <span class="math inline">\((\Phi,V)\)</span> を一意的に誘導する．</p>
+<div id="tip-thm5.6" class="callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Tip 7: <span class="citation" data-cites="hallLieGroupsLie2015">Hall (<a href="#ref-hallLieGroupsLie2015" role="doc-biblioref">2015</a>)</span> Theorem 5.6
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>行列 Lie 群 <span class="math inline">\(G,H\)</span> とその Lie 代数 <span class="math inline">\(\g,\h\)</span> に対して，<span class="math inline">\(\phi\colon\g\to\h\)</span> が Lie 代数の準同型で，<span class="math inline">\(G\)</span> が単連結ならば，Lie 群の準同型 <span class="math inline">\(\Phi\colon G\to H\)</span> で，<span class="math inline">\(\Phi(e^X)=e^{\phi(X)}\)</span> を満たすものが一意的に存在する．</p>
+</div>
+</div>
+<p>Theorem 4.28 より，コンパクト行列 Lie 群の有限次元表現は完全可約．特に，<span class="math inline">\((\pi|_\k,V)\)</span> も完全可約で，<span class="math inline">\((\pi,V)\)</span> もそう．</p>
+<div id="tip-thm4.28" class="callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Tip 8: <span class="citation" data-cites="hallLieGroupsLie2015">Hall (<a href="#ref-hallLieGroupsLie2015" role="doc-biblioref">2015</a>)</span> Theorem 4.28
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>コンパクト行列 Lie 群の有限次元表現は完全可約．</p>
+</div>
+</div>
+</div>
+<p>証明の流れ：<a href="#prp-10.8" class="quarto-xref">Proposition 5</a> → <a href="#lem-10.10" class="quarto-xref">Lemma 3</a> → <a href="#thm-10.9" class="quarto-xref">Theorem 2</a></p>
+<div class="proof">
+<p><span class="proof-title"><em>Proof</em>. </span><span class="math inline">\(\g\)</span> が既約な場合は明らか．既約でない場合を示す．<span class="math inline">\((\pi,V)\)</span> を有限次元表現として，<span class="math inline">\(W\subset V\)</span> を非自明な不変部分空間とする．</p>
+<p><strong>示すこと</strong>：ある不変部分空間 <span class="math inline">\(U\)</span> が存在して，<span class="math inline">\(V=W\oplus U.\)</span></p>
+<p>これを非自明な不変部分空間に繰り返し適用することで完全可約性が従う．</p>
+<p><strong>証明のアイデア</strong>：絡写像 <span class="math inline">\(A\colon V\to W\)</span> で <span class="math inline">\(A|_W\)</span> が単射なものが存在すれば，<span class="math inline">\(U\)</span> として <span class="math inline">\(\Ker A\)</span> がとれる．</p>
+<div id="tip-thm10.9-1" class="callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Tip 9
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>実際，<span class="math inline">\(A\)</span> は <span class="math inline">\(\pi\)</span> と可換なので，<span class="math inline">\(\Ker A\)</span> は不変部分空間．特に <span class="math inline">\(A|_W\)</span> が単射ならば，<span class="math inline">\(\Ker A\cap W=\Ker A|_W=\{0\}\)</span>．<span class="math inline">\(\dim V=\dim\Ker A+\dim\Im A,\Im A\subset W\)</span> に注意すると，<span class="math inline">\(V=W\oplus \Ker A\)</span> が従う．</p>
+</div>
+</div>
+<div id="tip-thm10.9-2" class="callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Tip 10
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p><a href="#lem-10.10" class="quarto-xref">Lemma 3</a> の証明では，<span class="math inline">\(W\)</span> が既約で，<span class="math inline">\(\dim W\geq2\)</span>，余次元1のときに <span class="math inline">\(A\)</span> として <span class="math inline">\(\tilde\pi(C)\)</span> をとった．</p>
+</div>
+</div>
+<p><span class="math inline">\(\Hom(V,W)\)</span> を <span class="math inline">\(V\)</span> から <span class="math inline">\(W\)</span> への線形写像全体とする．<span class="math inline">\(\phi\colon\g\to\gl(\Hom(V,W))\)</span> を <span class="math display">\[
+\phi(X)A\coloneqq\pi(X)A-A\pi(X),\quad X\in\g,A\in\Hom(V,W)
+\]</span></p>
+<p>で定めると，<span class="math inline">\((\phi,\Hom(V,W))\)</span> は有限次元表現．</p>
+<p><span class="math display">\[
+\begin{align*}
+\mathcal{V}&amp;\coloneqq\{A\in\Hom(V,W)\mid A|_W=c_A I,c_A\in\C\}\\
+\mathcal{W}&amp;\coloneqq\{A\in\Hom(V,W)\mid A|_W=0\}
+\end{align*}
+\]</span></p>
+<p>とすると，<span class="math inline">\(\mathcal{V},\mathcal{W}\)</span> は <span class="math inline">\(\Hom(V,W)\)</span> の部分空間で，<span class="math inline">\(A\mapsto c_A\)</span> は <span class="math inline">\(\mathcal{V}\)</span> 上の線形汎関数．</p>
+<div id="tip-thm10.9-3" class="callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Tip 11
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p><span class="math inline">\(A\mapsto c_A\)</span> は恒等的に <span class="math inline">\(0\)</span> ではない． 実際，<span class="math inline">\(W\)</span> の基底を <span class="math inline">\(w_1,\dots,w_n\)</span> として，<span class="math inline">\(V\)</span> の基底を <span class="math inline">\(v_1,\dots,v_m,w_1,\dots,w_n\)</span> となるようにとる． <span class="math inline">\(A\in\Hom(V,W)\simeq\R^{n\times(m+n)}\)</span> として，最初の <span class="math inline">\(m\)</span> 列がすべて <span class="math inline">\(0\)</span> で，残りの <span class="math inline">\(n\)</span> 列がすべて <span class="math inline">\(1\)</span> となるようなものが取れる．</p>
+</div>
+</div>
+<p><span class="math inline">\(\Ker c_A=\mathcal{W}\)</span> より， <span class="math display">\[
+\dim\mathcal{V}=\dim\Im c_A+\dim\Ker c_A=1+\dim\mathcal{W}.
+\]</span></p>
+<p>つまり，<span class="math inline">\(\mathcal{W}\)</span> は <span class="math inline">\(\mathcal{V}\)</span> の部分空間で余次元1.</p>
+<p><strong>主張</strong>：<span class="math inline">\(\mathcal{V},\mathcal{W}\)</span> は <span class="math inline">\(\Hom(V,W)\)</span> の不変部分空間</p>
+<p><span class="math inline">\(A\in\Hom(V,W)\)</span> は <span class="math inline">\(W\)</span> 上 <span class="math inline">\(A=cI\)</span> とする．<span class="math inline">\(w\in W\)</span> に対して，<span class="math inline">\(\pi(X)w\in W\)</span> に注意すると， <span class="math display">\[
+\phi(X)Aw=\pi(X)Aw-A\pi(X)w=c\pi(X)-c\pi(X)=0.
+\]</span></p>
+<p>よって，<span class="math inline">\(\phi(X)A\in\mathcal{W}\subset\mathcal{V}\)</span> となり主張が示された．</p>
+<ul>
+<li><a href="#lem-10.10" class="quarto-xref">Lemma 3</a> より，不変部分空間 <span class="math inline">\(\mathcal{U}\)</span> が存在して，<span class="math inline">\(\mathcal{V}=\mathcal{W}\oplus\mathcal{U}.\)</span></li>
+<li>0でない <span class="math inline">\(A\in\mathcal{U}\)</span> に対して，<span class="math inline">\(c_A\neq0.\)</span></li>
+<li><span class="math inline">\((\phi|_{\mathcal{U}},\mathcal{U})\)</span> は1次元表現なので，<a href="#prp-10.8" class="quarto-xref">Proposition 5</a> より，<span class="math inline">\(\phi|_\mathcal{U}=0\)</span>．これは，<span class="math display">\[\pi(X)A=A\pi(X),\enspace X\in\g,A\in\mathcal{U},\]</span> つまり <span class="math inline">\(A\)</span> が絡写像であることを意味する．</li>
+<li><span class="math inline">\(c_A\neq0\)</span> なので，<span class="math inline">\(A|_W\)</span> は全単射で，特に単射．</li>
+</ul>
+<p>以上より，<span class="math inline">\(U\coloneqq\Ker A\)</span> とすればよい．</p>
+</div>
+<div id="prp-10.8" class="theorem proposition">
+<p><span class="theorem-title"><strong>Proposition 5 (<span class="citation" data-cites="hallLieGroupsLie2015">Hall (<a href="#ref-hallLieGroupsLie2015" role="doc-biblioref">2015</a>)</span> Proposition 10.8)</strong></span> <span class="math inline">\((\pi,V)\)</span> は <span class="math inline">\(\g\)</span> の1次元表現とする．このとき，<span class="math inline">\(\pi=0.\)</span></p>
+</div>
+<div class="proof">
+<p><span class="proof-title"><em>Proof</em>. </span>Theorem 7.8 より，<span class="math inline">\(\g\)</span> は単純 Lie 代数 <span class="math inline">\(\g_j\)</span> の直和分解で表せる： <span class="math display">\[
+\g=\bigoplus_j \g_j.
+\]</span></p>
+<div id="tip-thm7.8" class="callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Tip 12: <span class="citation" data-cites="hallLieGroupsLie2015">Hall (<a href="#ref-hallLieGroupsLie2015" role="doc-biblioref">2015</a>)</span> Theorem 7.8
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>半単純 Lie 代数 <span class="math inline">\(\g\)</span> は，Lie 代数の直和 <span class="math inline">\(\g=\bigoplus \g_j\)</span> に分解でき，<span class="math inline">\(\g_j\)</span> は単純（次元が2以上かつ非自明なイデアルをもたない）．</p>
+</div>
+</div>
+<p><span class="math inline">\(\Ker \pi|_{\g_j}\)</span> は <span class="math inline">\(\g_j\)</span> のイデアルなので，<span class="math inline">\(\Ker\pi|_{\g_j}\)</span> は <span class="math inline">\(\{0\},\g_j\)</span> のいずれか． <span class="math inline">\(\dim\g_j\geq2,\dim(V)=1\)</span> より，<span class="math inline">\(\Ker\pi|_{\g_j}=\{0\}\)</span> である．<span class="math inline">\(j\)</span> は任意だったので，<span class="math inline">\(\pi=0.\)</span></p>
+</div>
+<div id="lem-10.10" class="theorem lemma">
+<p><span class="theorem-title"><strong>Lemma 3 (<span class="citation" data-cites="hallLieGroupsLie2015">Hall (<a href="#ref-hallLieGroupsLie2015" role="doc-biblioref">2015</a>)</span> Lemma 10.10)</strong></span> <span class="math inline">\((\pi,V)\)</span> は <span class="math inline">\(\g\)</span> の有限次元表現で，<span class="math inline">\(W\subset V\)</span> は余次元1の不変部分空間とする． このとき，ある不変部分空間 <span class="math inline">\(U\subset V\)</span> が存在して，<span class="math inline">\(V=W\oplus U.\)</span></p>
+</div>
+<div class="proof">
+<p><span class="proof-title"><em>Proof</em>. </span><strong>一段目</strong>：<span class="math inline">\(W\)</span> が既約で，<span class="math inline">\(\dim W=1\)</span> の場合</p>
+<p><a href="#prp-10.8" class="quarto-xref">Proposition 5</a> より，<span class="math inline">\(\g\)</span> の1次元表現 <span class="math inline">\((\pi|_W,W)\)</span> に対して，<span class="math inline">\(\pi|_W=0\)</span> である．<span class="math inline">\(\dim V=2\)</span> なので， <span class="math display">\[
+\dim\{A\in\gl(V)\mid A(W)=\{0\}\}=2.
+\]</span></p>
+<p>つまり，<span class="math inline">\(\dim\Im\pi\leq 2\)</span> である．</p>
+<div id="tip-lem10.10-1" class="callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Tip 13
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p><span class="math inline">\(V\)</span> の基底として，<span class="math inline">\(v_1\in W,v_2\in V\)</span> をとる．<span class="math inline">\(A\in\gl(V)\simeq\R^{2\times2}\)</span> で，<span class="math inline">\(A(W)=\{0\}\)</span> を満たすのは一列目の列ベクトルが0のもの．</p>
+</div>
+</div>
+<p>単純 Lie 代数の次元は3以上になるので，単純 Lie 代数による直和分解 <span class="math inline">\(\g=\bigoplus_j\g_j\)</span> について，<span class="math inline">\(\dim\g_j\geq 3\)</span> である．</p>
+<div id="tip-lem10.10-2" class="callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Tip 14
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>2次元 Lie 代数 <span class="math inline">\(\g\)</span> は単純でない．実際，以下のいずれか一方のみが成立する：</p>
+<ol type="1">
+<li><span class="math inline">\(\g\)</span> は可換</li>
+<li>交換子イデアル <span class="math inline">\([\g,\g]\)</span> は1次元</li>
+</ol>
+</div>
+</div>
+<p><span class="math inline">\(\Ker \pi|_{\g_j}\)</span> は <span class="math inline">\(\g_j\)</span> のイデアルなので，<span class="math inline">\(\Ker\pi|_{\g_j}\)</span> は <span class="math inline">\(\{0\},\g_j\)</span> のいずれか． <span class="math inline">\(\dim\g_j\geq3,\dim\Ker\pi|_{\g_j}\geq1\)</span> より，<span class="math inline">\(\Ker\pi|_{\g_j}=\g_j\)</span> である．<span class="math inline">\(j\)</span> は任意だったので，<span class="math inline">\(\pi=0.\)</span></p>
+<p>以上より，<span class="math inline">\(U\)</span> として <span class="math inline">\(W\)</span> の補空間を選べば，<span class="math inline">\(U\)</span> も不変部分空間で，<span class="math inline">\(V=W\oplus U.\)</span></p>
+<p><strong>二段目</strong>：<span class="math inline">\(W\)</span> が既約で，<span class="math inline">\(\dim W\geq 2\)</span> の場合</p>
+<p><span class="math inline">\(\pi\)</span> は <span class="math inline">\(W\)</span> 上 <span class="math inline">\(\pi=0\)</span>（自明な表現）ではない．実際，自明な表現の場合，<span class="math inline">\(W\)</span> の1次元部分空間を不変部分空間としてとれるので，<span class="math inline">\(W\)</span> が既約であることに矛盾する．</p>
+<p><span class="math inline">\((\pi,V)\)</span> の <span class="math inline">\(U(\g)\)</span> への拡張を <span class="math inline">\((\tilde{\pi},V)\)</span> とする．</p>
+<p><strong>主張</strong>：Casimir 元 <span class="math inline">\(C\)</span> に対して，<span class="math inline">\(U\coloneqq\Ker\tilde\pi(C)\)</span> は不変部分空間で，<span class="math inline">\(V=W\oplus U.\)</span></p>
+<ul>
+<li><span class="math inline">\((\pi,V/W)\)</span> は一次元表現なので，<a href="#prp-10.8" class="quarto-xref">Proposition 5</a> より，<span class="math inline">\(V/W\)</span> 上で自明な表現である．特に，<span class="math inline">\(V/W\)</span> 上で <span class="math inline">\(\tilde\pi(C)=0\)</span> で，<span class="math inline">\(\dim\Ker\tilde\pi(C)\geq\dim V/W=1.\)</span></li>
+<li><span class="math inline">\(\tilde\pi(C)\)</span> は任意の <span class="math inline">\(\pi(X)\)</span> と可換．特に，<span class="math inline">\(\Ker\tilde\pi(C)\)</span> は不変部分空間．</li>
+<li><a href="#prp-10.6" class="quarto-xref">Proposition 4</a> より，<span class="math inline">\(W\)</span> 上で <span class="math inline">\(\tilde\pi(C)=c_\mu I\)</span> が成り立つ．<span class="math inline">\((\pi,W)\)</span> は自明な表現ではないので，<span class="math inline">\(c_\mu&gt;0\)</span> で，<span class="math inline">\(W\cap\Ker\tilde\pi(C)=\{0\}.\)</span></li>
+</ul>
+<p><strong>三段目</strong>：<span class="math inline">\(W\)</span> が一般の場合</p>
+<p><span class="math inline">\(n\coloneqq\dim W\)</span> に関する帰納法で示す．</p>
+<ul>
+<li><span class="math inline">\(n=1\)</span> の場合は一段目で示した．</li>
+<li><span class="math inline">\(n\geq 2\)</span> で <span class="math inline">\(W\)</span> が既約の場合は，二段目で示した．</li>
+</ul>
+<p><span class="math inline">\(W\)</span> は既約でないとして，非自明な不変部分空間を <span class="math inline">\(W&#39;\subset W\)</span> とする．</p>
+<ul>
+<li><span class="math inline">\(W/W&#39;\)</span> は <span class="math inline">\(V/W&#39;\)</span> の余次元1の不変部分空間で，<span class="math inline">\(\dim W/W&#39;&lt;\dim W\)</span>．よって，帰納法の仮定から，ある不変部分空間 <span class="math inline">\(Y/W&#39;\)</span> が存在して，<span class="math inline">\(V/W&#39;=W/W&#39;\oplus Y/W&#39;.\)</span></li>
+<li><span class="math inline">\(V=W+Y,Y\cap W=W&#39;\)</span> で，<span class="math display">\[\dim Y=\dim Y/W&#39;+\dim W&#39;=1+\dim W&#39;.\]</span> つまり，<span class="math inline">\(W&#39;\)</span> は <span class="math inline">\(Y\)</span> の不変部分空間で余次元1．</li>
+<li><span class="math inline">\(\dim W&#39;&lt;\dim W\)</span> より，帰納法の仮定から，ある不変部分空間 <span class="math inline">\(U\subset Y\)</span> が存在して，<span class="math inline">\(Y=W&#39;\oplus U\)</span>．特に，<span class="math inline">\(V=W\oplus U.\)</span></li>
+</ul>
+</div>
 </section>
 <section id="the-weyl-character-formula" class="level1">
 <h1>10.4 The Weyl Character Formula</h1>
+<div id="def-10.11" class="theorem definition">
+<p><span class="theorem-title"><strong>Definition 2 (<span class="citation" data-cites="hallLieGroupsLie2015">Hall (<a href="#ref-hallLieGroupsLie2015" role="doc-biblioref">2015</a>)</span> Definition 10.11 指標 (charactor))</strong></span> 複素半単純 Lie 代数 <span class="math inline">\(\g\)</span> の有限次元表現 <span class="math inline">\((\pi,V)\)</span> の指標 <span class="math inline">\(\chi_\pi\colon\g\to\C\)</span> は以下で定義される： <span class="math display">\[
+\chi_\pi(X)\coloneqq\tr(e^{\pi(X)}).
+\]</span></p>
+</div>
+<blockquote class="blockquote">
+<p>The character of <span class="math inline">\(\pi\)</span> encodes many interesting properties of <span class="math inline">\(\pi\)</span>.</p>
+</blockquote>
+<div id="tip-charactor-compact-lie-group" class="callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Tip 15
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p><span class="math inline">\(\g\)</span> はコンパクト行列 Lie 群 <span class="math inline">\(K\)</span> の Lie 代数 <span class="math inline">\(\k\)</span> の複素化 <span class="math inline">\(\g=\k_\C\)</span> として得られた．</p>
+<ul>
+<li><span class="math inline">\(K\)</span> の表現 <span class="math inline">\((\Pi,V)\)</span> から誘導された表現 <span class="math inline">\((\pi,V)\)</span> については，<span class="math inline">\(\chi_\pi(X)=\tr(\Pi(e^X)).\)</span></li>
+<li><span class="math inline">\((\Pi,V)\)</span> の指標 <span class="math inline">\(x\mapsto \tr(\Pi(x))\)</span> はコンパクト行列 Lie 群の表現論で重要 (Chapter 12)．</li>
+</ul>
+</div>
+</div>
+<div id="prp-10.12" class="theorem proposition">
+<p><span class="theorem-title"><strong>Proposition 6 (<span class="citation" data-cites="hallLieGroupsLie2015">Hall (<a href="#ref-hallLieGroupsLie2015" role="doc-biblioref">2015</a>)</span> Proposition 10.12)</strong></span> <span class="math inline">\(\g\)</span> の有限次元表現 <span class="math inline">\((\pi,V)\)</span> について，以下が成立：</p>
+<ol type="1">
+<li><span class="math inline">\(\dim V=\chi_\pi(0).\)</span></li>
+<li>ウェイト空間による直和分解 <span class="math inline">\(V=\bigoplus_\lambda V_\lambda\)</span> を考える．このとき，<span class="math display">\[\chi_\pi(H)=\sum_\lambda\mult(\lambda)e^{\ang{\lambda,H}},\quad H\in\h.\]</span></li>
+</ol>
+</div>
+<div class="proof">
+<p><span class="proof-title"><em>Proof</em>. </span><span class="math inline">\((1)\)</span>：</p>
+<p><span class="math display">\[
+\chi_\pi(0)=\tr(e^0)=\tr(I)=\dim V.
+\]</span></p>
+<p><span class="math inline">\((2)\)</span>：</p>
+<p><span class="math inline">\(e^{\pi(H)}\)</span> の固有値が <span class="math inline">\(e^{\ang{\lambda,H}}\)</span> となることと，トレースは固有値の総和になることから， <span class="math display">\[
+\chi_\pi(H)=\sum_\lambda\mult(\lambda)e^{\ang{\lambda,H}},\quad H\in\h.
+\]</span></p>
+</div>
+<div id="exm-10.13" class="theorem example">
+<p><span class="theorem-title"><strong>Example 1 (<span class="citation" data-cites="hallLieGroupsLie2015">Hall (<a href="#ref-hallLieGroupsLie2015" role="doc-biblioref">2015</a>)</span> Example 10.13)</strong></span> <span class="math inline">\(\sl(2;\C)\)</span> の <span class="math inline">\(m+1\)</span> 次元既約表現 <span class="math inline">\((\pi,V)\)</span> について，<span class="math inline">\(H\coloneqq\operatorname{diag}(1,-1)\)</span> とすると， <span class="math display">\[
+\chi_\pi(aH)=e^{ma}+e^{(m-2)a}+\cdots+e^{-ma},\quad a\in \C.
+\]</span></p>
+<p>特に，<span class="math inline">\(a\)</span> が <span class="math inline">\(i\pi\)</span> の整数倍でないなら，<span class="math inline">\(\chi_\pi(aH)={\sinh((m+1)a)}/{\sinh(a)}.\)</span></p>
+</div>
+<div class="proof">
+<p><span class="proof-title"><em>Proof</em>. </span></p>
+<ul>
+<li><span class="math inline">\(m+1\)</span> 次元既約表現について，<span class="math inline">\(\pi(H)\)</span> の最大固有値は <span class="math inline">\(m\)</span>．</li>
+<li><span class="math inline">\(\pi(H)\)</span> の固有値は，<span class="math inline">\(-m,-m+2,\dots,m-2,m\)</span> で重複度は <span class="math inline">\(1\)</span>．</li>
+</ul>
+<p>以上のことに注意すると，<a href="#prp-10.12" class="quarto-xref">Proposition 6</a> より， <span class="math display">\[
+\chi_\pi(aH)=e^{ma}+e^{(m-2)a}+\cdots+e^{-ma}.
+\]</span></p>
+<p>両辺に <span class="math inline">\(\sinh(a)\coloneqq e^a-e^{-a}\)</span> をかけると， <span class="math display">\[
+\begin{align*}
+\sinh(a)\chi_\pi(H)
+&amp;=\left(e^{(m+1)a}+e^{(m-1)a}+\cdots+e^{-(m-1)a}\right)\\
+&amp;\hphantom{=}-\left(e^{(m-1)a}+e^{(m-3)a}+\cdots+e^{-(m+1)a}\right)\\
+&amp;=e^{(m+1)a}-e^{-(m+1)a}\\
+&amp;=\sinh((m+1)a).
+\end{align*}
+\]</span></p>
+</div>
+<div id="thm-10.14" class="theorem">
+<p><span class="theorem-title"><strong>Theorem 3 (<span class="citation" data-cites="hallLieGroupsLie2015">Hall (<a href="#ref-hallLieGroupsLie2015" role="doc-biblioref">2015</a>)</span> Theorem 10.14 Weyl の指標公式)</strong></span> <span class="math inline">\(\g\)</span> の最高ウェイト <span class="math inline">\(\mu\)</span> をもつ既約表現 <span class="math inline">\((\pi,V_\mu)\)</span> について， <span class="math display">\[
+\chi_\pi(H)=\frac{\sum_{w\in W}\det(w)e^{\ang{w\cdot(\mu+\delta),H}}}{\sum_{w\in W}\det(w)e^{\ang{w\cdot\delta,H}}}
+\]</span></p>
+<p>が分母 <span class="math inline">\(q(H)\coloneqq\sum_{w\in W}\det(w)e^{\ang{w\cdot\delta,H}}\)</span> が <span class="math inline">\(0\)</span> にならない任意の <span class="math inline">\(h\in H\)</span> に対して成立．</p>
+</div>
+<ul>
+<li><a href="#thm-10.14" class="quarto-xref">Theorem 3</a> の証明は 10.8 節で．残りの節では指標公式を認めていくつかの結果を導出する．</li>
+<li><span class="math inline">\(q(H)\)</span> を Wely の分母 (Weyl denominator) という (Definition 10.15)．</li>
+<li>証明のアイデアは，<a href="#exm-10.13" class="quarto-xref">Example 1</a> の <span class="math inline">\(\sinh(a)\)</span> のようにうまい分母をみつけること．</li>
+</ul>
+<div id="prp-10.16" class="theorem proposition">
+<p><span class="theorem-title"><strong>Proposition 7 (<span class="citation" data-cites="hallLieGroupsLie2015">Hall (<a href="#ref-hallLieGroupsLie2015" role="doc-biblioref">2015</a>)</span> Proposition 10.16)</strong></span> 各 <span class="math inline">\(\lambda\in\h\)</span> に対して，<span class="math inline">\(H\mapsto e^{\ang{\lambda,H}}\)</span> は <span class="math inline">\(C^\infty(\h)\)</span> 上で線形独立．</p>
+</div>
+<div class="proof">
+<p><span class="proof-title"><em>Proof</em>. </span>相異なる <span class="math inline">\(\lambda_1\dots,\lambda_n\in\h\)</span> について， <span class="math display">\[
+f(H)\coloneqq\sum_j c_j e^{\ang{\lambda_j,H}}=0
+\]</span></p>
+<p>を仮定して，<span class="math inline">\(c_1=\cdots=c_n=0\)</span> を示せばよい．</p>
+<p><span class="math inline">\(n=1\)</span> の場合は <span class="math inline">\(f(0)=c_1=0\)</span> より明らか．<span class="math inline">\(n\geq2\)</span> の場合を示す．</p>
+<p><span class="math inline">\(k=2,\dots,n\)</span> に対して，<span class="math inline">\(H_k\in\h\)</span> を <span class="math inline">\(\ang{\lambda_1,H_k}\neq\ang{\lambda_k,H_k}\)</span> となるように選ぶ．</p>
+<div id="tip-prp10.16-1" class="callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Tip 16
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>例えば，<span class="math inline">\(H_k\coloneqq\lambda_1-\lambda_k\)</span> とする．</p>
+</div>
+</div>
+<p><span class="math inline">\(f=0\)</span> なので， <span class="math display">\[
+g\coloneqq \prod_{k=2}^n (D_{H_{k}}-\ang{\lambda_k,H_k})f=0.
+\]</span></p>
+<div id="tip-prpr10.16-2" class="callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Tip 17
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p><span class="math inline">\(X\)</span> 方向の方向微分作用素を <span class="math inline">\(D_X\)</span> とした： <span class="math display">\[
+D_X f(H)\coloneqq\left.\dd{}{t}f(H+tX)\right|_{t=0}.
+\]</span></p>
+</div>
+</div>
+<p><span class="math display">\[
+(D_{H_k}-\ang{\lambda_k,H_k})f(H)=\sum_j c_j(\ang{\lambda_j,H_k}-\ang{\lambda_k,H_k})e^{\ang{\lambda_j,H}}
+\]</span></p>
+<p>なので， <span class="math display">\[
+\begin{align*}
+g(H)&amp;=\sum_jc_je^{\ang{\lambda_j,H}}\prod_{k=2}^n(\ang{\lambda_j,H_k}-\ang{\lambda_k,H_k})\\
+&amp;=c_1e^{\ang{\lambda_1,H}}\prod_{k=2}^n(\ang{\lambda_1,H_k}-\ang{\lambda_k,H_k})\\
+&amp;\hphantom{=}+\cancel{\sum_{j\geq2}c_je^{\ang{\lambda_j,H}}\prod_{k=2}^n(\ang{\lambda_j,H_k}-\ang{\lambda_k,H_k})}
+\end{align*}
+\]</span></p>
+<p><span class="math inline">\(\prod_{k=2}^n(\ang{\lambda_1,H_k}-\ang{\lambda_k,H_k})\neq0\)</span> となるように <span class="math inline">\(H_k\)</span> をとっていたことに注意すると， <span class="math display">\[
+0=g(0)=c_1\prod_{k=2}^n(\ang{\lambda_1,H_k}-\ang{\lambda_k,H_k})
+\]</span> より，<span class="math inline">\(c_1=0\)</span> である．この手続きを繰り返して，<span class="math inline">\(c_2=\cdots=c_n=0\)</span> を得る．</p>
+</div>
+<div id="cor-10.17" class="theorem corollary">
+<p><span class="theorem-title"><strong>Corollary 1 (<span class="citation" data-cites="hallLieGroupsLie2015">Hall (<a href="#ref-hallLieGroupsLie2015" role="doc-biblioref">2015</a>)</span> Corollary 10.17)</strong></span> <span class="math inline">\(f\in C^\infty(\h)\)</span> は整元 <span class="math inline">\(\lambda\in\h\)</span> の指数関数の線形結合で表せるとする： <span class="math display">\[
+f(H)=\sum_\lambda c_\lambda e^{\ang{\lambda,H}}.
+\]</span></p>
+<p><span class="math inline">\(f(w\cdot H)=\det(w)f(H)\)</span> を仮定する．このとき，<span class="math inline">\(c_{w\cdot\lambda}=\det(w)c_\lambda.\)</span></p>
+</div>
+<div class="proof">
+<p><span class="proof-title"><em>Proof</em>. </span><span class="math display">\[
+f(w\cdot H)=\sum_\lambda c_\lambda e^{\ang{\lambda,w\cdot H}}
+=\sum_\lambda c_\lambda e^{\ang{w^{-1}\cdot\lambda,H}}
+=\sum_\lambda c_{w\cdot\lambda}e^{\ang{\lambda,H}}.
+\]</span></p>
+<p>上式と，<span class="math inline">\(f(w\cdot H)=\det(w)f(H)=\sum_\lambda \det(w)c_\lambda e^{\ang{\lambda,H}}\)</span> の係数を比べると， <span class="math display">\[
+c_{w\cdot\lambda}=\det(w)c_\lambda
+\]</span></p>
+<p>を得る．</p>
+</div>
 </section>
 <section id="the-weyl-dimension-formula" class="level1">
 <h1>10.5 The Weyl Dimension Formula</h1>
+<p><a href="#prp-10.12" class="quarto-xref">Proposition 6</a> より，<span class="math inline">\(\dim V_\mu=\chi_\pi(0)\)</span> だが，Weyl の指標公式は Weyl 分母が <span class="math inline">\(0\)</span> になるときは直接利用できない．例えば，<span class="math inline">\(\sl(2;\C)\)</span> など (<a href="#exm-10.13" class="quarto-xref">Example 1</a>)．</p>
+<div id="thm-10.18" class="theorem">
+<p><span class="theorem-title"><strong>Theorem 4 (<span class="citation" data-cites="hallLieGroupsLie2015">Hall (<a href="#ref-hallLieGroupsLie2015" role="doc-biblioref">2015</a>)</span> Theorem 10.18 Weyl の次元公式)</strong></span> <span class="math inline">\(\g\)</span> の最高ウェイト <span class="math inline">\(\mu\)</span> をもつ既約表現 <span class="math inline">\((\pi_\mu,V_\mu)\)</span> について， <span class="math display">\[
+\dim V_\mu=\frac{\prod_{\alpha\in R^+}\ang{\alpha,\mu+\delta}}{\prod_{\alpha\in R^+}\ang{\alpha,\delta}}.
+\]</span></p>
+</div>
+<ul>
+<li><span class="math inline">\(f\colon\h\to\C\)</span> が <span class="math inline">\(\h\)</span> のある基底について，その係数に関する多項式になっているとき，<span class="math inline">\(f\)</span> を多項式 (polynomial) という．</li>
+<li><span class="math inline">\(P\colon\h\to\C,H\mapsto\prod_{\alpha\in\R^+}\ang{\alpha,H}\)</span> は <span class="math inline">\(k\)</span>-斉次な多項式 (Definition 10.19) ．ただし，<span class="math inline">\(k\coloneqq|R^+|.\)</span></li>
+<li><span class="math inline">\(f\colon\h\to\C\)</span> が Weyl 交代関数 (Weyl alternating) であるとは，任意の <span class="math inline">\(w\in W\)</span> に対して，<span class="math inline">\(f(w\cdot H)=\det(w)f(H)\)</span> となること (Definition 10.20)．</li>
+</ul>
+<div class="proof">
+<p><span class="proof-title"><em>Proof</em>. </span><span class="math inline">\(H\)</span> が strict に優元ならば，<span class="math inline">\(P(H)&gt;0\)</span> であることに注意する．</p>
+<p><a href="#thm-10.14" class="quarto-xref">Theorem 3</a> と <a href="#lem-10.22" class="quarto-xref">Lemma 5</a> より， <span class="math display">\[
+\begin{align*}
+\chi_\pi(tH)
+&amp;=\frac{f_{\mu+\delta}(tH)}{f_{\delta}(tH)}\\
+&amp;=\frac{c_{\mu+\delta}P(tH)+Q_{\mu+\delta(tH)}}{c_\delta P(tH)+Q_\delta(tH)}\\
+&amp;=\frac{c_{\mu+\delta}t^kP(H)+Q_{\mu+\delta}(tH)}{c_\delta t^{k}P(H)+Q_\delta(tH)}\\
+&amp;=\frac{c_{\mu+\delta}P(H)+t^{-k}Q_{\mu+\delta(tH)}}{c_\delta P(H)+t^{-k}Q_\delta(tH)}
+\end{align*}
+\]</span></p>
+<p><span class="math inline">\(t\mapsto \chi_\pi(tH)\)</span> は連続なので， <span class="math display">\[
+\dim(V_\mu)=\lim_{t\to0}\chi_\pi(tH)
+=\frac{c_{\mu+\delta}P(H)}{c_\delta P(H)}
+=\frac{c_{\mu+\delta}}{c_\delta}.
+\]</span></p>
+<p><a href="#lem-10.22" class="quarto-xref">Lemma 5</a> より，<span class="math inline">\(\div(V_\mu)=P(\mu+\delta)/P(\delta).\)</span></p>
+</div>
+<div id="prp-10.21" class="theorem proposition">
+<p><span class="theorem-title"><strong>Proposition 8 (<span class="citation" data-cites="hallLieGroupsLie2015">Hall (<a href="#ref-hallLieGroupsLie2015" role="doc-biblioref">2015</a>)</span> Proposition 10.21)</strong></span> 以下が成立：</p>
+<ol type="1">
+<li><span class="math inline">\(P\)</span> は Weyl 交代関数．</li>
+<li><span class="math inline">\(f\colon\h\to\C\)</span> が Weyl 交代関数で多項式ならば，ある多項式 <span class="math inline">\(g\colon\h\to\C\)</span> が存在して，<span class="math display">\[f(H)=P(H)g(H).\]</span> 特に，<span class="math inline">\(f\)</span> が <span class="math inline">\(l\,(&lt;k)\)</span>-斉次ならば <span class="math inline">\(f=0\)</span> で，<span class="math inline">\(f\)</span> が <span class="math inline">\(k\)</span>-斉次ならば <span class="math inline">\(g\)</span> は定数．</li>
+</ol>
+</div>
+<div id="tip-10.21" class="callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Tip 18
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>「特に」の部分は <span class="math inline">\(\mathrm{deg}(f)=k+\mathrm{deg}(g)\)</span> から従う．</p>
+</div>
+</div>
+<div class="proof">
+<p><span class="proof-title"><em>Proof</em>. </span><span class="math inline">\((1)\)</span>：</p>
+<p><strong>一段目</strong>：正単純ルート <span class="math inline">\(\alpha\)</span> に対して，<span class="math inline">\(P(s_\alpha\cdot H)=\det(s_\alpha)P(H)\)</span></p>
+<p>正単純ルート <span class="math inline">\(\alpha\)</span> について，<span class="math inline">\(w=s_\alpha\)</span> なら，Proposition 8.30 より，<span class="math inline">\(w\)</span> は <span class="math inline">\(R^+\setminus\{\alpha\}\)</span> 上では置換で，<span class="math inline">\(w\cdot\alpha=-\alpha\)</span> となる．</p>
+<div id="tip-prp8.30" class="callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Tip 19: <span class="citation" data-cites="hallLieGroupsLie2015">Hall (<a href="#ref-hallLieGroupsLie2015" role="doc-biblioref">2015</a>)</span> Proposition 8.30
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p><span class="math inline">\(\alpha\)</span> は正単純ルートとすると，<span class="math inline">\(s_\alpha\)</span> は <span class="math inline">\(R^+\setminus\{\alpha\}\)</span> 上の置換．</p>
+</div>
+</div>
+<p>このことに注意すると，</p>
+<p><span class="math display">\[
+P(s_\alpha\cdot H)
+=\prod_{\beta\in R^+}\ang{\beta,s_\alpha\cdot H}
+=\prod_{\beta\in R^+}\ang{s_\alpha\cdot\beta,H}
+=(-1)\prod_{\beta\in R^+}\ang{\beta,H}.
+\]</span></p>
+<p><span class="math inline">\(\det(s_\alpha)=-1\)</span> なので，<span class="math inline">\(P(s_\alpha\cdot H)=\det(s_\alpha)P(H).\)</span></p>
+<p><strong>二段目</strong>：<span class="math inline">\(w\in W\)</span> に対して，<span class="math inline">\(P(w\cdot H)=\det(w)P(H)\)</span></p>
+<p>Proposition 8.24 より，<span class="math inline">\(w\)</span> は正単純ルート <span class="math inline">\(\alpha_1,\dots,\alpha_N\)</span> を用いて，<span class="math inline">\(w=s_{\alpha_1}\cdots s_{\alpha_N}\)</span> と表せる．</p>
+<div id="tip-prp8.24" class="callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Tip 20: <span class="citation" data-cites="hallLieGroupsLie2015">Hall (<a href="#ref-hallLieGroupsLie2015" role="doc-biblioref">2015</a>)</span> Proposition 8.24
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p><span class="math inline">\(\alpha_1,\dots,\alpha_r\)</span> は正単純ルート全体とする．このとき，<span class="math inline">\(W\)</span> は <span class="math inline">\(s_{\alpha_j}\)</span> で生成される．</p>
+</div>
+</div>
+<p>したがって， <span class="math display">\[
+\begin{align*}
+P(w\cdot H)
+&amp;=\det(s_{\alpha_1})P(s_{\alpha_2}\cdots s_{\alpha_N}\cdot H)\\
+&amp;=\det(s_{\alpha_1})\cdots\det(s_{\alpha_N})P(H)\\
+&amp;=\det(w)P(H).
+\end{align*}
+\]</span></p>
+<p><span class="math inline">\((2)\)</span>：</p>
+<p><span class="math inline">\(f\colon\h\to\C\)</span> が Weyl 交代関数で多項式とする．</p>
+<p>正ルート全体を <span class="math inline">\(\alpha_1,\dots,\alpha_k\)</span> と並べる． 任意の <span class="math inline">\(j\geq1\)</span> に対して，ある多項式 <span class="math inline">\(f^{(j)}\)</span> が存在して， <span class="math display">\[
+f(H)=\ang{\alpha_1,H}\ang{\alpha_2,H}\cdots\ang{\alpha_j,H}f^{(j)}(H)
+\]</span></p>
+<p>と表せることを帰納法で示す．</p>
+<p><span class="math inline">\(\alpha_j\in R^+\)</span> に対して， <span class="math inline">\(V_j\coloneqq\{H\in\h\mid \ang{\alpha_j,H}=0\}\)</span> とする． <span class="math inline">\(f|_{V_j}=0\)</span> である．実際， <span class="math display">\[
+\ang{\alpha_j,H}=0\Rightarrow f(H)=f(s_{\alpha_j}\cdot H)=-f(H)\iff f(H)=0.
+\]</span></p>
+<p><span class="math inline">\(j=1\)</span> の場合：</p>
+<p><a href="#lem-exercise-10.9.5" class="quarto-xref">Lemma 4</a> より，ある多項式 <span class="math inline">\(f^{(1)}\)</span> が存在して，<span class="math inline">\(f(H)=\ang{\alpha_1,H}f^{(1)}(H).\)</span></p>
+<p><span class="math inline">\(j\geq2\)</span> の場合：</p>
+<p>帰納法の仮定から，ある多項式 <span class="math inline">\(f^{(j)}\)</span> が存在して， <span class="math display">\[
+f(H)=\ang{\alpha_1,H}\ang{\alpha_2,H}\cdots\ang{\alpha_j,H}f^{(j)}(H).
+\]</span></p>
+<ul>
+<li><span class="math inline">\(V_{j+1}\setminus(\bigcup_{l\leq j}V_l)\)</span> 上 <span class="math inline">\(\ang{\alpha_l,H}\neq0,\,(l\leq j)\)</span> なので，<span class="math inline">\(f^{(j)}|_{V_{j+1}\setminus (\bigcup_{l\leq j}V_l)}=0.\)</span></li>
+<li><span class="math inline">\(V_l\cap V_{j+1}\)</span> は <span class="math inline">\(V_{j+1}\)</span> の真部分空間なので，<span class="math inline">\(V_{j+1}\setminus (\bigcup_{l\leq j}V_l)=V_{j+1}\setminus (\bigcup_{l\leq j}V_l\cap V_{j+1})\)</span> は <span class="math inline">\(V_{j+1}\)</span> で稠密．よって，連続性から <span class="math inline">\(f^{(j)}|_{V_{j+1}}=0.\)</span></li>
+</ul>
+<p><a href="#lem-exercise-10.9.5" class="quarto-xref">Lemma 4</a> より，ある多項式 <span class="math inline">\(f^{(j+1)}\)</span> が存在して，<span class="math inline">\(f^{(j)}(H)=\ang{\alpha_{j+1},H}f^{(j+1)}(H).\)</span></p>
+</div>
+<div id="lem-exercise-10.9.5" class="theorem lemma">
+<p><span class="theorem-title"><strong>Lemma 4 (<span class="citation" data-cites="hallLieGroupsLie2015">Hall (<a href="#ref-hallLieGroupsLie2015" role="doc-biblioref">2015</a>)</span> 10.9 Exercises 5)</strong></span> <span class="math inline">\(f\colon\h\to\C\)</span> は多項式で，<span class="math inline">\(\ang{\alpha,H}=0\Rightarrow f(H)=0\)</span> を満たすとする． このとき，ある多項式 <span class="math inline">\(f&#39;\)</span> が存在して，<span class="math inline">\(f(H)=\ang{\alpha,H}f&#39;(H).\)</span></p>
+</div>
+<div class="proof">
+<p><span class="proof-title"><em>Proof</em>. </span><span class="math inline">\(\h\)</span> の正規直交基底 <span class="math inline">\(e_1,\dots,e_r\)</span> を固定する．このとき， <span class="math display">\[
+\alpha=\sum_{j=1}^r \alpha_je_j,\quad
+H=\sum_{j=1}^r H_je_j,\quad
+\ang{\alpha,H}=\sum_{j=1}^r\alpha_jH_j.
+\]</span></p>
+<p><span class="math inline">\(\alpha_1\neq0\)</span> としてよい．</p>
+<div id="tip-10.9.5" class="callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Tip 21
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p><span class="math inline">\(\alpha\neq0\)</span> なので，<span class="math inline">\(\alpha_1\neq0\)</span> となるように基底をとっておく．</p>
+</div>
+</div>
+<ul>
+<li><span class="math inline">\(h(H_2,\dots,H_r)\coloneqq -\sum_{j=2}^r\alpha_j/\alpha_1 H_j\)</span> とする．</li>
+<li><span class="math inline">\(f\colon\h\to\C\)</span> を <span class="math inline">\(f\colon\R^r\to\C\)</span> と同一視する．</li>
+</ul>
+<p><span class="math inline">\(f\)</span> を <span class="math inline">\(g(H)\coloneqq H_1+h(H_2,\dots,H_r)\)</span> で割る： <span class="math display">\[
+f(H)=\alpha_1 g(H)Q(H)+R(H_2,\dots,H_n).
+\]</span></p>
+<p><span class="math inline">\(f(h,H_2,\dots,H_r)=0,g(h,H_2,\dots,H_r)=0\)</span> なので，<span class="math inline">\(R=0\)</span> である．よって，<span class="math inline">\(f&#39;\coloneqq\alpha Q\)</span> とおけばよい．</p>
+</div>
+<div id="lem-10.22" class="theorem lemma">
+<p><span class="theorem-title"><strong>Lemma 5 (<span class="citation" data-cites="hallLieGroupsLie2015">Hall (<a href="#ref-hallLieGroupsLie2015" role="doc-biblioref">2015</a>)</span> Lemma 10.22)</strong></span> <span class="math display">\[
+f_\lambda\colon\h\to\C,H\mapsto \sum_{w\in W}\det(w)e^{\ang{w\cdot\lambda, H}},\quad \lambda \in \h
+\]</span></p>
+<p>は Weyl 交代関数で，収束冪級数として表せる： <span class="math display">\[
+f_\lambda(H)=c_\lambda P(H)+Q_\lambda(H),\quad c_\lambda=\frac{(\mathcal{A}f_\lambda)(0)}{(\mathcal{A}P)(0)}.
+\]</span></p>
+<p>ただし，</p>
+<ul>
+<li><span class="math inline">\(Q_\lambda\)</span> は <span class="math inline">\(|R^+|\)</span> 次以上の項</li>
+<li><span class="math inline">\(\mathcal{A}\coloneqq\prod_{\alpha\in R^+}D_\alpha\)</span></li>
+<li><span class="math inline">\((\mathcal{A}f_\lambda)(0)=|W|P(\lambda)\)</span></li>
+</ul>
+</div>
+<div class="proof">
+<p><span class="proof-title"><em>Proof</em>. </span><strong>一段目</strong>：<span class="math inline">\(f_\lambda\)</span> は Weyl 交代関数</p>
+<p><span class="math display">\[
+\begin{align*}
+f_\lambda(w\cdot H)
+&amp;=\sum_{w&#39;\in W}\det(w&#39;)e^{\ang{w&#39;\cdot\lambda,w\cdot H}}\\
+&amp;=\sum_{w&#39;\in W}\det(w&#39;)e^{\ang{w^{-1}w&#39;\cdot\lambda,H}}\\
+&amp;=\sum_{w&#39;\in W}\det(ww&#39;)e^{\ang{w&#39;\cdot\lambda,H}}\\
+&amp;=\det(w)f_\lambda(H).
+\end{align*}
+\]</span></p>
+<p><strong>二段目</strong>：<span class="math inline">\(f_\lambda\)</span> は収束冪級数として表せて，<span class="math inline">\(f_\lambda=c_\lambda P+Q\)</span></p>
+<ol type="1">
+<li><span class="math inline">\(\h\)</span> の基底を1つ選んで固定する．</li>
+<li><span class="math inline">\(f_\lambda\)</span> は指数関数の有限和なので，収束冪級数として表せる．</li>
+<li>級数のうち，<span class="math inline">\(l\)</span>-斉次な項をまとめて <span class="math inline">\(q_{\lambda,l}\)</span> とすると，<span class="math inline">\(f_\lambda=\sum_{l=0}^\infty q_{\lambda,l}.\)</span></li>
+<li><span class="math inline">\(p_{\lambda,l}\)</span> も Weyl 交代関数．</li>
+</ol>
+<div class="tip-10.22 callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Tip
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p><span class="math inline">\(p_{\lambda,l}\)</span> が Weyl 交代関数であることは次のようにわかる：</p>
+<p>Weyl 群の作用は線形なので，<span class="math inline">\(H\mapsto p_{\lambda,l}(w\cdot H)\)</span> も <span class="math inline">\(l\)</span>-斉次．</p>
+<p><span class="math display">\[
+\begin{align*}
+f_\lambda(w\cdot H)&amp;=\sum_{l=0}^\infty p_{\lambda,l}(w\cdot H),\\
+f_\lambda(w\cdot H)&amp;=\det(w)f_\lambda(H)=\sum_{l=0}^\infty \det(w)p_{\lambda,l}(H).
+\end{align*}
+\]</span></p>
+<p>各項を比べると，<span class="math inline">\(p_{\lambda,l}\)</span> が Weyl 交代関数であることがわかる．</p>
+</div>
+</div>
+<ol start="5" type="1">
+<li><a href="#prp-10.21" class="quarto-xref">Proposition 8</a> より，ある定数 <span class="math inline">\(c_\lambda\)</span> が存在して，<span class="math inline">\(p_{\lambda,k}=c_\lambda P(H)\)</span>．また，<span class="math inline">\(p_{\lambda,l}=0,\enspace l&lt;k\)</span>.</li>
+<li><span class="math inline">\(Q_\lambda\coloneqq\sum_{l&gt;k}p_{\lambda,l}\)</span> とすればよい．</li>
+</ol>
+<p><strong>三段目</strong>：<span class="math inline">\((\mathcal{A}f_\lambda)(0)=c_\lambda(\mathcal{A}P)(0)\)</span></p>
+<p><span class="math display">\[
+(\mathcal{A}f_\lambda)(0)=c_\lambda(\mathcal{A}P)(0)+\cancel{(\mathcal{A}Q_\lambda)(0)}.
+\]</span></p>
+<p><strong>四段目</strong>：<span class="math inline">\(c_\lambda(\mathcal{A}P)(0)=|W|P(\lambda)\)</span></p>
+<p><span class="math display">\[
+\begin{align*}
+D_\alpha f_\lambda
+&amp;=\sum_{w\in W}\det(w)\left.\frac{\mathrm{d}}{\mathrm{d}t}e^{\ang{w\cdot \lambda,H+t\alpha}}\right|_{t=0}\\
+&amp;=\sum_{w\in W}\det(w)\ang{w\cdot \lambda,\alpha}e^{\ang{w\cdot \lambda,H}}
+\end{align*}
+\]</span></p>
+<p>より， <span class="math display">\[
+\begin{align*}
+(\mathcal{A}f_\lambda)(0)
+&amp;=\sum_{w\in W}\det(w)\prod_{\alpha\in R^+}\ang{w\cdot \lambda,\alpha}\\
+&amp;=\sum_{w\in W}\det(w)P(w\cdot\lambda)\\
+&amp;=\sum_{w\in W}\det(w)^2P(\lambda)\\
+&amp;=|W|P(\lambda).
+\end{align*}
+\]</span></p>
+<p>特に，<span class="math inline">\(\lambda\)</span> として <span class="math inline">\(P(\lambda)\neq0\)</span> となる優元が取れるので，<span class="math inline">\((\mathcal{A}P)(0)\neq0.\)</span></p>
+</div>
 </section>
 <section id="the-kostant-multiplicity-formula" class="level1">
 <h1>10.6 The Kostant Multiplicity Formula</h1>
