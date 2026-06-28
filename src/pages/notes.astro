@@ -9,12 +9,12 @@ const allPostsSorted = allPosts.sort(
 	(a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf()
 );
 
-const pageTitle = 'Blog';
+const pageTitle = 'Notes';
 ---
 <BaseLayout pageTitle={pageTitle}>
   <PostCardList>
     {allPostsSorted.map((post) =>
-      <PostCard frontmatter={post.data} url={'/posts/' + post.slug} />
+      <PostCard frontmatter={post.data} url={'/posts/' + post.id} />
     )}
   </PostCardList>
 </BaseLayout>

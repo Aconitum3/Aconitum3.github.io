@@ -1,0 +1,130 @@
+---
+import BaseLayout from '@/layouts/BaseLayout.astro';
+import eventsData from '@/content/calendar.json';
+import '@/styles/calendar.css';
+
+const pageTitle = 'bibouroku';
+
+const calendarEvents = eventsData.map(event => ({
+  title: event.title,
+  start: event.start,
+  end: event.end,
+  extendedProps: {
+    description: event.description
+  }
+}));
+---
+
+<BaseLayout pageTitle={pageTitle}>
+  <main class="calendar-container">
+    <div id="calendar" data-events={JSON.stringify(calendarEvents)}></div>
+    <aside class="events-sidebar">
+        <ul id="event-list"></ul>
+    </aside>
+  </main>
+</BaseLayout>
+
+<script>
+import { Calendar } from '@fullcalendar/core';
+import dayGridPlugin from '@fullcalendar/daygrid';
+
+document.addEventListener('DOMContentLoaded', () => {
+const calendarEl = document.getElementById('calendar');
+const eventListEl = document.getElementById('event-list') as HTMLElement;
+const events = JSON.parse(calendarEl.dataset.events || '[]');
+
+let tooltipEl: HTMLElement | null = null;
+
+if (calendarEl) {
+    const events = JSON.parse(calendarEl.dataset.events || '[]');
+
+    const calendar = new Calendar(calendarEl, {
+    plugins: [dayGridPlugin],
+    initialView: 'dayGridMonth',
+    events: events,
+    height: 'auto',
+    headerToolbar: {
+        left: 'prevYear,prev today',
+        center: 'title',
+        right: 'next,nextYear'
+    },
+
+
+    // イベントをホバーしたときに詳細を表示する
+    eventMouseEnter: (info) => {
+        if (tooltipEl) tooltipEl.remove();
+
+        tooltipEl = document.createElement('div');
+        tooltipEl.className = 'calendar-tooltip';
+        
+        const desc = info.event.extendedProps.description;
+        tooltipEl.innerHTML = `
+          <div class="tooltip-title">${info.event.title}</div>
+          ${desc ? `<div class="tooltip-desc">${desc}</div>` : ''}
+        `;
+
+        document.body.appendChild(tooltipEl);
+        
+        tooltipEl.style.top = `${info.jsEvent.pageY + 15}px`;
+        if (window.innerWidth <= 768) {
+          tooltipEl.classList.add('tooltip-mobile');
+        } else{
+          tooltipEl.style.left = `${info.jsEvent.pageX + 15}px`;
+        }
+      },
+      
+      eventMouseLeave: () => {
+        if (tooltipEl) {
+          tooltipEl.remove();
+          tooltipEl = null;
+      }
+    }, 
+
+    datesSet: () => updateSidebarEvents() 
+    });
+
+    calendar.render();
+    
+    function updateSidebarEvents() {
+      eventListEl.innerHTML = '';
+      const viewEvents = calendar.getEvents();
+      const viewDate = calendar.getDate();
+      const viewTimestamp = viewDate.getTime();
+
+      viewEvents.sort((a, b) => {
+        const diffA = Math.abs(a.start!.getTime() - viewTimestamp);
+        const diffB = Math.abs(b.start!.getTime() - viewTimestamp);
+        return diffA - diffB;
+      });
+
+      const nearestEvents = viewEvents.slice(0,5);
+      nearestEvents.sort((a, b) => a.start!.getTime() - b.start!.getTime());
+
+      nearestEvents.forEach(event => {
+          const li = document.createElement('li');
+          li.className = 'event-item';
+          const startStr = event.start!.toLocaleDateString('ja-JP', { year: 'numeric', month: 'numeric', day: 'numeric' });
+          let dateDisplay = startStr;
+          if (event.end) {
+              const actualEnd = new Date(event.end.getTime() - 1); 
+              const startZero = new Date(event.start!.getFullYear(), event.start!.getMonth(), event.start!.getDate()).getTime();
+              const endZero = new Date(actualEnd.getFullYear(), actualEnd.getMonth(), actualEnd.getDate()).getTime();
+              if (startZero !== endZero) {
+                  const endStr = actualEnd.toLocaleDateString('ja-JP', { year: 'numeric', month: 'numeric', day: 'numeric' });
+                  dateDisplay = `${startStr} - ${endStr}`;
+              }
+          }
+          li.addEventListener('click', () => calendar.gotoDate(event.start!));
+          li.innerHTML = `
+          <div class="event-header">
+          <span class="event-date">${dateDisplay}</span>
+          <span class="event-title">${event.title}</span>
+          </div>
+          <div class="event-desc">${event.extendedProps.description || ''}</div>
+      `;
+          eventListEl.appendChild(li);
+    });
+} 
+}
+});
+</script>
