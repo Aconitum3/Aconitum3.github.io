@@ -9,7 +9,7 @@
   --base-yellow5: #c2ae3c;
   --base-yellow6: #b8a84e;
   --base-white1: #fffffb;
-  --base-white2: #e0e0e0;
+  --base-white2: #f0f0f0;
   --base-white3: #e2e2e2;
 
   --white1: var(--base-white1);
@@ -31,6 +31,11 @@ body {
 
 a, a:visited {
   color: inherit;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
 }
 
 /** Header **/
@@ -96,6 +101,40 @@ a, a:visited {
   margin: auto;
   margin-top: 80px;
 }
+
+blockquote {
+  padding: 5px 20px;
+  color: var(--base-black2);
+  border-radius: 4px;
+  background-color: var(--white2);
+}
+
+span.theorem-title::after, span.proof-title::after {
+    content: "";
+    display: block;
+    margin-bottom: 10px;
+}
+.theorem {
+    padding-left: 10px;
+    border-left: 5px solid var(--black1);
+    border-radius: 4px;
+}
+
+.proof::after {
+    content: "□";
+    text-align: right;
+    display: block;
+    margin-bottom: 20px;
+}
+
+summary {
+    margin-bottom: 10px;
+}
+
+.quarto-xref {
+    color: var(--black1);
+}
+
 
 /*** Dark Theme ***/
 

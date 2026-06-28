@@ -1,0 +1,64 @@
+a {
+    text-decoration: none;
+}
+.postcard-title {
+    width: 50%;
+    padding-left: 15px;
+    padding-right: 15px;
+    padding-top: 5px;
+    padding-bottom: 5px;
+}
+
+.postcard-date {
+    width: 15%;
+    text-align: center;
+    padding-left: 10px;
+    padding-right: 10px;
+}
+
+.postcard-tags {
+    width: 35%;
+    text-align: left;
+}
+
+.postcard-tags ul {
+    list-style-type: none;  
+    display: flex;
+    padding-inline-start: 0;
+    margin-right: 10px;
+}
+
+.postcard-tags li {
+    margin-left: 10px;
+}
+
+.postcard td {
+    border-bottom: 1px solid var(--black1);
+}
+
+h3 {
+    text-align: center;
+}
+
+.bloglist {
+    width: 100%;
+    border-collapse: collapse;
+}
+.bloglist th {
+    border-bottom: 3px double var(--black1);
+    border-top: 3px double var(--black1);
+}
+
+.table-title {
+    text-align: left;
+    padding-left: 15px;
+}
+
+.table-date {
+    text-align: center;
+}
+
+.table-tags {
+    text-align: left;
+    padding-left: 10px;
+}

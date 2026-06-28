@@ -28,6 +28,6 @@ const { posts } = Astro.props;
 ---
 <BaseLayout pageTitle={tag}>
   <PostCardList>
-    {posts.map((post) => <PostCard frontmatter={post.data} url={'/posts/' + post.slug} />)}
+    {posts.map((post) => <PostCard frontmatter={post.data} url={'/posts/' + post.id} />)}
   </PostCardList>
 </BaseLayout>

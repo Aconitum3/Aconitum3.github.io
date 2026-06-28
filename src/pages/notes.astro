@@ -3,6 +3,8 @@ import BaseLayout from '@/layouts/BaseLayout.astro';
 import PostCard from '@/components/PostCard.astro';
 import PostCardList from '@/components/PostCardList.astro';
 import { getCollection } from 'astro:content';
+import '@/styles/postcard.css';
+import table from '@/content/misc-table.json';
 
 const allPosts = await getCollection('posts');
 const allPostsSorted = allPosts.sort(
@@ -17,4 +19,22 @@ const pageTitle = 'Notes';
       <PostCard frontmatter={post.data} url={'/posts/' + post.id} />
     )}
   </PostCardList>
+
+  <h3>Table 2: Miscellaneous</h3>
+    <table border="0" class="bloglist">
+      <tr>
+        <th class="table-title">Title</th>
+        <th class="table-date">Date</th>
+        <th class="table-tags">Description</th>
+      </tr>
+        {table.map((row) => (
+          <tr class="postcard">
+            <td class="postcard-title">
+              <a href={row.url} target="_blank">{row.title}</a>
+            </td>
+            <td class="postcard-date">{row.date}</td>
+            <td class="postcard-tags">{row.description}</td>
+          </tr>
+        ))}
+    </table>
 </BaseLayout>
