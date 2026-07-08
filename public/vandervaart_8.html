@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 <meta name="author" content="とり">
-<meta name="dcterms.date" content="2026-07-04">
+<meta name="dcterms.date" content="2026-07-08">
 
 <title>Asymptotic Statistics Chapter 8 Efficiency of Estimators</title>
 <style>
@@ -26540,7 +26540,7 @@ color: #556056;
     <div>
     <div class="quarto-title-meta-heading">Published</div>
     <div class="quarto-title-meta-contents">
-      <p class="date">July 4, 2026</p>
+      <p class="date">July 8, 2026</p>
     </div>
   </div>
   
@@ -27168,7 +27168,8 @@ N(0,\dot{\psi}_\theta I_\theta^{-1}\dot{\psi}_\theta^\top)[\ell]
 \]</span></p>
 <p>両辺の上限をとって， <span class="math display">\[
 N(0,\dot{\psi}_\theta I_\theta^{-1}\dot{\psi}_\theta^\top)[\ell]
-=\sup_{I\in\F}\sup_{h\in I}\E_{h}[\ell(\dot{\psi}_\theta X-\dot{\psi_\theta}h)].
+=\sup_{I\in\F}\sup_{h\in I}\E_{h}[\ell(\dot{\psi}_\theta X-\dot{\psi_\theta}h)]
+=\sup_{h\in\R^d}\E_{h}[\ell(\dot{\psi}_\theta X-\dot{\psi_\theta}h)].
 \]</span></p>
 </div>
 </div>
@@ -27182,16 +27183,41 @@ Tip 4
 </div>
 </div>
 <div class="callout-body-container callout-body">
+<p><a href="#thm-8.11" class="quarto-xref">Theorem 5</a> は asymptotic minimax 定理より強いことを主張している．実際，</p>
+<p><span class="math display">\[
+\begin{align*}
+&amp;\sup_{h\in \R^k}\E_{\theta+h/\sqrt{n}}\left[\ell\left(\sqrt{n}\left(T_n-\psi\left(\theta+\frac{h}{\sqrt{n}}\right)\right)\right)\right]\\
+&amp;\geq\sup_{h\in I}\E_{\theta+h/\sqrt{n}}\left[\ell\left(\sqrt{n}\left(T_n-\psi\left(\theta+\frac{h}{\sqrt{n}}\right)\right)\right)\right]
+\end{align*}
+\]</span></p>
+<p>なので， <span class="math display">\[
+\begin{align*}
+&amp;\liminf_n\sup_{h\in \R^k}\E_{\theta+h/\sqrt{n}}\left[\ell\left(\sqrt{n}\left(T_n-\psi\left(\theta+\frac{h}{\sqrt{n}}\right)\right)\right)\right]\\
+&amp;\geq\sup_{I\in\F}\liminf_n\sup_{h\in I}\E_{\theta+h/\sqrt{n}}\left[\ell\left(\sqrt{n}\left(T_n-\psi\left(\theta+\frac{h}{\sqrt{n}}\right)\right)\right)\right].
+\end{align*}
+\]</span></p>
+</div>
+</div>
+<div id="tip-8.11-3" class="callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Tip 5
+</div>
+</div>
+<div class="callout-body-container callout-body">
 <p>特に，正則な推定量 <span class="math inline">\(T_n\)</span> については， <span class="math display">\[
 \begin{align*}
 &amp;\sup_{I\in\F}\liminf_n\sup_{h\in I}\E_{\theta+h/\sqrt{n}}\left[\ell\left(\sqrt{n}\left(T_n-\psi\left(\theta+\frac{h}{\sqrt{n}}\right)\right)\right)\right]\\
 &amp;\geq\sup_{I\in\F}\sup_{h\in I}\liminf_n\E_{\theta+h/\sqrt{n}}\left[\ell\left(\sqrt{n}\left(T_n-\psi\left(\theta+\frac{h}{\sqrt{n}}\right)\right)\right)\right]\\
-&amp;=\sup_{I\in\F}\sup_{h\in I}L_{\theta}[\ell]\\
+&amp;\geq\sup_{I\in\F}\sup_{h\in I}L_{\theta}[\ell]\\
 &amp;=L_{\theta}[\ell]\\
 &amp;\geq N(0,\dot{\psi}_\theta I_\theta^{-1}\dot{\psi}_\theta^\top)[\ell].
 \end{align*}
 \]</span></p>
-<p>ただし，<span class="math inline">\(L_\theta\)</span> は <span class="math inline">\(T_n\)</span> の極限分布．最後の不等式は <a href="#thm-8.8" class="quarto-xref">Theorem 3</a> と <a href="#lem-8.5" class="quarto-xref">Lemma 1</a> から従う．</p>
+<p>ただし，<span class="math inline">\(L_\theta\)</span> は <span class="math inline">\(T_n\)</span> の極限分布．最後の不等式は <a href="#thm-8.8" class="quarto-xref">Theorem 3</a> と <a href="#lem-8.5" class="quarto-xref">Lemma 1</a> から従う． 特に，最良で正則な推定量でも下限を達成するとは限らない．</p>
 </div>
 </div>
 <div class="proof">
@@ -27235,13 +27261,13 @@ R=\liminf_l R_l\geq \liminf_{l}\E_{\theta+h/\sqrt{n_{m_l}}}[\ell(T_{n_{m_l},\the
 R^\star\geq R\geq \sup_{h\in\Q^k}L_{\theta,h}[\ell]=\sup_{h\in\R^k}L_{\theta,h}[\ell]\geq
 N(0,\dot{\psi}_\theta I_{\theta}^{-1}\dot{\psi}_\theta^\top)[\ell].
 \]</span></p>
-<div id="tip-8.11-2" class="callout callout-style-default callout-tip callout-titled">
+<div id="tip-8.11-4" class="callout callout-style-default callout-tip callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-Tip 5
+Tip 6
 </div>
 </div>
 <div class="callout-body-container callout-body">
@@ -27301,7 +27327,7 @@ T\coloneqq\sqrt{n}T_n=X-(k-2)\frac{X}{\norm{X}^2}.
 <i class="callout-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-Tip 6
+Tip 7
 </div>
 </div>
 <div class="callout-body-container callout-body">
@@ -27434,7 +27460,7 @@ T-\dot{\psi}_\theta h\sim L_{\theta,h},\quad \forall h\in\R^k.
 <i class="callout-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-Tip 7
+Tip 8
 </div>
 </div>
 <div class="callout-body-container callout-body">
@@ -27488,7 +27514,7 @@ S_n\coloneqq\psi(\theta)+\frac1n\sum_{i=1}^{n}\dot{\psi}_\theta I_\theta^{-1}\do
 <i class="callout-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-Tip 8
+Tip 9
 </div>
 </div>
 <div class="callout-body-container callout-body">
@@ -27735,7 +27761,7 @@ x\in B_1\subset\bar{B_1}\subset B_2\subset G.
 <i class="callout-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-Tip 9
+Tip 10
 </div>
 </div>
 <div class="callout-body-container callout-body">
@@ -27755,7 +27781,7 @@ T_{n,\theta}\warrow[\theta+h/\sqrt{n}]L_\theta\ast\delta_{\dot{\psi}_\theta h},\
 <i class="callout-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-Tip 10
+Tip 11
 </div>
 </div>
 <div class="callout-body-container callout-body">
@@ -27785,7 +27811,7 @@ Tip 10
 <i class="callout-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-Tip 11
+Tip 12
 </div>
 </div>
 <div class="callout-body-container callout-body">
@@ -27808,7 +27834,7 @@ f_m(T_\theta,\Delta_\theta)\coloneqq
 <i class="callout-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-Tip 12
+Tip 13
 </div>
 </div>
 <div class="callout-body-container callout-body">
@@ -27852,7 +27878,7 @@ y_{m,n_m}\geq y_m-\frac{1}{m}\geq K-\frac{1}{m}.
 <i class="callout-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-Tip 13
+Tip 14
 </div>
 </div>
 <div class="callout-body-container callout-body">
