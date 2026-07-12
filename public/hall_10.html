@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 <meta name="author" content="とり">
-<meta name="dcterms.date" content="2026-06-26">
+<meta name="dcterms.date" content="2026-07-12">
 
 <title>Lie Groups, Lie Algebras, and Representations Chapter 10 Further Properties of the Representations</title>
 <style>
@@ -2346,6 +2346,7 @@ color: #556056;
   <li><a href="#k-の-levi-civita-接続" id="toc-k-の-levi-civita-接続" class="nav-link" data-scroll-target="#k-の-levi-civita-接続"><span class="math inline">\(K\)</span> の Levi-Civita 接続</a></li>
   <li><a href="#laplace-beltrami-作用素の導出" id="toc-laplace-beltrami-作用素の導出" class="nav-link" data-scroll-target="#laplace-beltrami-作用素の導出">Laplace-Beltrami 作用素の導出</a></li>
   </ul></li>
+  <li><a href="#の補足" id="toc-の補足" class="nav-link" data-scroll-target="#の補足">10.8 の補足</a></li>
   </ul></li>
   </ul>
 </nav>
@@ -2371,7 +2372,7 @@ color: #556056;
     <div>
     <div class="quarto-title-meta-heading">Published</div>
     <div class="quarto-title-meta-contents">
-      <p class="date">June 26, 2026</p>
+      <p class="date">July 12, 2026</p>
     </div>
   </div>
   
@@ -2414,6 +2415,7 @@ color: #556056;
 \newcommand{\d}{\,\mathrm{d}}
 \newcommand{\dd}[3][]{\frac{\text{d}^{#1}{#2}}{\text{d}^{#1}{#3}}}
 \DeclarePairedDelimiter{\ang}{\langle}{\rangle}
+\DeclarePairedDelimiter{\norm}{\lVert}{\rVert}
 \DeclareMathOperator{\Ker}{ker}
 \DeclareMathOperator{\Im}{im}
 \newcommand{\Hom}{\mathrm{Hom}}
@@ -3061,10 +3063,10 @@ Tip 15
 \]</span></p>
 </div>
 <div id="thm-10.14" class="theorem">
-<p><span class="theorem-title"><strong>Theorem 3 (<span class="citation" data-cites="hallLieGroupsLie2015">Hall (<a href="#ref-hallLieGroupsLie2015" role="doc-biblioref">2015</a>)</span> Theorem 10.14 Weyl の指標公式)</strong></span> <span class="math inline">\(\g\)</span> の最高ウェイト <span class="math inline">\(\mu\)</span> をもつ既約表現 <span class="math inline">\((\pi,V_\mu)\)</span> について， <span class="math display">\[
+<p><span class="theorem-title"><strong>Theorem 3 (<span class="citation" data-cites="hallLieGroupsLie2015">Hall (<a href="#ref-hallLieGroupsLie2015" role="doc-biblioref">2015</a>)</span> Theorem 10.14 Weyl の指標公式)</strong></span> <span class="math inline">\(\g\)</span> の最高ウェイト <span class="math inline">\(\mu\)</span> をもつ有限次元既約表現 <span class="math inline">\((\pi,V_\mu)\)</span> について， <span class="math display">\[
 \chi_\pi(H)=\frac{\sum_{w\in W}\det(w)e^{\ang{w\cdot(\mu+\delta),H}}}{\sum_{w\in W}\det(w)e^{\ang{w\cdot\delta,H}}}
 \]</span></p>
-<p>が分母 <span class="math inline">\(q(H)\coloneqq\sum_{w\in W}\det(w)e^{\ang{w\cdot\delta,H}}\)</span> が <span class="math inline">\(0\)</span> にならない任意の <span class="math inline">\(h\in H\)</span> に対して成立．</p>
+<p>が分母 <span class="math inline">\(q(H)\coloneqq\sum_{w\in W}\det(w)e^{\ang{w\cdot\delta,H}}\)</span> が <span class="math inline">\(0\)</span> にならない任意の <span class="math inline">\(H\in\h\)</span> に対して成立．</p>
 </div>
 <ul>
 <li><a href="#thm-10.14" class="quarto-xref">Theorem 3</a> の証明は 10.8 節で．残りの節では指標公式を認めていくつかの結果を導出する．</li>
@@ -3376,15 +3378,531 @@ D_\alpha f_\lambda
 \]</span></p>
 <p>特に，<span class="math inline">\(\lambda\)</span> として <span class="math inline">\(P(\lambda)\neq0\)</span> となる優元が取れるので，<span class="math inline">\((\mathcal{A}P)(0)\neq0.\)</span></p>
 </div>
+<div id="exm-10.23" class="theorem example">
+<p><span class="theorem-title"><strong>Example 2 (<span class="citation" data-cites="hallLieGroupsLie2015">Hall (<a href="#ref-hallLieGroupsLie2015" role="doc-biblioref">2015</a>)</span> Example 10.23 (Theorem 6.27))</strong></span> <span class="math inline">\(\mu_1,\mu_2\)</span> は <span class="math inline">\(\sl(3;\C)\)</span> の基本ウェイトとする．最高ウェイト <span class="math inline">\(\mu\coloneqq m_1\mu_1+m_2\mu_2\)</span> をもつ既約表現の次元は <span class="math display">\[
+\frac12(m_1+1)(m_2+1)(m_1+m_2+2).
+\]</span></p>
+</div>
+<div id="tip-10.23" class="callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Tip 22
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p><span class="math inline">\(\sl(3;\C)\)</span> のウェイトは非負整数の組 <span class="math inline">\((m_1,m_2)\)</span> と対応しているのだった．<span class="math inline">\(\mu_1,\mu_2\)</span> はそれぞれ <span class="math inline">\((1,0),(0,1)\)</span> に対応している．</p>
+</div>
+</div>
+<div class="proof">
+<p><span class="proof-title"><em>Proof</em>. </span>正ルートは次の通り： <span class="math display">\[
+\alpha_1\coloneqq\begin{pmatrix}1&amp;0&amp;0\\0&amp;-1&amp;0\\0&amp;0&amp;0\end{pmatrix},\enspace
+\alpha_2\coloneqq\begin{pmatrix}0&amp;0&amp;0\\0&amp;1&amp;0\\0&amp;0&amp;-1\end{pmatrix},\enspace
+\alpha_3\coloneqq \alpha_1+\alpha_2.
+\]</span></p>
+<p><span class="math inline">\(\ang{\mu_i,H_j}=\delta_{ij},H_j=2\alpha_j/\ang{\alpha_j,\alpha_j}\,(i,j=1,2)\)</span> に注意すると，</p>
+<p><span class="math display">\[
+\ang{\mu,\alpha_i}=\ang{\alpha_i,\alpha_i}m_i/2=m_i,\enspace(i=1,2).
+\]</span></p>
+<p><span class="math inline">\(\delta\coloneqq(\alpha_1+\alpha_2+\alpha_3)/2=\alpha_3,\ang{\alpha_1,\delta}=\ang{\alpha_2,\delta}=1\)</span> より， <span class="math display">\[
+\begin{align*}
+\dim V_\mu
+&amp;= \frac{\ang{\alpha_1,\mu+\delta}\cdot\ang{\alpha_2,\mu+\delta}\cdot\ang{\alpha_3,\mu+\delta}}{\ang{\alpha_1,\delta}\cdot\ang{\alpha_2,\delta}\cdot\ang{\alpha_3,\delta}}\\
+&amp;= \frac{(\ang{\alpha_1,\mu}+\ang{\alpha_1,\delta})(\ang{\alpha_2,\mu}+\ang{\alpha_2,\delta})(\ang{\alpha_1+\alpha_2,\mu}+\ang{\alpha_1+\alpha_2,\delta})}{2}\\
+&amp;=\frac12(m_1+1)(m_2+1)(m_1+m_2+2).
+\end{align*}
+\]</span></p>
+</div>
 </section>
 <section id="the-kostant-multiplicity-formula" class="level1">
 <h1>10.6 The Kostant Multiplicity Formula</h1>
+<p>はじめに <span class="math inline">\(\sl(2;\C)\)</span> の例を眺める．</p>
+<p><span class="math inline">\(m+1\)</span> 次元既約表現 <span class="math inline">\(\pi\)</span> について， <span class="math display">\[
+\chi_\pi(aH)=\frac{e^{(m+1)a}-e^{-(m+1)a}}{e^a-e^{-a}}
+\]</span></p>
+<p><span class="math inline">\(1/(1-x)=1+x+x^2+\cdots\)</span> を形式的に代入すると， <span class="math display">\[
+\begin{align*}
+\chi_\pi(aH)
+&amp;=\frac{e^{(m+1)a}-e^{-(m+1)a}}{e^a(1-e^{-2a})}\\
+&amp;\overset{?}{=}(e^{(m+1)a}-e^{-(m+1)a})e^{-a}(1+e^{-2a}+e^{-4a}+\cdots)\\
+&amp;=(e^{ma}+e^{(m-2)a}+\cdots)-(e^{-(m+2)a}+e^{-(m+4)a}+\cdots)\\
+&amp;=e^{ma}+e^{(m-2)a}+\cdots+e^{-ma}.
+\end{align*}
+\]</span></p>
+<p><a href="#prp-10.12" class="quarto-xref">Proposition 6</a> より，各ウェイトの重複度は1となりそう．</p>
+<div id="def-10.24" class="theorem definition">
+<p><span class="theorem-title"><strong>Definition 3 (<span class="citation" data-cites="hallLieGroupsLie2015">Hall (<a href="#ref-hallLieGroupsLie2015" role="doc-biblioref">2015</a>)</span> Definition 10.24 形式的指数級数 (formal exponential series))</strong></span> 形式的指数級数とは，形式的級数 <span class="math display">\[
+\sum_\lambda c_\lambda\exp(\ang{\lambda,H})
+\]</span></p>
+<p>のこと．ただし，<span class="math inline">\(\lambda\)</span> は整元，<span class="math inline">\(c_\lambda\in\C.\)</span></p>
+<p>形式的指数級数が有限指数級数であるとは，<span class="math inline">\(c_\lambda\neq0\)</span> を満たす <span class="math inline">\(\lambda\)</span> が有限個であること．</p>
+</div>
+<div id="def-10.25" class="theorem definition">
+<p><span class="theorem-title"><strong>Definition 4 (<span class="citation" data-cites="hallLieGroupsLie2015">Hall (<a href="#ref-hallLieGroupsLie2015" role="doc-biblioref">2015</a>)</span> Kostant の分配関数 (Kostant partition function))</strong></span> 整元 <span class="math inline">\(\lambda\)</span> は，正ルートの非負整数係数の線形結合として <span class="math inline">\(n\)</span> 通りの表示をもつとする． Kostant の分配関数 <span class="math inline">\(p\)</span> は <span class="math inline">\(p(\lambda)\coloneqq n\)</span> で定義される．</p>
+</div>
+<div id="exm-10.26" class="theorem example">
+<p><span class="theorem-title"><strong>Example 3 (<span class="citation" data-cites="hallLieGroupsLie2015">Hall (<a href="#ref-hallLieGroupsLie2015" role="doc-biblioref">2015</a>)</span> Example 10.26)</strong></span> <span class="math inline">\(\sl(3;\C)\)</span> の正単純ルート <span class="math inline">\(\alpha_1,\alpha_2\)</span> に対して，</p>
+<p><span class="math display">\[
+p(m_1\alpha_1+m_2\alpha_2)=1+\min\{m_1,m_2\},\quad m_1,m_2\in\Z_+.
+\]</span></p>
+</div>
+<div class="proof">
+<p><span class="proof-title"><em>Proof</em>. </span><span class="math inline">\(\lambda\coloneqq m_1\alpha_1+m_2\alpha_2\)</span> とする．<span class="math inline">\(\sl(3;\C)\)</span> の正ルートは <span class="math inline">\(\alpha_1,\alpha_2,\alpha_3\coloneqq\alpha_1+\alpha_2\)</span> である．</p>
+<p><span class="math display">\[
+\lambda=m_1&#39;\alpha_1+m_2&#39;\alpha_2+m_3&#39;\alpha_3
+=\underbrace{(m_1&#39;+m_3&#39;)}_{m_1}\alpha_1+\underbrace{(m_2&#39;+m_3&#39;)}_{m_2}\alpha_2
+\]</span></p>
+<p>より，<span class="math inline">\(m_3&#39;=0,1,\dots,\min\{m_1,m_2\}\)</span> がとりえる．</p>
+</div>
+<div id="prp-10.27" class="theorem proposition">
+<p><span class="theorem-title"><strong>Proposition 9 (<span class="citation" data-cites="hallLieGroupsLie2015">Hall (<a href="#ref-hallLieGroupsLie2015" role="doc-biblioref">2015</a>)</span> Proposition 10.27 Weyl 分母の形式的逆数 (Formal Reciprocal of the Weyl Denominator))</strong></span> 形式的指数級数として， <span class="math display">\[
+\frac{1}{q(H)}=\sum_{\eta}p(\eta)e^{-\ang{\eta+\delta,H}}.
+\]</span></p>
+<p>ただし，<span class="math inline">\(\eta\)</span> は正ルートの非負整数係数結合で表せる元全体にわたってとる．</p>
+</div>
+<div class="proof">
+<p><span class="proof-title"><em>Proof</em>. </span><a href="#lem-10.28" class="quarto-xref">Lemma 6</a> の表示より， <span class="math display">\[
+\begin{align*}
+\frac{1}{q(H)}
+&amp;=\frac{1}{\prod_{\alpha\in R^+}e^{\ang{\alpha,H}/2}(1-e^{-\ang{\alpha,H}})}\\
+&amp;=\prod_{\alpha\in R^+}e^{-\ang{\alpha,H}/2}(1+e^{-\ang{\alpha,H}}+e^{-2\ang{\alpha,H}}+\cdots)\\
+&amp;=e^{-\ang{\delta,H}}\prod_{\alpha\in R^+}(1+e^{-\ang{\alpha,H}}+e^{-2\ang{\alpha,H}}+\cdots)\\
+&amp;=\sum_{(n_\alpha)\in \Z_+,\alpha\in R^+}\exp\left(-\ang*{\delta+\sum_{\alpha\in R^+}n_\alpha\alpha,H}\right)\\
+&amp;=\sum_{\eta}p(\eta)e^{-\ang{\eta+\delta,H}}.
+\end{align*}
+\]</span></p>
+</div>
+<div id="lem-10.28" class="theorem lemma">
+<p><span class="theorem-title"><strong>Lemma 6 (<span class="citation" data-cites="hallLieGroupsLie2015">Hall (<a href="#ref-hallLieGroupsLie2015" role="doc-biblioref">2015</a>)</span> Lemma 10.28)</strong></span> <span class="math display">\[
+q(H)=\prod_{\alpha\in R^+}\left( e^{\ang{\alpha,H}/2} - e^{-\ang{\alpha,H}/2}  \right).
+\]</span></p>
+</div>
+<div class="proof">
+<p><span class="proof-title"><em>Proof</em>. </span><span class="math display">\[
+\begin{align*}
+\tilde{q}(H)
+&amp;\coloneqq\prod_{\alpha\in R^+}\left( e^{\ang{\alpha,H}/2} - e^{-\ang{\alpha,H}/2}  \right)\\
+&amp;=\sum_{S\subset R^+}(-1)^{|S|}\exp\left(\sum_{\beta\in R^+}\ang{\beta,H}/2-\sum_{\beta\in S}\ang{\beta,H}\right)\\
+&amp;=\sum_{S\subset R^+}(-1)^{|S|}\exp\left(\ang*{\delta-\sum_{\beta\in S}\beta,H}\right)\\
+&amp;\eqqcolon \sum_{\lambda}c_\lambda\exp\left(\ang{\lambda,H}\right).
+\end{align*}
+\]</span></p>
+<p>ただし，<span class="math inline">\(\lambda\)</span> は整元全体（ <span class="math inline">\(\delta\)</span> は整元）．</p>
+<div id="tip-8.38" class="callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Tip 23: <span class="citation" data-cites="hallLieGroupsLie2015">Hall (<a href="#ref-hallLieGroupsLie2015" role="doc-biblioref">2015</a>)</span> Proposition 8.38
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p><span class="math inline">\(\delta\)</span> は狭義優・整元．</p>
+</div>
+</div>
+<ul>
+<li><span class="math inline">\(\tilde{q}(H)\)</span> は Weyl 交代関数になっている（<a href="#prp-10.21" class="quarto-xref">Proposition 8</a> の証明一段目と二段目と同じ流れ）．</li>
+<li><span class="math inline">\(\exp(\ang{\delta,H})\)</span> の係数は1で，<a href="#cor-10.17" class="quarto-xref">Corollary 1</a> より，<span class="math inline">\(\exp(\ang{w\cdot\delta,H})\)</span> の係数は <span class="math inline">\(\det(w)\)</span>.</li>
+</ul>
+<p>整元全体は</p>
+<ol type="1">
+<li><span class="math inline">\(\delta\)</span> の Weyl 群軌道 <span class="math inline">\(W\cdot \delta\)</span></li>
+<li><span class="math inline">\(\delta\)</span> 以外の狭義優元の Weyl 群軌道</li>
+<li>優元だが，狭義優元でない（ある正ルートと直交する）整元の Weyl 群軌道</li>
+</ol>
+<p>にわけることができる．</p>
+<p><strong>主張</strong>：2,3 のいずれかを満たす整元 <span class="math inline">\(\lambda\)</span> について，<span class="math inline">\(c_\lambda=0\)</span>．特に，<span class="math inline">\(\tilde{q}(H)=q(H)\)</span></p>
+<p>2の場合：</p>
+<p><span class="math inline">\(\delta\)</span> 以外の狭義優元 <span class="math inline">\(\lambda\)</span> について，<span class="math inline">\(c_\lambda\neq0\)</span> を仮定する．このとき，ある <span class="math inline">\(S\)</span> が存在して， <span class="math display">\[
+\lambda=\delta-\sum_{\beta\in S}\beta
+\]</span></p>
+<p>と表せる．つまり，<span class="math inline">\(\lambda\preceq \delta\)</span> だが，これは <span class="math inline">\(\lambda\succ\delta\)</span> に矛盾する． よって，<span class="math inline">\(c_\lambda=0\)</span> で，<span class="math inline">\(c_{w\cdot\lambda}=\det(w)c_\lambda=0\)</span>.</p>
+<div id="tip-8.43" class="callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Tip 24: <span class="citation" data-cites="hallLieGroupsLie2015">Hall (<a href="#ref-hallLieGroupsLie2015" role="doc-biblioref">2015</a>)</span> Proposition 8.43
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>任意の狭義優元 <span class="math inline">\(\lambda\)</span> について，<span class="math inline">\(\lambda\succeq\delta.\)</span></p>
+</div>
+</div>
+<p>3の場合：</p>
+<p>優元 <span class="math inline">\(\lambda\)</span> は <span class="math inline">\(\alpha\in R^+\)</span> と直交すると仮定する．このとき，Weyl 交代性から， <span class="math display">\[
+c_\lambda = c_{s_\alpha\cdot \lambda} = \det(s_\alpha)c_\lambda = -c_\lambda.
+\]</span></p>
+<p>よって，<span class="math inline">\(c_\lambda=0\)</span> で，<span class="math inline">\(c_{w\cdot\lambda}=\det(w)c_\lambda=0\)</span>.</p>
+</div>
+<div id="thm-10.29" class="theorem">
+<p><span class="theorem-title"><strong>Theorem 5 (<span class="citation" data-cites="hallLieGroupsLie2015">Hall (<a href="#ref-hallLieGroupsLie2015" role="doc-biblioref">2015</a>)</span> Theorem 10.29 Kostant の重複度公式)</strong></span> 最高ウェイト <span class="math inline">\(\mu\)</span> をもつ有限次元既約表現 <span class="math inline">\((\pi,V_\mu)\)</span> のウェイト <span class="math inline">\(\lambda\)</span> について， <span class="math display">\[
+\mathrm{mult}(\lambda)=\sum_{w\in W}\det(w)p(w\cdot(\mu+\delta)-(\lambda+\delta)).
+\]</span></p>
+</div>
+<div class="proof">
+<p><span class="proof-title"><em>Proof</em>. </span><a href="#prp-10.12" class="quarto-xref">Proposition 6</a> より，</p>
+<p><span class="math display">\[
+\chi_\pi(H)=\sum_{\lambda}\mathrm{mult}(\lambda)e^{\lambda,H}.
+\]</span></p>
+<p>これは有限指数級数で，特に形式的指数級数．</p>
+<p><a href="#thm-10.14" class="quarto-xref">Theorem 3</a> と <a href="#prp-10.27" class="quarto-xref">Proposition 9</a> より， <span class="math display">\[
+\chi_\pi(H)=
+\left(\sum_{w\in W}\det(w)e^{\ang{w\cdot(\mu+\delta),H}}\right)
+\left(\sum_{\eta}p(\eta)e^{-\ang{\eta+\delta,H}}\right).
+\]</span></p>
+<p>形式的指数級数として両者の係数を比較すると，<span class="math inline">\(\mathrm{mult}(\lambda)\)</span> は <span class="math display">\[
+\lambda=w\cdot(\mu+\delta)-(\eta+\delta)
+\]</span></p>
+<p>を満たす <span class="math inline">\(w,\eta\)</span> について，<span class="math inline">\(\det(w)p(\eta)\)</span> の総和をとったもの．つまり， <span class="math display">\[
+\mathrm{mult}(\lambda)=\sum_{w\in W}\det(w)p(w\cdot(\mu+\delta)-(\lambda+\delta)).
+\]</span></p>
+</div>
 </section>
 <section id="the-character-formula-for-verma-modules" class="level1">
 <h1>10.7 The Character Formula for Verma Modules</h1>
+<div id="def-10.30" class="theorem definition">
+<p><span class="theorem-title"><strong>Definition 5 (<span class="citation" data-cites="hallLieGroupsLie2015">Hall (<a href="#ref-hallLieGroupsLie2015" role="doc-biblioref">2015</a>)</span> Definition 10.30 形式的指標)</strong></span> （有限次元とは限らない）表現 <span class="math inline">\((\pi,V)\)</span> に以下を仮定する：</p>
+<ol type="1">
+<li><span class="math inline">\(V\)</span> は整ウェイトで直和分解できる：<span class="math inline">\(V=\bigoplus_{\lambda}V_\lambda.\)</span></li>
+<li><span class="math inline">\(\mathrm{mult}(\lambda)&lt;\infty.\)</span></li>
+</ol>
+<p>この表現の形式的指標 <span class="math inline">\(\mathcal{Q}_V\)</span> とは，以下で定義される形式的指数級数： <span class="math display">\[
+\mathcal{Q}_V(H)\coloneqq\sum_{\lambda}\mathrm{mult}(\lambda)e^{\ang{\lambda,H}},\enspace H\in\h.
+\]</span></p>
+</div>
+<div id="prp-10.31" class="theorem proposition">
+<p><span class="theorem-title"><strong>Proposition 10 (<span class="citation" data-cites="hallLieGroupsLie2015">Hall (<a href="#ref-hallLieGroupsLie2015" role="doc-biblioref">2015</a>)</span> Proposition 10.31 Verma 加群に対する指標公式)</strong></span> 任意の整元 <span class="math inline">\(\lambda\)</span> に対して，Verma 加群 <span class="math inline">\(W_\lambda\)</span> の形式的指標は以下で与えられる：</p>
+<p><span class="math display">\[
+\mathcal{Q}_{W_\lambda}(H)=\sum_{\eta}p(\eta)e^{\ang{\lambda-\eta,H}}.
+\]</span></p>
+<p>ただし，<span class="math inline">\(\eta\)</span> は正ルートの非負整数係数結合で表せる元全体にわたってとる．</p>
+</div>
+<div id="tip-10.31" class="callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Tip 25
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>特に，<a href="#prp-10.27" class="quarto-xref">Proposition 9</a> より，</p>
+<p><span class="math display">\[
+\mathcal{Q}_{W_\lambda}(H)=\frac{e^{\ang{\lambda+\delta,H}}}{q(H)}.
+\]</span></p>
+</div>
+</div>
+<ul>
+<li>Verma 加群 <span class="math inline">\(W_\lambda\)</span> とは，<span class="math inline">\(H-\ang{\lambda,H}1_{U(\g)},\,H\in\h\)</span> と <span class="math inline">\(X\in \g_{\alpha},\alpha\in R^+\)</span> が生成する左イデアル <span class="math inline">\(I_\lambda\)</span> で普遍包絡代数 <span class="math inline">\(U(\g)\)</span> を割った商代数として定まるのだった（最高ウェイト巡回表現になるように割る）．</li>
+<li><span class="math inline">\(\g\)</span> は <span class="math inline">\(U(\g)\)</span> に左乗法として自然に作用する．この作用は <span class="math inline">\(W_\lambda\)</span> にも誘導される．</li>
+</ul>
+<div class="proof">
+<p><span class="proof-title"><em>Proof</em>. </span>正ルート全体を <span class="math inline">\(\alpha_1,\dots,\alpha_k\)</span> と並べる．<span class="math inline">\(Y_j\in \g_{-\alpha_j}\)</span> として非零元を選ぶ．</p>
+<p>Theorem 9.14 より，Verma 加群 <span class="math inline">\(W_\lambda\)</span> の基底は</p>
+<p><span class="math display">\[
+\pi(Y_1)^{n_1}\cdots\pi(Y_k)^{n_k}v_0,\enspace n_j\in\Z_+.
+\]</span></p>
+<div id="tip-9.14" class="callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Tip 26: <span class="citation" data-cites="hallLieGroupsLie2015">Hall (<a href="#ref-hallLieGroupsLie2015" role="doc-biblioref">2015</a>)</span> Theorem 9.14
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p><span class="math inline">\(v_0\in W_\lambda\)</span> を最高ウェイトベクトルとする．<span class="math inline">\(W_\lambda\)</span> の基底は以下の表示をもつ元全体： <span class="math display">\[
+\pi(Y_1)^{n_1}\cdots\pi(Y_k)^{n_k}v_0,\enspace n_j\in\Z_+.
+\]</span></p>
+</div>
+</div>
+<p>これらの元は，それぞれウェイト <span class="math display">\[
+\xi\coloneqq \lambda-n_1\alpha_1-\cdots-n_k\alpha_k
+\]</span></p>
+<p>に対応するウェイトベクトルになっている（昇降演算）． よって，</p>
+<p><span class="math display">\[
+\mathcal{Q}_{W_\lambda}(H)=\sum_{\xi}e^{\ang{\xi,H}}
+=\sum_{\eta}p(\eta)e^{\ang{\lambda-\eta,H}}.
+\]</span></p>
+</div>
 </section>
 <section id="proof-of-the-character-formula" class="level1">
 <h1>10.8 Proof of the Character Formula</h1>
+<div id="prp-10.32" class="theorem proposition">
+<p><span class="theorem-title"><strong>Proposition 11 (<span class="citation" data-cites="hallLieGroupsLie2015">Hall (<a href="#ref-hallLieGroupsLie2015" role="doc-biblioref">2015</a>)</span> Proposition 10.32)</strong></span> 最高ウェイト <span class="math inline">\(\mu\)</span> をもつ有限次元既約表現 <span class="math inline">\((\pi,V_\mu)\)</span> について，</p>
+<p>ある <span class="math inline">\(c_\lambda\in\R\)</span> が存在して， <span class="math display">\[
+q(H)\chi_\pi(H)=\sum_{\lambda}c_\lambda e^{\ang{\lambda,H}}
+\]</span></p>
+<p>と表せる．ただし，和は整元全体にわたってとる．さらに，<span class="math inline">\(c_\lambda\neq0\)</span> ならば，以下が成立：</p>
+<ol type="1">
+<li><span class="math inline">\(\lambda\in\Conv(W\cdot(\mu+\delta)).\)</span></li>
+<li><span class="math inline">\(\lambda-(\mu+\delta)\)</span> はルートの整数係数線形結合で表せる．</li>
+</ol>
+</div>
+<div class="proof">
+<p><span class="proof-title"><em>Proof</em>. </span><strong>一段目</strong>：<span class="math inline">\(q(H)\chi_\pi(H)=\sum_\lambda c_\lambda\exp(\ang{\lambda,H})\)</span> と表せる</p>
+<p><a href="#prp-10.12" class="quarto-xref">Proposition 6</a> と Weyl 分母の定義より， <span class="math display">\[
+q(H)\chi_\pi(H)=\left(\sum_{w\in W}\det(w)e^{\ang{w\cdot \delta,H}}\right)\left(\sum_{\xi}\mathrm{mult}(\xi)e^{\ang{\xi,H}}\right).
+\]</span></p>
+<p><span class="math inline">\(\delta\)</span> とウェイト <span class="math inline">\(\xi\)</span> は整元．</p>
+<p><strong>二段目</strong>：<span class="math inline">\(c_\lambda\neq0\)</span> ならば，<span class="math inline">\(\lambda\in W\cdot(\mu+\delta)\)</span> かつ <span class="math inline">\(\lambda-(\mu+\delta)\)</span> はルートの整数係数線形結合で表せる</p>
+<p>整元 <span class="math inline">\(\lambda\)</span> とルート <span class="math inline">\(\alpha\)</span> に対して，</p>
+<p><span class="math display">\[
+s_\alpha\cdot\lambda = \lambda-\underbrace{2\frac{\ang{\lambda,\alpha}}{\ang{\alpha,\alpha}}}_{\in\Z}\alpha
+\]</span></p>
+<p>より，<span class="math inline">\(w\cdot\lambda-\lambda\)</span> はルートの整数係数線形結合で表せる．</p>
+<p><span class="math inline">\(c_\lambda\neq0\)</span> ならば，あるウェイト <span class="math inline">\(\xi\)</span> と <span class="math inline">\(w\in W\)</span> が存在して，<span class="math inline">\(\lambda=w\cdot\delta+\xi\)</span> と表せる．</p>
+<ol type="1">
+<li><a href="#thm-10.1" class="quarto-xref">Theorem 1</a> より，<span class="math inline">\(\xi\in\Conv(W\cdot\mu)\)</span> なので，<span class="math inline">\(\lambda\in\Conv(W\cdot(\mu+\delta))\)</span></li>
+<li><a href="#thm-10.1" class="quarto-xref">Theorem 1</a> より，<span class="math inline">\(\xi-\mu\)</span> はルートの整数係数線形結合で表せるので，<span class="math inline">\(\lambda-(\mu+\delta)=(w\cdot\delta-\delta)+(\xi-\mu)\)</span> もそう．</li>
+</ol>
+</div>
+<div id="prp-10.33" class="theorem proposition">
+<p><span class="theorem-title"><strong>Proposition 12 (<span class="citation" data-cites="hallLieGroupsLie2015">Hall (<a href="#ref-hallLieGroupsLie2015" role="doc-biblioref">2015</a>)</span> Proposition 10.33)</strong></span> 表記は <a href="#prp-10.32" class="quarto-xref">Proposition 11</a> と同様とする．<span class="math inline">\(c_\lambda\neq0\)</span> ならば， <span class="math display">\[
+\ang{\lambda,\lambda}=\ang{\mu+\delta,\mu+\delta}.
+\]</span></p>
+</div>
+<p><a href="#prp-10.33" class="quarto-xref">Proposition 12</a> の証明がとても大変．まずは <a href="#prp-10.33" class="quarto-xref">Proposition 12</a> を認めて <a href="#thm-10.14" class="quarto-xref">Theorem 3</a> を示す．</p>
+<div class="proof">
+<p><span class="proof-title"><em>Proof</em> (<a href="#thm-10.14" class="quarto-xref">Theorem 3</a> の証明). </span><span class="math inline">\(v_1,\dots,v_m\in V_\mu\)</span> はノルムが等しい相異なる元とすると，<a href="#lem-conv" class="quarto-xref">Lemma 8</a> より，</p>
+<p>凸結合 <span class="math inline">\(v\coloneqq\sum_{j=1}^ma_jv_j\)</span> について，<span class="math inline">\(\norm{v}=\norm{v_1}\iff\)</span> ある <span class="math inline">\(j\)</span> が存在して，<span class="math inline">\(a_j=1.\)</span></p>
+<p>このことと，<a href="#prp-10.32" class="quarto-xref">Proposition 11</a>, <a href="#prp-10.33" class="quarto-xref">Proposition 12</a> を合わせると， <span class="math display">\[
+c_\lambda\neq0\Rightarrow
+\lambda\in W\cdot(\mu+\delta).
+\]</span></p>
+<p>従って，ある <span class="math inline">\(c_w\in\R\)</span> が存在して， <span class="math display">\[
+q(H)\chi_\pi(H)=\sum_{w\in W}c_we^{\ang{w\cdot(\mu+\delta),H}}
+\]</span></p>
+<p>と表せる．</p>
+<p><strong>主張</strong>：<span class="math inline">\(c_w=\det(w)\)</span></p>
+<ul>
+<li><a href="#prp-10.12" class="quarto-xref">Proposition 6</a> の表示から，<span class="math inline">\(\chi_\pi(H)\)</span> は Weyl 群の作用に不変</li>
+<li>Weyl 分母 <span class="math inline">\(q(H)\)</span> は Weyl 交代関数</li>
+<li><span class="math inline">\(\mathrm{mult}(\mu)=1\)</span> である（Proposition 6.11 と同様に確認できる）．</li>
+</ul>
+<p><a href="#prp-10.12" class="quarto-xref">Proposition 6</a> と Weyl 分母の定義より， <span class="math display">\[
+q(H)\chi_\pi(H)=\left(\sum_{w\in W}\det(w)e^{\ang{w\cdot \delta,H}}\right)\left(\sum_{\xi}\mathrm{mult}(\xi)e^{\ang{\xi,H}}\right).
+\]</span></p>
+<p><span class="math inline">\(w\cdot\delta\prec \delta\,(w\neq1)\)</span> と <span class="math inline">\(\xi\prec\mu\,(\xi\neq\mu)\)</span> に注意すると，<span class="math inline">\(c_1=1\)</span>． 以上より，<span class="math inline">\(q(H)\chi_\pi(H)\)</span> の Weyl 交代性から，<span class="math inline">\(c_w=\det(w)\)</span> である．</p>
+</div>
+<div id="prp-10.34" class="theorem proposition">
+<p><span class="theorem-title"><strong>Proposition 13 (<span class="citation" data-cites="hallLieGroupsLie2015">Hall (<a href="#ref-hallLieGroupsLie2015" role="doc-biblioref">2015</a>)</span> Proposition 10.34)</strong></span> <span class="math inline">\((\pi,V)\)</span> は最高ウェイト <span class="math inline">\(\lambda\)</span> をもつ最高ウェイト巡回表現とする（有限次元とは限らない）． <span class="math inline">\((\tilde{\pi},V)\)</span> を普遍包絡代数 <span class="math inline">\(U(\g)\)</span> への拡張とすると， <span class="math display">\[
+\tilde\pi(C)=c_\lambda I,\enspace c_\lambda = \ang{\lambda+\delta,\lambda+\delta}-\ang{\delta,\delta}.
+\]</span></p>
+</div>
+<div id="tip-mwc" class="callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Tip 27
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>最高ウェイト巡回表現とは，以下を満たす <span class="math inline">\(v_0\neq0\)</span> をもつ表現のことだった：</p>
+<ol type="1">
+<li><span class="math inline">\(v_0\neq0\)</span> は（最高）ウェイトベクトル．</li>
+<li><span class="math inline">\(\pi(X_\alpha)v_0=0,\quad X_\alpha\in g_\alpha,\alpha\in R^+.\)</span></li>
+<li><span class="math inline">\(v_0\)</span> を含む最小の不変部分空間は <span class="math inline">\(V\)</span> 自身．</li>
+</ol>
+</div>
+</div>
+<ul>
+<li><a href="#prp-10.6" class="quarto-xref">Proposition 4</a> の一般化になっている．</li>
+</ul>
+<div class="proof">
+<p><span class="proof-title"><em>Proof</em>. </span><a href="#prp-10.6" class="quarto-xref">Proposition 4</a> の二段目前半と同様にして，<span class="math inline">\(\tilde\pi(C)v_0=c_\lambda v_0\)</span> が示せる．ただし，<span class="math inline">\(v_0\)</span> は最高ウェイトベクトル．</p>
+<p><span class="math display">\[
+U\coloneqq\{v\in V\mid \tilde\pi(C)v=c_\lambda v\}
+\]</span></p>
+<p>とする．</p>
+<p><strong>主張</strong>：<span class="math inline">\(U\)</span> は <span class="math inline">\(v_0\)</span> を含む不変部分空間，特に（最高ウェイト巡回表現であることから）<span class="math inline">\(U=V\)</span></p>
+<p><span class="math inline">\(C\)</span> は <span class="math inline">\(U(\g)\)</span> の中心に含まれるので， <span class="math display">\[
+\tilde\pi(C)\pi(X)v=\pi(X)\tilde\pi(C)v=c_\lambda\pi(X)v,\quad \forall X\in\g,v\in U.
+\]</span></p>
+<p>よって，<span class="math inline">\(U\)</span> は不変部分空間．</p>
+</div>
+<div id="prp-10.36" class="theorem proposition">
+<p><span class="theorem-title"><strong>Proposition 14 (<span class="citation" data-cites="hallLieGroupsLie2015">Hall (<a href="#ref-hallLieGroupsLie2015" role="doc-biblioref">2015</a>)</span> Proposition 10.36)</strong></span> <span class="math inline">\(S_\mu\)</span> は <span class="math inline">\(\ang{\eta+\delta,\eta+\delta}=\ang{\mu+\delta,\mu+\delta}\)</span> を満たす整元 <span class="math inline">\(\eta\)</span> 全体とする（Definition 10.35）． 各 <span class="math inline">\(\eta\in S_\mu\)</span> に対して，最高ウェイト <span class="math inline">\(\eta\)</span> をもつ最高ウェイト巡回表現 <span class="math inline">\(U_\eta\)</span> （特に Verma 加群）の形式的指標 <span class="math inline">\(\mathcal{Q}_{U_\eta}\)</span> は以下のように表せる： <span class="math display">\[
+\mathcal{Q}_{U_\eta}=\sum_{\gamma}a_{\gamma}^\eta\mathcal{Q}_{V_\gamma}
+\]</span></p>
+<p>ただし，和は <span class="math inline">\(\gamma\in S_\mu,\gamma\preceq\eta\)</span> にわたってとる． <span class="math inline">\(V_\gamma\)</span> は最高ウェイト <span class="math inline">\(\gamma\)</span> をもつ既約な最高ウェイト巡回表現．</p>
+<p>さらに，<span class="math inline">\(a_\eta^\eta=1.\)</span></p>
+</div>
+<ul>
+<li><span class="math inline">\(S_\mu\)</span> は有限集合（球面上の格子点になっている, Fig 10.10 を参照）</li>
+<li>証明の流れ：<a href="#lem-10.37" class="quarto-xref">Lemma 7</a> → <a href="#prp-10.36" class="quarto-xref">Proposition 14</a></li>
+<li>既約な最高ウェイト巡回表現で，最高ウェイトが同じものは同型（どこかでやった…?）．</li>
+</ul>
+<div class="proof">
+<p><span class="proof-title"><em>Proof</em>. </span>まず，<span class="math inline">\(U_\eta\)</span> は有限次元の整ウェイト空間の直和に分解できて，最高ウェイト <span class="math inline">\(\eta\)</span> の重複度は1になる（Proposition 6.11 の証明を参考）．</p>
+<p><span class="math inline">\(M(U_\eta)\coloneqq\sum_{\gamma\in S_\mu}\mathrm{mult}_{U_\eta}(\gamma)\)</span> とする．</p>
+<p><strong>一段目</strong>：<span class="math inline">\(\mathcal{Q}_{U_\eta}=\sum_{\gamma}a_{\gamma}^\eta\mathcal{Q}_{V_\gamma}\)</span></p>
+<p><span class="math inline">\(M\)</span> に関する帰納法で示す．</p>
+<p><span class="math inline">\(M=1\)</span> の場合：</p>
+<p><strong>主張</strong>：<span class="math inline">\(M=1\)</span> となるような最高ウェイト巡回表現 <span class="math inline">\(U_\eta\)</span> は既約</p>
+<p>既約なら <span class="math inline">\(U_\eta\simeq V_\eta\)</span> の同型性から，<span class="math inline">\(\mathcal{Q}_{U_\eta}=\mathcal{Q}_{V_\eta}.\)</span></p>
+<p>主張を背理法で示す．<span class="math inline">\(U_\eta\)</span> は既約でないと仮定する．</p>
+<ol type="1">
+<li>このとき，非自明な不変部分空間 <span class="math inline">\(W\)</span> が存在する．</li>
+<li><a href="#lem-10.37" class="quarto-xref">Lemma 7</a> より，<span class="math inline">\(W\)</span> はウェイト空間の直和に分解できて，各ウェイト <span class="math inline">\(\lambda\)</span> は <span class="math inline">\(\lambda\prec\eta.\)</span></li>
+</ol>
+<div id="tip-10.36" class="callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Tip 28
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p><span class="math inline">\(\lambda=\eta\)</span> となると，最高ウェイト巡回表現であることから，<span class="math inline">\(U_\eta=W\)</span> となり，<span class="math inline">\(W\)</span> が非自明な部分空間であることに矛盾する．</p>
+</div>
+</div>
+<ol start="3" type="1">
+<li>よって，あるウェイトベクトル <span class="math inline">\(w\)</span> で <span class="math inline">\(\pi(X_\alpha)w=0,\,X_\alpha\in\g_\alpha,\alpha\in R^+\)</span> を満たすものが存在．つまり，ある部分空間 <span class="math inline">\(W&#39;\subset W\)</span> が存在して，<span class="math inline">\((\pi,W&#39;)\)</span> はある最高ウェイト <span class="math inline">\(\xi\)</span> に対する最高ウェイト巡回表現になる．</li>
+</ol>
+<div id="tip-10.36-2" class="callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Tip 29
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<ul>
+<li>そのような <span class="math inline">\(w\)</span> が存在しないと上昇作用 <span class="math inline">\(\pi(X_\alpha)\)</span> を繰り返すことで，最高ウェイトベクトルが <span class="math inline">\(W\)</span> に含まれてしまう．</li>
+<li><span class="math inline">\(W&#39;\)</span> として，<span class="math inline">\(U(\g)w\)</span> をとる．</li>
+</ul>
+</div>
+</div>
+<ol start="4" type="1">
+<li><p><a href="#prp-10.34" class="quarto-xref">Proposition 13</a> より，</p>
+<ul>
+<li><span class="math inline">\(W&#39;\)</span> 上では，<span class="math inline">\(\tilde\pi(C)=(\ang{\xi+\delta,\xi+\delta}-\ang{\delta,\delta})I.\)</span></li>
+<li><span class="math inline">\(U_\eta\)</span> 上では，<span class="math inline">\(\tilde\pi(C)=(\ang{\eta+\delta,\eta+\delta}-\ang{\delta,\delta})I.\)</span></li>
+</ul></li>
+</ol>
+<p><span class="math inline">\(\eta\in S_\mu\)</span> とあわせて，<span class="math inline">\(\xi\in S_\mu\)</span> である．</p>
+<ol start="5" type="1">
+<li>以上より，<span class="math inline">\(\eta,\xi\in S_\mu\)</span> となったが，これは <span class="math inline">\(M=1\)</span> に矛盾する．</li>
+</ol>
+<p><span class="math inline">\(M\geq2\)</span> の場合：</p>
+<p><span class="math inline">\(U_\eta\)</span> が既約の場合は明らか． <span class="math inline">\(U_\eta\)</span> は既約でないとすると，1-4 を繰り返して，ある最高ウェイト <span class="math inline">\(\xi\prec\eta\)</span> に関する最高ウェイト巡回表現 <span class="math inline">\((\pi,W&#39;)\)</span> が得られる．このとき，<span class="math inline">\((\pi,U_\eta/W&#39;)\)</span> は最高ウェイト <span class="math inline">\(\eta\)</span> に関する最高ウェイト巡回表現．</p>
+<div id="tip-10.36-3" class="callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Tip 30
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<ul>
+<li><span class="math inline">\(\eta\)</span> に関するウェイトベクトル <span class="math inline">\(v\)</span> は <span class="math inline">\(v\notin W&#39;\)</span></li>
+<li><span class="math inline">\(\pi(H)[v]=[\pi(H)v]=\ang{\eta,H}[v]\)</span> より，<span class="math inline">\([v]\)</span> は最高ウェイトベクトル</li>
+<li><span class="math inline">\(\pi(X_\alpha)[v]=[\pi(X_\alpha)v]=[0]\)</span></li>
+<li><span class="math inline">\(U(\g)[v]=[U(\g)v]=[U]=U/N\)</span></li>
+</ul>
+</div>
+</div>
+<p><a href="#lem-10.37" class="quarto-xref">Lemma 7</a> より， <span class="math display">\[
+\mathcal{Q}_{U_\eta}=\mathcal{Q}_{W&#39;}+\mathcal{Q}_{U_\eta/W&#39;}.
+\]</span></p>
+<p><span class="math inline">\(W&#39;,U_\eta/W&#39;\)</span> は相異なる <span class="math inline">\(S_\mu\)</span> 上のウェイトをもつので， <span class="math display">\[
+M(W&#39;),M(U_\eta/W&#39;)&lt;M(U_\eta)
+\]</span></p>
+<p>よって，帰納法の仮定から，題意が従う．</p>
+<p><strong>二段目</strong>：<span class="math inline">\(a_\eta^\eta=1\)</span> になること</p>
+<p><span class="math inline">\(U_\eta\)</span> に対応する <span class="math inline">\(a_\eta^\eta\)</span> を <span class="math inline">\(a_\eta^\eta(U_\eta)\)</span> と表す．</p>
+<p><span class="math inline">\(M\)</span> に関する帰納法で示す．<span class="math inline">\(M=1\)</span> の場合は明らか．<span class="math inline">\(M\geq2\)</span> の場合，</p>
+<p><span class="math inline">\(M(U_\eta/W&#39;)&lt;M(U_\eta)\)</span> なので，帰納法の仮定より，<span class="math inline">\(a_\eta^\eta(U_\eta/W&#39;)=1\)</span> である． 一段目の結果から，<span class="math inline">\(a_\eta^\eta(U_\eta)=a_\eta^\eta(U_\eta/W&#39;)=1\)</span></p>
+</div>
+<div id="lem-10.37" class="theorem lemma">
+<p><span class="theorem-title"><strong>Lemma 7 (<span class="citation" data-cites="hallLieGroupsLie2015">Hall (<a href="#ref-hallLieGroupsLie2015" role="doc-biblioref">2015</a>)</span> Lemma 10.37)</strong></span> （有限次元とは限らない）表現 <span class="math inline">\((\pi,V)\)</span> に以下を仮定する：</p>
+<ol type="1">
+<li><span class="math inline">\(V\)</span> はウェイト空間の直和で表せる．</li>
+<li>各ウェイト <span class="math inline">\(\lambda\)</span> に対して，<span class="math inline">\(\mathrm{mult}(\lambda)&lt;\infty.\)</span></li>
+</ol>
+<p><span class="math inline">\(U\neq\{0\}\)</span> は <span class="math inline">\(V\)</span> の不変部分空間とする．このとき，</p>
+<ol type="1">
+<li><span class="math inline">\(U,V/U\)</span> はウェイト空間の直和で表せる．</li>
+<li>各ウェイト <span class="math inline">\(\lambda\)</span> の <span class="math inline">\(V\)</span> における重複度は <span class="math inline">\(U\)</span> における重複度と <span class="math inline">\(V/U\)</span> における重複度の和．</li>
+</ol>
+</div>
+<div class="proof">
+<p><span class="proof-title"><em>Proof</em>. </span><strong>一段目</strong>：<span class="math inline">\(U\)</span> はウェイト空間の直和で表せる</p>
+<p><span class="math inline">\(V\)</span> のウェイト <span class="math inline">\(\lambda\)</span> に対応するウェイト空間を <span class="math inline">\(V_\lambda\)</span> と表す．</p>
+<p>仮定より，<span class="math inline">\(u\in U\)</span> に対して，相異なるウェイト <span class="math inline">\(\lambda_1,\dots,\lambda_j\)</span> とウェイトベクトル <span class="math inline">\(v_k\in V_{\lambda_k}\,(k=1,\dots,j)\)</span> が存在して，<span class="math inline">\(u=v_1+\cdots+v_j\)</span> と直和分解できる．</p>
+<p><strong>主張</strong>：<span class="math inline">\(v_k\in U\,(k=1,\dots,j)\)</span></p>
+<p>このとき，<span class="math inline">\(U\subset \bigoplus_\lambda U_\lambda\)</span> が成り立つので，<span class="math inline">\(U\)</span> はウェイト空間の直和で表せる．</p>
+<p>主張を <span class="math inline">\(j\)</span> に関する帰納法で示す．<span class="math inline">\(j=1\)</span> の場合は明らか． <span class="math inline">\(j\geq2\)</span> とする．</p>
+<p>零でない <span class="math inline">\(H\in\h\)</span> を <span class="math inline">\(\ang{\lambda_j,H}\neq\ang{\lambda_1,H}\)</span> となるように選ぶ．</p>
+<div id="tip-10.37" class="callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Tip 31
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>例えば，<span class="math inline">\(H\coloneqq\lambda_j-\lambda_1\)</span> とする．</p>
+</div>
+</div>
+<p>このとき， <span class="math display">\[
+\begin{align*}
+(\pi(H)-\ang{\lambda_1,H}I)u
+&amp;=\sum_{k=1}^{j}(\ang{\lambda_k,H}-\ang{\lambda_1,H})v_k\\
+&amp;=\sum_{k=2}^{j}(\ang{\lambda_k,H}-\ang{\lambda_1,H})v_k
+\end{align*}
+\]</span></p>
+<p>となる．</p>
+<ul>
+<li>帰納法の仮定から，<span class="math inline">\((\ang{\lambda_k,H}-\ang{\lambda_1,H})v_k\in U\,(k=2,\dots,j)\)</span> である．特に，<span class="math inline">\(H\)</span> の選び方から，<span class="math inline">\(v_j\in U\)</span> である．</li>
+<li><span class="math inline">\(u-v_j\)</span> に対して，帰納法の仮定から，<span class="math inline">\(v_1,\dots,v_j\in U\)</span> である．</li>
+</ul>
+<p>以上より，主張が示された．</p>
+<p><strong>二段目</strong>：<span class="math inline">\(V/U\)</span> はウェイト空間の直和で表せる</p>
+<p><span class="math display">\[
+V/U=\left(\bigoplus_\lambda V_\lambda\right)/\left(\bigoplus_\lambda U_\lambda\right)=\bigoplus_\lambda \underbrace{V_\lambda/U_\lambda}_{(V/U)_\lambda}.
+\]</span></p>
+<p><strong>三段目</strong>：各ウェイト <span class="math inline">\(\lambda\)</span> の <span class="math inline">\(V\)</span> における重複度は <span class="math inline">\(U\)</span> における重複度と <span class="math inline">\(V/U\)</span> における重複度の和</p>
+<p><span class="math inline">\((V/U)_\lambda=V_\lambda/U_\lambda\)</span> より従う．</p>
+</div>
+<div id="prp-10.38" class="theorem proposition">
+<p><span class="theorem-title"><strong>Proposition 15 (<span class="citation" data-cites="hallLieGroupsLie2015">Hall (<a href="#ref-hallLieGroupsLie2015" role="doc-biblioref">2015</a>)</span> Proposition 10.38)</strong></span> <span class="math inline">\(S_\mu\)</span> の元を <span class="math inline">\(\eta_1\preceq \eta_2\preceq\cdots\preceq \eta_l\)</span> となるように並べる． このとき，<span class="math inline">\(A_{jk}\coloneqq a_{\eta_k}^{\eta_j}\)</span> は上三角行列で対角成分は <span class="math inline">\(1\)</span>. とくに，<span class="math inline">\(\eta\in S_\mu\)</span> に対して，</p>
+<p><span class="math display">\[
+\mathcal{Q}_{V_\eta}=\sum_{\gamma\in S_\mu}b_{\gamma}^\eta\mathcal{Q}_{W_\gamma}.
+\]</span></p>
+<p>ただし，<span class="math inline">\(W_\gamma\)</span> は Verma 加群．また，<span class="math inline">\(b_\eta^\eta=1.\)</span></p>
+</div>
+<ul>
+<li><span class="math inline">\(S_\mu\)</span> は半順序集合かつ有限集合なので，そのような整列が可能 (Excercise6).</li>
+</ul>
+<div class="proof">
+<p><span class="proof-title"><em>Proof</em>. </span><a href="#prp-10.36" class="quarto-xref">Proposition 14</a> より，<span class="math inline">\(A\)</span> の対角成分は <span class="math inline">\(1\)</span> で，非零元は上三角成分にのみ現れる．<span class="math inline">\(A\)</span> は正則なので，逆行列をかけて，題意が従う．</p>
+</div>
+<div class="proof">
+<p><span class="proof-title"><em>Proof</em> (<a href="#prp-10.33" class="quarto-xref">Proposition 12</a> の証明). </span><span class="math inline">\(\eta=\mu\)</span> の場合に <a href="#prp-10.38" class="quarto-xref">Proposition 15</a> を使う．</p>
+<p><span class="math display">\[
+\chi_\pi(H)=\mathcal{Q}_{V_\mu}(H)=\sum_{\gamma\in S_\mu}b_\gamma^\mu\frac{e^{\ang{\gamma+\delta,H}}}{q(H)}.
+\]</span></p>
+<p>ただし，最後の等式は <a href="#prp-10.31" class="quarto-xref">Proposition 10</a> による．いま，<span class="math inline">\(S_\mu\)</span> の定義から，<span class="math inline">\(q(H)\chi_\pi(H)\)</span> は <a href="#prp-10.33" class="quarto-xref">Proposition 12</a> の条件を満たす表示をもっている．<a href="#prp-10.16" class="quarto-xref">Proposition 7</a> より，各項は線形独立なので，この表示は一意的．よって題意が従う．</p>
+</div>
 </section>
 <section id="付録" class="level1">
 <h1>付録</h1>
@@ -3430,8 +3948,32 @@ D_\alpha f_\lambda
 &amp;=-\sum_{j}X_j^2f.\\
 \end{align*}
 \]</span></p>
-
 </section>
+</section>
+<section id="の補足" class="level2">
+<h2 class="anchored" data-anchor-id="の補足">10.8 の補足</h2>
+<div id="lem-conv" class="theorem lemma">
+<p><span class="theorem-title"><strong>Lemma 8</strong></span> <span class="math inline">\(V\)</span> はノルム空間， <span class="math inline">\(v_1,\dots,v_m\in V\)</span> はノルムが等しい相異なる元とする．</p>
+<p>凸結合 <span class="math inline">\(v\coloneqq\sum_{j=1}^ma_jv_j\)</span> について，<span class="math inline">\(\norm{v}=\norm{v_1}\iff\)</span> ある <span class="math inline">\(j\)</span> が存在して，<span class="math inline">\(a_j=1\)</span></p>
+</div>
+<div class="proof">
+<p><span class="proof-title"><em>Proof</em>. </span><span class="math inline">\((\Leftarrow)\)</span> は明らか．<span class="math inline">\((\Rightarrow)\)</span> を帰納法で示す．</p>
+<p><span class="math inline">\(m=1\)</span> の場合は明らか．<span class="math inline">\(m\geq2\)</span> として，<span class="math inline">\(\norm{v}=\norm{v_1}\)</span> を仮定する．</p>
+<p><span class="math inline">\(a_m=1\)</span> なら明らか．<span class="math inline">\(a_m=0\)</span> なら帰納法の仮定から，ある <span class="math inline">\(j&lt;m\)</span> が存在して，<span class="math inline">\(a_j=1\)</span></p>
+<p><span class="math inline">\(0&lt;a_m&lt;1\)</span> を仮定して，矛盾を示す．</p>
+<p><span class="math display">\[
+v=a_mv_m+(1-a_m)\underbrace{\sum_{j=1}^{m-1}\frac{a_j}{1-a_m}v_j}_{\eqqcolon w}
+\]</span></p>
+<p>と分解する．<span class="math inline">\(w\)</span> は <span class="math inline">\(v_1,\dots,v_{m-1}\)</span> の凸結合になっている．</p>
+<ul>
+<li>三角不等式から，<span class="math inline">\(\norm{w}\leq\norm{v_1}\)</span></li>
+<li>三角不等式から，<span class="math inline">\(\norm{v_1}=\norm{v}\leq a_m\norm{v_m}+(1-a_m)\norm{w}\)</span>，特に <span class="math inline">\(\norm{v_1}\leq\norm{w}\)</span></li>
+</ul>
+<p>よって，<span class="math inline">\(\norm{v}=a_m\norm{v_m}+(1-a_m)\norm{w}\)</span> が成立する．ノルムの狭義凸性より，<span class="math inline">\(v_m=w\)</span> である． 帰納法の仮定から，ある <span class="math inline">\(j&lt;m\)</span> が存在して，<span class="math inline">\(w=a_jv_j/(1-a_m),a_j=(1-a_m)\)</span></p>
+<p><span class="math inline">\(v=a_mv_m+(1-a_m)v_j\)</span></p>
+<p>より，<span class="math inline">\(\norm{v_1}=\norm{v}\leq a_m\norm{v_m}+(1-a_m)\norm{v_j}=\norm{v_1}\)</span> で，ノルムの狭義凸性から，<span class="math inline">\(v_j=v_m\)</span> となるが，これは矛盾．</p>
+</div>
+
 </section>
 </section>
 
