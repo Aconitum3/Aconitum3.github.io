@@ -89,7 +89,7 @@ const calendarEvents = eventsData.map((event) => ({
         if (description) {
           const descriptionEl = document.createElement('div');
           descriptionEl.className = 'tooltip-desc';
-          descriptionEl.textContent = description;
+          descriptionEl.innerHTML = description;
 
           tooltipEl.appendChild(descriptionEl);
         }
@@ -207,7 +207,7 @@ const calendarEvents = eventsData.map((event) => ({
 
         const eventDescriptionEl = document.createElement('div');
         eventDescriptionEl.className = 'event-desc';
-        eventDescriptionEl.textContent =
+        eventDescriptionEl.innerHTML =
           event.extendedProps.description || '';
 
         eventHeaderEl.appendChild(eventDateEl);
