@@ -13,7 +13,7 @@ Ph.D. student (The Graduate University for Advanced Studies, SOKENDAI / The Inst
 
 ## Research Interests
 
-Unnormalized model, Score matching, Stein's method
+Unnormalized model, Score matching, Stein's method, Scoring rule
 
 ## Curriculum Vitae
 
@@ -23,6 +23,12 @@ Unnormalized model, Score matching, Stein's method
 |--|--|--|
 |2025-2030|Doctor of Statistical Science (expected)|The Graduate University for Advanced Studies, SOKENDAI|
 |2021-2025|Bachelor of Engineering|Chuo University|
+
+### Awards
+
+|Award|Date|Event|
+|--|--|--|
+|最優秀報告賞|202609|2026年度統計関連連合大会コンペティション講演セッション|
 
 <style>
 table {

@@ -8,7 +8,7 @@ next: ""
 
 |Title|Date|Authors|Journal|
 |--|--|--|--|
-|超球面上の確率分布に対する分布クラスタリングとその応用<br>(A Distributional Clustering for Distributions on the Unit Hypersphere and its Applications)|2026+|M. Nagai and [Fumitake Sakaori](https://researchmap.jp/fsakaori)|accepted in 計算機統計学 (*Bulletin of the Computational Statistics of Japan*)|
+|[超球面上の確率分布に対する分布クラスタリングとその応用<br>(A Distributional Clustering for Distributions on the Unit Hypersphere and its Applications)](https://www.jstage.jst.go.jp/article/jscswabun/39/1/39_1/_article/-char/ja)|2026|M. Nagai and [Fumitake Sakaori](https://sakaori.v.chuo-u.ac.jp/)|計算機統計学 (*Bulletin of the Computational Statistics of Japan*)|
 
 ## Preprints
 
